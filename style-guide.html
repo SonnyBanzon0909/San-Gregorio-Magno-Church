@@ -1,0 +1,638 @@
+<!DOCTYPE html><!--  Last Published: Mon Apr 10 2023 16:26:38 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="640c46c54379a3c0f82188b3" data-wf-site="640c46a109bfca551c61da47">
+<head>
+  <meta charset="utf-8">
+  <title>Style Guide</title>
+  <meta content="Style Guide" property="og:title">
+  <meta content="Style Guide" property="twitter:title">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/san-gregorio-magno.webflow.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">WebFont.load({  google: {    families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic","Marcellus:regular"]  }});</script>
+  <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XREV9R6ECX"></script>
+  <script type="text/javascript">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('set', 'developer_id.dZGVlNj', true);gtag('config', 'G-XREV9R6ECX');</script>
+  <style>
+.no-scroll
+{
+    overflow-y: hidden!important;
+		touch-action: none;
+	 -ms-touch-action: none;
+}
+</style>
+  <!--  Google tag (gtag.js)  -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XREV9R6ECX"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XREV9R6ECX');
+</script>
+</head>
+<body>
+  <div class="ui-kit-wrapper">
+    <div class="section ui-hero-base wf-section">
+      <div class="container">
+        <div class="ui-hero-wrapper"><img src="images/Parokya-logo.png" loading="lazy" alt="" class="client-logo margin-bottom-30">
+          <h1 class="hero-title">Style Guide</h1>
+        </div>
+      </div>
+    </div>
+    <div class="section ui-kit-wrapper wf-section">
+      <div class="container">
+        <div class="ui-kit-grid">
+          <div class="sticky-menu-wrapper">
+            <div class="sticky-menu">
+              <div class="menu-title">Menu</div>
+              <div class="sticky-grid">
+                <a id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b0329e1-f82188b3" href="#colors" class="menu-link">Colors</a>
+                <a id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b0329e3-f82188b3" href="#typography" class="menu-link">Typography</a>
+                <a id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b0329e5-f82188b3" href="#structure" class="menu-link">Structure</a>
+                <a id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b0329e7-f82188b3" href="#forms" class="menu-link">Forms</a>
+                <a id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b0329e9-f82188b3" href="#richtext" class="menu-link">Rich Text</a>
+                <a id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b0329eb-f82188b3" href="#buttons" class="menu-link">Buttons</a>
+                <a id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b0329ed-f82188b3" href="#custom-css" class="menu-link">Custom CSS</a>
+                <a id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b0329ef-f82188b3" href="#empty-states" class="menu-link">Empty States</a>
+                <a id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b0329f1-f82188b3" href="#404-page" class="menu-link">404 Page</a>
+                <a id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b0329f3-f82188b3" href="#owl-carousel" class="menu-link">Owl Carousel</a>
+              </div>
+            </div>
+          </div>
+          <div id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b0329f5-f82188b3" class="element-style-wrapper">
+            <div id="colors" class="background-wrapper">
+              <div class="ui-block-title-wrapper">
+                <div class="style-block-title">Color</div>
+                <div class="style-block-title-excerpt margin-top-10">Remove the combo class &quot;custom-bg-color&quot; before customizing.</div>
+              </div>
+              <div class="style-wrapper margin-top-50">
+                <div class="style-block-title">Primary Colors</div>
+                <div class="background-grid">
+                  <div id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b032a00-f82188b3" class="bg-color-wrapper">
+                    <div class="bg-gray custom-bg-color"></div>
+                    <div class="bg-desc-wrapper">
+                      <div class="bg-color-name-text margin-bottom-10">bg-gray</div>
+                      <div class="color-hex">#f1f4f6</div>
+                    </div>
+                  </div>
+                  <div id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b032a07-f82188b3" class="bg-color-wrapper">
+                    <div class="bg-blue custom-bg-color"></div>
+                    <div class="bg-desc-wrapper">
+                      <div class="bg-color-name-text margin-bottom-10">bg-blue</div>
+                      <div class="color-hex">#0088e2</div>
+                    </div>
+                  </div>
+                  <div id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b032a0e-f82188b3" class="bg-color-wrapper">
+                    <div class="bg-red custom-bg-color"></div>
+                    <div class="bg-desc-wrapper">
+                      <div class="bg-color-name-text margin-bottom-10">bg-red</div>
+                      <div class="color-hex">#ff0004</div>
+                    </div>
+                  </div>
+                  <div id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b032a15-f82188b3" class="bg-color-wrapper">
+                    <div class="bg-yellow custom-bg-color"></div>
+                    <div class="bg-desc-wrapper">
+                      <div class="bg-color-name-text margin-bottom-10">bg-yellow</div>
+                      <div class="color-hex">#F3D707</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="style-wrapper margin-top-50">
+                <div class="style-block-title-2">Secondary Colors</div>
+                <div class="background-grid _2-col-grid margin-top-10">
+                  <div id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b032a20-f82188b3" class="bg-color-wrapper">
+                    <div class="bg-white-lilac custom-bg-color"></div>
+                    <div class="bg-desc-wrapper">
+                      <div class="bg-color-name-text margin-bottom-10">bg-white-lilac</div>
+                      <div class="color-hex">#fafbfd</div>
+                    </div>
+                  </div>
+                  <div id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b032a27-f82188b3" class="bg-color-wrapper">
+                    <div class="bg-zircon custom-bg-color"></div>
+                    <div class="bg-desc-wrapper">
+                      <div class="bg-color-name-text margin-bottom-10">bg-zircon</div>
+                      <div class="color-hex">#EEF3FF</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="style-wrapper margin-top-50">
+                <div class="style-block-title-2">Other</div>
+                <div class="background-grid">
+                  <div id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b032a32-f82188b3" class="bg-color-wrapper">
+                    <div class="bg-black custom-bg-color"></div>
+                    <div class="bg-desc-wrapper">
+                      <div class="bg-color-name-text margin-bottom-10">bg-black</div>
+                      <div class="color-hex">#25272a</div>
+                    </div>
+                  </div>
+                  <div id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b032a39-f82188b3" class="bg-color-wrapper">
+                    <div class="bg-white custom-bg-color"></div>
+                    <div class="bg-desc-wrapper">
+                      <div class="bg-color-name-text margin-bottom-10">bg-white</div>
+                      <div class="color-hex">#ffffff</div>
+                    </div>
+                  </div>
+                  <div id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b032a40-f82188b3" class="bg-color-wrapper">
+                    <div class="bg-school-bus-yellow custom-bg-color"></div>
+                    <div class="bg-desc-wrapper">
+                      <div class="bg-color-name-text margin-bottom-10">bg-school-bus-yellow</div>
+                      <div class="color-hex">#ff0004</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="style-wrapper margin-top-50">
+                <div class="style-block-title">Text Colors</div>
+                <div class="background-grid">
+                  <div id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b032a4b-f82188b3" class="bg-color-wrapper">
+                    <div class="bg-desc-wrapper">
+                      <div class="color-black">Edit Text Color here</div>
+                      <div class="bg-color-name-text margin-bottom-10">color-black</div>
+                      <div class="color-hex">#201A1E</div>
+                    </div>
+                  </div>
+                  <div id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b032a53-f82188b3" class="bg-color-wrapper">
+                    <div class="bg-desc-wrapper">
+                      <div class="color-white">Edit Text Color here</div>
+                      <div class="bg-color-name-text margin-bottom-10">color-white</div>
+                      <div class="color-hex">#ffffff</div>
+                    </div>
+                  </div>
+                  <div id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b032a5b-f82188b3" class="bg-color-wrapper">
+                    <div class="bg-desc-wrapper">
+                      <div class="color-yellow">Edit Text Color here</div>
+                      <div class="bg-color-name-text margin-bottom-10">color-yellow</div>
+                      <div class="color-hex">#F3D707</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="colors" class="typography-wrapper">
+              <div class="ui-block-title-wrapper">
+                <div id="typography" class="style-block-title">Typography</div>
+              </div>
+              <div class="style-wrapper margin-top-50">
+                <h1>Heading 1</h1>
+                <h2>Heading 2</h2>
+                <h3>Heading 3</h3>
+                <h4>Heading 4</h4>
+                <h5>Heading 5</h5>
+                <h6>Heading 6</h6>
+                <div class="header-title">header-title</div>
+                <div class="block-title">block-title</div>
+                <div class="block-title-med">block-title-med</div>
+                <div class="block-title-small">block-title-small</div>
+                <div class="services-title">services-title</div>
+                <div class="block-title-xs">block-title-xs</div>
+                <div class="blog-title">blog-title</div>
+                <div class="testi-name">testi-name</div>
+                <div class="button-text">button-text</div>
+                <div class="overline-text">overline-text</div>
+                <div class="body-medium">body-medium</div>
+                <div class="body-text">body-text</div>
+                <div class="body-small">body-small</div>
+                <div class="footnote-text">footnote-text</div>
+              </div>
+            </div>
+            <div id="structure" class="structure-wrapper">
+              <div class="ui-block-title-wrapper">
+                <div id="typography" class="style-block-title">Structure</div>
+              </div>
+              <div class="style-wrapper margin-top-50">
+                <div class="structure-grid">
+                  <div class="container-con">
+                    <div class="bg-color-name-text">section</div>
+                    <div class="style-block-title-excerpt margin-top-10">Padding left and right is set to 25px<br>Remove the combo class &quot;custom-section&quot; before customizing.</div>
+                    <div class="section custom-section"></div>
+                  </div>
+                  <div class="container-con">
+                    <div class="bg-color-name-text">container</div>
+                    <div class="style-block-title-excerpt margin-top-10">max-width: 1200px to 1300px<br>Remove the class &quot;custom-container&quot; before customizing.<br></div>
+                    <div class="container custom-container"></div>
+                  </div>
+                  <div id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b032aa7-f82188b3" class="_2-col-grid">
+                    <div class="container-con">
+                      <div class="bg-color-name-text">2-col-grid</div>
+                    </div>
+                    <div class="container-con"></div>
+                  </div>
+                  <div id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b032aac-f82188b3" class="_3-col-grid">
+                    <div class="container-con">
+                      <div class="bg-color-name-text">3-col-grid</div>
+                    </div>
+                    <div class="container-con"></div>
+                    <div class="container-con"></div>
+                  </div>
+                  <div id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b032ab2-f82188b3" class="_4-col-grid">
+                    <div class="container-con">
+                      <div class="bg-color-name-text">4-col-grid</div>
+                    </div>
+                    <div class="container-con"></div>
+                    <div class="container-con"></div>
+                    <div class="container-con"></div>
+                  </div>
+                  <div id="w-node-_79548658-3fe4-e6c2-9d3f-140d4b032ab9-f82188b3" class="_2-col-grid">
+                    <div class="container-con">
+                      <div class="bg-color-name-text">flex</div>
+                      <div class="flex flex-size">
+                        <div class="flex-item-con"></div>
+                      </div>
+                    </div>
+                    <div class="container-con">
+                      <div class="bg-color-name-text">flex-horizontal</div>
+                      <div class="flex-horizontal flex-size">
+                        <div class="flex-item-con"></div>
+                      </div>
+                    </div>
+                    <div class="container-con">
+                      <div class="bg-color-name-text">flex-vertical</div>
+                      <div class="flex-vertical flex-size">
+                        <div class="flex-item-con"></div>
+                      </div>
+                    </div>
+                    <div class="container-con">
+                      <div class="bg-color-name-text">flex-align-stretch</div>
+                      <div class="flex-align-stretch flex-size">
+                        <div class="flex-item-con"></div>
+                      </div>
+                    </div>
+                    <div class="container-con">
+                      <div class="bg-color-name-text">flex-align-start</div>
+                      <div class="flex-align-start flex-size">
+                        <div class="flex-item-con"></div>
+                      </div>
+                    </div>
+                    <div class="container-con">
+                      <div class="bg-color-name-text">flex-align-center</div>
+                      <div class="flex-align-center flex-size">
+                        <div class="flex-item-con"></div>
+                      </div>
+                    </div>
+                    <div class="container-con">
+                      <div class="bg-color-name-text">flex-align-end</div>
+                      <div class="flex-align-end flex-size">
+                        <div class="flex-item-con"></div>
+                      </div>
+                    </div>
+                    <div class="container-con">
+                      <div class="bg-color-name-text">hide</div>
+                      <div class="hide">
+                        <div class="flex-item-con"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="forms" class="forms-wrapper">
+              <div class="ui-block-title-wrapper">
+                <div id="typography" class="style-block-title">Forms</div>
+                <div class="style-block-title-excerpt margin-top-10">Note: Select Icon is already set for customization.</div>
+              </div>
+              <div class="style-wrapper margin-top-50">
+                <div class="w-form">
+                  <form id="email-form" name="email-form" data-name="Email Form" method="get"><label for="name-2">Full name</label><input type="text" class="input w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="Enter your name" id="name-2"><label for="Category-2">Category</label>
+                    <div class="select-wrapper"><select id="Category-2" name="Category-2" data-name="Category 2" class="select filter-select w-select">
+                        <option value="">Select an option</option>
+                        <option value="First">First Choice</option>
+                        <option value="Second">Second Choice</option>
+                        <option value="Third">Third Choice</option>
+                      </select><img src="images/down-chevron-1.svg" loading="lazy" alt="" class="select-icon"></div><label for="Message">Message</label><textarea placeholder="Example Text" maxlength="5000" id="field-2" name="field-2" data-name="Field 2" class="text-area w-input"></textarea>
+                    <div class="field-buttons-wrapper"><label class="radio-button-field w-radio">
+                        <div class="w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input"></div><input type="radio" data-name="Radio 2" id="radio-2" name="radio" value="Radio" style="opacity:0;position:absolute;z-index:-1"><span class="w-form-label" for="radio-2">Radio</span>
+                      </label><label class="w-checkbox checkbox-field">
+                        <div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox"></div><input type="checkbox" id="checkbox-2" name="checkbox-2" data-name="Checkbox 2" style="opacity:0;position:absolute;z-index:-1"><span class="w-form-label" for="checkbox-2">Checkbox</span>
+                      </label></div>
+                  </form>
+                  <div class="success-message w-form-done">
+                    <div class="paragraph-normal">Thank you! Your submission has been received!</div>
+                  </div>
+                  <div class="error-message w-form-fail">
+                    <div class="paragraph-normal">Oops! Something went wrong while submitting the form.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="richtext" class="richtext-wrapper">
+              <div class="ui-block-title-wrapper">
+                <div id="typography" class="style-block-title">Richtext</div>
+                <div class="style-block-title-excerpt margin-top-10">Note 1: Richtext &quot;figure&quot; element max-width is set to 100%. </div>
+                <div class="style-block-title-excerpt">Note 2: Richtext &quot;ul li::marker&quot; style can be change inside the &quot;custom-css&quot; embed.</div>
+              </div>
+              <div class="style-wrapper margin-top-50">
+                <div class="richtext w-richtext">
+                  <h2>What’s a Rich Text element?</h2>
+                  <p>The rich text element allows you to create and format headings, paragraphs, blockquotes, images, and video all in one place instead of having to add and format them individually. Just double-click and easily create content.</p>
+                  <h4>Static and dynamic content editing</h4>
+                  <p>A rich text element can be used with static or dynamic content. For static content, just drop it into any page and begin editing. For dynamic content, add a rich text field to any collection and then connect a rich text element to that field in the settings panel. Voila!</p>
+                  <h1>List</h1>
+                  <ul role="list">
+                    <li>List item</li>
+                    <li>List item</li>
+                    <li>List item</li>
+                    <li>List item</li>
+                    <li>List item</li>
+                  </ul>
+                  <ol start="" role="list">
+                    <li>List item</li>
+                    <li>List item</li>
+                    <li>List item</li>
+                    <li>List item</li>
+                    <li>List item</li>
+                  </ol>
+                  <h4>How to customize formatting for each rich text</h4>
+                  <p>Headings, paragraphs, blockquotes, figures, images, and figure captions can all be styled after a class is added to the rich text element using the &quot;When inside of&quot; nested selector system.</p>
+                </div>
+              </div>
+            </div>
+            <div id="buttons" class="buttons-wrapper">
+              <div class="ui-block-title-wrapper">
+                <div id="typography" class="style-block-title">Buttons</div>
+                <div class="style-block-title-excerpt margin-top-10">Note: Button Animation is already set. </div>
+              </div>
+              <div class="style-wrapper margin-top-50">
+                <div class="ui-btn-grid">
+                  <div data-w-id="79548658-3fe4-e6c2-9d3f-140d4b032b40" class="button">
+                    <div style="opacity:0" class="button-overlay"></div>
+                    <a aria-label="" href="#" class="button-link">Learn more</a>
+                  </div>
+                  <div data-w-id="79548658-3fe4-e6c2-9d3f-140d4b032b44" class="circle-button">
+                    <div class="circle-button-overlay"></div><img src="images/ui-fb-icon.svg" loading="lazy" alt="" class="button-icon">
+                    <a href="#" class="circle-button-link"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="custom-css" class="buttons-wrapper">
+              <div class="ui-block-title-wrapper">
+                <div id="typography" class="style-block-title">Custom CSS</div>
+                <div class="style-block-title-excerpt margin-top-10 custom-css-excerpt">Note: Remove the &quot;show-css&quot; class before copying the custom-css embed to keep it hidden on all pages, or Remove the class &quot;show-css&quot; if custom-css is set as a component.</div>
+              </div>
+              <div class="style-wrapper margin-top-50">
+                <div class="custom-css w-embed">
+                  <style>
+/*CUSTOM CSS*/
+h1,h2,h3,h4,h5,h6
+{
+	padding: 0;
+  margin: 0;
+}
+.richtext ul li::marker
+{
+	font-size: 20px;
+  color: green;
+}
+/*FOR Removing Select Icon*/
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+/*To disable Select Custom Icon*/
+.select-icon, .calendar
+{
+  pointer-events:none;
+}
+.underline-text, .cta-link ,.social-text
+{
+  overflow: hidden;
+  position: relative;
+}
+.underline-text::before , .cta-link::before, .social-text::before
+{
+	content: "";
+  position: absolute;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom:0;
+  width: 100%;
+  height: 2px;
+  background-color: #52070B;
+  transition: all .5s;
+  transform: translateX(-110%);
+}
+.cta-link::before
+{
+	background-color: #100A0A;
+ 	height: 1px;
+}
+.underline-text:hover::before , .cta-link:hover::before, .social-text:hover::before
+{
+	transform: translateX(0);
+}
+.home-service-list.owl-carousel .owl-item img
+{
+	width: auto;
+}
+.service-dot-container .owl-dot, .announce-dot-container .owl-dot, .gallery-dot-container .owl-dot
+{
+	width:10px;
+  height: 10px;
+  background-color: #C7C6B8;
+  border-radius: 100%;
+  margin: 0 5px;
+  padding:0px;
+}
+.service-dot-container .owl-dot.active, .announce-dot-container .owl-dot.active, .gallery-dot-container .owl-dot.active
+{
+  background-color: #9FA28C;
+}
+.moment-list.owl-carousel .owl-item:nth-child(even)
+{
+	padding-top: 40px;
+}
+.cta-link
+{
+	word-break: break-all;
+}
+/* For Chrome and Safari */
+.table-container::-webkit-scrollbar {
+  width: 5px; /* width of the scrollbar */
+  background-color: #CDCDCD; /* background color of the scrollbar */
+}
+.table-container::-webkit-scrollbar-thumb {
+  background-color: #807D7D; /* color of the thumb */
+}
+/* For Firefox and Microsoft Edge */
+.table-container::-moz-scrollbar {
+  width: 5px; /* width of the scrollbar */
+  background-color: #CDCDCD; /* background color of the scrollbar */
+  border-top-right-radius: 10px;
+}
+.table-container::-moz-scrollbar-thumb {
+  background-color: #807D7D; /* color of the thumb */
+}
+.code {
+    width: 56px;
+    height: 51px;
+    margin-bottom: 0px;
+    padding: 16px;
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px 0 rgba(16, 10, 10, 0.12);
+    text-align: center;
+    color: #000000;
+}
+@media screen and (max-width: 767px){
+  .code 
+  {
+      width: 45px !important;
+      height: 45px !important;
+      padding: 12px !important;
+  }
+}
+.code-con {
+    display: -ms-grid;
+    display: grid;
+    margin: 15px;
+    grid-auto-columns: 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+}
+.already-text a
+{
+    color: #52070b;
+    text-decoration: none;
+}
+.rotate-arrow {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.pagination .page-btn, .next-btn, .prev-btn, .ellipsis
+{
+    background-color: #EFEFEF;
+    padding: 9px 12px;
+    margin: 7px;
+    font-family: Lato, sans-serif;
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 400;
+    text-align: center;
+}
+.pagination .page-btn.active-page
+{
+	background-color: #D3D3D3;
+}
+.option
+{
+  color: #100A0A;
+}
+.option:hover
+{
+  color: #fff !important;
+  background-color: #8F0F16 !important;
+}
+.border-bot-right, .border-top-left
+{
+	pointer-events: none;
+}
+</style>
+                </div>
+              </div>
+            </div>
+            <div id="empty-states" class="empty-states-wrapper">
+              <div class="ui-block-title-wrapper">
+                <div id="typography" class="style-block-title">Empty States</div>
+                <div class="style-block-title-excerpt margin-top-10 custom-css-excerpt">Note: Copy the &quot;empty-wrapper&quot; div block and paste it inside the page</div>
+              </div>
+              <div class="style-wrapper margin-top-50">
+                <div class="empty-wrapper">
+                  <div class="empty-con"><img src="images/moonshot-logo.png" loading="lazy" sizes="(max-width: 479px) 87vw, (max-width: 991px) 82vw, (max-width: 1279px) 54vw, 693px" srcset="images/moonshot-logo-p-500.png 500w, images/moonshot-logo.png 693w" alt="" class="empty-icon">
+                    <div class="empty-title">No blogs found.</div>
+                    <div class="empty-excerpt">We’re still organizing stuff for you. You can come back later.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="404-page" class="empty-states-wrapper">
+              <div class="ui-block-title-wrapper">
+                <div id="typography" class="style-block-title">404 page</div>
+                <div class="style-block-title-excerpt margin-top-10 custom-css-excerpt">Note: Copy the &quot;404-wrapper&quot; div block and paste it inside the page</div>
+              </div>
+              <div class="style-wrapper margin-top-50">
+                <div class="_404-wrapper">
+                  <div class="_404-con"><img src="images/moonshot-logo.png" loading="lazy" sizes="(max-width: 479px) 87vw, (max-width: 991px) 82vw, (max-width: 1279px) 54vw, 693px" srcset="images/moonshot-logo-p-500.png 500w, images/moonshot-logo.png 693w" alt="" class="_404-icon">
+                    <div class="_404-title">PAGE NOT FOUND</div>
+                    <div class="_404-excerpt">Sorry the page you requested could not be found, we are working on it.</div>
+                    <div data-w-id="79548658-3fe4-e6c2-9d3f-140d4b032b6c" class="button">
+                      <div style="opacity:0" class="button-overlay"></div>
+                      <a href="#" class="button-link">Learn more</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="owl-carousel" class="owl-carousel-wrapper">
+              <div class="ui-block-title-wrapper">
+                <div id="typography" class="style-block-title">Owl Carousel</div>
+                <div class="style-block-title-excerpt margin-top-10 custom-css-excerpt">Note: Copy the &quot;slider-wrapper&quot; div block to your page.</div>
+              </div>
+              <div class="style-wrapper margin-top-50">
+                <div class="owl-carousel-embed show-carousel w-embed"></div>
+                <div id="typography" class="bg-color-name-text margin-bottom-10">Owl Carousel Structure</div>
+                <div class="slider-wrapper-container">
+                  <div class="slider-wrapper">
+                    <div class="slider-list owl-carousel owl-theme">
+                      <div class="slider-item"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=640c46a109bfca551c61da47" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <script>
+function togglefunction()
+{  
+	if ($(window).width() > 1023) 
+    {	
+        $('.signup-btn').click(function(){
+            $('body').toggleClass('no-scroll');
+        });
+        $('.login-btn').click(function(){
+            $('body').toggleClass('no-scroll');
+        });
+        $('.close-login').click(function(){
+            $('body').toggleClass('no-scroll');
+        });
+    }
+  	else
+    {
+     	$('.hamburger').click(function(){
+            $('body').toggleClass('no-scroll');
+        }); 
+    }
+}  
+$(document).ready(function(e) {
+togglefunction();
+});
+$(window).resize(function() {
+togglefunction();
+});
+</script>
+</body>
+</html>
