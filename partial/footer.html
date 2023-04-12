@@ -67,19 +67,28 @@
       </div>
       <div class="w-form">
         <form id="create-forms" name="wf-form-login" data-name="login" method="post" class="login-form" action="create-account.php" >
-          <div class="input-con"><input type="text" class="input-field w-input create-field" maxlength="256" name="c-fullname" data-name="Full Name 3" placeholder="Full Name" id="c-fullname"></div>
-          <div class="input-con"><input type="text" class="input-field w-input create-field" maxlength="256" name="c-birthday" data-name="Birthday 2" placeholder="Birthday" id="c-birthday"><img src="images/calendar-2.svg" loading="lazy" alt="" class="calendar"></div>
-          <div class="input-con"><input type="text" class="input-field w-input create-field" maxlength="256" name="c-contact" data-name="Contact Number 2" placeholder="Contact number" id="c-contact"></div>
-          <div class="input-con"><input type="text" class="input-field w-input create-field" maxlength="256" name="c-address" data-name="Address 3" placeholder="Address" id="c-address"></div>
-          <div class="select-wrapper"><select id="c-barangay" name="c-barangay" data-name="Barangay 2" class="select login-select w-select create-field">
+
+          <div class="input-con"><input required type="text" class="input-field w-input create-field" maxlength="256" name="c-fullname" data-name="Full Name 3" placeholder="Full Name" id="c-fullname"></div>
+
+          <div class="input-con"><input required type="date" class="input-field w-input create-field" maxlength="256" name="c-birthday" data-name="Birthday 2" placeholder="Birthday" id="c-birthday"><img src="images/calendar-2.svg" loading="lazy" alt="" class="calendar"></div>
+
+          <div class="input-con"><input required type="text" class="input-field w-input create-field" maxlength="256" name="c-contact" data-name="Contact Number 2" placeholder="Contact number" id="c-contact"></div>
+          <div class="input-con"><input required type="text" class="input-field w-input create-field" maxlength="256" name="c-address" data-name="Address 3" placeholder="Address" id="c-address"></div>
+          <div class="select-wrapper"><select required id="c-barangay" name="c-barangay" data-name="Barangay 2" class="select login-select w-select create-field">
             <option value="">Choose your barangay</option>
             <option value="Brgy. Aguado">Brgy. Aguado</option>
             <option value="Brgy. Inocencio">Brgy. Inocencio</option>
           </select><img src="images/down-chevron.svg" loading="lazy" alt="" class="select-icon"></div>
-          <div class="input-con"><input type="email" class="input-field w-input create-field" maxlength="256" name="c-email" data-name="Email 2" placeholder="Email" id="c-email"></div>
-          <div class="input-con "><input type="text" class="input-field w-input create-field" maxlength="256" name="c-password" data-name="Create Password 3" placeholder="Create password" id="c-password"></div>
+
+          <div class="input-con" style="align-items: flex-start !important;flex-direction: column !important;" ><input required type="email" class="input-field w-input create-field" maxlength="256" name="c-email" data-name="Email 2" placeholder="Email" id="c-email" onblur="checkEmail()">
+            <p id="email-status" class="requirement-text" style="margin-top: 5px; display: none;"></p>
+          </div>
+          
+
+          <div class="input-con"><input required type="text" class="input-field w-input create-field" maxlength="256" name="c-password" data-name="Create Password 3" placeholder="Create password" id="c-password"></div>
           <div id="w-node-b6a4babc-5026-d4af-ff01-fe664515777d-45157763" class="already-text">Already have an account?  <a href="#" data-w-id="b6a4babc-5026-d4af-ff01-fe664515777f" class="login-link-span">Log in</a>
           </div>
+
           <div data-w-id="b6a4babc-5026-d4af-ff01-fe6645157781" class="button rounded-button" >
             <div class="button-overlay"></div><input type="submit" value="SIGN UP" data-wait="Please wait..." class="button-link w-button create-btn">
 
@@ -237,67 +246,60 @@
   </div>
 
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=640c46a109bfca551c61da47" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  
+ 
+
+
   <script type="text/javascript">
 
+    //$('#c-birthday').datepicker();
+
     $(document).ready(function(){
-      $(".create-btn").css('pointer-events', "none");
+       
 
 
-      $(".create-field").each(function(q){
+      $(".create-field").each( function(q){
 
-        var value = $(this).val();
-        if($(this).val() != "")
-        {
+        
 
-          $(".create-btn").css('pointer-events', "auto");
-        }
-
-        document.addEventListener('keydown', function(event) {
-          if (event.key === 'Enter') {
-            if(value.val() == "")
-            {
-              event.preventDefault();
-            }
+        // Disable submit button if any field is empty
+        var submitButton = $('.create-btn');
+        var formInputs = $(this);
+        formInputs.on("keypress", function(event) {
+          if(event.keyCode === 13 && $(this).val().length === 0) {
+            event.preventDefault();
           }
-          
+          submitButton.prop('disabled', $('.username-input').val() === '' || $('.password-input').val() === '' || $('.email-input').val() === '');
         });
+
 
 
       });
 
     });
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Enter') {
-        const inputs = document.querySelectorAll('.create-field');
-        const allEmpty = Array.from(inputs).every(input => input.value.trim() === '');
-        if (allEmpty) {
-          event.preventDefault();
-        }
-      }
-    });
-/*
-    const form = document.querySelector('#create-forms');
-    form.addEventListener('submit', (event) => {
-  event.preventDefault(); // prevent default form submission behavior
 
-  const formData = new FormData(form); // get form data
-  fetch(form.action, {
-    method: form.method,
-    body: formData
-  }).then((response) => {
-    if (response.ok) {
-      // submission successful, do something here
-      alert('Submission successful');
-      form.reset(); // reset form fields
-    } else {
-      // submission failed, handle errors here
-      alert('Submission failed');
+
+
+    function checkEmail() {
+
+      var email = document.getElementById("c-email").value;
+      if(email.trim() != "")
+      {
+
+        $("#email-status").css("display","block");
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            document.getElementById("email-status").innerHTML = xhr.responseText;
+          }
+        };
+        xhr.open("POST", "check_email.php", true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.send("email=" + email);
+      }
+      else
+      {
+        $("#email-status").css("display","none");
+      }
     }
-  }).catch((error) => {
-    // submission failed, handle errors here
-    alert('Submission failed');
-    console.error(error);
-  });
-});
-*/
-</script>>
+  </script>>
