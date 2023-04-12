@@ -10,9 +10,15 @@ if(isset($_SESSION['user_email']) && $_SESSION['created_account'] == "true")
 
   $email = $_SESSION['user_email'];
 }
+else if(isset($_SESSION['user_email']) && $_SESSION['login_account'] == "true") 
+{
+
+  $email = $_SESSION['user_email'];
+}
 else
 {
   $email = "";
+  
 }
 
 

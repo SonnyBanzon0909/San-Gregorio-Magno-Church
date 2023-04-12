@@ -22,7 +22,7 @@ $barangay = $_POST['c-barangay'];
 $email = $_POST['c-email'];
 $password = $_POST['c-password'];
 
-$_SESSION['create_user_email'] = $email;
+$_SESSION['user_email'] = $email;
 
 
 if ($fullname != "" && $birthday != "" && $contact != "" && $address != "" && $barangay != "" && $email != "" && $password != "") 
@@ -41,11 +41,11 @@ if ($fullname != "" && $birthday != "" && $contact != "" && $address != "" && $b
 		// ...
 
 		// Set cookies if remember me checkbox is checked
-		if (isset($_POST['remember']) && $_POST['remember'] == 1) {
+	/*	if (isset($_POST['remember']) && $_POST['remember'] == 1) {
 			setcookie('email', $_POST['c-email'], time() + (86400 * 30), "/");
 			setcookie('password', $_POST['c-password'], time() + (86400 * 30), "/");
 		}
-
+	*/
 
 		header("Location: index.php?");
 
