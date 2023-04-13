@@ -21,7 +21,7 @@ else
   
 }
 
-<!-- // -->
+ 
 $otp = mt_rand(100000, 999999);
 $_SESSION['otp'] = $otp;
 
@@ -43,7 +43,7 @@ $smtp = array(
 $mailer = Mail::factory('smtp', $smtp);
 $mail = $mailer->send($to, array('headers' => $headers, 'subject' => $subject, 'body' => $message));
 
-<!-- // -->
+ 
 ?>
 
 <!DOCTYPE html><!--  Last Published: Mon Apr 10 2023 17:06:25 GMT+0000 (Coordinated Universal Time)  -->
