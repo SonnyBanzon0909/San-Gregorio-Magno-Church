@@ -1,5 +1,5 @@
 <?php
-$servername = "Corporate VIP1 [Shared]";
+$servername = "parokya-ni-san-gregorio-magno.com";
 $username = "parokyan";
 $password = "l)UKks28.Jp67H";
 $dbname = "parokyan_san-gregorio-db";
