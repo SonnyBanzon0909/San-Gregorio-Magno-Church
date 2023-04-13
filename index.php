@@ -1,11 +1,11 @@
 
-<?php 
+ <?php 
 // Start the session
 session_start();
 
 // Check if the session variable is set and display the email address
 
-if(isset($_SESSION['user_email']) && $_SESSION['created_account'] == "true") 
+if(isset($_SESSION['user_email'])) 
 {
 
   $email = $_SESSION['user_email'];
@@ -23,6 +23,7 @@ else
 
 
 ?>
+
 <!DOCTYPE html><!--  Last Published: Mon Apr 10 2023 17:06:25 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="640c46a109bfcae29c61da48" data-wf-site="640c46a109bfca551c61da47">
 <head>
@@ -150,7 +151,7 @@ else
   </div>
 
 
-  <?php include 'partial/footer.html'; ?>
+  <?php include 'partial/footer.php'; ?>
 
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=640c46a109bfca551c61da47" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>

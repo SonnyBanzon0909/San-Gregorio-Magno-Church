@@ -1,3 +1,5 @@
+
+
   <div class="section footer-section wf-section">
     <div class="container">
       <div class="cta-grid">
@@ -317,7 +319,7 @@
     if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status === 200) {
 
-alert(xhr.responseText + " asasa");
+//alert(xhr.responseText + " asasa");
         // Check if the login was successful
         if (xhr.responseText.trim() === 'success') {
           // Redirect to the index page
@@ -327,7 +329,7 @@ alert(xhr.responseText + " asasa");
         else 
         {
           // Display an error message
-           
+
           $("#error-message").css("display","block");
           document.getElementById('error-message').textContent = 'Invalid email or password.';
         }
@@ -356,22 +358,41 @@ alert(xhr.responseText + " asasa");
 
 <script type="text/javascript">
 
-  var data = <?php echo json_encode($email); ?>;
-  if(data.trim() != "")
-  {
- 
-    $(".signup-btn").hide();
-     $(".sign-btn").hide();
-    $(".profile").show();
-    var firstLetter = data[0];
-    $(".profile-initial").text(firstLetter);
-  }
+  $(document).ready(function(){
 
-document.getElementById("log-out").addEventListener("click", function() {
-  // make an AJAX request to a PHP script that removes the session
-  var xhr = new XMLHttpRequest();
-  xhr.open("GET", "logout.php", true);
-  xhr.send();
-  window.location.href = "index.php";
-});
-</script>>
+    var data = <?php echo json_encode($email); ?>;
+
+    //alert(data);
+    if(data.trim() != "")
+    {
+
+      $(".signup-btn").hide();
+      $(".sign-btn").hide();
+      $(".profile").show();
+      var firstLetter = data[0];
+      $(".profile-initial").text(firstLetter);
+    }
+    else
+    {
+      setTimeout(function() {
+        document.getElementById("nav-login").click();
+      }, 2000);
+
+      
+
+    }
+
+    document.getElementById("log-out").addEventListener("click", function() {
+    // make an AJAX request to a PHP script that removes the session
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "logout.php", true);
+    xhr.send();
+    window.location.href = "index.php";
+  });
+
+
+  });
+
+</script>
+
+

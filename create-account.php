@@ -26,10 +26,11 @@ $password = $_POST['c-password'];
 
 $_SESSION['user_email'] = $email;
 
+$otp="";
 $verified = "false";
 
 
-
+/*
 $otp = mt_rand(100000, 999999);
 $_SESSION['otp'] = $otp;
 
@@ -52,7 +53,7 @@ $mailer = Mail::factory('smtp', $smtp);
 $mail = $mailer->send($to, array('headers' => $headers, 'subject' => $subject, 'body' => $message));
 
 
-
+*/
 
 
 if ($fullname != "" && $birthday != "" && $contact != "" && $address != "" && $barangay != "" && $email != "" && $password != "") 
