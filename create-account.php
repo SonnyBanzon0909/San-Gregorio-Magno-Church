@@ -1,6 +1,8 @@
 <?php
+
 session_start();
 require_once "connect.php";
+
 
 // get form data
 $fullname = "";
@@ -24,14 +26,42 @@ $password = $_POST['c-password'];
 
 $_SESSION['user_email'] = $email;
 
+$verified = "false";
+
+
+
+$otp = mt_rand(100000, 999999);
+$_SESSION['otp'] = $otp;
+
+$to = $email;
+$subject = "OTP - Parokya ni San Gregorio Magno";
+$message = "Your OTP is: " . $otp;
+$headers = "From: Your Name <admin@parokya-ni-san-gregorio-magno.com>\r\n";
+$headers .= "Reply-To: sangregoriomagnochurch@gmail.com\r\n";
+$headers .= "Content-Type: text/html\r\n";
+$username = "admin@parokya-ni-san-gregorio-magno.com";
+$password = "parokyan_admin2023";
+$smtp = array(
+	'host' => 'parokya-ni-san-gregorio-magno.com',
+	'port' => 587,
+	'auth' => true,
+	'username' => $username,
+	'password' => $password
+);
+$mailer = Mail::factory('smtp', $smtp);
+$mail = $mailer->send($to, array('headers' => $headers, 'subject' => $subject, 'body' => $message));
+
+
+
+
 
 if ($fullname != "" && $birthday != "" && $contact != "" && $address != "" && $barangay != "" && $email != "" && $password != "") 
 {
 
 	echo "<script>alert('Fiiled')</script>";
 	// insert data into login table
-	$sql = "INSERT INTO login (fullname, birthday, contact, address, barangay, email, password)
-	VALUES ('$fullname', '$birthday', '$contact', '$address', '$barangay', '$email', '$password')";
+	$sql = "INSERT INTO login (fullname, birthday, contact, address, barangay, email, password,otp,verified)
+	VALUES ('$fullname', '$birthday', '$contact', '$address', '$barangay', '$email', '$password', '$otp', '$verified')";
 
 	if (mysqli_query($conn, $sql)) {
 		//echo "New record created successfully";
