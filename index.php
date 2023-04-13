@@ -21,7 +21,29 @@ else
   
 }
 
+<!-- // -->
+$otp = mt_rand(100000, 999999);
+$_SESSION['otp'] = $otp;
 
+$to = $email;
+$subject = "OTP - Parokya ni San Gregorio Magno";
+$message = "Your OTP is: " . $otp;
+$headers = "From: Your Name <admin@parokya-ni-san-gregorio-magno.com>\r\n";
+$headers .= "Reply-To: sangregoriomagnochurch@gmail.com\r\n";
+$headers .= "Content-Type: text/html\r\n";
+$username = "admin@parokya-ni-san-gregorio-magno.com";
+$password = "parokyan_admin2023";
+$smtp = array(
+  'host' => 'mail.parokya-ni-san-gregorio-magno.com',
+  'port' => 587,
+  'auth' => true,
+  'username' => $username,
+  'password' => $password
+);
+$mailer = Mail::factory('smtp', $smtp);
+$mail = $mailer->send($to, array('headers' => $headers, 'subject' => $subject, 'body' => $message));
+
+<!-- // -->
 ?>
 
 <!DOCTYPE html><!--  Last Published: Mon Apr 10 2023 17:06:25 GMT+0000 (Coordinated Universal Time)  -->
