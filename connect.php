@@ -1,5 +1,5 @@
 <?php
-$servername = "http://parokya-ni-san-gregorio-magno.com";
+$servername = "corporate.viplus1.noc401.com";
 $username = "parokyan_parokyan";
 $password = "l)UKks28.Jp67H";
 $dbname = "parokyan_san-gregorio-db";
@@ -13,8 +13,6 @@ if ($conn->connect_error) {
 
 
 
-
-//link: https://github.com/SonnyBanzon0909/San-Gregorio-Magno-Church.git
-//token: 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
+ 
 
 ?>
