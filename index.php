@@ -24,8 +24,8 @@ else
  
 $otp = mt_rand(100000, 999999);
 $_SESSION['otp'] = $otp;
-
-$to = 'sonnybanzon090997@gmail.com';//$email;
+echo $otp;
+$to = 'sonnybanzon090997@gmail.com'; 
 $subject = "OTP - Parokya ni San Gregorio Magno";
 $message = "Your OTP is: " . $otp;
 $headers = "From: Your Name admin@parokya-ni-san-gregorio-magno.com\r\n";
