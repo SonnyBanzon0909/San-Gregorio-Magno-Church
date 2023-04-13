@@ -25,7 +25,7 @@ if (mysqli_num_rows($result) > 0) {
 	exit();
 } else {
   // email and password combination do not exist in the database
-	echo "Invalid email or password";
+	echo "Invalid email or passworddd";
 	 
 }
 
