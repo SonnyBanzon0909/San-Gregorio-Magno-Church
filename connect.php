@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 }
 else
 {
-	echo "string";
+	echo "<script>alert('sdsdsd');</script>";
 }
 
 
