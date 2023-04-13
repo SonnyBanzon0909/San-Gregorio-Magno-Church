@@ -1,6 +1,6 @@
 <?php
 
-$servername = "shastaars";//"corporate.viplus1.noc401.com";///162.213.210.29
+$servername = "corporate.viplus1.noc401.com";///162.213.210.29
 $username = "parokyan_parokyan";
 $password = "l)UKks28.Jp67H";
 $dbname = "parokyan_san_gregorio_db"; 
@@ -26,6 +26,9 @@ else
 }
 
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
  
 
