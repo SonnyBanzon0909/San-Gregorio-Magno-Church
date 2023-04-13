@@ -1,3 +1,28 @@
+ <?php 
+ // Start the session
+ session_start();
+
+ // Check if the session variable is set and display the email address
+
+ if(isset($_SESSION['user_email'])) 
+ {
+
+  $email = $_SESSION['user_email'];
+}
+else if(isset($_SESSION['user_email']) && $_SESSION['login_account'] == "true") 
+{
+
+  $email = $_SESSION['user_email'];
+}
+else
+{
+  $email = "";
+  
+}
+
+
+?>
+
 <!DOCTYPE html><!--  Last Published: Mon Apr 10 2023 17:06:25 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="6431a5f101d447259d53b872" data-wf-site="640c46a109bfca551c61da47">
 <head>
@@ -20,658 +45,323 @@
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XREV9R6ECX"></script>
   <script type="text/javascript">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('set', 'developer_id.dZGVlNj', true);gtag('config', 'G-XREV9R6ECX');</script>
   <style>
-.no-scroll
-{
-    overflow-y: hidden!important;
-		touch-action: none;
-	 -ms-touch-action: none;
-}
-</style>
+    .no-scroll
+    {
+      overflow-y: hidden!important;
+      touch-action: none;
+      -ms-touch-action: none;
+    }
+  </style>
   <!--  Google tag (gtag.js)  -->
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XREV9R6ECX"></script>
   <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XREV9R6ECX');
-</script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XREV9R6ECX');
+  </script>
 </head>
 <body>
-  <div class="custom-css w-embed">
-    <style>
-/*CUSTOM CSS*/
-h1,h2,h3,h4,h5,h6
-{
-	padding: 0;
-  margin: 0;
-}
-.richtext ul li::marker
-{
-	font-size: 20px;
-  color: green;
-}
-/*FOR Removing Select Icon*/
-select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    text-indent: 1px;
-    text-overflow: '';
-}
-/*To disable Select Custom Icon*/
-.select-icon, .calendar
-{
-  pointer-events:none;
-}
-.underline-text, .cta-link ,.social-text
-{
-  overflow: hidden;
-  position: relative;
-}
-.underline-text::before , .cta-link::before, .social-text::before
-{
-	content: "";
-  position: absolute;
-  top: auto;
-  left: auto;
-  right: auto;
-  bottom:0;
-  width: 100%;
-  height: 2px;
-  background-color: #52070B;
-  transition: all .5s;
-  transform: translateX(-110%);
-}
-.cta-link::before
-{
-	background-color: #100A0A;
- 	height: 1px;
-}
-.underline-text:hover::before , .cta-link:hover::before, .social-text:hover::before
-{
-	transform: translateX(0);
-}
-.home-service-list.owl-carousel .owl-item img
-{
-	width: auto;
-}
-.service-dot-container .owl-dot, .announce-dot-container .owl-dot, .gallery-dot-container .owl-dot
-{
-	width:10px;
-  height: 10px;
-  background-color: #C7C6B8;
-  border-radius: 100%;
-  margin: 0 5px;
-  padding:0px;
-}
-.service-dot-container .owl-dot.active, .announce-dot-container .owl-dot.active, .gallery-dot-container .owl-dot.active
-{
-  background-color: #9FA28C;
-}
-.moment-list.owl-carousel .owl-item:nth-child(even)
-{
-	padding-top: 40px;
-}
-.cta-link
-{
-	word-break: break-all;
-}
-/* For Chrome and Safari */
-.table-container::-webkit-scrollbar {
-  width: 5px; /* width of the scrollbar */
-  background-color: #CDCDCD; /* background color of the scrollbar */
-}
-.table-container::-webkit-scrollbar-thumb {
-  background-color: #807D7D; /* color of the thumb */
-}
-/* For Firefox and Microsoft Edge */
-.table-container::-moz-scrollbar {
-  width: 5px; /* width of the scrollbar */
-  background-color: #CDCDCD; /* background color of the scrollbar */
-  border-top-right-radius: 10px;
-}
-.table-container::-moz-scrollbar-thumb {
-  background-color: #807D7D; /* color of the thumb */
-}
-.code {
-    width: 56px;
-    height: 51px;
-    margin-bottom: 0px;
-    padding: 16px;
-    border: 1px solid #d9d9d9;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px 0 rgba(16, 10, 10, 0.12);
-    text-align: center;
-    color: #000000;
-}
-@media screen and (max-width: 767px){
-  .code 
-  {
-      width: 45px !important;
-      height: 45px !important;
-      padding: 12px !important;
-  }
-}
-.code-con {
-    display: -ms-grid;
-    display: grid;
-    margin: 15px;
-    grid-auto-columns: 1fr;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    -ms-grid-columns: 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    -ms-grid-rows: auto;
-    grid-template-rows: auto;
-}
-.already-text a
-{
-    color: #52070b;
-    text-decoration: none;
-}
-.rotate-arrow {
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    transform: rotate(180deg);
-}
-.pagination .page-btn, .next-btn, .prev-btn, .ellipsis
-{
-    background-color: #EFEFEF;
-    padding: 9px 12px;
-    margin: 7px;
-    font-family: Lato, sans-serif;
-    font-size: 10px;
-    line-height: 12px;
-    font-weight: 400;
-    text-align: center;
-}
-.pagination .page-btn.active-page
-{
-	background-color: #D3D3D3;
-}
-.option
-{
-  color: #100A0A;
-}
-.option:hover
-{
-  color: #fff !important;
-  background-color: #8F0F16 !important;
-}
-.border-bot-right, .border-top-left
-{
-	pointer-events: none;
-}
-</style>
-  </div>
-  <div class="section navigation wf-section">
-    <div class="container">
-      <div class="navigation-link-wrapper">
-        <a href="index.html" class="brand w-inline-block"><img src="images/Parokya-logo.png" loading="eager" alt="" class="brand-logo"></a>
-        <div class="nav-links-grid desktop-nav-link-grid">
-          <a href="index.html" id="w-node-_14e56277-239e-cc10-6aba-00a1806977c3-806977bd" class="nav-link">Home</a>
-          <a href="about.html" id="w-node-_14e56277-239e-cc10-6aba-00a1806977c5-806977bd" class="nav-link">About</a>
-          <div data-hover="false" data-delay="500" data-w-id="14e56277-239e-cc10-6aba-00a1806977c7" class="nav-dropdown w-dropdown">
-            <div class="nav-dropdown-toggle w-dropdown-toggle">
-              <div class="nav-link">Services</div><img src="images/down-icon.svg" loading="lazy" alt="" class="dropdown-icon">
-            </div>
-            <nav class="nav-drop-list w-dropdown-list">
-              <div class="nav-droplist-wrapper">
-                <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ce-806977bd" href="services.html" class="link">Baptism</a>
-                <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977d0-806977bd" href="#" class="link">First Communion</a>
-                <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977d2-806977bd" href="#" class="link">Confirmation</a>
-                <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977d4-806977bd" href="#" class="link">Faith Formation</a>
-                <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977d6-806977bd" href="#" class="link">Mass Wedding</a>
-                <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977d8-806977bd" href="#" class="link">Blessings</a>
-                <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977da-806977bd" href="#" class="link">Funeral Mass</a>
-                <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977dc-806977bd" href="#" class="link">Request Certificate</a>
-                <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977de-806977bd" href="#" class="link">Sick Call</a>
-              </div>
-            </nav>
-          </div>
-          <div data-hover="false" data-delay="500" id="w-node-_14e56277-239e-cc10-6aba-00a1806977e0-806977bd" data-w-id="14e56277-239e-cc10-6aba-00a1806977e0" class="nav-dropdown w-dropdown">
-            <div class="nav-dropdown-toggle w-dropdown-toggle">
-              <div class="nav-link">Galleries</div><img src="images/down-icon.svg" loading="lazy" alt="" class="dropdown-icon">
-            </div>
-            <nav class="nav-drop-list w-dropdown-list">
-              <div class="nav-droplist-wrapper gallery-droplist-wrapper">
-                <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="galleries.html" class="link">VISITA IGLESIA</a>
-                <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e9-806977bd" href="#" class="link">Renewal of Vows</a>
-                <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977eb-806977bd" href="#" class="link">Panunuluyan 2022</a>
-                <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ed-806977bd" href="#" class="link">Solemnity of Christ the King</a>
-                <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ef-806977bd" href="#" class="link">Ministry of the Altar Server Investiture</a>
-                <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977f1-806977bd" href="#" class="link">ALAB 2022</a>
-                <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977f3-806977bd" href="#" class="link">WALK OF FAITH 2022</a>
-                <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977f5-806977bd" href="#" class="link">Misa Concelebrada ...</a>
-                <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977f7-806977bd" href="#" class="link">Banal na Misa Kapistahan ...</a>
-                <a id="w-node-dbe93e0a-392a-b0ac-7fe7-3a98ffc8b347-806977bd" href="#" class="link">KARAKOL 2022</a>
-              </div>
-            </nav>
-          </div>
-          <a href="contact-us.html" id="w-node-_14e56277-239e-cc10-6aba-00a1806977f9-806977bd" class="nav-link">Contact us</a>
-          <a href="#" id="w-node-_14e56277-239e-cc10-6aba-00a1806977fb-806977bd" data-w-id="14e56277-239e-cc10-6aba-00a1806977fb" class="nav-link login-btn">Log in</a>
-          <div data-w-id="14e56277-239e-cc10-6aba-00a1806977fd" class="button rounded-button signup-btn">
-            <div class="button-overlay"></div>
-            <a aria-label="" href="#" class="button-link">Sign up</a>
-          </div>
-          <div data-hover="false" data-delay="500" data-w-id="a3e29982-56b0-b8b9-18b8-0f02a2630aa4" class="dropdown w-dropdown">
-            <div class="dropdown-toggle w-dropdown-toggle">
-              <div class="profile-img-con">
-                <div class="profile-initial">E</div>
-              </div><img src="images/down-chevron.svg" loading="lazy" alt="" class="drop-icon">
-            </div>
-            <nav class="dropdown-list w-dropdown-list">
-              <div class="login-content-con">
-                <a href="#" class="login-link w-inline-block"><img src="images/Status.svg" loading="lazy" alt="" class="login-icon">
-                  <div class="login-text">Status</div>
-                </a>
-                <a href="#" class="login-link w-inline-block"><img src="images/log-out.svg" loading="lazy" alt="" class="login-icon">
-                  <div class="login-text">Logout</div>
-                </a>
-              </div>
-            </nav>
-          </div>
-        </div>
-        <div data-w-id="14e56277-239e-cc10-6aba-00a180697801" class="hamburger">
-          <div class="top"></div>
-          <div class="mid"></div>
-          <div class="bot"></div>
-        </div>
+ 
+ <?php include 'partial/custom-css.html'; ?>
+ <?php include 'partial/navigation.html'; ?>
+
+ 
+ <div class="section header-section wf-section">
+  <div class="container">
+    <div class="header-wrapper">
+      <div class="header-content-con">
+        <h1 data-w-id="97ee2e95-bedc-8996-6f58-28ca048dc297" style="opacity:0" class="header-title header-title-text">Certificate</h1>
+        <div data-w-id="97ee2e95-bedc-8996-6f58-28ca048dc299" style="opacity:0" class="body-text-medium header-excerpt">lorem ipsum</div>
       </div>
     </div>
   </div>
-  <div class="section navigation-list-section wf-section">
-    <div class="container">
-      <div class="nav-links-grid mobile-nav-link-grid">
-        <a href="#" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4710-440d470d" class="nav-link">Home</a>
-        <a href="#" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4712-440d470d" class="nav-link">About</a>
-        <div data-hover="false" data-delay="500" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4714-440d470d" data-w-id="cc8842c1-27e0-b9b5-b91f-d8b4440d4714" class="nav-dropdown w-dropdown">
-          <div class="nav-dropdown-toggle w-dropdown-toggle">
-            <div class="nav-link">Services</div><img src="images/down-icon.svg" loading="lazy" alt="" class="dropdown-icon">
-          </div>
-          <nav class="nav-drop-list w-dropdown-list">
-            <div class="nav-droplist-wrapper">
-              <a id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d471b-440d470d" href="services.html" class="link">Baptism</a>
-              <a id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d471d-440d470d" href="#" class="link">First Communion</a>
-              <a id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d471f-440d470d" href="#" class="link">Confirmation</a>
-              <a id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4721-440d470d" href="#" class="link">Faith Formation</a>
-              <a id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4723-440d470d" href="#" class="link">Mass Wedding</a>
-              <a id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4725-440d470d" href="#" class="link">Blessings</a>
-              <a id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4727-440d470d" href="#" class="link">Funeral Mass</a>
-              <a id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4729-440d470d" href="#" class="link">Request Certificate</a>
-              <a id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d472b-440d470d" href="#" class="link">Sick Call</a>
-            </div>
-          </nav>
+</div>
+<div class="section create-section wf-section">
+  <div data-w-id="9a356ad7-03f5-c344-1e49-df5b3e5bfa71" style="opacity:0" class="container">
+    <div class="select-cert-wrapper">
+      <div class="select-cert-text">Select certificate  layout</div>
+      <div class="create-cert-form w-form">
+        <form id="email-form" name="email-form" data-name="Email Form" method="get">
+          <div class="select-wrapper serv-categ-wrapper"><select id="cert-type" name="Month" data-name="Month" class="select filter-select serv-create-select w-select">
+            <option value="">Select</option>
+            <option value="Baptismal">Baptismal</option>
+            <option value="Communion">Communion</option>
+            <option value="Confirmation">Confirmation</option>
+          </select><img src="images/down-chevron-1.svg" loading="lazy" alt="" class="select-icon"></div>
+        </form>
+        <div class="w-form-done">
+          <div>Thank you! Your submission has been received!</div>
         </div>
-        <div data-hover="false" data-delay="500" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d472d-440d470d" data-w-id="cc8842c1-27e0-b9b5-b91f-d8b4440d472d" class="nav-dropdown w-dropdown">
-          <div class="nav-dropdown-toggle w-dropdown-toggle">
-            <div class="nav-link">Galleries</div><img src="images/down-icon.svg" loading="lazy" alt="" class="dropdown-icon">
-          </div>
-          <nav class="nav-drop-list w-dropdown-list">
-            <div class="nav-droplist-wrapper gallery-droplist-wrapper">
-              <a id="w-node-c2b21419-ad24-f15e-ca54-d65a1ce158ff-440d470d" href="galleries.html" class="link">VISITA IGLESIA</a>
-              <a id="w-node-c2b21419-ad24-f15e-ca54-d65a1ce15901-440d470d" href="#" class="link">Renewal of Vows</a>
-              <a id="w-node-c2b21419-ad24-f15e-ca54-d65a1ce15903-440d470d" href="#" class="link">Panunuluyan 2022</a>
-              <a id="w-node-c2b21419-ad24-f15e-ca54-d65a1ce15905-440d470d" href="#" class="link">Solemnity of Christ the King</a>
-              <a id="w-node-c2b21419-ad24-f15e-ca54-d65a1ce15907-440d470d" href="#" class="link">Ministry of the Altar Server Investiture</a>
-              <a id="w-node-c2b21419-ad24-f15e-ca54-d65a1ce15909-440d470d" href="#" class="link">ALAB 2022</a>
-              <a id="w-node-c2b21419-ad24-f15e-ca54-d65a1ce1590b-440d470d" href="#" class="link">WALK OF FAITH 2022</a>
-              <a id="w-node-c2b21419-ad24-f15e-ca54-d65a1ce1590d-440d470d" href="#" class="link">Misa Concelebrada ...</a>
-              <a id="w-node-c2b21419-ad24-f15e-ca54-d65a1ce1590f-440d470d" href="#" class="link">Banal na Misa Kapistahan ...</a>
-              <a id="w-node-c2b21419-ad24-f15e-ca54-d65a1ce15911-440d470d" href="#" class="link">KARAKOL 2022</a>
-            </div>
-          </nav>
-        </div>
-        <a href="#" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4746-440d470d" class="nav-link">Contact us</a>
-        <a href="#" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4748-440d470d" data-w-id="cc8842c1-27e0-b9b5-b91f-d8b4440d4748" class="nav-link">Log in</a>
-        <div data-w-id="cc8842c1-27e0-b9b5-b91f-d8b4440d474a" class="button rounded-button">
-          <div class="button-overlay"></div>
-          <a aria-label="" href="#" class="button-link">Sign up</a>
+        <div class="w-form-fail">
+          <div>Oops! Something went wrong while submitting the form.</div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="section header-section wf-section">
-    <div class="container">
-      <div class="header-wrapper">
-        <div class="header-content-con">
-          <h1 data-w-id="97ee2e95-bedc-8996-6f58-28ca048dc297" style="opacity:0" class="header-title header-title-text">Certificate</h1>
-          <div data-w-id="97ee2e95-bedc-8996-6f58-28ca048dc299" style="opacity:0" class="body-text-medium header-excerpt">lorem ipsum</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="section create-section wf-section">
-    <div data-w-id="9a356ad7-03f5-c344-1e49-df5b3e5bfa71" style="opacity:0" class="container">
-      <div class="select-cert-wrapper">
-        <div class="select-cert-text">Select certificate  layout</div>
-        <div class="create-cert-form w-form">
-          <form id="email-form" name="email-form" data-name="Email Form" method="get">
-            <div class="select-wrapper serv-categ-wrapper"><select id="cert-type" name="Month" data-name="Month" class="select filter-select serv-create-select w-select">
-                <option value="">Select</option>
-                <option value="Baptismal">Baptismal</option>
-                <option value="Communion">Communion</option>
-                <option value="Confirmation">Confirmation</option>
-              </select><img src="images/down-chevron-1.svg" loading="lazy" alt="" class="select-icon"></div>
-          </form>
-          <div class="w-form-done">
-            <div>Thank you! Your submission has been received!</div>
-          </div>
-          <div class="w-form-fail">
-            <div>Oops! Something went wrong while submitting the form.</div>
-          </div>
-        </div>
-      </div>
-      <div class="cert-cont-wrapper">
-        <div class="cert-wrapper">
-          <div id="Baptismal" class="cert-preview baptismal-cert">
-            <div class="cert-border">
-              <div class="cert-inner-border">
-                <div class="logo-grid">
-                  <div id="w-node-a09aca7b-abff-362e-1e13-57a9981ebaaa-9d53b872" class="cert-logo-con"><img src="images/parokya-ni-San-Gregorio-Magno.png" loading="lazy" alt="" class="cert-logo"></div>
-                  <div id="w-node-_409948cc-6d99-5dd2-92a9-e09972e3968b-9d53b872" class="cert-church-title">
-                    <div class="diocese">Diocese of Imus</div>
-                    <div class="parokya">PAROKYA NI SAN GREGORIO MAGNO</div>
-                    <div class="address">Brgy. Inocencio, Trece Martires City, Cavite 4109 Philippines</div>
-                  </div>
-                  <div id="w-node-eede9853-2b5e-735f-af71-b760337418bf-9d53b872" class="cert-logo-con"><img src="images/Diyosesis-ng-Imus.png" loading="lazy" alt="" class="cert-logo"></div>
-                </div>
-                <div class="cert-type bap-text"><strong>Baptismal Certificate</strong></div>
-                <div class="cert-semi-title"><strong>This is to certify that</strong></div>
-                <div class="cert-field-wrapper">
-                  <div class="cert-form w-form">
-                    <form id="email-form-2" name="email-form-2" data-name="Email Form 2" method="get">
-                      <div class="info-wrapper">
-                        <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="cert-name" required="">
-                          <div class="cert-text text-cert">---</div>
-                        </div>
-                        <div class="text-field-wrapper">
-                          <div class="cert-text">Child of</div>
-                          <div class="cert-input-wrapper">
-                            <div class="cert-text text-cert">---</div><input type="email" class="cert-field child-of w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="">
-                          </div>
-                        </div>
-                        <div class="text-field-wrapper">
-                          <div class="cert-text">and</div>
-                          <div class="cert-input-wrapper">
-                            <div class="cert-text text-cert">---</div><input type="email" class="cert-field and w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="and" required="">
-                          </div>
-                        </div>
-                        <div class="text-field-wrapper">
-                          <div class="cert-text">born in</div>
-                          <div class="cert-input-wrapper">
-                            <div class="cert-text text-cert">---</div><input type="email" class="cert-field child-of w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="born-in" required="">
-                          </div>
-                        </div>
-                        <div class="text-field-wrapper">
-                          <div class="cert-text">on the</div>
-                          <div class="cert-input-wrapper">
-                            <div class="cert-text text-cert">---</div><input type="email" class="cert-field on-the w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="on-the" required="">
-                          </div>
-                          <div class="cert-text left-marg">day of</div>
-                          <div class="cert-input-wrapper">
-                            <div class="cert-text text-cert">---</div><input type="email" class="cert-field day-of w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="day-of" required="">
-                          </div>
-                          <div class="cert-text left-marg coma"><strong>,</strong></div>
-                          <div class="cert-input-wrapper">
-                            <div class="cert-text text-cert">---</div><input type="email" class="cert-field coma w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="year" required="">
-                          </div>
-                        </div>
-                        <div class="cert-text has-rec">has received</div>
-                      </div>
-                      <div class="holy-wrapper">
-                        <div class="holy-title"><strong>The Holy Sacraments of Baptism</strong></div>
-                        <div class="cert-text center-text top-5">according to the rite of the Roman Catholic Church</div>
-                        <div class="text-field-wrapper">
-                          <div class="cert-text">on the</div>
-                          <div class="cert-input-wrapper">
-                            <div class="cert-text text-cert">---</div><input type="email" class="cert-field on-the w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="on-the" required="">
-                          </div>
-                          <div class="cert-text left-marg">day of</div>
-                          <div class="cert-input-wrapper">
-                            <div class="cert-text text-cert">---</div><input type="email" class="cert-field day-of w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="day-of" required="">
-                          </div>
-                          <div class="cert-text left-marg coma"><strong>,</strong></div>
-                          <div class="cert-input-wrapper">
-                            <div class="cert-text text-cert">---</div><input type="email" class="cert-field coma w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="year" required="">
-                          </div>
-                        </div>
-                        <div class="text-field-wrapper">
-                          <div class="cert-text">by the rev</div>
-                          <div class="cert-input-wrapper">
-                            <div class="cert-text text-cert">---</div><input type="email" class="cert-field by-the w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="by-the" required="">
-                          </div>
-                        </div>
-                        <div class="text-field-wrapper">
-                          <div class="cert-text">the sponsor being</div>
-                          <div class="cert-input-wrapper">
-                            <div class="cert-text text-cert">---</div><input type="email" class="cert-field sponsor w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="sponsor" required="">
-                          </div>
-                        </div>
-                        <div class="text-field-wrapper">
-                          <div class="cert-text">and</div>
-                          <div class="cert-input-wrapper">
-                            <div class="cert-text text-cert">---</div><input type="email" class="cert-field and-holy w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="and-holy" required="">
-                          </div>
-                        </div>
-                        <div class="text-field-wrapper register-wrapper">
-                          <div class="cert-text">As appears on the Baptismal Register No.</div>
-                          <div class="cert-input-wrapper">
-                            <div class="cert-text text-cert">---</div><input type="email" class="cert-field reg-num w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="reg-num" required="">
-                          </div>
-                          <div class="cert-text left-marg coma"><strong>,</strong> Page no.</div>
-                          <div class="cert-input-wrapper">
-                            <div class="cert-text text-cert">---</div><input type="email" class="cert-field reg-num w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="page-num" required="">
-                          </div>
-                          <div class="cert-text left-marg coma"><strong>,</strong> Line no.</div>
-                          <div class="cert-input-wrapper">
-                            <div class="cert-text text-cert">---</div><input type="email" class="cert-field reg-num w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="line-num" required="">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="date-wrapper padd-none">
-                        <div>
-                          <div class="text-field-wrapper">
-                            <div class="cert-text">Date issued:</div>
-                            <div class="cert-input-wrapper">
-                              <div class="cert-text text-cert">---</div><input type="email" class="cert-field issued w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="">
-                            </div>
-                          </div>
-                          <div class="text-field-wrapper">
-                            <div class="cert-text">Purpose:</div>
-                            <div class="cert-input-wrapper">
-                              <div class="cert-text text-cert">---</div><input type="email" class="cert-field purpose w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="">
-                            </div>
-                          </div>
-                        </div>
-                        <div class="text-field-wrapper priest-sign">
-                          <div class="cert-input-wrapper min-210">
-                            <div class="cert-text text-cert"></div><input type="email" class="cert-field priest-sign w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="">
-                          </div>
-                          <div class="cert-text mag-top">Parish Priest</div>
-                        </div>
-                      </div>
-                    </form>
-                    <div class="w-form-done">
-                      <div>Thank you! Your submission has been received!</div>
-                    </div>
-                    <div class="w-form-fail">
-                      <div>Oops! Something went wrong while submitting the form.</div>
-                    </div>
-                  </div>
-                </div><img src="images/image-89.png" loading="lazy" alt="" class="bg-img">
-              </div>
-            </div>
-          </div>
-          <div id="Confirmation" class="cert-preview confirmation-cert"><img src="images/Group-154.png" loading="lazy" alt="" class="bg-img-copy">
-            <div class="cert-border">
-              <div class="cert-inner-border">
-                <div class="logo-grid">
-                  <div id="w-node-_725d7263-227a-03ce-7926-9a83b7513613-9d53b872" class="cert-logo-con"><img src="images/parokya-ni-San-Gregorio-Magno.png" loading="lazy" alt="" class="cert-logo"></div>
-                  <div id="w-node-_725d7263-227a-03ce-7926-9a83b7513615-9d53b872" class="cert-church-title">
-                    <div class="diocese">Diocese of Imus</div>
-                    <div class="parokya">PAROKYA NI SAN GREGORIO MAGNO</div>
-                    <div class="address">Brgy. Inocencio, Trece Martires City, Cavite 4109 Philippines</div>
-                  </div>
-                  <div id="w-node-_725d7263-227a-03ce-7926-9a83b751361c-9d53b872" class="cert-logo-con"><img src="images/Diyosesis-ng-Imus.png" loading="lazy" alt="" class="cert-logo"></div>
-                </div>
-                <div class="cert-type">Confirmation Certificate</div>
-                <div class="cert-semi-title"><strong>This is to certify that</strong></div>
-                <div class="cert-field-wrapper">
-                  <div class="cert-form w-form">
-                    <form id="email-form-2" name="email-form-2" data-name="Email Form 2" method="get">
-                      <div class="info-wrapper">
-                        <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="cert-name" required="">
-                          <div class="cert-text text-cert">---</div>
-                        </div>
-                        <div class="text-field-wrapper">
-                          <div class="cert-text">Child of</div>
-                          <div class="cert-input-wrapper"><input type="email" class="cert-field child-of w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="">
-                            <div class="cert-text text-cert">---</div>
-                          </div>
-                        </div>
-                        <div class="text-field-wrapper">
-                          <div class="cert-text">and</div>
-                          <div class="cert-input-wrapper"><input type="email" class="cert-field and w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="and" required="">
-                            <div class="cert-text text-cert">---</div>
-                          </div>
-                        </div>
-                        <div class="text-field-wrapper">
-                          <div class="cert-text">born in</div>
-                          <div class="cert-input-wrapper"><input type="email" class="cert-field child-of w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="born-in" required="">
-                            <div class="cert-text text-cert">---</div>
-                          </div>
-                        </div>
-                        <div class="text-field-wrapper">
-                          <div class="cert-text">on the</div>
-                          <div class="cert-input-wrapper"><input type="email" class="cert-field on-the w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="on-the" required="">
-                            <div class="cert-text text-cert">---</div>
-                          </div>
-                          <div class="cert-text left-marg">day of</div>
-                          <div class="cert-input-wrapper"><input type="email" class="cert-field day-of w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="day-of" required="">
-                            <div class="cert-text text-cert">---</div>
-                          </div>
-                          <div class="cert-text left-marg coma"><strong>,</strong></div>
-                          <div class="cert-input-wrapper"><input type="email" class="cert-field coma w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="year" required="">
-                            <div class="cert-text text-cert">---</div>
-                          </div>
-                        </div>
-                        <div class="cert-text has-rec">has received</div>
-                      </div>
-                      <div class="holy-wrapper">
-                        <div class="holy-title font-marv"><strong>The Holy Sacraments of Confirmation</strong></div>
-                        <div class="cert-text center-text">according to the rite of the Roman Catholic Church</div>
-                        <div class="text-field-wrapper">
-                          <div class="cert-text">on the</div>
-                          <div class="cert-input-wrapper"><input type="email" class="cert-field on-the w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="on-the" required="">
-                            <div class="cert-text text-cert">---</div>
-                          </div>
-                          <div class="cert-text left-marg">day of</div>
-                          <div class="cert-input-wrapper"><input type="email" class="cert-field day-of w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="day-of" required="">
-                            <div class="cert-text text-cert">---</div>
-                          </div>
-                          <div class="cert-text left-marg coma"><strong>,</strong></div>
-                          <div class="cert-input-wrapper"><input type="email" class="cert-field coma w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="year" required="">
-                            <div class="cert-text text-cert">---</div>
-                          </div>
-                        </div>
-                        <div class="text-field-wrapper">
-                          <div class="cert-text">by the rev</div>
-                          <div class="cert-input-wrapper"><input type="email" class="cert-field by-the w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="by-the" required="">
-                            <div class="cert-text text-cert">---</div>
-                          </div>
-                        </div>
-                        <div class="text-field-wrapper">
-                          <div class="cert-text">the sponsor being</div>
-                          <div class="cert-input-wrapper"><input type="email" class="cert-field sponsor w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="sponsor" required="">
-                            <div class="cert-text text-cert">---</div>
-                          </div>
-                        </div>
-                        <div class="text-field-wrapper">
-                          <div class="cert-text">and</div>
-                          <div class="cert-input-wrapper"><input type="email" class="cert-field and-holy w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="and-holy" required="">
-                            <div class="cert-text text-cert">---</div>
-                          </div>
-                        </div>
-                        <div class="text-field-wrapper register-wrapper">
-                          <div class="cert-text">As appears on the Baptismal Register No.</div>
-                          <div class="cert-input-wrapper"><input type="email" class="cert-field reg-num w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="reg-num" required="">
-                            <div class="cert-text text-cert">---</div>
-                          </div>
-                          <div class="cert-text left-marg coma"><strong>,</strong> Page no.</div>
-                          <div class="cert-input-wrapper"><input type="email" class="cert-field reg-num w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="page-num" required="">
-                            <div class="cert-text text-cert">---</div>
-                          </div>
-                          <div class="cert-text left-marg coma"><strong>,</strong> Line no.</div>
-                          <div class="cert-input-wrapper"><input type="email" class="cert-field reg-num w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="line-num" required="">
-                            <div class="cert-text text-cert">---</div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="date-wrapper">
-                        <div>
-                          <div class="text-field-wrapper">
-                            <div class="cert-text">Date issued:</div>
-                            <div class="cert-input-wrapper"><input type="email" class="cert-field issued w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="">
-                              <div class="cert-text text-cert">---</div>
-                            </div>
-                          </div>
-                          <div class="text-field-wrapper">
-                            <div class="cert-text">Purpose:</div>
-                            <div class="cert-input-wrapper"><input type="email" class="cert-field purpose w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="">
-                              <div class="cert-text text-cert">---</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="text-field-wrapper priest-sign"><input type="email" class="cert-field priest-sign w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="">
-                          <div class="cert-text mag-top">Parish Priest</div>
-                        </div>
-                      </div>
-                    </form>
-                    <div class="w-form-done">
-                      <div>Thank you! Your submission has been received!</div>
-                    </div>
-                    <div class="w-form-fail">
-                      <div>Oops! Something went wrong while submitting the form.</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="Communion" class="cert-preview communion-cert">
-            <div class="com-content-wrapper">
-              <div class="border-top-left"></div>
-              <div class="border-bot-right"></div>
+    <div class="cert-cont-wrapper">
+      <div class="cert-wrapper">
+        <div id="Baptismal" class="cert-preview baptismal-cert">
+          <div class="cert-border">
+            <div class="cert-inner-border">
               <div class="logo-grid">
-                <div id="w-node-_6b65a5d3-79cb-b4e9-e9b8-0965bb33b797-9d53b872" class="cert-logo-con"><img src="images/parokya-ni-San-Gregorio-Magno.png" loading="lazy" alt="" class="cert-logo"></div>
-                <div id="w-node-_6b65a5d3-79cb-b4e9-e9b8-0965bb33b799-9d53b872" class="cert-church-title">
+                <div id="w-node-a09aca7b-abff-362e-1e13-57a9981ebaaa-9d53b872" class="cert-logo-con"><img src="images/parokya-ni-San-Gregorio-Magno.png" loading="lazy" alt="" class="cert-logo"></div>
+                <div id="w-node-_409948cc-6d99-5dd2-92a9-e09972e3968b-9d53b872" class="cert-church-title">
                   <div class="diocese">Diocese of Imus</div>
                   <div class="parokya">PAROKYA NI SAN GREGORIO MAGNO</div>
                   <div class="address">Brgy. Inocencio, Trece Martires City, Cavite 4109 Philippines</div>
                 </div>
-                <div id="w-node-_6b65a5d3-79cb-b4e9-e9b8-0965bb33b7a0-9d53b872" class="cert-logo-con"><img src="images/Diyosesis-ng-Imus.png" loading="lazy" alt="" class="cert-logo"></div>
+                <div id="w-node-eede9853-2b5e-735f-af71-b760337418bf-9d53b872" class="cert-logo-con"><img src="images/Diyosesis-ng-Imus.png" loading="lazy" alt="" class="cert-logo"></div>
               </div>
-              <div class="com-title"><strong>Remembrance of First Holy Communion</strong></div>
-              <div class="com-field-wrapper">
-                <div class="w-form">
-                  <form id="email-form-3" name="email-form-3" data-name="Email Form 3" method="get" class="form-2">
-                    <div class="com-input-title"><strong>Received by</strong></div>
-                    <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="receive-by" required="">
-                      <div class="cert-text text-cert">---</div>
+              <div class="cert-type bap-text"><strong>Baptismal Certificate</strong></div>
+              <div class="cert-semi-title"><strong>This is to certify that</strong></div>
+              <div class="cert-field-wrapper">
+                <div class="cert-form w-form">
+                  <form id="email-form-2" name="email-form-2" data-name="Email Form 2" method="get">
+                    <div class="info-wrapper">
+                      <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="cert-name" required="">
+                        <div class="cert-text text-cert">---</div>
+                      </div>
+                      <div class="text-field-wrapper">
+                        <div class="cert-text">Child of</div>
+                        <div class="cert-input-wrapper">
+                          <div class="cert-text text-cert">---</div><input type="email" class="cert-field child-of w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="">
+                        </div>
+                      </div>
+                      <div class="text-field-wrapper">
+                        <div class="cert-text">and</div>
+                        <div class="cert-input-wrapper">
+                          <div class="cert-text text-cert">---</div><input type="email" class="cert-field and w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="and" required="">
+                        </div>
+                      </div>
+                      <div class="text-field-wrapper">
+                        <div class="cert-text">born in</div>
+                        <div class="cert-input-wrapper">
+                          <div class="cert-text text-cert">---</div><input type="email" class="cert-field child-of w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="born-in" required="">
+                        </div>
+                      </div>
+                      <div class="text-field-wrapper">
+                        <div class="cert-text">on the</div>
+                        <div class="cert-input-wrapper">
+                          <div class="cert-text text-cert">---</div><input type="email" class="cert-field on-the w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="on-the" required="">
+                        </div>
+                        <div class="cert-text left-marg">day of</div>
+                        <div class="cert-input-wrapper">
+                          <div class="cert-text text-cert">---</div><input type="email" class="cert-field day-of w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="day-of" required="">
+                        </div>
+                        <div class="cert-text left-marg coma"><strong>,</strong></div>
+                        <div class="cert-input-wrapper">
+                          <div class="cert-text text-cert">---</div><input type="email" class="cert-field coma w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="year" required="">
+                        </div>
+                      </div>
+                      <div class="cert-text has-rec">has received</div>
                     </div>
-                    <div class="com-input-title marg-top-32"><strong>In the church of</strong></div>
-                    <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="church-of" required="">
-                      <div class="cert-text text-cert">---</div>
+                    <div class="holy-wrapper">
+                      <div class="holy-title"><strong>The Holy Sacraments of Baptism</strong></div>
+                      <div class="cert-text center-text top-5">according to the rite of the Roman Catholic Church</div>
+                      <div class="text-field-wrapper">
+                        <div class="cert-text">on the</div>
+                        <div class="cert-input-wrapper">
+                          <div class="cert-text text-cert">---</div><input type="email" class="cert-field on-the w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="on-the" required="">
+                        </div>
+                        <div class="cert-text left-marg">day of</div>
+                        <div class="cert-input-wrapper">
+                          <div class="cert-text text-cert">---</div><input type="email" class="cert-field day-of w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="day-of" required="">
+                        </div>
+                        <div class="cert-text left-marg coma"><strong>,</strong></div>
+                        <div class="cert-input-wrapper">
+                          <div class="cert-text text-cert">---</div><input type="email" class="cert-field coma w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="year" required="">
+                        </div>
+                      </div>
+                      <div class="text-field-wrapper">
+                        <div class="cert-text">by the rev</div>
+                        <div class="cert-input-wrapper">
+                          <div class="cert-text text-cert">---</div><input type="email" class="cert-field by-the w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="by-the" required="">
+                        </div>
+                      </div>
+                      <div class="text-field-wrapper">
+                        <div class="cert-text">the sponsor being</div>
+                        <div class="cert-input-wrapper">
+                          <div class="cert-text text-cert">---</div><input type="email" class="cert-field sponsor w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="sponsor" required="">
+                        </div>
+                      </div>
+                      <div class="text-field-wrapper">
+                        <div class="cert-text">and</div>
+                        <div class="cert-input-wrapper">
+                          <div class="cert-text text-cert">---</div><input type="email" class="cert-field and-holy w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="and-holy" required="">
+                        </div>
+                      </div>
+                      <div class="text-field-wrapper register-wrapper">
+                        <div class="cert-text">As appears on the Baptismal Register No.</div>
+                        <div class="cert-input-wrapper">
+                          <div class="cert-text text-cert">---</div><input type="email" class="cert-field reg-num w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="reg-num" required="">
+                        </div>
+                        <div class="cert-text left-marg coma"><strong>,</strong> Page no.</div>
+                        <div class="cert-input-wrapper">
+                          <div class="cert-text text-cert">---</div><input type="email" class="cert-field reg-num w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="page-num" required="">
+                        </div>
+                        <div class="cert-text left-marg coma"><strong>,</strong> Line no.</div>
+                        <div class="cert-input-wrapper">
+                          <div class="cert-text text-cert">---</div><input type="email" class="cert-field reg-num w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="line-num" required="">
+                        </div>
+                      </div>
                     </div>
-                    <div class="com-input-title marg-top-32"><strong>On the date of</strong></div>
-                    <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="date-of" required="">
-                      <div class="cert-text text-cert">---</div>
+                    <div class="date-wrapper padd-none">
+                      <div>
+                        <div class="text-field-wrapper">
+                          <div class="cert-text">Date issued:</div>
+                          <div class="cert-input-wrapper">
+                            <div class="cert-text text-cert">---</div><input type="email" class="cert-field issued w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="">
+                          </div>
+                        </div>
+                        <div class="text-field-wrapper">
+                          <div class="cert-text">Purpose:</div>
+                          <div class="cert-input-wrapper">
+                            <div class="cert-text text-cert">---</div><input type="email" class="cert-field purpose w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="text-field-wrapper priest-sign">
+                        <div class="cert-input-wrapper min-210">
+                          <div class="cert-text text-cert"></div><input type="email" class="cert-field priest-sign w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="">
+                        </div>
+                        <div class="cert-text mag-top">Parish Priest</div>
+                      </div>
                     </div>
-                    <div id="com-the-rev" class="com-input-title marg-top-32"><strong>By the rev</strong></div>
-                    <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="receive-by" required="">
-                      <div class="cert-text text-cert">---</div>
+                  </form>
+                  <div class="w-form-done">
+                    <div>Thank you! Your submission has been received!</div>
+                  </div>
+                  <div class="w-form-fail">
+                    <div>Oops! Something went wrong while submitting the form.</div>
+                  </div>
+                </div>
+              </div><img src="images/image-89.png" loading="lazy" alt="" class="bg-img">
+            </div>
+          </div>
+        </div>
+        <div id="Confirmation" class="cert-preview confirmation-cert"><img src="images/Group-154.png" loading="lazy" alt="" class="bg-img-copy">
+          <div class="cert-border">
+            <div class="cert-inner-border">
+              <div class="logo-grid">
+                <div id="w-node-_725d7263-227a-03ce-7926-9a83b7513613-9d53b872" class="cert-logo-con"><img src="images/parokya-ni-San-Gregorio-Magno.png" loading="lazy" alt="" class="cert-logo"></div>
+                <div id="w-node-_725d7263-227a-03ce-7926-9a83b7513615-9d53b872" class="cert-church-title">
+                  <div class="diocese">Diocese of Imus</div>
+                  <div class="parokya">PAROKYA NI SAN GREGORIO MAGNO</div>
+                  <div class="address">Brgy. Inocencio, Trece Martires City, Cavite 4109 Philippines</div>
+                </div>
+                <div id="w-node-_725d7263-227a-03ce-7926-9a83b751361c-9d53b872" class="cert-logo-con"><img src="images/Diyosesis-ng-Imus.png" loading="lazy" alt="" class="cert-logo"></div>
+              </div>
+              <div class="cert-type">Confirmation Certificate</div>
+              <div class="cert-semi-title"><strong>This is to certify that</strong></div>
+              <div class="cert-field-wrapper">
+                <div class="cert-form w-form">
+                  <form id="email-form-2" name="email-form-2" data-name="Email Form 2" method="get">
+                    <div class="info-wrapper">
+                      <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="cert-name" required="">
+                        <div class="cert-text text-cert">---</div>
+                      </div>
+                      <div class="text-field-wrapper">
+                        <div class="cert-text">Child of</div>
+                        <div class="cert-input-wrapper"><input type="email" class="cert-field child-of w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="">
+                          <div class="cert-text text-cert">---</div>
+                        </div>
+                      </div>
+                      <div class="text-field-wrapper">
+                        <div class="cert-text">and</div>
+                        <div class="cert-input-wrapper"><input type="email" class="cert-field and w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="and" required="">
+                          <div class="cert-text text-cert">---</div>
+                        </div>
+                      </div>
+                      <div class="text-field-wrapper">
+                        <div class="cert-text">born in</div>
+                        <div class="cert-input-wrapper"><input type="email" class="cert-field child-of w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="born-in" required="">
+                          <div class="cert-text text-cert">---</div>
+                        </div>
+                      </div>
+                      <div class="text-field-wrapper">
+                        <div class="cert-text">on the</div>
+                        <div class="cert-input-wrapper"><input type="email" class="cert-field on-the w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="on-the" required="">
+                          <div class="cert-text text-cert">---</div>
+                        </div>
+                        <div class="cert-text left-marg">day of</div>
+                        <div class="cert-input-wrapper"><input type="email" class="cert-field day-of w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="day-of" required="">
+                          <div class="cert-text text-cert">---</div>
+                        </div>
+                        <div class="cert-text left-marg coma"><strong>,</strong></div>
+                        <div class="cert-input-wrapper"><input type="email" class="cert-field coma w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="year" required="">
+                          <div class="cert-text text-cert">---</div>
+                        </div>
+                      </div>
+                      <div class="cert-text has-rec">has received</div>
+                    </div>
+                    <div class="holy-wrapper">
+                      <div class="holy-title font-marv"><strong>The Holy Sacraments of Confirmation</strong></div>
+                      <div class="cert-text center-text">according to the rite of the Roman Catholic Church</div>
+                      <div class="text-field-wrapper">
+                        <div class="cert-text">on the</div>
+                        <div class="cert-input-wrapper"><input type="email" class="cert-field on-the w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="on-the" required="">
+                          <div class="cert-text text-cert">---</div>
+                        </div>
+                        <div class="cert-text left-marg">day of</div>
+                        <div class="cert-input-wrapper"><input type="email" class="cert-field day-of w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="day-of" required="">
+                          <div class="cert-text text-cert">---</div>
+                        </div>
+                        <div class="cert-text left-marg coma"><strong>,</strong></div>
+                        <div class="cert-input-wrapper"><input type="email" class="cert-field coma w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="year" required="">
+                          <div class="cert-text text-cert">---</div>
+                        </div>
+                      </div>
+                      <div class="text-field-wrapper">
+                        <div class="cert-text">by the rev</div>
+                        <div class="cert-input-wrapper"><input type="email" class="cert-field by-the w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="by-the" required="">
+                          <div class="cert-text text-cert">---</div>
+                        </div>
+                      </div>
+                      <div class="text-field-wrapper">
+                        <div class="cert-text">the sponsor being</div>
+                        <div class="cert-input-wrapper"><input type="email" class="cert-field sponsor w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="sponsor" required="">
+                          <div class="cert-text text-cert">---</div>
+                        </div>
+                      </div>
+                      <div class="text-field-wrapper">
+                        <div class="cert-text">and</div>
+                        <div class="cert-input-wrapper"><input type="email" class="cert-field and-holy w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="and-holy" required="">
+                          <div class="cert-text text-cert">---</div>
+                        </div>
+                      </div>
+                      <div class="text-field-wrapper register-wrapper">
+                        <div class="cert-text">As appears on the Baptismal Register No.</div>
+                        <div class="cert-input-wrapper"><input type="email" class="cert-field reg-num w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="reg-num" required="">
+                          <div class="cert-text text-cert">---</div>
+                        </div>
+                        <div class="cert-text left-marg coma"><strong>,</strong> Page no.</div>
+                        <div class="cert-input-wrapper"><input type="email" class="cert-field reg-num w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="page-num" required="">
+                          <div class="cert-text text-cert">---</div>
+                        </div>
+                        <div class="cert-text left-marg coma"><strong>,</strong> Line no.</div>
+                        <div class="cert-input-wrapper"><input type="email" class="cert-field reg-num w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="line-num" required="">
+                          <div class="cert-text text-cert">---</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="date-wrapper">
+                      <div>
+                        <div class="text-field-wrapper">
+                          <div class="cert-text">Date issued:</div>
+                          <div class="cert-input-wrapper"><input type="email" class="cert-field issued w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="">
+                            <div class="cert-text text-cert">---</div>
+                          </div>
+                        </div>
+                        <div class="text-field-wrapper">
+                          <div class="cert-text">Purpose:</div>
+                          <div class="cert-input-wrapper"><input type="email" class="cert-field purpose w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="">
+                            <div class="cert-text text-cert">---</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="text-field-wrapper priest-sign"><input type="email" class="cert-field priest-sign w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="">
+                        <div class="cert-text mag-top">Parish Priest</div>
+                      </div>
                     </div>
                   </form>
                   <div class="w-form-done">
@@ -682,170 +372,215 @@ select {
                   </div>
                 </div>
               </div>
-              <div class="sign-wrapper">
-                <div class="com-img-wrapper"><img src="images/image-94.png" loading="lazy" alt="" class="con-img"></div>
-                <div class="sign-con">
-                  <div class="sign-overline"><strong>“I am the living bread that came down from heaven; whoever eats this head will live forever.” (John 6:51)</strong></div>
-                  <div class="text-field-wrapper priest-sign">
-                    <div class="cert-input-wrapper min-210">
-                      <div class="cert-text text-cert"></div>
-                    </div>
-                    <div class="cert-text mag-top">Parish Priest</div>
+            </div>
+          </div>
+        </div>
+        <div id="Communion" class="cert-preview communion-cert">
+          <div class="com-content-wrapper">
+            <div class="border-top-left"></div>
+            <div class="border-bot-right"></div>
+            <div class="logo-grid">
+              <div id="w-node-_6b65a5d3-79cb-b4e9-e9b8-0965bb33b797-9d53b872" class="cert-logo-con"><img src="images/parokya-ni-San-Gregorio-Magno.png" loading="lazy" alt="" class="cert-logo"></div>
+              <div id="w-node-_6b65a5d3-79cb-b4e9-e9b8-0965bb33b799-9d53b872" class="cert-church-title">
+                <div class="diocese">Diocese of Imus</div>
+                <div class="parokya">PAROKYA NI SAN GREGORIO MAGNO</div>
+                <div class="address">Brgy. Inocencio, Trece Martires City, Cavite 4109 Philippines</div>
+              </div>
+              <div id="w-node-_6b65a5d3-79cb-b4e9-e9b8-0965bb33b7a0-9d53b872" class="cert-logo-con"><img src="images/Diyosesis-ng-Imus.png" loading="lazy" alt="" class="cert-logo"></div>
+            </div>
+            <div class="com-title"><strong>Remembrance of First Holy Communion</strong></div>
+            <div class="com-field-wrapper">
+              <div class="w-form">
+                <form id="email-form-3" name="email-form-3" data-name="Email Form 3" method="get" class="form-2">
+                  <div class="com-input-title"><strong>Received by</strong></div>
+                  <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="receive-by" required="">
+                    <div class="cert-text text-cert">---</div>
                   </div>
+                  <div class="com-input-title marg-top-32"><strong>In the church of</strong></div>
+                  <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="church-of" required="">
+                    <div class="cert-text text-cert">---</div>
+                  </div>
+                  <div class="com-input-title marg-top-32"><strong>On the date of</strong></div>
+                  <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="date-of" required="">
+                    <div class="cert-text text-cert">---</div>
+                  </div>
+                  <div id="com-the-rev" class="com-input-title marg-top-32"><strong>By the rev</strong></div>
+                  <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="receive-by" required="">
+                    <div class="cert-text text-cert">---</div>
+                  </div>
+                </form>
+                <div class="w-form-done">
+                  <div>Thank you! Your submission has been received!</div>
+                </div>
+                <div class="w-form-fail">
+                  <div>Oops! Something went wrong while submitting the form.</div>
+                </div>
+              </div>
+            </div>
+            <div class="sign-wrapper">
+              <div class="com-img-wrapper"><img src="images/image-94.png" loading="lazy" alt="" class="con-img"></div>
+              <div class="sign-con">
+                <div class="sign-overline"><strong>“I am the living bread that came down from heaven; whoever eats this head will live forever.” (John 6:51)</strong></div>
+                <div class="text-field-wrapper priest-sign">
+                  <div class="cert-input-wrapper min-210">
+                    <div class="cert-text text-cert"></div>
+                  </div>
+                  <div class="cert-text mag-top">Parish Priest</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="print-btn-wrapper">
-          <div data-w-id="264267ad-4410-94ee-9c94-b4619ad31d51" class="button rounded-button print-btn">
-            <div style="opacity:0" class="button-overlay"></div>
-            <a aria-label="" href="#" class="button-link">EDIT</a>
-          </div>
-          <div data-w-id="1bfae472-55c7-8dea-b277-bbaeff02cf6d" class="button rounded-button print-btn">
-            <div style="opacity:0" class="button-overlay"></div>
-            <a aria-label="" href="#" class="button-link">SAVE</a>
-          </div>
+      </div>
+      <div class="print-btn-wrapper">
+        <div data-w-id="264267ad-4410-94ee-9c94-b4619ad31d51" class="button rounded-button print-btn">
+          <div style="opacity:0" class="button-overlay"></div>
+          <a aria-label="" href="#" class="button-link">EDIT</a>
         </div>
-        <div class="print-btn-con">
-          <div id="print-btn" data-w-id="29354402-af0b-b46a-b719-c3772c7b4b6e" class="button rounded-button print-btn">
-            <div style="opacity:0" class="button-overlay"></div>
-            <a aria-label="" href="#" class="button-link">PRINT</a>
-          </div>
+        <div data-w-id="1bfae472-55c7-8dea-b277-bbaeff02cf6d" class="button rounded-button print-btn">
+          <div style="opacity:0" class="button-overlay"></div>
+          <a aria-label="" href="#" class="button-link">SAVE</a>
+        </div>
+      </div>
+      <div class="print-btn-con">
+        <div id="print-btn" data-w-id="29354402-af0b-b46a-b719-c3772c7b4b6e" class="button rounded-button print-btn">
+          <div style="opacity:0" class="button-overlay"></div>
+          <a aria-label="" href="#" class="button-link">PRINT</a>
         </div>
       </div>
     </div>
   </div>
-  <div class="section footer-section wf-section">
-    <div class="container">
-      <div class="cta-grid">
-        <div id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae23a-2fdae237" data-w-id="0070e048-3023-2eb5-4e69-91f82fdae23a" class="cta-con left-cta-con">
-          <div class="cta-title cta-title-with-border">LETS GET IN TOUCH</div>
-          <div class="div-block">
-            <a href="https://www.facebook.com/parokyanisangregoriomagnotrece" target="_blank" class="cta-link">Parokya ni San Gregorio Magno/Trece | Facebook</a>
-            <a href="mailto:sangregoriomagno262017@gmail.com" class="cta-link">sangregoriomagno262017@gmail.com</a>
-          </div>
-        </div>
-        <div id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae242-2fdae237" data-w-id="0070e048-3023-2eb5-4e69-91f82fdae242" class="cta-con">
-          <div class="cta-title cta-title-with-border">LETS GET IN TOUCH</div>
-          <div class="div-block">
-            <a href="tel:(046)419-1162" class="cta-link">Landline No. (046) 419-1162</a>
-            <a href="tel:09109799416" class="cta-link">Cellphone No. 09109799416</a>
-          </div>
+</div>
+<div class="section footer-section wf-section">
+  <div class="container">
+    <div class="cta-grid">
+      <div id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae23a-2fdae237" data-w-id="0070e048-3023-2eb5-4e69-91f82fdae23a" class="cta-con left-cta-con">
+        <div class="cta-title cta-title-with-border">LETS GET IN TOUCH</div>
+        <div class="div-block">
+          <a href="https://www.facebook.com/parokyanisangregoriomagnotrece" target="_blank" class="cta-link">Parokya ni San Gregorio Magno/Trece | Facebook</a>
+          <a href="mailto:sangregoriomagno262017@gmail.com" class="cta-link">sangregoriomagno262017@gmail.com</a>
         </div>
       </div>
-      <div class="footer-brand-wrapper">
-        <div data-w-id="0070e048-3023-2eb5-4e69-91f82fdae24b" class="footer-brand-con">
-          <div class="footer-brand-grid">
-            <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae24d-2fdae237" href="#" class="footer-brand-link w-inline-block"><img src="images/Diyosesis-ng-Imus.png" loading="eager" alt="" class="footer-brand"></a>
-            <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae24f-2fdae237" href="#" class="footer-brand-link w-inline-block"><img src="images/parokya-ni-San-Gregorio-Magno.png" loading="eager" alt="" class="footer-brand"></a>
-          </div>
-          <div class="footer-title">Parokya ni San Gregorio Magno</div>
-          <div class="footer-excerpt">Inocencio, Trece Martires City</div>
-        </div>
-      </div>
-      <div class="footer-link-wrapper">
-        <div data-w-id="0070e048-3023-2eb5-4e69-91f82fdae256" class="footer-link-grid">
-          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae257-2fdae237" href="index.html" class="nav-link footer-link">Home</a>
-          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae259-2fdae237" href="about.html" class="nav-link footer-link">About</a>
-          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae25b-2fdae237" href="services.html" class="nav-link footer-link">Services</a>
-          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae25d-2fdae237" href="galleries.html" class="nav-link footer-link">Galleries</a>
-          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae25f-2fdae237" href="contact-us.html" class="nav-link footer-link">Contact us</a>
-          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae261-2fdae237" data-w-id="0070e048-3023-2eb5-4e69-91f82fdae261" href="#" class="nav-link footer-link login-btn">Log in</a>
-        </div>
-      </div>
-      <div class="footer-note-wrapper">
-        <div data-w-id="0070e048-3023-2eb5-4e69-91f82fdae264" class="footnote-text">© PAROKYA NI SAN GREGORIO MAGNO PARISH CHURCH 2023. Website by PRIJAG Network Solution</div>
-      </div>
-      <div class="tawkto-wrapper">
-        <div class="tawkto-embed w-embed w-script">
-          <!-- Start of Tawk.to Script -->
-          <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6429585a4247f20fefe95a36/1gt0o2977';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-          <!-- End of Tawk.to Script -->
+      <div id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae242-2fdae237" data-w-id="0070e048-3023-2eb5-4e69-91f82fdae242" class="cta-con">
+        <div class="cta-title cta-title-with-border">LETS GET IN TOUCH</div>
+        <div class="div-block">
+          <a href="tel:(046)419-1162" class="cta-link">Landline No. (046) 419-1162</a>
+          <a href="tel:09109799416" class="cta-link">Cellphone No. 09109799416</a>
         </div>
       </div>
     </div>
+    <div class="footer-brand-wrapper">
+      <div data-w-id="0070e048-3023-2eb5-4e69-91f82fdae24b" class="footer-brand-con">
+        <div class="footer-brand-grid">
+          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae24d-2fdae237" href="#" class="footer-brand-link w-inline-block"><img src="images/Diyosesis-ng-Imus.png" loading="eager" alt="" class="footer-brand"></a>
+          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae24f-2fdae237" href="#" class="footer-brand-link w-inline-block"><img src="images/parokya-ni-San-Gregorio-Magno.png" loading="eager" alt="" class="footer-brand"></a>
+        </div>
+        <div class="footer-title">Parokya ni San Gregorio Magno</div>
+        <div class="footer-excerpt">Inocencio, Trece Martires City</div>
+      </div>
+    </div>
+    <div class="footer-link-wrapper">
+      <div data-w-id="0070e048-3023-2eb5-4e69-91f82fdae256" class="footer-link-grid">
+        <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae257-2fdae237" href="index.html" class="nav-link footer-link">Home</a>
+        <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae259-2fdae237" href="about.html" class="nav-link footer-link">About</a>
+        <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae25b-2fdae237" href="services.html" class="nav-link footer-link">Services</a>
+        <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae25d-2fdae237" href="galleries.html" class="nav-link footer-link">Galleries</a>
+        <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae25f-2fdae237" href="contact-us.html" class="nav-link footer-link">Contact us</a>
+        <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae261-2fdae237" data-w-id="0070e048-3023-2eb5-4e69-91f82fdae261" href="#" class="nav-link footer-link login-btn">Log in</a>
+      </div>
+    </div>
+    <div class="footer-note-wrapper">
+      <div data-w-id="0070e048-3023-2eb5-4e69-91f82fdae264" class="footnote-text">© PAROKYA NI SAN GREGORIO MAGNO PARISH CHURCH 2023. Website by PRIJAG Network Solution</div>
+    </div>
+    <div class="tawkto-wrapper">
+      <div class="tawkto-embed w-embed w-script">
+        <!-- Start of Tawk.to Script -->
+        <script type="text/javascript">
+          var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+          (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/6429585a4247f20fefe95a36/1gt0o2977';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+          })();
+        </script>
+        <!-- End of Tawk.to Script -->
+      </div>
+    </div>
   </div>
-  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=640c46a109bfca551c61da47" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-  <script src="js/webflow.js" type="text/javascript"></script>
-  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
-  <script>
-function togglefunction()
-{  
-	if ($(window).width() > 1023) 
-    {	
-        $('.signup-btn').click(function(){
-            $('body').toggleClass('no-scroll');
-        });
-        $('.login-btn').click(function(){
-            $('body').toggleClass('no-scroll');
-        });
-        $('.close-login').click(function(){
-            $('body').toggleClass('no-scroll');
-        });
-    }
-  	else
-    {
-     	$('.hamburger').click(function(){
-            $('body').toggleClass('no-scroll');
-        }); 
-    }
-}  
-$(document).ready(function(e) {
-togglefunction();
-});
-$(window).resize(function() {
-togglefunction();
-});
-</script>
-  <script>
-$(".cert-input-wrapper").each(function(){
-	var input = $(this).find(".cert-field");
-  var text = $(this).find(".text-cert");
-  input.on("keypress, keyup", function(){
-  	console.log($(this).val());
-    text.text($(this).val());
-  });
-});
-var cert_type="Baptismal";
-$("#cert-type").change(function(){
-	$(".cert-cont-wrapper").show();
-	cert_type = $(this).val();
-  if(cert_type == "Baptismal")
-  {
-  	$(".cert-preview").hide();
-  	$("#Baptismal").show();
-  }
-  else if(cert_type == "Confirmation")
-  {
-  	$(".cert-preview").hide();
-  	$("#Confirmation").show();
-  }
-  else if(cert_type == "Communion")
-  {
-  	$(".cert-preview").hide();
-  	$("#Communion").show();
+</div>
+<script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=640c46a109bfca551c61da47" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="js/webflow.js" type="text/javascript"></script>
+<!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+<script>
+  function togglefunction()
+  {  
+   if ($(window).width() > 1023) 
+   {	
+    $('.signup-btn').click(function(){
+      $('body').toggleClass('no-scroll');
+    });
+    $('.login-btn').click(function(){
+      $('body').toggleClass('no-scroll');
+    });
+    $('.close-login').click(function(){
+      $('body').toggleClass('no-scroll');
+    });
   }
   else
   {
-  	$(".cert-preview").hide();
-  	$("#Baptismal").show();
+    $('.hamburger').click(function(){
+      $('body').toggleClass('no-scroll');
+    }); 
   }
+}  
+$(document).ready(function(e) {
+  togglefunction();
 });
-$("#print-btn").click(function(){
-  printDiv();
+$(window).resize(function() {
+  togglefunction();
 });
-function printDiv() {
+</script>
+<script>
+  $(".cert-input-wrapper").each(function(){
+   var input = $(this).find(".cert-field");
+   var text = $(this).find(".text-cert");
+   input.on("keypress, keyup", function(){
+     console.log($(this).val());
+     text.text($(this).val());
+   });
+ });
+  var cert_type="Baptismal";
+  $("#cert-type").change(function(){
+   $(".cert-cont-wrapper").show();
+   cert_type = $(this).val();
+   if(cert_type == "Baptismal")
+   {
+     $(".cert-preview").hide();
+     $("#Baptismal").show();
+   }
+   else if(cert_type == "Confirmation")
+   {
+     $(".cert-preview").hide();
+     $("#Confirmation").show();
+   }
+   else if(cert_type == "Communion")
+   {
+     $(".cert-preview").hide();
+     $("#Communion").show();
+   }
+   else
+   {
+     $(".cert-preview").hide();
+     $("#Baptismal").show();
+   }
+ });
+  $("#print-btn").click(function(){
+    printDiv();
+  });
+  function printDiv() {
   //var cert_type = "my-cert-type"; // Replace with your actual element ID
   var printContents = document.getElementById(cert_type).innerHTML;
   var originalContents = document.body.innerHTML;
