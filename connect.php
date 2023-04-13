@@ -3,7 +3,7 @@
 $servername = "corporate.viplus1.noc401.com";
 $username = "parokyan_parokyan";
 $password = "l)UKks28.Jp67H";
-$dbname = "parokyan_san-gregorio-db"; 
+$dbname = "parokyan_san_gregorio_db"; 
 /*
 $servername = "localhost";
 $username = "parokyan_parokyan";
