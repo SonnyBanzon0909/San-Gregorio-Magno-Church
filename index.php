@@ -1,5 +1,5 @@
 
- <?php 
+<?php 
 // Start the session
 session_start();
 
@@ -21,7 +21,7 @@ else
   
 }
 
- 
+
 $otp = mt_rand(100000, 999999);
 $_SESSION['otp'] = $otp;
 echo $otp;
@@ -34,16 +34,20 @@ $headers .= "Content-Type: text/html\r\n";
 $username = "admin@parokya-ni-san-gregorio-magno.com";
 $password = "parokyan_admin2023";
 $smtp = array(
-  'host' => 'mail.parokya-ni-san-gregorio-magno.com',
-  'port' => 465,
-  'auth' => true,
-  'username' => $username,
-  'password' => $password
+'host' => 'mail.parokya-ni-san-gregorio-magno.com',
+'port' => 465,
+'auth' => true,
+'username' => $username,
+'password' => $password
 );
 $mailer = Mail::factory('smtp', $smtp);
 $mail = $mailer->send($to, array('headers' => $headers, 'subject' => $subject, 'body' => $message));
 
- 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
 ?>
 
 <!DOCTYPE html><!--  Last Published: Mon Apr 10 2023 17:06:25 GMT+0000 (Coordinated Universal Time)  -->
