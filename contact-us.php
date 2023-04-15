@@ -114,7 +114,7 @@ else
           <div class="form-container">
             <div class="form-title">Get appointment</div>
             <div class="w-form">
-              <form id="appointment-form" name="wf-form-Appointment-Form" data-name="Appointment Form" method="get" class="form"><input type="text" class="input-field w-input" maxlength="256" name="name" data-name="Name" placeholder="Full Name" id="name" required=""><input type="text" class="input-field w-input" maxlength="256" name="Address" data-name="Address" placeholder="Address" id="address" required=""><input type="tel" class="input-field w-input" maxlength="256" name="Phone" data-name="Phone" placeholder="Phone" id="phone" required="">
+              <form id="appointment-form" name="wf-form-Appointment-Form" data-name="Appointment Form" method="post" action="request.php" class="form"><input type="text" class="input-field w-input" maxlength="256" name="name" data-name="Name" placeholder="Full Name" id="name" required=""><input type="text" class="input-field w-input" maxlength="256" name="Address" data-name="Address" placeholder="Address" id="address" required=""><input type="tel" class="input-field w-input" maxlength="256" name="Phone" data-name="Phone" placeholder="Phone" id="phone" required="">
                 <div class="select-wrapper"><select id="barangay" name="Barangay" data-name="Barangay" class="select w-select">
                   <option value="">Choose your barangay</option>
                   <option value="Brgy. Aguado">Brgy. Aguado</option>
@@ -132,7 +132,7 @@ else
                   <option value="Request Certificate">Request Certificate</option>
                   <option value="Sick Call">Sick Call</option>
                 </select><img src="images/down-chevron.svg" loading="lazy" alt="" class="select-icon"></div>
-                <div id="req-text" class="requirement-text w-node-ec9f49cd-3f54-5695-98c7-64fa17e824f2-f1521fbf">Requirements:</div>
+                <div id="req-text" class="requirement-text w-node-ec9f49cd-3f54-5695-98c7-64fa17e824f2-f1521fbf"></div>
                 <div data-w-id="5b8a60ca-0674-a70c-a128-7036f4b41cbe" class="button rounded-button">
                   <div style="opacity:0" class="button-overlay"></div><input type="submit" value="Submit" data-wait="Please wait..." class="button-link w-button">
                 </div>
@@ -209,16 +209,24 @@ $(window).resize(function() {
 </script>
 <script>
 //insert php code inside each purpose_req var
-var purpose_req="0";
-var baptism_req="1";
-var communion_req="2";
-var confirmation_req="3";
-var faith_req="4";
-var mass_req="5";
-var bless_req="6";
-var funeral_req="7";
-var cert_req="8";
-var sick_req="9";
+var purpose_req="";
+var baptism_req="Requirements:<br><span class='circle'></span>Bring the birth certificate of child and marriage contract of parents if they are married<br><span class='circle'></span>One week before the baptism, must register the child (baptism day is Sunday only)<br><span class='circle'></span>Only Catholics can be sponsors (16 years old and above)<br><span class='circle'></span>The seminar of the parents and sponsors of the child to be baptized is on the day of the baptism (before the baptism begins)<br><span class='circle'></span>In terms of clothing: parents, godfather and godmother are not allowed to wear shorts and sleeveless during the baptism<br><span class='circle'></span>All godfathers and godmothers can attend, but they must indicate where they will sit";
+
+var communion_req="Requirements:<br><span class='circle'></span>Baptismal Certificate (Original & Photocopy)<br><span class='circle'></span>Seminar of the child who will receive the first communion<br><span class='circle'></span>Parent/guardian seminar for the child receiving first communion";
+
+var confirmation_req="Requirements:<br><span class='circle'></span>Baptismal Certificate (Original & Photocopy)<br><span class='circle'></span>Seminar of the child who will receive the confirmation together with parents, godfather and godmother<br><span class='circle'></span>The child has already received first communion";
+
+var faith_req="";
+var mass_req="Note:<br>Two months before the wedding, the couple must register in person at the parish office.<br><br>Requirements:<br><span class='circle'></span>A Baptismal Certificate, written on it for marriage purpose<br><span class='circle'></span>A Confirmation Certificate, written on it for marriage purpose<br><span class='circle'></span>Pre-Marriage Counseling<br><span class='circle'></span>Photocopy of CENOMAR<br><span class='circle'></span>Marriage License<br><span class='circle'></span>Renewal of Vow<br><span class='circle'></span>Article 34 (more than 5 years live-in not married) contact the civil registry";
+
+var bless_req="Requirements:<br>Please pick up the Priest 15 minutes before the set time. If failed to arrive on time, your appointment may be cancelled.";
+
+var funeral_req="Requirements:<br><span class='circle'></span>Death Certificate";
+
+var cert_req="";
+
+var sick_req="Note:<br>Please pick up the Priest 15 minutes before the set time. If failed to arrive on time, your appointment may be cancelled.";
+
 $("#purpose").change(function(){
 	var val = $(this).val();
   var req_text = "";
@@ -263,7 +271,7 @@ $("#purpose").change(function(){
   {
     req_text = purpose_req;
   }
-  $("#req-text").text(req_text);
+  $("#req-text").html(req_text);
 });
  
 /*
