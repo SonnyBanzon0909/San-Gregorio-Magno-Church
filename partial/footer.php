@@ -330,18 +330,22 @@
     $(".verify-section").css("display","flex");
     $(".verify-section").css("opacity","1");
 
-    $.ajax({
-    url: "otp.php", // the URL of your PHP script
-    type: "POST", // the HTTP method
-    data: { // the data to send to the server
-      function_name: "my_function", // the name of your PHP function
-      arg1: "some value", // the first argument to your PHP function
-      arg2: "another value" // the second argument to your PHP function
-    },
-    success: function(response) { // the callback function to handle the server response
-      alert("PHP function returned: " + response);
-    }
-  });
+
+    const name = document.querySelector('#c-email').value;
+    
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'otp.php');
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.onload = () => {
+      if (xhr.status === 200) {
+        //const output = document.querySelector('#output');
+        //output.innerHTML = xhr.responseText;
+        alert(xhr.statusText+" : success");
+      } else {
+        console.error('Error:', xhr.statusText);
+      }
+    };
+    xhr.send('email=' + encodeURIComponent(name));
 
   }
 
@@ -419,9 +423,9 @@
         document.getElementById("nav-login").click();
       }, 1000);
 
-     */ 
+     
 
-    }
+    }*/ 
 
     document.getElementById("log-out").addEventListener("click", function() {
     // make an AJAX request to a PHP script that removes the session
