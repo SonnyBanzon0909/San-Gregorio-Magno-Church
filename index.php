@@ -51,6 +51,7 @@ error_reporting(E_ALL);
 ?>
 
 <?php
+/*
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
@@ -98,6 +99,7 @@ try {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 
+*/
 ?>
 
 
