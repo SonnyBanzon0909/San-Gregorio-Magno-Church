@@ -1,10 +1,13 @@
 <?php
 session_start();
 require_once "connect.php";
+
 $user = $_SESSION['user_email'];
+$date_time = date("Y-m-d H:i:s");
+
 // Prepare and bind the SQL statement
-$stmt = $conn->prepare("INSERT INTO formdata (name, address, phone, barangay, purpose) VALUES (?, ?, ?, ?, ?, ?, ?)");
-$stmt->bind_param("sssss", $name, $address, $phone, $barangay, $purpose, $message, $user);
+$stmt = $conn->prepare("INSERT INTO formdata (name, address, phone, barangay, purpose, message, user, date_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("ssssssss", $name, $address, $phone, $barangay, $purpose, $message, $user, $date_time);
 
 // Set the POST parameters
 $name = $_POST['name'];

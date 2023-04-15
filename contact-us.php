@@ -133,6 +133,8 @@ else
                   <option value="Sick Call">Sick Call</option>
                 </select><img src="images/down-chevron.svg" loading="lazy" alt="" class="select-icon"></div>
                 <div id="req-text" class="requirement-text w-node-ec9f49cd-3f54-5695-98c7-64fa17e824f2-f1521fbf"></div>
+                <textarea class="input-area" placeholder="Message" name="Message"></textarea>
+
                 <div data-w-id="5b8a60ca-0674-a70c-a128-7036f4b41cbe" class="button rounded-button">
                   <div style="opacity:0" class="button-overlay"></div><input type="submit" value="Submit" data-wait="Please wait..." class="button-link w-button">
                 </div>
