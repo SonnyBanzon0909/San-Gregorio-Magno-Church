@@ -265,6 +265,17 @@ $("#purpose").change(function(){
   }
   $("#req-text").text(req_text);
 });
+ 
+/*
+var log = <?php echo json_encode($_SESSION['user_email']); ?>;
+if(log!=null)
+{
+  alert(log);
+}
+else
+{
+  alert("dss");
+}*/
 </script>
 </body>
 </html>
