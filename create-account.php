@@ -27,6 +27,9 @@ $address = $_SESSION['cr-address'];
 $barangay = $_SESSION['cr-barangay'];
 $email = $_SESSION['cr-email'];
 $password =$_SESSION['cr-password'];
+$password = password_hash($password, PASSWORD_DEFAULT);
+
+
 
 
 
