@@ -5,7 +5,7 @@ require_once "connect.php";
 /// Email
 
 
-$email = 'sonnybanzon090997@gmail.com';
+ 
 $email = $_POST['email'];
 //$_SESSION['user_email'] = $email;
 
