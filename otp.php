@@ -5,8 +5,8 @@ require_once "connect.php";
 /// Email
 
 
- 
-$email = $_POST['email'];
+$email = 'sonnybanzon090997@gmail.com';
+//$email = $_POST['email'];
 //$_SESSION['user_email'] = $email;
 
 //Generate OTP
