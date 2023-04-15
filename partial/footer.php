@@ -68,7 +68,7 @@
       <div class="text-block">Create Account</div>
     </div>
     <div class="w-form">
-      <form id="create-forms" name="wf-form-login" data-name="login" method="post" class="login-form"action="otp.php" >
+      <form id="create-forms" name="wf-form-login" data-name="login" method="post" class="login-form"action="" onsubmit="return create()" >
 
         <div class="input-con"><input required type="text" class="input-field w-input create-field" maxlength="256" name="c-fullname" data-name="Full Name 3" placeholder="Full Name" id="c-fullname"></div>
 
@@ -332,7 +332,7 @@
 
 
     const name = document.querySelector('#c-email').value;
-
+    
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'otp.php');
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
