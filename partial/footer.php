@@ -376,7 +376,7 @@
     {
       setTimeout(function() {
         document.getElementById("nav-login").click();
-      }, 2000);
+      }, 1000);
 
       
 

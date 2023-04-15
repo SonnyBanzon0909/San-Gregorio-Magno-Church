@@ -59,7 +59,7 @@ $mail = $mailer->send($to, array('headers' => $headers, 'subject' => $subject, '
 if ($fullname != "" && $birthday != "" && $contact != "" && $address != "" && $barangay != "" && $email != "" && $password != "") 
 {
 
-	echo "<script>alert('Fiiled')</script>";
+	 
 	// insert data into login table
 	$sql = "INSERT INTO login (fullname, birthday, contact, address, barangay, email, password,otp,verified)
 	VALUES ('$fullname', '$birthday', '$contact', '$address', '$barangay', '$email', '$password', '$otp', '$verified')";

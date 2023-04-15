@@ -3,7 +3,7 @@ session_start();
 require_once "connect.php";
 
 $email = $_POST['email']; // Get email from AJAX request
- 
+  
 // Create a SELECT statement to search for the email in the database
 $sql = "SELECT * FROM login WHERE email = '$email'";
 $result = $conn->query($sql);
@@ -14,7 +14,7 @@ if ($result->num_rows > 0) {
     echo "<span style='color: red;'>Email already exists</span>";
 } else {
     // Email does not exist in database
-    echo "<span style='color: green;'>Email is available</span>";
+    echo "<span style='color: green;'>Email is available = '$email'</span>";
 }
 
 // Close the database connection
