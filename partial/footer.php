@@ -68,7 +68,7 @@
       <div class="text-block">Create Account</div>
     </div>
     <div class="w-form">
-      <form id="create-forms" name="wf-form-login" data-name="login" method="post" class="login-form"action="" onsubmit="return create()" >
+      <form id="create-forms" name="wf-form-login" data-name="login" method="post" class="login-form"action="" onsubmit="return create()"  >
 
         <div class="input-con"><input required type="text" class="input-field w-input create-field" maxlength="256" name="c-fullname" data-name="Full Name 3" placeholder="Full Name" id="c-fullname"></div>
 
@@ -125,7 +125,7 @@
       </div>
       <div data-w-id="6dc8872f-5289-90b7-23c0-0449d393680c" class="button rounded-button">
         <div class="button-overlay"></div>
-        <a aria-label="" href="#" class="button-link hero-btn">VERIFY</a>
+        <a aria-label="" href="#" class="button-link hero-btn" id="verify" onclick="verify()">VERIFY</a>
       </div>
     </div>
   </div>
@@ -279,7 +279,32 @@
 
   });
 
+  function verify()
+  {
 
+    const code1 = document.getElementById('code1').value;
+    const code2 = document.getElementById('code2').value;
+    const code3 = document.getElementById('code3').value;
+    const code4 = document.getElementById('code4').value;
+    const combinedCode = code1 + code2 + code3 + code4;
+    const email = document.querySelector('#c-email').value;
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'verify.php');
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.onload = () => {
+      if (xhr.status === 200) {
+        //const output = document.querySelector('#output');
+        //output.innerHTML = xhr.responseText;
+        //alert(xhr.statusText+" : success");
+        window.location.href = 'index.php';
+      } else {
+        //console.error('Error:', xhr.statusText);
+      }
+    };
+    xhr.send('email=' + encodeURIComponent(email) + '&otp=' + encodeURIComponent(combinedCode));
+
+  }
 
   function checkEmail() {
     $(document).ready(function(){
@@ -294,7 +319,7 @@
           if (xhr.readyState == 4 && xhr.status == 200) {
             document.getElementById("email-status").innerHTML = xhr.responseText;
             var avail_email = xhr.responseText;
-            console.log(xhr.responseText);
+            //console.log(xhr.responseText);
             if(avail_email=="<span style='color: green;'>Email is available</span>")
             {
               $("#create-btn").css("pointer-events","auto");
@@ -331,8 +356,14 @@
     $(".verify-section").css("opacity","1");
 
 
-    const name = document.querySelector('#c-email').value;
-    
+    const name = document.querySelector('#c-fullname').value;
+    const birthday = document.querySelector('#c-birthday').value;
+    const contact = document.querySelector('#c-contact').value;
+    const address = document.querySelector('#c-address').value;
+    const barangay = document.querySelector('#c-barangay').value;
+    const email = document.querySelector('#c-email').value;
+    const password = document.querySelector('#c-password').value;
+
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'otp.php');
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -340,12 +371,12 @@
       if (xhr.status === 200) {
         //const output = document.querySelector('#output');
         //output.innerHTML = xhr.responseText;
-        alert(xhr.statusText+" : success");
+        //alert(xhr.statusText+" : success");
       } else {
         console.error('Error:', xhr.statusText);
       }
     };
-    xhr.send('email=' + encodeURIComponent(name));
+    xhr.send('name=' + encodeURIComponent(name) + '&birthday=' + encodeURIComponent(birthday) + '&contact=' + encodeURIComponent(contact) + '&address=' + encodeURIComponent(address) + '&barangay=' + encodeURIComponent(barangay) + '&email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password));
 
   }
 

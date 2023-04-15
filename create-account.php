@@ -5,7 +5,7 @@ require_once "connect.php";
 
 
 // get form data
-$fullname = "";
+
 $fullname = "";
 $birthday = "";
 $contact = "";
@@ -16,18 +16,20 @@ $password = "";
 
 
 
-$fullname = $_POST['c-fullname'];
-$birthday = $_POST['c-birthday'];
-$contact = $_POST['c-contact'];
-$address = $_POST['c-address'];
-$barangay = $_POST['c-barangay'];
-$email = $_POST['c-email'];
-$password = $_POST['c-password'];
 
-$_SESSION['user_email'] = $email;
 
-$otp="";
-$verified = "false";
+$_SESSION['user_email'] = $_SESSION['cr-email'];
+
+$fullname = $_SESSION['cr-name'];
+$birthday = $_SESSION['cr-birthday'];
+$contact = $_SESSION['cr-contact'];
+$address = $_SESSION['cr-address'];
+$barangay = $_SESSION['cr-barangay'];
+$email = $_SESSION['cr-email'];
+$password =$_SESSION['cr-password'];
+
+
+
 
 
 
@@ -37,13 +39,14 @@ if ($fullname != "" && $birthday != "" && $contact != "" && $address != "" && $b
 
 
 	// insert data into login table
-	$sql = "INSERT INTO login (fullname, birthday, contact, address, barangay, email, password,otp,verified)
-	VALUES ('$fullname', '$birthday', '$contact', '$address', '$barangay', '$email', '$password', '$otp', '$verified')";
-
+	$sql = "INSERT INTO login (fullname, birthday, contact, address, barangay, email, password)
+	VALUES ('$fullname', '$birthday', '$contact', '$address', '$barangay', '$email', '$password')";
+mysqli_error($conn);
 	if (mysqli_query($conn, $sql)) {
 		//echo "New record created successfully";
 		$_SESSION['created_account'] = "true";
 
+		//echo "<script>alert('Success OTP');</script>";
 		// Handle login process
 		// ...
 

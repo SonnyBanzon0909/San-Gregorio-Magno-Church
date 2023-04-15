@@ -5,12 +5,32 @@ require_once "connect.php";
 /// Email
 
 
- 
-$email = $_POST['email'];
-//$_SESSION['user_email'] = $email;
 
+
+$fullname = $_POST['name'];
+$birthday = $_POST['birthday'];
+$contact = $_POST['contact'];
+$address = $_POST['address'];
+$barangay = $_POST['barangay'];
+$email = $_POST['email'];
+$password = $_POST['password'];
+
+
+$_SESSION['cr-name'] = $fullname;
+$_SESSION['cr-birthday'] = $birthday ;
+$_SESSION['cr-contact'] = $contact ;
+$_SESSION['cr-address'] = $address;
+$_SESSION['cr-barangay'] = $barangay ;
+$_SESSION['cr-email'] = $email;
+$_SESSION['cr-password'] = $password;
+
+
+ 
+//$_SESSION['user_email'] = $email;
+$date_time = date("Y-m-d H:i:s");
 //Generate OTP
 $otp = mt_rand(1000, 9999);
+$_SESSION['date_time'] = $date_time;
 $_SESSION['otp'] = $otp;
 
 //Import PHPMailer classes into the global namespace
@@ -25,7 +45,29 @@ require 'phpmailer/vendor/autoload.php';
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
+
+//insert to temp database
+$sql = "INSERT INTO temp_account (email, otp, date_time, verified) VALUES ('$email', '$otp', '$date_time', 'false')";
+if(mysqli_query($conn, $sql))
+{
+    echo "Record added successfully!";
+} 
+else
+{
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+mysqli_close($conn);
+
+
+
+  
 try {
+
     //Server settings
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
@@ -63,8 +105,12 @@ try {
     $mail->AltBody = 'Your OTP is: ' . $otp . '. This OTP is valid for 5 Minutes and can only be used once. Please enter the OTP code on our website/app to complete the login/sign-up process.';
 
     $mail->send();
-     
+
     echo '<script>alert("Message has been sent! \nNote: If you did not receive this email, please check your spam folder.");</script>';
+
+
+
+
 
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
