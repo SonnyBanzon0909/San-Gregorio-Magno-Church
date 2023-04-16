@@ -86,7 +86,7 @@ else
           </div>
           <div data-w-id="29031199-5904-0a46-abed-1313029a9425" style="opacity:0" class="button rounded-button">
             <div style="opacity:0" class="button-overlay"></div>
-            <a aria-label="" href="#" class="button-link">GET APPOINTMENT</a>
+            <a aria-label="" href="contact-us.php" class="button-link">GET APPOINTMENT</a>
           </div>
         </div><img src="images/baptism-thumbnail.jpg" loading="lazy" style="opacity:0" data-w-id="edc6fe87-fd79-59a6-745d-7a4cb0e7d263" id="w-node-edc6fe87-fd79-59a6-745d-7a4cb0e7d263-10b8448d" alt="" class="service-thumb">
       </div>
