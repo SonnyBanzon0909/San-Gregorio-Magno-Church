@@ -82,7 +82,7 @@ if ($result->num_rows > 0) {
 
 // Save spreadsheet to file
 $writer = new Xlsx($spreadsheet);
-$writer->save('baptism-certificates-list.xlsx');
+$writer->save('requested-certificates-list.xlsx');
 
 // Close database connection
 $conn->close();
