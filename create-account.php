@@ -30,7 +30,7 @@ $password =$_SESSION['cr-password'];
 $password = password_hash($password, PASSWORD_DEFAULT);
 
 
-
+echo "<script>alert(". $_SESSION['cr-email']  ."+ ' Create');</script>";
 
 
 
@@ -69,7 +69,7 @@ if (mysqli_query($conn, $sql)) {
 		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 	}
 
-	
+
 
 
 	mysqli_close($conn);

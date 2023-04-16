@@ -16,6 +16,7 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 
 
+
 $_SESSION['cr-name'] = $fullname;
 $_SESSION['cr-birthday'] = $birthday ;
 $_SESSION['cr-contact'] = $contact ;
@@ -23,6 +24,7 @@ $_SESSION['cr-address'] = $address;
 $_SESSION['cr-barangay'] = $barangay ;
 $_SESSION['cr-email'] = $email;
 $_SESSION['cr-password'] = $password;
+"<script>alert(". $_SESSION['cr-email']  ."+ ' OTP');</script>";
 
 
 
