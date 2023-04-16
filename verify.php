@@ -21,7 +21,7 @@ if ($user_otp != "") {
 	mysqli_error($conn);
 	$result = $stmt->get_result();
 	if (mysqli_num_rows($result) > 0) {
-		include "create-account.php";
+		//include "create-account.php"; Turn on if it doesnt work
 		//echo "<script>alert('Success OTP');</script>";
 	}
 	else {
