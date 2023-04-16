@@ -31,228 +31,263 @@ else
   <meta content="Request Certificate" property="og:title">
   <meta content="Request Certificate" property="twitter:title">
   <meta content="width=device-width, initial-scale=1" name="viewport">
-  <link href="css/normalize.css" rel="stylesheet" type="text/css">
-  <link href="css/webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/san-gregorio-magno.webflow.css" rel="stylesheet" type="text/css">
+  <link href="../css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="../css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="../css/san-gregorio-magno.webflow.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
   <script type="text/javascript">WebFont.load({  google: {    families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic","Marcellus:regular"]  }});</script>
   <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
-  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
-  <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
-  <link href="images/webclip.png" rel="apple-touch-icon">
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XREV9R6ECX"></script>
-  <script type="text/javascript">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('set', 'developer_id.dZGVlNj', true);gtag('config', 'G-XREV9R6ECX');</script>
-  <style>
-    .no-scroll
-    {
-      overflow-y: hidden!important;
-      touch-action: none;
-      -ms-touch-action: none;
-    }
-  </style>
-  <!--  Google tag (gtag.js)  -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XREV9R6ECX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XREV9R6ECX');
-  </script>
-</head>
-<body>
-  <div class="section header-section wf-section">
-    <div class="container">
-      <div class="header-wrapper">
-        <div class="header-content-con">
-          <h1 data-w-id="57a8dbd8-0d2d-09f9-75c6-5edafa8b68e2" style="opacity:0" class="header-title header-title-text">Request Certificate</h1>
-          <div data-w-id="57a8dbd8-0d2d-09f9-75c6-5edafa8b68e4" style="opacity:0" class="body-text-medium header-excerpt">lorem ipsum</div>
+    <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+    <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="../images/webclip.png" rel="apple-touch-icon">
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XREV9R6ECX"></script>
+    <script type="text/javascript">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('set', 'developer_id.dZGVlNj', true);gtag('config', 'G-XREV9R6ECX');</script>
+    <style>
+      .no-scroll
+      {
+        overflow-y: hidden!important;
+        touch-action: none;
+        -ms-touch-action: none;
+      }
+    </style>
+    <!--  Google tag (gtag.js)  -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XREV9R6ECX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XREV9R6ECX');
+    </script>
+  </head>
+  <body>
+    <div class="section header-section wf-section">
+      <div class="container">
+        <div class="header-wrapper">
+          <div class="header-content-con">
+            <h1 data-w-id="57a8dbd8-0d2d-09f9-75c6-5edafa8b68e2" style="opacity:0" class="header-title header-title-text">Request Certificate</h1>
+            <div data-w-id="57a8dbd8-0d2d-09f9-75c6-5edafa8b68e4" style="opacity:0" class="body-text-medium header-excerpt">lorem ipsum</div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <?php include 'partial/custom-css.html'; ?>
-  <?php include 'partial/navigation.html'; ?>
+    <?php include '../partial/custom-css.html'; ?>
+    <?php include '../partial/navigation.html'; ?>
 
-  <div class="section status-section wf-section">
-    <div class="container">
-      <div id="w-node-e11252ee-d72a-90fa-2d26-73bcf10fd970-6fbcb9d9" class="w-form">
-        <form method="get" name="email-form" data-name="Email Form" style="opacity:0" data-w-id="e11252ee-d72a-90fa-2d26-73bcf10fd971" id="email-form" class="filter-wrapper">
-          <div id="w-node-_80536e23-6151-9975-adb2-35980bf7c7b0-6fbcb9d9" class="select-filter-wrapper">
-            <div class="select-wrapper"><select id="gender" name="Gender" data-name="Gender" class="select filter-select w-select">
-              <option value="">Select sex</option>
-              <option value="male">Male</option>
-              <option value="Female">Female</option>
-            </select><img src="images/down-chevron-1.svg" loading="lazy" alt="" class="select-icon"></div>
-            <div class="select-wrapper"><select id="month" name="Month" data-name="Month" class="select filter-select w-select">
-              <option value="">Select month</option>
-              <option value="January">January</option>
-              <option value="February">February</option>
-              <option value="March">March</option>
-              <option value="April">April</option>
-              <option value="May">May</option>
-              <option value="June">June</option>
-              <option value="July">July</option>
-              <option value="August">August</option>
-              <option value="September">September</option>
-              <option value="October">October</option>
-              <option value="November">November</option>
-              <option value="December">December</option>
-            </select><img src="images/down-chevron-1.svg" loading="lazy" alt="" class="select-icon"></div><input type="text" class="select filter-select w-node-bf108295-d0aa-8c11-e91e-2270fbecb533-6fbcb9d9 w-input" maxlength="256" name="Year" data-name="Year" placeholder="Select year" id="year">
-            <div class="select-wrapper"><select id="barangay" name="Barangay" data-name="Barangay" class="select filter-select w-select">
-              <option value="">Barangay</option>
-              <option value="Brgy. Aguado">Brgy. Aguado</option>
-              <option value="Brgy. Inocencio">Brgy. Inocencio</option>
-            </select><img src="images/down-chevron-1.svg" loading="lazy" alt="" class="select-icon"></div>
-          </div>
-          <div id="w-node-b4028a5b-c8ef-df80-9a35-75789bf105b1-6fbcb9d9" class="search-wrapper">
-            <div id="w-node-b6ec6774-df05-e803-8d15-82867510d761-6fbcb9d9" class="print-wrapper">
-              <div id="w-node-_797a341e-e77b-3edb-abfc-8ecd7d3a3407-6fbcb9d9" class="print-con dl-con"><img src="images/Mask-group.svg" loading="lazy" alt="" class="print-icon"></div>
-              <div id="w-node-_707b0ddf-b844-fdc1-5875-afad95fc28e2-6fbcb9d9" class="print-con printer-con"><img src="images/Mask-group-1.svg" loading="lazy" alt="" class="print-icon"></div>
+    <div class="section status-section wf-section">
+      <div class="container">
+        <div id="w-node-e11252ee-d72a-90fa-2d26-73bcf10fd970-6fbcb9d9" class="w-form">
+          <form method="get" name="email-form" data-name="Email Form" style="opacity:0" data-w-id="e11252ee-d72a-90fa-2d26-73bcf10fd971" id="email-form" class="filter-wrapper">
+            <div id="w-node-_80536e23-6151-9975-adb2-35980bf7c7b0-6fbcb9d9" class="select-filter-wrapper">
+              <div class="select-wrapper"><select id="gender" name="Gender" data-name="Gender" class="select filter-select w-select">
+                <option value="">Select sex</option>
+                <option value="male">Male</option>
+                <option value="Female">Female</option>
+              </select><img src="../images/down-chevron-1.svg" loading="lazy" alt="" class="select-icon"></div>
+              <div class="select-wrapper"><select id="month" name="Month" data-name="Month" class="select filter-select w-select">
+                <option value="">Select month</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+              </select><img src="../images/down-chevron-1.svg" loading="lazy" alt="" class="select-icon"></div><input type="text" class="select filter-select w-node-bf108295-d0aa-8c11-e91e-2270fbecb533-6fbcb9d9 w-input" maxlength="256" name="Year" data-name="Year" placeholder="Select year" id="year">
+              <div class="select-wrapper"><select id="barangay" name="Barangay" data-name="Barangay" class="select filter-select w-select">
+                <option value="">Barangay</option>
+                <option value="Brgy. Aguado">Brgy. Aguado</option>
+                <option value="Brgy. Inocencio">Brgy. Inocencio</option>
+              </select><img src="../images/down-chevron-1.svg" loading="lazy" alt="" class="select-icon"></div>
             </div>
-            <div id="w-node-_4cca64a6-0a55-4a6e-5412-4a46426bcb02-6fbcb9d9" class="input-wrapper">
-              <div class="search-label">Search:</div><input type="text" class="select filter-select search-text w-input" maxlength="256" name="search" data-name="search" placeholder="" id="search">
+            <div id="w-node-b4028a5b-c8ef-df80-9a35-75789bf105b1-6fbcb9d9" class="search-wrapper">
+              <div id="w-node-b6ec6774-df05-e803-8d15-82867510d761-6fbcb9d9" class="print-wrapper">
+                <div id="w-node-_797a341e-e77b-3edb-abfc-8ecd7d3a3407-6fbcb9d9" class="print-con dl-con"><img src="../images/Mask-group.svg" loading="lazy" alt="" class="print-icon"></div>
+                <div id="w-node-_707b0ddf-b844-fdc1-5875-afad95fc28e2-6fbcb9d9" class="print-con printer-con"><img src="../images/Mask-group-1.svg" loading="lazy" alt="" class="print-icon"></div>
+              </div>
+              <div id="w-node-_4cca64a6-0a55-4a6e-5412-4a46426bcb02-6fbcb9d9" class="input-wrapper">
+                <div class="search-label">Search:</div><input type="text" class="select filter-select search-text w-input" maxlength="256" name="search" data-name="search" placeholder="" id="search">
+              </div>
             </div>
+          </form>
+          <div class="hide w-form-done">
+            <div>Thank you! Your submission has been received!</div>
           </div>
-        </form>
-        <div class="hide w-form-done">
-          <div>Thank you! Your submission has been received!</div>
+          <div class="hide w-form-fail">
+            <div>Oops! Something went wrong while submitting the form.</div>
+          </div>
         </div>
-        <div class="hide w-form-fail">
-          <div>Oops! Something went wrong while submitting the form.</div>
-        </div>
-      </div>
-      <div data-w-id="a6ce49cc-23b9-46b0-3db0-c07c98e55d15" style="opacity:0" class="table-container report-table">
-        <div class="table-wrapper w-embed">
-          <style>
-            table {
-              border-collapse: collapse;
-              width: 100%;
-              border-radius: 0px;
-              overflow: hidden;
-              position: relative;
-              border: 1px solid #C7C6B8;
-            }
-            table td,
-            table th {
-              border: 1px solid #C7C6B8;
-              text-align: start;
-            }
-            table td {
-              padding: 15px 7px;
-              font-family: Lato, sans-serif;
-              color: #555;
+        <div data-w-id="a6ce49cc-23b9-46b0-3db0-c07c98e55d15" style="opacity:0" class="table-container report-table">
+          <div class="table-wrapper w-embed">
+            <style>
+              table {
+                border-collapse: collapse;
+                width: 100%;
+                border-radius: 0px;
+                overflow: hidden;
+                position: relative;
+                border: 1px solid #C7C6B8;
+              }
+              table td,
+              table th {
+                border: 1px solid #C7C6B8;
+                text-align: start;
+              }
+              table td {
+                padding: 15px 7px;
+                font-family: Lato, sans-serif;
+                color: #555;
+                font-size: 14px;
+                line-height: 30px;
+                font-weight: 400;
+                min-height: 60px;
+                text-align: center;
+              }
+              table tr td:first-child
+              {
+               text-align: left;
+             }
+             table th {
+              background-color: #BABABA36;
+              padding: 7px 45px;
+              font-family: Marcellus, sans-serif;
+              color: #100a0a;
               font-size: 14px;
               line-height: 30px;
               font-weight: 400;
-              min-height: 60px;
               text-align: center;
             }
-            table tr td:first-child
+            .btn-td {
+              display: flex;
+              justify-content: center;
+            }
+            .status {
+              text-align: center;
+            }
+            .edit
             {
-             text-align: left;
+             position: relative;
            }
-           table th {
-            background-color: #BABABA36;
-            padding: 7px 45px;
-            font-family: Marcellus, sans-serif;
-            color: #100a0a;
-            font-size: 14px;
-            line-height: 30px;
-            font-weight: 400;
-            text-align: center;
-          }
-          .btn-td {
-            display: flex;
+           .edit-wrapper {
+            position: absolute;
+            top: 45px;
+            right: 8px;
+            left: auto;
+            bottom: auto;
+            z-index: 20;
+            background-color: #fff;
+            display: none;
+            width: 80px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            flex-direction: column;
             justify-content: center;
+            border: 1px solid #c7c6b8;
+            border-radius: 5px;
           }
-          .status {
-            text-align: center;
-          }
-          .edit
+          table tr:last-child .edit-wrapper
           {
-           position: relative;
+            top: auto;
+            right: 8px;
+            left: auto;
+            bottom: 10px;
+          }
+          .edit-btn-wrapper
+          {
+           width: 20px;
+           height: 20px;
+           margin: 0 auto;
+           cursor: pointer;
          }
-         .edit-wrapper {
-          position: absolute;
-          top: 45px;
-          right: 8px;
-          left: auto;
-          bottom: auto;
-          z-index: 20;
-          background-color: #fff;
-          display: none;
-          width: 80px;
-          padding-top: 6px;
-          padding-bottom: 6px;
-          flex-direction: column;
-          justify-content: center;
-          border: 1px solid #c7c6b8;
-          border-radius: 5px;
+         .create-edit {
+          font-family: Lato, sans-serif;
+          color: #52070b;
+          font-size: 10px;
+          line-height: 30px;
+          font-weight: 400;
+          text-decoration: none;
+          text-transform: uppercase;
         }
-        table tr:last-child .edit-wrapper
-        {
-          top: auto;
-          right: 8px;
-          left: auto;
-          bottom: 10px;
+        .create-edit:hover {
+          text-decoration: underline;
         }
-        .edit-btn-wrapper
-        {
-         width: 20px;
-         height: 20px;
-         margin: 0 auto;
-         cursor: pointer;
-       }
-       .create-edit {
-        font-family: Lato, sans-serif;
-        color: #52070b;
-        font-size: 10px;
-        line-height: 30px;
-        font-weight: 400;
-        text-decoration: none;
-        text-transform: uppercase;
-      }
-      .create-edit:hover {
-        text-decoration: underline;
-      }
-    </style>
-    <table id="myTable">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Gender</th>
-          <th>Barangay</th>
-          <th>Age</th>
-          <th>Date</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1. Princess Elnalyn Villegas</td>
-          <td>Male</td>
-          <td>Aguado</td>
-          <td>2 years old</td>
-          <td>03 / 11 / 2023</td>
-          <td>
-            <a class="create-edit" href="#">CREATE</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+      </style>
+      <table id="myTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Barangay</th>
+            <th>Age</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <?php
+          require_once "../connect.php";
+
+          $table = "SELECT * FROM formdata";
+          $table_result = mysqli_query($conn, $table);
+          $table_total = mysqli_num_rows($table_result);
+
+          $c=0;
+          while ($row = mysqli_fetch_assoc($table_result)) {
+            $c=$c+1;
+            $tbl_name = $row['name'];
+            $tbl_gender = $row['gender'];
+            $tbl_barangay = $row['barangay'];
+            $tbl_age = $row['age'];
+            $tbl_date = $row['date_time'];
+
+            $name = urlencode($row['name']);
+            $gender = urlencode($row['gender']);
+            $barangay = urlencode($row['barangay']);
+            $age = urlencode($row['age']);
+            $date_time = urlencode($row['date_time']);
+
+            // Get the base URL of the current page
+            $base_url = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+
+            $url = $base_url ."/create-certificate.php?name=$name&gender=$gender&barangay=$barangay&age=$age&date_time=$date_time";
+
+
+
+
+            echo '<tr>';
+            echo '<td>'. $c.'. '.$tbl_name.'</td>';
+            echo '<td>'.$tbl_gender.'</td>';
+            echo '<td>'.$tbl_barangay.'</td>';
+            echo '<td>'.$tbl_age.' years old</td>';
+            echo '<td>'.$tbl_date.'</td>';
+            echo '<td>';
+            echo '<a class="create-edit" href="'.$url.'">CREATE</a>';
+            echo '</td>';
+            echo '</tr>';
+          }
+
+          ?>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div data-w-id="0853b24f-7720-ae28-225f-1186ba5f3c1f" style="opacity:0" class="page-wrapper">
+    <div id="pagination" class="pagination"></div>
   </div>
 </div>
-<div data-w-id="0853b24f-7720-ae28-225f-1186ba5f3c1f" style="opacity:0" class="page-wrapper">
-  <div id="pagination" class="pagination"></div>
-</div>
-</div>
 </div>
 
 
-<?php include 'partial/footer.php'; ?>
+<?php include '../partial/footer.php'; ?>
 
 
 <div class="tawkto-wrapper">
@@ -274,38 +309,38 @@ else
 </div>
 </div>
 </div>
- 
+
 <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=640c46a109bfca551c61da47" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-<script src="js/webflow.js" type="text/javascript"></script>
+<script src="../js/webflow.js" type="text/javascript"></script>
 <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
-<script>
-  function togglefunction()
-  {  
-   if ($(window).width() > 1023) 
-   {	
-    $('.signup-btn').click(function(){
-      $('body').toggleClass('no-scroll');
-    });
-    $('.login-btn').click(function(){
-      $('body').toggleClass('no-scroll');
-    });
-    $('.close-login').click(function(){
-      $('body').toggleClass('no-scroll');
-    });
-  }
-  else
-  {
-    $('.hamburger').click(function(){
-      $('body').toggleClass('no-scroll');
-    }); 
-  }
-}  
-$(document).ready(function(e) {
-  togglefunction();
-});
-$(window).resize(function() {
-  togglefunction();
-});
+  <script>
+    function togglefunction()
+    {  
+     if ($(window).width() > 1023) 
+     {	
+      $('.signup-btn').click(function(){
+        $('body').toggleClass('no-scroll');
+      });
+      $('.login-btn').click(function(){
+        $('body').toggleClass('no-scroll');
+      });
+      $('.close-login').click(function(){
+        $('body').toggleClass('no-scroll');
+      });
+    }
+    else
+    {
+      $('.hamburger').click(function(){
+        $('body').toggleClass('no-scroll');
+      }); 
+    }
+  }  
+  $(document).ready(function(e) {
+    togglefunction();
+  });
+  $(window).resize(function() {
+    togglefunction();
+  });
 </script>
 <script>
   $(".edit-btn-wrapper").click(function(){
@@ -323,25 +358,25 @@ $(window).resize(function() {
  });
 // pagination"
 // number of rows to display per page
-var rowsPerPage = 3;
+  var rowsPerPage = 10;
 // get the table and rows
-var table = document.getElementById("myTable");
-var rows = table.getElementsByTagName("tr");
+  var table = document.getElementById("myTable");
+  var rows = table.getElementsByTagName("tr");
 // calculate the number of pages
-var totalPages = Math.ceil((rows.length - 1) / rowsPerPage);
-if(totalPages <= 1)
-{
-	totalPages = 1;
-  $(".pagination").hide();
-}
+  var totalPages = Math.ceil((rows.length - 1) / rowsPerPage);
+  if(totalPages <= 1)
+  {
+   totalPages = 1;
+   $(".pagination").hide();
+ }
 // show the first page
-$(document).ready(function(){
-	showPage(1);
-});
+ $(document).ready(function(){
+   showPage(1);
+ });
 // create pagination buttons
-var page_num ;
-var pagination = document.getElementById("pagination");
-for (var i = 1; i <= totalPages; i++) {
+ var page_num ;
+ var pagination = document.getElementById("pagination");
+ for (var i = 1; i <= totalPages; i++) {
   var button = document.createElement("button");
   button.innerHTML = i;
   button.classList.add("page-btn");
@@ -394,15 +429,15 @@ else if (i > 4) {
     ellipsis.innerHTML = "&hellip;";
     ellipsis.classList.add("ellipsis");
     pagination.appendChild(ellipsis);*/ //hidden for now
-  }
-  nextBtn.addEventListener("click", function() {
-    var currentPage = getCurrentPage();
-    page_num = currentPage;
-    showPage(currentPage + 1);
-    var activePageBtn = document.querySelector(".active-page");
-    setActivePage(activePageBtn.nextSibling);
-  });
-  pagination.appendChild(nextBtn);
+}
+nextBtn.addEventListener("click", function() {
+  var currentPage = getCurrentPage();
+  page_num = currentPage;
+  showPage(currentPage + 1);
+  var activePageBtn = document.querySelector(".active-page");
+  setActivePage(activePageBtn.nextSibling);
+});
+pagination.appendChild(nextBtn);
 // function to show a page of rows
 function showPage(page) {
   // calculate the start and end indexes of the rows to show

@@ -22,10 +22,10 @@ else
 if($user!="")
 {
     date_default_timezone_set('Asia/Manila');
-    $date_time = date("Y-m-d h:i:s A"); // A for AM/PM indicator
+    $date_time = date("Y-m-d"); // A for AM/PM indicator
 
 
-    $stmt = $conn->prepare("INSERT INTO formdata (name, age, address, phone, gender, barangay, purpose, message, user, date_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO formdata (name, age, address, phone, gender, barangay, purpose, message, user, date_time, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending')");
 
     if (!$stmt) {
         die('Error in prepare statement: ' . $conn->error);
@@ -41,6 +41,8 @@ if($user!="")
     $purpose = $_POST['Purpose'];
 
     $stmt->bind_param("ssssssssss", $name, $age, $address, $phone, $gender, $barangay, $purpose, $message, $user, $date_time);
+
+
 
     if ($stmt->execute()) {
         echo "success";
