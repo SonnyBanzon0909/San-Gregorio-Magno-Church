@@ -305,7 +305,7 @@
         //const output = document.querySelector('#output');
         //output.innerHTML = xhr.responseText;
         //alert(xhr.statusText+" : success");
-        window.location.href = 'index.php?success';
+        //window.location.href = 'index.php?success';
       } else {
         //console.error('Error:', xhr.statusText);
       }

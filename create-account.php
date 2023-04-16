@@ -62,7 +62,7 @@ if ($fullname != "" && $birthday != "" && $contact != "" && $address != "" && $b
         // Wait for 2 seconds
 		//sleep(3);
 		echo "Error: " . "<br>" . mysqli_error($conn);
-		//header("Location: index.php?");
+		header("Location: index.php?");
 
 	} 
 	else 
