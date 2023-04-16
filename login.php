@@ -17,8 +17,9 @@ if (mysqli_num_rows($result) > 0) {
   // Step 2: Verify the user's password
   if (password_verify($password, $hashedPassword)) {
     // Password is correct, log the user in
-    //$_SESSION['login_account'] = "true";
-    //$_SESSION['user_email'] = $email;
+    session_start();
+    $_SESSION['login_account'] = "true";
+    $_SESSION['user_email'] = $email;
 
     echo "success";
   } else {
@@ -28,7 +29,7 @@ if (mysqli_num_rows($result) > 0) {
   }
 } else {
   // User does not exist in the database
-  echo "Invalid email;
+  echo "Invalid email";
 }
 
 // Close the database connection
