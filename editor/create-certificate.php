@@ -118,19 +118,11 @@ else
                   <div class="cert-form w-form">
                     <form id="email-form-2" name="email-form-2" data-name="Email Form 2" method="get">
 
-                      <?php 
-                      $name = $_GET['name'];
-                      $gender = $_GET['gender'];
-                      $barangay = $_GET['barangay'];
-                      $age = $_GET['age'];
-                      //$date_time = $_GET['date_time'];
-                      $date = $date = date("F d, Y");
-
-                      ?>
+                     
 
                       <div class="info-wrapper">
                         <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="cert-name" required="">
-                          <div class="cert-text text-cert"><?php echo $name;?></div>
+                          <div class="cert-text text-cert">---</div>
                         </div>
                         <div class="text-field-wrapper">
                           <div class="cert-text">Child of</div>
@@ -221,7 +213,7 @@ else
                           <div class="text-field-wrapper">
                             <div class="cert-text">Date issued:</div>
                             <div class="cert-input-wrapper">
-                              <div class="cert-text text-cert"><?php echo $date; ?></div><input type="email" class="cert-field issued w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="" value="<?php echo $date; ?>">
+                              <div class="cert-text text-cert">---</div><input type="email" class="cert-field issued w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="" value="">
                             </div>
                           </div>
                           <div class="text-field-wrapper">

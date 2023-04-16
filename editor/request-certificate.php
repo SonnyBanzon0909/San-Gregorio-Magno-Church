@@ -80,7 +80,9 @@ else
       <div class="container">
         <div id="w-node-e11252ee-d72a-90fa-2d26-73bcf10fd970-6fbcb9d9" class="w-form">
           <form method="get" name="email-form" data-name="Email Form" style="opacity:0" data-w-id="e11252ee-d72a-90fa-2d26-73bcf10fd971" id="email-form" class="filter-wrapper">
+
             <div id="w-node-_80536e23-6151-9975-adb2-35980bf7c7b0-6fbcb9d9" class="select-filter-wrapper">
+
               <div class="select-wrapper"><select id="gender" name="Gender" data-name="Gender" class="select filter-select w-select">
                 <option value="">Select sex</option>
                 <option value="male">Male</option>
@@ -100,7 +102,10 @@ else
                 <option value="October">October</option>
                 <option value="November">November</option>
                 <option value="December">December</option>
-              </select><img src="../images/down-chevron-1.svg" loading="lazy" alt="" class="select-icon"></div><input type="text" class="select filter-select w-node-bf108295-d0aa-8c11-e91e-2270fbecb533-6fbcb9d9 w-input" maxlength="256" name="Year" data-name="Year" placeholder="Select year" id="year">
+              </select><img src="../images/down-chevron-1.svg" loading="lazy" alt="" class="select-icon"></div>
+
+              <input type="text" class="select filter-select w-node-bf108295-d0aa-8c11-e91e-2270fbecb533-6fbcb9d9 w-input" maxlength="256" name="Year" data-name="Year" placeholder="Select year" id="year">
+
               <div class="select-wrapper"><select id="barangay" name="Barangay" data-name="Barangay" class="select filter-select w-select">
                 <option value="">Barangay</option>
                 <option value="Brgy. Aguado">Brgy. Aguado</option>
@@ -108,10 +113,12 @@ else
               </select><img src="../images/down-chevron-1.svg" loading="lazy" alt="" class="select-icon"></div>
             </div>
             <div id="w-node-b4028a5b-c8ef-df80-9a35-75789bf105b1-6fbcb9d9" class="search-wrapper">
+
               <div id="w-node-b6ec6774-df05-e803-8d15-82867510d761-6fbcb9d9" class="print-wrapper">
-                <div id="w-node-_797a341e-e77b-3edb-abfc-8ecd7d3a3407-6fbcb9d9" class="print-con dl-con"><img src="../images/Mask-group.svg" loading="lazy" alt="" class="print-icon"></div>
+                <div id="w-node-_797a341e-e77b-3edb-abfc-8ecd7d3a3407-6fbcb9d9" class="print-con dl-con" onclick="print()"><img src="../images/Mask-group.svg" loading="lazy" alt="" class="print-icon"></div>
                 <div id="w-node-_707b0ddf-b844-fdc1-5875-afad95fc28e2-6fbcb9d9" class="print-con printer-con"><img src="../images/Mask-group-1.svg" loading="lazy" alt="" class="print-icon"></div>
               </div>
+
               <div id="w-node-_4cca64a6-0a55-4a6e-5412-4a46426bcb02-6fbcb9d9" class="input-wrapper">
                 <div class="search-label">Search:</div><input type="text" class="select filter-select search-text w-input" maxlength="256" name="search" data-name="search" placeholder="" id="search">
               </div>
@@ -230,51 +237,10 @@ else
             <th>Action</th>
           </tr>
         </thead>
-        <tbody>
-
-          <?php
-          require_once "../connect.php";
-
-          $table = "SELECT * FROM formdata";
-          $table_result = mysqli_query($conn, $table);
-          $table_total = mysqli_num_rows($table_result);
-
-          $c=0;
-          while ($row = mysqli_fetch_assoc($table_result)) {
-            $c=$c+1;
-            $tbl_name = $row['name'];
-            $tbl_gender = $row['gender'];
-            $tbl_barangay = $row['barangay'];
-            $tbl_age = $row['age'];
-            $tbl_date = $row['date_time'];
-
-            $name = urlencode($row['name']);
-            $gender = urlencode($row['gender']);
-            $barangay = urlencode($row['barangay']);
-            $age = urlencode($row['age']);
-            $date_time = urlencode($row['date_time']);
-
-            // Get the base URL of the current page
-            $base_url = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-
-            $url = $base_url ."/create-certificate.php?name=$name&gender=$gender&barangay=$barangay&age=$age&date_time=$date_time";
+        <tbody id="result">
 
 
 
-
-            echo '<tr>';
-            echo '<td>'. $c.'. '.$tbl_name.'</td>';
-            echo '<td>'.$tbl_gender.'</td>';
-            echo '<td>'.$tbl_barangay.'</td>';
-            echo '<td>'.$tbl_age.' years old</td>';
-            echo '<td>'.$tbl_date.'</td>';
-            echo '<td>';
-            echo '<a class="create-edit" href="'.$url.'">CREATE</a>';
-            echo '</td>';
-            echo '</tr>';
-          }
-
-          ?>
 
         </tbody>
       </table>
@@ -476,6 +442,107 @@ function setActivePage(pageBtn) {
   activePageBtn.classList.remove("active-page");
   pageBtn.classList.add("active-page");
 }
+
+
+
+
+function print() 
+{
+     // Get the current values of all four select boxes and the search input
+  var gender = $("#gender").val();
+  var year = $("#year").val();
+  var barangay = $("#barangay").val();
+  var month = $("#month").val();
+  var name = $("#search").val();
+
+    // Send an AJAX request to the server-side PHP script
+  $.ajax({
+      url: "print.php", // Replace with the URL of your PHP script
+      method: "POST",
+      data: {
+        gender: gender,
+        year: year,
+        barangay: barangay,
+        month: month,
+        name: name
+      },
+
+      success: function(response) {
+        // Handle the response from the PHP script
+        // For example, you could update the contents of a <div> element with the response data
+
+      },
+      error: function(xhr, textStatus, errorThrown) {
+        // Handle any errors that occur during the AJAX request
+        console.log("Error: " + errorThrown);
+      }
+    });
+
+
+var domain = window.location.hostname;
+
+if (domain === 'localhost') {
+    domain = 'http://localhost/san-gregorio-magno-church/editor/requested-certificates-list.xlsx';
+} else {
+    domain = "http://parokya-ni-san-gregorio-magno.com/editor/requested-certificates-list.xlsx";
+}
+
+window.open(domain, '_blank');
+
+
+
+}
+
+
+
+
+
+$(document).ready(function() {
+  // Define a function to handle the AJAX request
+  handleRequest();
+
+  function handleRequest() {
+    $("#result").html("");
+    // Get the current values of all four select boxes and the search input
+    var gender = $("#gender").val();
+    var year = $("#year").val();
+    var barangay = $("#barangay").val();
+    var month = $("#month").val();
+    var name = $("#search").val();
+
+    // Send an AJAX request to the server-side PHP script
+    $.ajax({
+      url: "get_request.php", // Replace with the URL of your PHP script
+      method: "POST",
+      data: {
+        gender: gender,
+        year: year,
+        barangay: barangay,
+        month: month,
+        name: name
+      },
+
+      success: function(response) {
+        // Handle the response from the PHP script
+        // For example, you could update the contents of a <div> element with the response data
+        $("#result").html(response);
+      },
+      error: function(xhr, textStatus, errorThrown) {
+        // Handle any errors that occur during the AJAX request
+        console.log("Error: " + errorThrown);
+      }
+    });
+  }
+
+  // Trigger the AJAX request on change events for any select box
+  $("select").change(handleRequest);
+
+  // Trigger the AJAX request on keypress and change events for the search input and year input
+  $("#search, #year").on("keyup change", handleRequest);
+});
+
+
+
 </script>
 </body>
 </html>
