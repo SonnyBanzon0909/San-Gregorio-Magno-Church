@@ -37,17 +37,16 @@ $password = password_hash($password, PASSWORD_DEFAULT);
 
 
 
-if ($fullname != "" && $birthday != "" && $contact != "" && $address != "" && $barangay != "" && $email != "" && $password != "") 
-{
+
 
 
 	// insert data into login table
-	$sql = "INSERT INTO login (fullname, birthday, contact, address, barangay, email, password)
-	VALUES ('$fullname', '$birthday', '$contact', '$address', '$barangay', '$email', '$password')";
+$sql = "INSERT INTO login (fullname, birthday, contact, address, barangay, email, password)
+VALUES ('$fullname', '$birthday', '$contact', '$address', '$barangay', '$email', '$password')";
 //mysqli_error($conn);
-	if (mysqli_query($conn, $sql)) {
+if (mysqli_query($conn, $sql)) {
 		//echo "New record created successfully";
-		$_SESSION['created_account'] = "true";
+	$_SESSION['created_account'] = "true";
 
 		//echo "<script>alert('Success OTP');</script>";
 		// Handle login process
@@ -70,14 +69,10 @@ if ($fullname != "" && $birthday != "" && $contact != "" && $address != "" && $b
 		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 	}
 
-}
-else
-{
-	//echo "<script>alert('Please fill up all the fields')</script>";
-}
+	
 
 
-mysqli_close($conn);
+	mysqli_close($conn);
 
 
-?>
+	?>
