@@ -28,7 +28,7 @@ if (mysqli_num_rows($result) > 0) {
   }
 } else {
   // User does not exist in the database
-  echo "Invalid email or password";
+  echo "Invalid email;
 }
 
 // Close the database connection

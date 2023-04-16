@@ -44,7 +44,7 @@ if ($fullname != "" && $birthday != "" && $contact != "" && $address != "" && $b
 	// insert data into login table
 	$sql = "INSERT INTO login (fullname, birthday, contact, address, barangay, email, password)
 	VALUES ('$fullname', '$birthday', '$contact', '$address', '$barangay', '$email', '$password')";
-mysqli_error($conn);
+//mysqli_error($conn);
 	if (mysqli_query($conn, $sql)) {
 		//echo "New record created successfully";
 		$_SESSION['created_account'] = "true";
