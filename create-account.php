@@ -59,7 +59,8 @@ if ($fullname != "" && $birthday != "" && $contact != "" && $address != "" && $b
 			setcookie('password', $_POST['c-password'], time() + (86400 * 30), "/");
 		}
 		*/
-
+        // Wait for 2 seconds
+		sleep(3);
 		header("Location: index.php?");
 
 	} 
