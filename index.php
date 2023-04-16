@@ -87,7 +87,7 @@ else
                 <div data-w-id="0e89be99-6618-78ff-1008-44dff0c04a43" style="opacity:0" class="body-text-medium color-white hero-excerpt">Lorem ipsum dolor sit amet consectetur lementum sed sollicitudin auctor ac suspendisse.</div>
                 <div data-w-id="81c44aa8-8550-e495-bbab-7b8dec4a25fe" style="opacity:0" class="button rounded-button">
                   <div style="opacity:0" class="button-overlay"></div>
-                  <a aria-label="" href="#" class="button-link hero-btn">GET APPOINTMENT</a>
+                  <a aria-label="" href="contact-us.php" class="button-link hero-btn">GET APPOINTMENT</a>
                 </div>
               </div>
             </div>
