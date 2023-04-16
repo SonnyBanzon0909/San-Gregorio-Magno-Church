@@ -195,7 +195,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-radius: 50%;
   background-color: #B38600;
 }
+.textarea-wrapper
+{
+  width: 100%;
+  max-width: 100%;
+}
 .input-area {
+  width: 100% !important;
   font-family: 'Lato', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -207,7 +213,61 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   padding: 10px;
   outline: none;
 }
+.section-success {
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  display: none;
+  height: 100vh;
+  padding-right: 25px;
+  padding-left: 25px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+}
 
+.success-container {
+  max-width: 1400px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.success-wrapper {
+  display: flex;
+  min-width: 628px;
+  padding: 42px 25px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 20px 0 hsla(0, 0%, 44.7%, 0.3);
+}
+
+.msg-title {
+  margin-bottom: 42px;
+  font-family: Lato, sans-serif;
+  color: #b38600;
+  font-size: 32px;
+  line-height: 46px;
+  font-weight: 700;
+}
+
+.msg-excerpt {
+  max-width: 583px;
+  margin-bottom: 42px;
+  font-family: Lato, sans-serif;
+  color: #353535;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 400;
+  text-align: center;
+}
 </style> 
 
 </div>

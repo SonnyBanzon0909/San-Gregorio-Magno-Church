@@ -21,8 +21,8 @@
     <div class="footer-brand-wrapper">
       <div data-w-id="0070e048-3023-2eb5-4e69-91f82fdae24b" class="footer-brand-con">
         <div class="footer-brand-grid">
-          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae24d-2fdae237" href="#" class="footer-brand-link w-inline-block"><img src="images/Diyosesis-ng-Imus.png" loading="eager" alt="" class="footer-brand"></a>
-          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae24f-2fdae237" href="#" class="footer-brand-link w-inline-block"><img src="images/parokya-ni-San-Gregorio-Magno.png" loading="eager" alt="" class="footer-brand"></a>
+          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae24d-2fdae237" href="index.php" class="footer-brand-link w-inline-block"><img src="images/Diyosesis-ng-Imus.png" loading="eager" alt="" class="footer-brand"></a>
+          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae24f-2fdae237" href="index.php" class="footer-brand-link w-inline-block"><img src="images/parokya-ni-San-Gregorio-Magno.png" loading="eager" alt="" class="footer-brand"></a>
         </div>
         <div class="footer-title">Parokya ni San Gregorio Magno</div>
         <div class="footer-excerpt">Inocencio, Trece Martires City</div>
@@ -31,10 +31,10 @@
     <div class="footer-link-wrapper">
       <div data-w-id="0070e048-3023-2eb5-4e69-91f82fdae256" class="footer-link-grid">
         <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae257-2fdae237" href="index.php" aria-current="page" class="nav-link footer-link w--current">Home</a>
-        <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae259-2fdae237" href="about.html" class="nav-link footer-link">About</a>
-        <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae25b-2fdae237" href="services.html" class="nav-link footer-link">Services</a>
-        <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae25d-2fdae237" href="galleries.html" class="nav-link footer-link">Galleries</a>
-        <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae25f-2fdae237" href="contact-us.html" class="nav-link footer-link">Contact us</a>
+        <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae259-2fdae237" href="about.php" class="nav-link footer-link">About</a>
+        <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae25b-2fdae237" href="services.php" class="nav-link footer-link">Services</a>
+        <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae25d-2fdae237" href="galleries.php" class="nav-link footer-link">Galleries</a>
+        <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae25f-2fdae237" href="contact-us.php" class="nav-link footer-link">Contact us</a>
         <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae261-2fdae237" data-w-id="0070e048-3023-2eb5-4e69-91f82fdae261" href="#" class="nav-link footer-link login-btn sign-btn">Log in</a>
       </div>
     </div>
@@ -121,7 +121,7 @@
           <input type="text" placeholder="0" id="code4" class="code" maxlength="1">
         </div>
       </div>
-      <div class="verify-excerpt marg-bot-50">Didn’t receive the OTP? <a href="#" class="otp-span">Resend otp</a>
+      <div class="verify-excerpt marg-bot-50">Didn’t receive the OTP? <a href="#" class="otp-span" onclick="resend_otp()">Resend otp</a>
       </div>
       <div data-w-id="6dc8872f-5289-90b7-23c0-0449d393680c" class="button rounded-button">
         <div class="button-overlay"></div>
@@ -184,7 +184,7 @@
           <option value="Brgy. Inocencio">Brgy. Inocencio</option>
         </select><img src="images/down-chevron.svg" loading="lazy" alt="" class="select-icon"></div>
         <div class="input-con"><input type="email" class="input-field w-input" maxlength="256" name="edit-email-3" data-name="Edit Email 3" placeholder="Email" id="edit-email-3"></div>
-        <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d82-e8e75d62" class="already-text chnage-text">Change Password? <a href="#" class="login-link-span">Click here</a>
+        <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d82-e8e75d62" class="already-text chnage-text">Change Password? <a href="#" class="login-link-span" onclick="change_password()">Click here</a>
         </div>
         <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d86-e8e75d62" class="save-grid-wrapper">
           <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d87-e8e75d62" class="save-grid">
@@ -253,7 +253,15 @@
 
 <script type="text/javascript">
 
-    //$('#c-birthday').datepicker();
+ function resend_otp()
+ {
+
+ }
+
+ function change_password()
+ {
+  
+ }
 
   $(document).ready(function(){
 

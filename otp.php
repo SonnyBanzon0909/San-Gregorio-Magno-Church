@@ -25,9 +25,10 @@ $_SESSION['cr-email'] = $email;
 $_SESSION['cr-password'] = $password;
 
 
- 
+
 //$_SESSION['user_email'] = $email;
-$date_time = date("Y-m-d H:i:s");
+date_default_timezone_set('Asia/Manila');
+$date_time = date("Y-m-d h:i:s A"); // A for AM/PM indicator
 //Generate OTP
 $otp = mt_rand(1000, 9999);
 $_SESSION['date_time'] = $date_time;
@@ -65,7 +66,7 @@ mysqli_close($conn);
 
 
 
-  
+
 try {
 
     //Server settings
