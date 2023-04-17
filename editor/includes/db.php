@@ -1,6 +1,6 @@
 <?php
 
-$host = 'localhost';
+$host = 'corporate.viplus1.noc401.com';
 $port = '';
 $db = 'parokyan_san-gregorio-db';
 $user = 'parokyan_parokyan';
