@@ -1,6 +1,6 @@
 <?php
 
-$servername = "localhost";///162.213.210.29//corporate.viplus1.noc401.com
+$servername = "corporate.viplus1.noc401.com";///162.213.210.29//corporate.viplus1.noc401.com
 $username = "parokyan_parokyan";
 $password = "l)UKks28.Jp67H";
 $dbname = "parokyan_san_gregorio_db"; 
