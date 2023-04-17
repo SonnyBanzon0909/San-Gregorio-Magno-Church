@@ -23,6 +23,36 @@ else
 
 ?>
 
+  <?php
+
+  include "editor/includes/db.php";
+    
+    if(isset($_GET['id'])){
+    $id = $_GET['id'];
+
+
+    $query = "SELECT * FROM services_tbl WHERE id = $id";
+    $view_query = mysqli_query($connection, $query);
+
+    if(!$view_query){
+      die("QUERY FAILED". mysqli_error($connection));
+    }
+
+    while($row = mysqli_fetch_array($view_query)){
+      $id = $row["id"];
+      $icon = $row["icon"];
+      $title = $row["title"];
+      $content = $row["content"];
+      $button_text = $row["button_text"];
+      $button_link = $row["button_link"];
+      $photo = $row["photo"];
+      $status = $row["status"];
+    }
+  }
+
+  ?>
+
+
 <!DOCTYPE html><!--  Last Published: Mon Apr 10 2023 17:06:25 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="640de7f385f0c01e10b8448d" data-wf-site="640c46a109bfca551c61da47">
 <head>
@@ -74,21 +104,21 @@ else
   </div>
 
   <?php include 'partial/custom-css.html'; ?>
-  <?php include 'partial/navigation.html'; ?>
+  <?php include 'partial/navigation.php'; ?>
 
   <div class="section service-list-section wf-section">
     <div class="container">
       <div class="service-grid">
-        <div id="w-node-cc95783b-3085-abec-473b-0a5adcb1b426-10b8448d" class="service-content-wrapper"><img src="images/Baptism.png" loading="eager" style="opacity:0" data-w-id="450304ab-b6d2-6b3e-8f3f-71a6bf0f6459" alt="" class="service-logo service-logo-ins">
-          <h3 data-w-id="450304ab-b6d2-6b3e-8f3f-71a6bf0f645a" style="opacity:0" class="card-title service-card-title-ins">Baptism</h3>
+        <div id="w-node-cc95783b-3085-abec-473b-0a5adcb1b426-10b8448d" class="service-content-wrapper"><img src="editor/img/<?php echo $icon; ?>" loading="eager" style="opacity:0" data-w-id="450304ab-b6d2-6b3e-8f3f-71a6bf0f6459" alt="" class="service-logo service-logo-ins">
+          <h3 data-w-id="450304ab-b6d2-6b3e-8f3f-71a6bf0f645a" style="opacity:0" class="card-title service-card-title-ins"><?php echo $title; ?></h3>
           <div data-w-id="005a333c-4bd0-eb30-2457-819752abf00a" style="opacity:0" class="body-text-medium service-content w-richtext">
-            <p>Lorem ipsum dolor sit amet consectetur. Sit vel magna aliquet qui sitncs arcu. Ultricies mi sed massa pharetra. Sit sem in fringilla id nequ fa nijils Aliquet ullamcorper donec felis ultricies habitasse dictum nibh. justond fusce elementum egestas viverra lobortis ligula non. t convallis e tvbtgt convallis. Semper nullam a ut erat convallis eget mauris quis. Id sit odio pulscelerisque tristique varius montes. Hendrerit mauris jja,xncuakxbfk pharetratincidunt sit risus molestie lacus. Risus egestas mauris nisi  nsa laoreet est proin dignissim. At purus cras ut imperdiet in tellus nunc. da Commodo morbi massa nunc morbi proin eget aenean velit quisque. dv Lectus quisque nec risus urna rhoncus quisque.</p>
+            <p><?php echo $content; ?></p>
           </div>
           <div data-w-id="29031199-5904-0a46-abed-1313029a9425" style="opacity:0" class="button rounded-button">
             <div style="opacity:0" class="button-overlay"></div>
             <a aria-label="" href="contact-us.php" class="button-link">GET APPOINTMENT</a>
           </div>
-        </div><img src="images/baptism-thumbnail.jpg" loading="lazy" style="opacity:0" data-w-id="edc6fe87-fd79-59a6-745d-7a4cb0e7d263" id="w-node-edc6fe87-fd79-59a6-745d-7a4cb0e7d263-10b8448d" alt="" class="service-thumb">
+        </div><img src="editor/img/<?php echo $photo; ?>" loading="lazy" style="opacity:0" data-w-id="edc6fe87-fd79-59a6-745d-7a4cb0e7d263" id="w-node-edc6fe87-fd79-59a6-745d-7a4cb0e7d263-10b8448d" alt="" class="service-thumb">
       </div>
     </div>
   </div>

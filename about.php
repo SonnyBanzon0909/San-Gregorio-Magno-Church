@@ -1,4 +1,31 @@
  <?php 
+
+include "editor/includes/db.php";
+    $query = "SELECT * FROM about_tbl";
+    $view_query = mysqli_query($connection, $query);
+
+    if(!$view_query){
+      die("QUERY FAILED". mysqli_error($connection));
+    }
+
+    while($row = mysqli_fetch_array($view_query)){
+      $id = $row["id"];
+      $hero_header = $row["hero_header"];
+      $hero_subtext = $row["hero_subtext"];
+
+      $about_date = $row["about_date"];
+      $about_title = $row["about_title"];
+      $about_content = $row["about_content"];
+
+      $vision_title = $row["vision_title"];
+      $vision_content = $row["vision_content"];
+
+      $mission_title = $row["mission_title"];
+      $mission_content = $row["mission_content"];
+
+      $priests_title = $row["priests_title"];
+      $priests_subtext = $row["priests_subtext"];
+    }
 // Start the session
 session_start();
 
@@ -70,16 +97,16 @@ else
     <div class="container">
       <div class="header-wrapper abt-header-wrapper">
         <div class="header-content-con">
-          <h1 data-w-id="6698cd1b-f006-bba1-4176-25bcb462243b" style="opacity:0" class="header-title header-title-text">About Parokya ni San Gregorio Magno</h1>
-          <div data-w-id="6698cd1b-f006-bba1-4176-25bcb462243d" style="opacity:0" class="body-text-medium header-excerpt max-671">Parokya ni San Gregorio Magno is a newly erected parish of Diocese of Imus (Cavite). It is located at Barangay Inocencio, Trece Martires City, Cavite</div>
+          <h1 data-w-id="6698cd1b-f006-bba1-4176-25bcb462243b" style="opacity:0" class="header-title header-title-text"><?php echo $hero_header; ?></h1>
+          <div data-w-id="6698cd1b-f006-bba1-4176-25bcb462243d" style="opacity:0" class="body-text-medium header-excerpt max-671"><?php echo $hero_subtext; ?></div>
         </div>
       </div>
       <div class="abt-sticky-wrapper"><img src="images/parokya.jpg" loading="lazy" style="opacity:0" data-w-id="eaf2cd15-34f9-fd39-1d3f-e92771dc1e75" alt="" class="parokya-img">
         <div data-w-id="55009323-918f-1a08-2812-cfa3a29a3eb1" style="opacity:0" class="abt-content-wrapper">
-          <div class="abt-date"><strong>SEPTEMBER, 2018</strong></div>
-          <div class="abt-block-title"><strong>Our Church Was Open</strong></div>
+          <div class="abt-date"><strong><?php echo $about_date; ?></strong></div>
+          <div class="abt-block-title"><strong><?php echo $about_title; ?></strong></div>
           <div class="rich-text-block w-richtext">
-            <p>The City of Trece Martires is predominantly Roman Catholic covering about 91% of the total household population. Members of other religious affiliations share the meager percentage of the total population. An increase in catholic religion is attributed to the joint effort of the Parish Priests, Pastoral Communities, and Parishioners. An outreach program to evangelize and preach the word of God to all people is their primary objective. Its main Parish St Jude Thaddeus is catering the entire city for their spiritual needs. At present, there are about sixty five (65) subdivisions, four (4) big resettlement areas and three (3) AFP/PNP housing projects.</p>
+            <p><?php echo $about_content; ?></p>
           </div>
         </div>
       </div>
@@ -87,18 +114,18 @@ else
   </div>
 
   <?php include 'partial/custom-css.html'; ?>
-  <?php include 'partial/navigation.html'; ?>
+  <?php include 'partial/navigation.php'; ?>
 
 
   <div class="section vision-section wf-section">
     <div class="container">
-      <div data-w-id="c22253c3-c2ee-a42e-ae65-c6dc461329f0" style="opacity:0" class="vision-title">Our Vision</div>
-      <div data-w-id="7041dab3-be42-2241-181e-19a005849583" style="opacity:0" class="body-text-medium vision-excerpt max-135">maging sambayanang kristiyanong maka-diyos-makatao, makabuhay, makakalikasan at makabayan - mga alagad ni kristo at simbahan ng mga dukha na may pananagutan at pakikisangkot sa pinagpanibagong lipunan sa tulong ni maria, birhen del pilar.</div>
-      <div data-w-id="692d5a83-7c6b-6e72-a442-f9f1f090fdce" style="opacity:0" class="vision-title marg-top60">Our Mission</div>
-      <div data-w-id="a1767852-ec39-07a3-96c2-a3e77e30d7b8" style="opacity:0" class="body-text-medium vision-excerpt max-135">Lorem ipsum dolor sit amet consectetur. Sit vel magna aliquet qui sit arcu. Ultricies mi sed massa pharetra. Sit sem in fringilla id nequ fa Aliquet ullamcorper donec felis ultricies habitasse dictum nibh. justo fusce elementum egestas viverra lobortis ligula non. Semper nullam a ut erat convallis eget mauris quis. Id sit odio</div>
+      <div data-w-id="c22253c3-c2ee-a42e-ae65-c6dc461329f0" style="opacity:0" class="vision-title"><?php echo $vision_title; ?></div>
+      <div data-w-id="7041dab3-be42-2241-181e-19a005849583" style="opacity:0" class="body-text-medium vision-excerpt max-135"><?php echo $vision_content; ?></div>
+      <div data-w-id="692d5a83-7c6b-6e72-a442-f9f1f090fdce" style="opacity:0" class="vision-title marg-top60"><?php echo $mission_title; ?></div>
+      <div data-w-id="a1767852-ec39-07a3-96c2-a3e77e30d7b8" style="opacity:0" class="body-text-medium vision-excerpt max-135"><?php echo $mission_content; ?></div>
       <div class="priest-wrapper">
-        <div data-w-id="33758c25-3aeb-f311-0903-90ed3b8106ec" style="opacity:0" class="vision-title">Meet all the Priests</div>
-        <div data-w-id="6db1914b-68a4-7ee6-4375-7230eba020b4" style="opacity:0" class="body-text-medium vision-excerpt max-135">Lorem ipsum dolor sit amet consectetur. Curabitur erat morbi consequat sit duis vel varius posuere. Quis feugiat eu scelerisque etiam elementum mi nisl interdum.</div>
+        <div data-w-id="33758c25-3aeb-f311-0903-90ed3b8106ec" style="opacity:0" class="vision-title"><?php echo $priests_title; ?></div>
+        <div data-w-id="6db1914b-68a4-7ee6-4375-7230eba020b4" style="opacity:0" class="body-text-medium vision-excerpt max-135"><?php echo $priests_subtext; ?></div>
       </div>
       <div class="priest-list-wrapper">
         <div class="priest-list owl-carousel owl-theme">

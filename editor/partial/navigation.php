@@ -4,9 +4,9 @@
 <div class="section navigation wf-section">
   <div class="container">
     <div class="navigation-link-wrapper">
-      <a href="index.php" aria-current="page" class="brand w-inline-block w--current"><img src="images/Parokya-logo.png" loading="eager" alt="" class="brand-logo"></a>
+      <a href="index.php?filter=today" aria-current="page" class="brand w-inline-block w--current"><img src="images/Parokya-logo.png" loading="eager" alt="" class="brand-logo"></a>
       <div class="nav-links-grid desktop-nav-link-grid">
-        <a href="index.php" id="w-node-_14e56277-239e-cc10-6aba-00a1806977c3-806977bd" aria-current="page" class="nav-link w--current">Home</a>
+        <a href="home.php?source=update_homepage" id="w-node-_14e56277-239e-cc10-6aba-00a1806977c3-806977bd" aria-current="page" class="nav-link w--current">Home</a>
         <a href="about.php" id="w-node-_14e56277-239e-cc10-6aba-00a1806977c5-806977bd" class="nav-link">About</a>
         <div data-hover="false" data-delay="500" data-w-id="14e56277-239e-cc10-6aba-00a1806977c7" class="nav-dropdown w-dropdown">
           <div class="nav-dropdown-toggle w-dropdown-toggle">
@@ -14,42 +14,72 @@
           </div>
           <nav class="nav-drop-list w-dropdown-list">
             <div class="nav-droplist-wrapper">
-              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ce-806977bd" href="services.php" class="link">Baptism</a>
-              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977d0-806977bd" href="#" class="link">First Communion</a>
-              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977d2-806977bd" href="#" class="link">Confirmation</a>
-              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977d4-806977bd" href="#" class="link">Faith Formation</a>
-              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977d6-806977bd" href="#" class="link">Mass Wedding</a>
-              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977d8-806977bd" href="#" class="link">Blessings</a>
-              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977da-806977bd" href="#" class="link">Funeral Mass</a>
-              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977dc-806977bd" href="#" class="link">Request Certificate</a>
-              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977de-806977bd" href="#" class="link">Sick Call</a>
+              <?php 
+                $query = "SELECT * FROM services_tbl";
+                $select_all_services = mysqli_query($connection, $query);
+                while($row = mysqli_fetch_array($select_all_services)){
+                  $id = $row['id'];
+                  $title = $row['title'];
+
+                  echo '<a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ce-806977bd" href="services.php?source=services&id='.$id.'" class="link">'.$title.'</a>';
+
+                }
+                echo "</br>";
+                echo '<a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ce-806977bd" href="services.php?source=add_service" class="link">Add new service</a>';
+                echo '<a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ce-806977bd" href="services.php" class="link">Service list</a>';
+
+              ?>
             </div>
           </nav>
         </div>
+
         <div data-hover="false" data-delay="500" id="w-node-_14e56277-239e-cc10-6aba-00a1806977e0-806977bd" data-w-id="14e56277-239e-cc10-6aba-00a1806977e0" class="nav-dropdown w-dropdown">
           <div class="nav-dropdown-toggle w-dropdown-toggle">
             <div class="nav-link">Galleries</div><img src="images/down-icon.svg" loading="lazy" alt="" class="dropdown-icon">
           </div>
           <nav class="nav-drop-list w-dropdown-list">
             <div class="nav-droplist-wrapper gallery-droplist-wrapper">
-              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="galleries.php" class="link">VISITA IGLESIA</a>
-              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e9-806977bd" href="#" class="link">Renewal of Vows</a>
-              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977eb-806977bd" href="#" class="link">Panunuluyan 2022</a>
-              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ed-806977bd" href="#" class="link">Solemnity of Christ the King</a>
-              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ef-806977bd" href="#" class="link">Ministry of the Altar Server Investiture</a>
-              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977f1-806977bd" href="#" class="link">ALAB 2022</a>
-              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977f3-806977bd" href="#" class="link">WALK OF FAITH 2022</a>
-              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977f5-806977bd" href="#" class="link">Misa Concelebrada ...</a>
-              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977f7-806977bd" href="#" class="link">Banal na Misa Kapistahan ...</a>
-              <a id="w-node-dbe93e0a-392a-b0ac-7fe7-3a98ffc8b347-806977bd" href="#" class="link">KARAKOL 2022</a>
+              <?php 
+                $query = "SELECT * FROM gallery_tbl";
+                $select_all_gallery = mysqli_query($connection, $query);
+                while($row = mysqli_fetch_array($select_all_gallery)){
+                  $id = $row['id'];
+                  $title = $row['title'];
+
+                  echo '<a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="galleries.php?source=update_gallery&id='.$id.'" class="link">'.$title.'</a>';
+
+                }
+                echo "</br>";
+                echo '<a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ce-806977bd" href="galleries.php?source=add_gallery" class="link">Add new gallery</a>';
+                echo '<a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ce-806977bd" href="galleries.php" class="link">Gallery list</a>';
+
+              ?>
             </div>
           </nav>
         </div>
-        <a href="contact-us.php" id="w-node-_14e56277-239e-cc10-6aba-00a1806977f9-806977bd" class="nav-link">Contact us</a>
-        <a href="#" id="nav-login" data-w-id="14e56277-239e-cc10-6aba-00a1806977fb" class="nav-link login-btn sign-btn">Log in</a>
-        <div data-w-id="14e56277-239e-cc10-6aba-00a1806977fd" class="button rounded-button signup-btn">
+
+        <div data-hover="false" data-delay="500" id="w-node-_14e56277-239e-cc10-6aba-00a1806977e0-806977bd" data-w-id="14e56277-239e-cc10-6aba-00a1806977e0" class="nav-dropdown w-dropdown">
+          <div class="nav-dropdown-toggle w-dropdown-toggle">
+            <div class="nav-link">Others</div><img src="images/down-icon.svg" loading="lazy" alt="" class="dropdown-icon">
+          </div>
+          <nav class="nav-drop-list w-dropdown-list">
+            <div class="nav-droplist-wrapper gallery-droplist-wrapper">
+              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="announcement.php" class="link">Announcement</a>
+              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="moments.php" class="link">Moments</a>
+              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="users.php" class="link">Users</a>
+              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="users.php" class="link">Users</a>
+              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="users.php" class="link">Users</a>
+            </div>
+          </nav>
+        </div>
+
+        <a href="contact.php" id="w-node-_14e56277-239e-cc10-6aba-00a1806977f9-806977bd" class="nav-link">Contact us</a>
+
+        <!-- <a href="#" id="nav-login" data-w-id="14e56277-239e-cc10-6aba-00a1806977fb" class="nav-link login-btn sign-btn">Log in</a> -->
+
+        <div class="button rounded-button">
           <div class="button-overlay"></div>
-          <a aria-label="" href="#" class="button-link">Sign up</a>
+          <a aria-label="" href="includes/logout.php" class="button-link">Logout</a>
         </div>
         <div data-hover="false" data-delay="500" data-w-id="a3e29982-56b0-b8b9-18b8-0f02a2630aa4" class="dropdown w-dropdown profile">
           <div class="dropdown-toggle w-dropdown-toggle">
@@ -59,7 +89,7 @@
           </div>
           <nav class="dropdown-list w-dropdown-list">
             <div class="login-content-con">
-              <a href="status.php" class="login-link w-inline-block"><img src="images/Status.svg" loading="lazy" alt="" class="login-icon">
+              <a href="#" class="login-link w-inline-block"><img src="images/Status.svg" loading="lazy" alt="" class="login-icon">
                 <div class="login-text">Status</div>
               </a>
               <a href="#" class="login-link w-inline-block" id="log-out"><img src="images/log-out.svg" loading="lazy" alt="" class="login-icon">
@@ -124,7 +154,7 @@
       <a href="#" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4748-440d470d" data-w-id="cc8842c1-27e0-b9b5-b91f-d8b4440d4748" class="nav-link">Log in</a>
       <div data-w-id="cc8842c1-27e0-b9b5-b91f-d8b4440d474a" class="button rounded-button">
         <div class="button-overlay"></div>
-        <a aria-label="" href="#" class="button-link">Sign up</a>
+        <a aria-label="" href="includes/logout.php" class="button-link">Logout</a>
       </div>
     </div>
   </div>

@@ -9,8 +9,8 @@ $servername = "localhost";
 $username = "parokyan";
 $password = "l)UKks28.Jp67H";
 $dbname = "san-gregorio-db";
-*/
 
+*/
 
 
 // Create connection

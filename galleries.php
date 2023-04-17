@@ -21,6 +21,31 @@ else
 }
 
 
+   include "editor/includes/db.php";
+
+    if(isset($_GET['id'])){
+    $id = $_GET['id'];
+    $gall_id = $_GET['id'];
+
+
+
+    $query = "SELECT * FROM gallery_tbl WHERE id = $id";
+    $view_query = mysqli_query($connection, $query);
+
+    if(!$view_query){
+      die("QUERY FAILED". mysqli_error($connection));
+    }
+
+    while($row = mysqli_fetch_array($view_query)){
+      $id = $row["id"];
+      $title = $row["title"];
+      $gallery_date = $row["gallery_date"];
+      $details = $row["details"];
+    }
+  }
+
+
+
 ?>
 
 <!DOCTYPE html><!--  Last Published: Mon Apr 10 2023 17:06:25 GMT+0000 (Coordinated Universal Time)  -->
@@ -66,7 +91,7 @@ else
 <body>
 
   <?php include 'partial/custom-css.html'; ?>
-  <?php include 'partial/navigation.html'; ?>
+  <?php include 'partial/navigation.php'; ?>
 
 
   <div class="section header-section wf-section">
@@ -82,15 +107,36 @@ else
   <div class="section galery-list-section wf-section">
     <div class="container">
       <div class="gallery-title-wrapper">
-        <h2 data-w-id="97af9b72-b3a9-c363-2587-8ec441b953a7" style="opacity:0" class="block-title gallery-block-title">VISITA IGLESIA</h2>
-        <div data-w-id="b32c8281-cce3-60c9-6f76-debf1e4b9e78" style="opacity:0" class="date-text marg-bot-29">March 4, 2023</div>
-        <div data-w-id="3e3da1fe-ab13-9350-3b23-4991f7922bb7" style="opacity:0" class="body-text-medium gallery-excerpt">Lorem ipsum dolor sit amet consectetur. Cursus leo tempor vehicula aliquam quam eleifend neque amet nunc. Volutpat nulla praesent id sollicitudin. Ac et id aliquam urna lorem condimentum hendrerit. Ac risus habitant et aliquet ipsum dictum.</div>
+        <h2 data-w-id="97af9b72-b3a9-c363-2587-8ec441b953a7" style="opacity:0" class="block-title gallery-block-title"><?php echo $title; ?></h2>
+        <div data-w-id="b32c8281-cce3-60c9-6f76-debf1e4b9e78" style="opacity:0" class="date-text marg-bot-29"><?php echo $gallery_date; ?></div>
+        <div data-w-id="3e3da1fe-ab13-9350-3b23-4991f7922bb7" style="opacity:0" class="body-text-medium gallery-excerpt"><?php echo $details; ?></div>
       </div>
       <div data-w-id="ad2701cb-d5b2-2689-c4e9-c13075c7f954" style="opacity:0" class="moment-list-wrapper">
         <div class="moment-list owl-carousel owl-theme">
-          <div class="moment-item">
+          <?php
+
+            $query = "SELECT * FROM gallery_images_tbl WHERE gallery_id = $gall_id";
+            $view_query = mysqli_query($connection, $query);
+
+            if(!$view_query){
+              die("QUERY FAILED". mysqli_error($connection));
+            }
+
+            while($row = mysqli_fetch_array($view_query)){
+              $id = $row["id"];
+              $photo = $row["photo"];
+
+              echo '
+                  <div class="moment-item">
+                    <div class="moment-card"><img src="editor/img/'.$photo.'"></div>
+                  </div>
+              ';
+            }
+
+          ?>
+          <!-- <div class="moment-item">
             <div class="moment-card"></div>
-          </div>
+          </div> -->
         </div>
       </div>
       <div data-w-id="039392ec-d7f3-61e9-7b3f-c4e567799218" style="opacity:0" class="gallery-dot-container-wrapper">

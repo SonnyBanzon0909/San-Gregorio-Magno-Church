@@ -1,0 +1,193 @@
+  <div class="custom-css w-embed">
+    <style>
+      /*CUSTOM CSS*/
+      h1,h2,h3,h4,h5,h6
+      {
+       padding: 0;
+       margin: 0;
+     }
+     .richtext ul li::marker
+     {
+       font-size: 20px;
+       color: green;
+     }
+     /*FOR Removing Select Icon*/
+     select 
+     {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      text-indent: 1px;
+      text-overflow: '';
+    }
+    
+    .select-icon, .calendar
+    {
+      pointer-events:none;
+    }
+    .underline-text, .cta-link ,.social-text
+    {
+      overflow: hidden;
+      position: relative;
+    }
+    .underline-text::before , .cta-link::before, .social-text::before
+    {
+     content: "";
+     position: absolute;
+     top: auto;
+     left: auto;
+     right: auto;
+     bottom:0;
+     width: 100%;
+     height: 2px;
+     background-color: #52070B;
+     transition: all .5s;
+     transform: translateX(-110%);
+   }
+   .cta-link::before
+   {
+     background-color: #100A0A;
+     height: 1px;
+   }
+   .underline-text:hover::before , .cta-link:hover::before, .social-text:hover::before
+   {
+     transform: translateX(0);
+   }
+   .home-service-list.owl-carousel .owl-item img
+   {
+     width: auto;
+   }
+   .service-dot-container .owl-dot, .announce-dot-container .owl-dot, .gallery-dot-container .owl-dot
+   {
+     width:10px;
+     height: 10px;
+     background-color: #C7C6B8;
+     border-radius: 100%;
+     margin: 0 5px;
+     padding:0px;
+   }
+   .service-dot-container .owl-dot.active, .announce-dot-container .owl-dot.active, .gallery-dot-container .owl-dot.active
+   {
+    background-color: #9FA28C;
+  }
+  .moment-list.owl-carousel .owl-item:nth-child(even)
+  {
+   padding-top: 40px;
+ }
+ .cta-link
+ {
+   word-break: break-all;
+ }
+ /* For Chrome and Safari */
+ .table-container::-webkit-scrollbar 
+ {
+  width: 5px; /* width of the scrollbar */
+  background-color: #CDCDCD; /* background color of the scrollbar */
+}
+.table-container::-webkit-scrollbar-thumb 
+{
+  background-color: #807D7D; /* color of the thumb */
+}
+/* For Firefox and Microsoft Edge */
+.table-container::-moz-scrollbar 
+{
+  width: 5px; /* width of the scrollbar */
+  background-color: #CDCDCD; /* background color of the scrollbar */
+  border-top-right-radius: 10px;
+}
+.table-container::-moz-scrollbar-thumb 
+{
+  background-color: #807D7D; /* color of the thumb */
+}
+.code 
+{
+  width: 56px;
+  height: 51px;
+  margin-bottom: 0px;
+  padding: 16px;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px 0 rgba(16, 10, 10, 0.12);
+  text-align: center;
+  color: #000000;
+}
+@media screen and (max-width: 767px)
+{
+  .code 
+  {
+    width: 45px !important;
+    height: 45px !important;
+    padding: 12px !important;
+  }
+}
+.code-con 
+{
+  display: -ms-grid;
+  display: grid;
+  margin: 15px;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: auto;
+  grid-template-rows: auto;
+}
+.already-text a
+{
+  color: #52070b;
+  text-decoration: none;
+}
+.rotate-arrow 
+{
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.pagination .page-btn, .next-btn, .prev-btn, .ellipsis
+{
+  background-color: #EFEFEF;
+  padding: 9px 12px;
+  margin: 7px;
+  font-family: Lato, sans-serif;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 400;
+  text-align: center;
+}
+.pagination .page-btn.active-page
+{
+	background-color: #D3D3D3;
+}
+.option
+{
+  color: #100A0A;
+}
+.option:hover
+{
+  color: #fff !important;
+  background-color: #8F0F16 !important;
+}
+.border-bot-right, .border-top-left
+{
+	pointer-events: none;
+}
+/* For Firefox */
+input[type="date"]::-moz-calendar-picker-indicator {
+  display: none;
+}
+
+/* For Edge and IE */
+input[type="date"]::-ms-clear,
+input[type="date"]::-ms-reveal {
+  display: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+</style> 
+
+</div>

@@ -20,6 +20,34 @@ else
   
 }
 
+include "editor/includes/db.php";
+
+    $query = "SELECT * FROM contact_tbl";
+    $view_query = mysqli_query($connection, $query);
+
+    if(!$view_query){
+      die("QUERY FAILED". mysqli_error($connection));
+    }
+
+    while($row = mysqli_fetch_array($view_query)){
+      $id = $row["id"];
+      $hero_header = $row["hero_header"];
+      $hero_subtext = $row["hero_subtext"];
+
+      $touch_overline = $row["touch_overline"];
+      $touch_header = $row["touch_header"];
+      $touch_details = $row["touch_details"];
+
+      $contact_address = $row["contact_address"];
+      $contact_number = $row["contact_number"];
+
+      $contact_email = $row["contact_email"];
+      $office_1 = $row["office_1"];
+
+      $office_2 = $row["office_2"];
+      $office_3 = $row["office_3"];
+    }
+
 
 ?>
 
@@ -64,15 +92,15 @@ else
   <body>
 
     <?php include 'partial/custom-css.html'; ?>
-    <?php include 'partial/navigation.html'; ?>
+    <?php include 'partial/navigation.php'; ?>
 
 
     <div class="section header-section wf-section">
       <div class="container">
         <div class="header-wrapper">
           <div class="header-content-con">
-            <h1 data-w-id="fd9158a3-4684-2a95-3384-9ae2303ed829" style="opacity:0" class="header-title header-title-text">Contact us</h1>
-            <div data-w-id="fd9158a3-4684-2a95-3384-9ae2303ed82b" style="opacity:0" class="body-text-medium header-excerpt">Here where to find us</div>
+            <h1 data-w-id="fd9158a3-4684-2a95-3384-9ae2303ed829" style="opacity:0" class="header-title header-title-text"><?php echo $hero_header; ?></h1>
+            <div data-w-id="fd9158a3-4684-2a95-3384-9ae2303ed82b" style="opacity:0" class="body-text-medium header-excerpt"><?php echo $hero_subtext; ?></div>
           </div>
         </div>
       </div>
@@ -82,9 +110,9 @@ else
         <div class="form-grid">
           <div id="w-node-_4858ad87-d132-f41c-c2ea-557bd2f0d853-f1521fbf" class="get-intouch-wrapper">
             <div data-w-id="694e3e1d-164a-a0e1-0e9b-9c92061e54f6" style="opacity:0" class="touch-title-wrapper">
-              <div class="touch-overline">LETS GET IN TOUCH</div>
-              <div class="needs-title">Let us know what are your needs</div>
-              <div class="touch-excerpt">Lorem ipsum dolor sit amet consectetur. At sagittis urna nec donec augue. Nunc nec arcu tellus et sit fermentum cras luctus. Hac lorem massa turpis quis enim. Quis neque fermentum lectus sed felis sollicitudin ac.</div>
+              <div class="touch-overline"><?php echo $touch_overline; ?></div>
+              <div class="needs-title"><?php echo $touch_header; ?></div>
+              <div class="touch-excerpt">L<?php echo $touch_details; ?></div>
               <div class="line-wrapper">
                 <div class="line"></div>
               </div>
@@ -93,20 +121,20 @@ else
               <div class="social-block-title marg-bot-30">Trece Martires</div>
               <div class="social-wrapper marg-bot-33">
                 <div class="social-con"><img src="images/location.svg" loading="lazy" alt="" class="social-icon">
-                  <a href="https://www.google.com/maps/place/San+Gregorio+Magno+Parish/@14.2493418,120.876876,17z/data=!3m1!4b1!4m6!3m5!1s0x33bd81744b783deb:0x59051579abb634d9!8m2!3d14.2493366!4d120.8790647!16s%2Fg%2F11f62sthsb" target="_blank" class="social-text">Bgry. Inocencio, Trece Martires City, Cavite</a>
+                  <a href="https://www.google.com/maps/place/San+Gregorio+Magno+Parish/@14.2493418,120.876876,17z/data=!3m1!4b1!4m6!3m5!1s0x33bd81744b783deb:0x59051579abb634d9!8m2!3d14.2493366!4d120.8790647!16s%2Fg%2F11f62sthsb" target="_blank" class="social-text"><?php echo $contact_address; ?></a>
                 </div>
                 <div class="social-con"><img src="images/phone.svg" loading="lazy" alt="" class="social-icon">
-                  <a href="http://+0 000 000 0000" class="social-text">+0 000 000 0000</a>
+                  <a href="http://+0 000 000 0000" class="social-text"><?php echo $contact_number; ?></a>
                 </div>
                 <div class="social-con"><img src="images/email.svg" loading="lazy" alt="" class="social-icon">
-                  <a href="mailto:sample000@gmail.com" class="social-text">sample000@gmail.com</a>
+                  <a href="mailto:sample000@gmail.com" class="social-text"><?php echo $contact_email; ?></a>
                 </div>
               </div>
               <div class="social-block-title marg-bot-30">Office Hours</div>
               <div class="office-time-wrapper">
-                <div id="w-node-_3868c652-b5fe-6ea0-2c9f-5f574048dea3-f1521fbf" class="social-office-time">No Office - Monday</div>
-                <div id="w-node-_485fc9ee-8cd4-44c6-f4be-f934a4f71d4c-f1521fbf" class="social-office-time">9:00 am to 5:00 pm - Tuesday to Saturday</div>
-                <div id="w-node-aa6b6196-351a-8de0-aab5-443e58c2f757-f1521fbf" class="social-office-time">8:00 am to 12 noon - Sunday</div>
+                <div id="w-node-_3868c652-b5fe-6ea0-2c9f-5f574048dea3-f1521fbf" class="social-office-time"><?php echo $office_1; ?></div>
+                <div id="w-node-_485fc9ee-8cd4-44c6-f4be-f934a4f71d4c-f1521fbf" class="social-office-time"><?php echo $office_2; ?></div>
+                <div id="w-node-aa6b6196-351a-8de0-aab5-443e58c2f757-f1521fbf" class="social-office-time"><?php echo $office_3; ?></div>
               </div>
             </div>
           </div>
