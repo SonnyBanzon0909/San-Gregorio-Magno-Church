@@ -2,8 +2,8 @@
 
 $host = 'localhost';
 $port = '';
-$db = 'parokyan_san-gregorio-db';
-$user = 'parokyan_parokyan';
+$db = 'san-gregorio-db';
+$user = 'parokyan';
 $pass = 'l)UKks28.Jp67H';
 
 

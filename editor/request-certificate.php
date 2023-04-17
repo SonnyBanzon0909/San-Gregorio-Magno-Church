@@ -74,7 +74,7 @@ else
     </div>
 
     <?php include '../partial/custom-css.html'; ?>
-    <?php include '../partial/navigation.html'; ?>
+    <?php include '../partial/navigation.php'; ?>
 
     <div class="section status-section wf-section">
       <div class="container">

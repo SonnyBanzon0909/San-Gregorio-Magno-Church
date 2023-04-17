@@ -64,7 +64,7 @@ else
   <body>
 
    <?php include '../partial/custom-css.html'; ?>
-   <?php include '../partial/navigation.html'; ?>
+   <?php include '../partial/navigation.php'; ?>
 
 
    <div class="section header-section wf-section">
