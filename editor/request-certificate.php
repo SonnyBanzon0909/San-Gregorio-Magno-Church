@@ -445,54 +445,8 @@ function setActivePage(pageBtn) {
 }
  
 function loadPrint() 
-{
-     // Get the current values of all four select boxes and the search input
-  var gender = $("#gender").val();
-  var year = $("#year").val();
-  var barangay = $("#barangay").val();
-  var month = $("#month").val();
-  var name = $("#search").val();
-
-    // Send an AJAX request to the server-side PHP script
-  $.ajax({
-      url: "loadprint.php", // Replace with the URL of your PHP script
-      method: "POST",
-      data: {
-        gender: gender,
-        year: year,
-        barangay: barangay,
-        month: month,
-        name: name
-      },
-
-      success: function(response) {
-        // Handle the response from the PHP script
-        // For example, you could update the contents of a <div> element with the response data
-        if(response==='success')
-        {
-          window.print();
-        }
-
-      },
-      error: function(xhr, textStatus, errorThrown) {
-        // Handle any errors that occur during the AJAX request
-        console.log("Error: " + errorThrown);
-      }
-    });
-
-
-var domain = window.location.hostname;
-
-if (domain === 'localhost') {
-    domain = 'http://localhost/san-gregorio-magno-church/editor/requested-certificates-list.xlsx';
-} else {
-    domain = "http://parokya-ni-san-gregorio-magno.com/editor/requested-certificates-list.xlsx";
-}
-
-window.open(domain, '_blank');
-
-
-
+{ 
+window.location.href = 'path/to/php/file.php';
 }
 
 
