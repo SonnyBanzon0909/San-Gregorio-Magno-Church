@@ -268,7 +268,7 @@
         url: "update-password.php",
         data: { name: name, address: address, password: password },
         success: function(data) {
-          if (data === 'success') {
+          if (data.trim() === 'success') {
           // Display alert message
             alert('Update successful');
           // Redirect to index.html
