@@ -318,9 +318,9 @@
     //$(".edit-wrapper").hide();
     
   // Show only the edit wrapper inside the current clicked edit button wrapper
-    
+    var ids = "#"+s;
 
-    $("#"+s).css("display","flex !important");
+    $(ids).css("display","flex !important");
     
 
   }
