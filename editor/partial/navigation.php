@@ -68,7 +68,7 @@
               <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="moments.php" class="link">Moments</a>
               <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="request-certificate.php" class="link">Request Certificate</a>
               <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="services-report.php" class="link">Services Report</a>
-              <!-- <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="users.php" class="link">Users</a> -->
+              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="priests.php" class="link">Priests</a>
             </div>
           </nav>
         </div>
