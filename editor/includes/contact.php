@@ -140,7 +140,7 @@ if(isset($_POST['update_homepage'])){
               <div class="field-container">
                 <h4>Trece Martires</h4>
                 <div class="field-wrapper">
-                  <input type="text" class="input-field w-input"  name="contact_address" id="office_1" value="<?php echo $$contact_address; ?>">
+                  <input type="text" class="input-field w-input"  name="contact_address" id="office_1" value="<?php echo $contact_address; ?>">
                 </div>
                 <div class="field-wrapper">
                   <input type="text" class="input-field w-input"  name="contact_number" id="office_2" value="<?php echo $contact_number; ?>">
