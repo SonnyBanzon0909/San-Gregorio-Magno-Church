@@ -285,6 +285,7 @@ else
         dots: true,
         loop: true,
         dotsContainer: ".service-dot-container",
+        autoplay:true,
         autoplayTimeout: 6000,
         smartSpeed: 1000,
         fluidSpeed: 1000,
