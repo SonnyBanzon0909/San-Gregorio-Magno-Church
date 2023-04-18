@@ -264,7 +264,7 @@
 
     // Send AJAX request to update the data
       $.ajax({
-        type: "POST",
+        type: "GET",
         url: "update-password.php",
         data: { name: name, address: address, password: password },
         success: function(data) {
