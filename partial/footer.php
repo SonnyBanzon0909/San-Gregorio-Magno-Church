@@ -136,7 +136,7 @@
     <div class="w-form">
 
 
-      <form id="wf-form-login" name="wf-form-login" data-name="login" method="get" class="login-form" action="update-password.php">
+      <form id="change-form" name="wf-form-login" data-name="login" method="get" class="login-form" action="">
 
         <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="change-name" data-name="change-name" placeholder="Full Name" id="change-name"></div>
 
@@ -254,267 +254,301 @@
 
 <script type="text/javascript">
 
-$("#update-button").click(function(){
+  $(document).ready(function() {
+  // Handle form submission
+    $('#change-form').submit(function(e) {
+      e.preventDefault();
+      var name = $('#change-name').val();
+      var address = $('#change-address').val();
+      var password = $('#change-password').val();
+
+    // Send AJAX request to update the data
+      $.ajax({
+        type: "POST",
+        url: "update-password.php",
+        data: { name: name, address: address, password: password },
+        success: function(data) {
+          if (data === 'success') {
+          // Display alert message
+            alert('Update successful');
+          // Redirect to index.html
+            window.location.href = 'index.php';
+          } else {
+          // Display error message
+            alert('Update failed');
+          }
+        },
+        error: function() {
+        // Display error message
+          alert('Update failed');
+        }
+      });
+    });
+  });
+
+
+
+  $("#update-button").click(function(){
   //console.log("Change Pass");
 
 
-$('#change-section').css({
-  display: "flex",
-  opacity: 1
-});
-
-
-  
-});
-
-
- function resend_otp()
- {
-  const name = document.querySelector('#c-fullname').value;
-  const birthday = document.querySelector('#c-birthday').value;
-  const contact = document.querySelector('#c-contact').value;
-  const address = document.querySelector('#c-address').value;
-  const barangay = document.querySelector('#c-barangay').value;
-  const email = document.querySelector('#c-email').value;
-  const password = document.querySelector('#c-password').value;
-
-  $("#resend_text").text("We've just sent a new OTP to your email address.");
-
-  const xhr = new XMLHttpRequest();
-  xhr.open('POST', 'otp.php');
-  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-  xhr.onload = () => {
-    if (xhr.status === 200) {
-        //const output = document.querySelector('#output');
-        //output.innerHTML = xhr.responseText;
-        //alert(xhr.statusText+" : success");
-    } else {
-      console.error('Error:', xhr.statusText);
-    }
-  };
-  xhr.send('name=' + encodeURIComponent(name) + '&birthday=' + encodeURIComponent(birthday) + '&contact=' + encodeURIComponent(contact) + '&address=' + encodeURIComponent(address) + '&barangay=' + encodeURIComponent(barangay) + '&email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password));
-
-}
-
-function change_password()
-{
-
-}
-
-$(document).ready(function(){
-
-
-
-  $(".create-field").each( function(q){
-
-
-
-        // Disable submit button if any field is empty
-    var submitButton = $('.create-btn');
-    var formInputs = $(this);
-    formInputs.on("keypress", function(event) {
-      if(event.keyCode === 13 && $(this).val().length === 0) {
-        event.preventDefault();
-      }
-      submitButton.prop('disabled', $('.username-input').val() === '' || $('.password-input').val() === '' || $('.email-input').val() === '');
+    $('#change-section').css({
+      display: "flex",
+      opacity: 1
     });
 
 
 
   });
 
-});
-function callCreate(){
 
+  function resend_otp()
+  {
+    const name = document.querySelector('#c-fullname').value;
+    const birthday = document.querySelector('#c-birthday').value;
+    const contact = document.querySelector('#c-contact').value;
+    const address = document.querySelector('#c-address').value;
+    const barangay = document.querySelector('#c-barangay').value;
+    const email = document.querySelector('#c-email').value;
+    const password = document.querySelector('#c-password').value;
 
-  const name = document.querySelector('#c-fullname').value;
-  const birthday = document.querySelector('#c-birthday').value;
-  const contact = document.querySelector('#c-contact').value;
-  const address = document.querySelector('#c-address').value;
-  const barangay = document.querySelector('#c-barangay').value;
-  const email = document.querySelector('#c-email').value;
-  const password = document.querySelector('#c-password').value;
+    $("#resend_text").text("We've just sent a new OTP to your email address.");
 
-  const xhr = new XMLHttpRequest();
-  xhr.open('POST', 'create-account.php');
-  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-  xhr.onload = () => {
-    if (xhr.status === 200) {
-      if(xhr.responseText==='success')
-      {
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'otp.php');
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.onload = () => {
+      if (xhr.status === 200) {
         //const output = document.querySelector('#output');
         //output.innerHTML = xhr.responseText;
-        alert("Registration successful");
-        window.location.href = 'index.php';
+        //alert(xhr.statusText+" : success");
+      } else {
+        console.error('Error:', xhr.statusText);
       }
+    };
+    xhr.send('name=' + encodeURIComponent(name) + '&birthday=' + encodeURIComponent(birthday) + '&contact=' + encodeURIComponent(contact) + '&address=' + encodeURIComponent(address) + '&barangay=' + encodeURIComponent(barangay) + '&email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password));
 
-    } else {
-      console.error('Error:', xhr.statusText);
-    }
-  };
-  xhr.send('name=' + encodeURIComponent(name) + '&birthday=' + encodeURIComponent(birthday) + '&contact=' + encodeURIComponent(contact) + '&address=' + encodeURIComponent(address) + '&barangay=' + encodeURIComponent(barangay) + '&email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password));
+  }
+
+  function change_password()
+  {
+
+  }
+
+  $(document).ready(function(){
 
 
-}
 
-function verify()
-{
+    $(".create-field").each( function(q){
 
-  const code1 = document.getElementById('code1').value;
-  const code2 = document.getElementById('code2').value;
-  const code3 = document.getElementById('code3').value;
-  const code4 = document.getElementById('code4').value;
-  const combinedCode = code1 + code2 + code3 + code4;
-  const email = document.querySelector('#c-email').value;
 
-  const xhr = new XMLHttpRequest();
-  xhr.open('POST', 'verify.php');
-  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-  xhr.onload = () => {
-    if (xhr.status === 200) {
-      alert(xhr.responseText);
-      if (xhr.responseText.trim()=='success') 
-      {
-        callCreate();
+
+        // Disable submit button if any field is empty
+      var submitButton = $('.create-btn');
+      var formInputs = $(this);
+      formInputs.on("keypress", function(event) {
+        if(event.keyCode === 13 && $(this).val().length === 0) {
+          event.preventDefault();
+        }
+        submitButton.prop('disabled', $('.username-input').val() === '' || $('.password-input').val() === '' || $('.email-input').val() === '');
+      });
+
+
+
+    });
+
+  });
+  function callCreate(){
+
+
+    const name = document.querySelector('#c-fullname').value;
+    const birthday = document.querySelector('#c-birthday').value;
+    const contact = document.querySelector('#c-contact').value;
+    const address = document.querySelector('#c-address').value;
+    const barangay = document.querySelector('#c-barangay').value;
+    const email = document.querySelector('#c-email').value;
+    const password = document.querySelector('#c-password').value;
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'create-account.php');
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.onload = () => {
+      if (xhr.status === 200) {
+        if(xhr.responseText==='success')
+        {
+        //const output = document.querySelector('#output');
+        //output.innerHTML = xhr.responseText;
+          alert("Registration successful");
+          window.location.href = 'index.php';
+        }
+
+      } else {
+        console.error('Error:', xhr.statusText);
       }
-      else
-      {
-        alert("Invalid OTP");
-      }
+    };
+    xhr.send('name=' + encodeURIComponent(name) + '&birthday=' + encodeURIComponent(birthday) + '&contact=' + encodeURIComponent(contact) + '&address=' + encodeURIComponent(address) + '&barangay=' + encodeURIComponent(barangay) + '&email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password));
+
+
+  }
+
+  function verify()
+  {
+
+    const code1 = document.getElementById('code1').value;
+    const code2 = document.getElementById('code2').value;
+    const code3 = document.getElementById('code3').value;
+    const code4 = document.getElementById('code4').value;
+    const combinedCode = code1 + code2 + code3 + code4;
+    const email = document.querySelector('#c-email').value;
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'verify.php');
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.onload = () => {
+      if (xhr.status === 200) {
+        alert(xhr.responseText);
+        if (xhr.responseText.trim()=='success') 
+        {
+          callCreate();
+        }
+        else
+        {
+          alert("Invalid OTP");
+        }
         //const output = document.querySelector('#output');
         //output.innerHTML = xhr.responseText;
         //alert(xhr.statusText+" : success");
         //window.location.href = 'index.php?success'; //Turn off when session is okay
 
-      
 
 
 
-    } else {
+
+      } else {
         //console.error('Error:', xhr.statusText);
-    }
-  };
-  xhr.send('email=' + encodeURIComponent(email) + '&otp=' + encodeURIComponent(combinedCode));
+      }
+    };
+    xhr.send('email=' + encodeURIComponent(email) + '&otp=' + encodeURIComponent(combinedCode));
 
-}
+  }
 
-function checkEmail() {
-  $(document).ready(function(){
+  function checkEmail() {
+    $(document).ready(function(){
 
-    var email = document.getElementById("c-email").value;
-    if(email.trim() != "")
-    {
+      var email = document.getElementById("c-email").value;
+      if(email.trim() != "")
+      {
 
-      $("#email-status").css("display","block");
-      var xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-          document.getElementById("email-status").innerHTML = xhr.responseText;
-          var avail_email = xhr.responseText;
+        $("#email-status").css("display","block");
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            document.getElementById("email-status").innerHTML = xhr.responseText;
+            var avail_email = xhr.responseText;
             //console.log(xhr.responseText);
-          if(avail_email=="<span style='color: green;'>Email is available</span>")
-          {
-            $("#create-btn").css("pointer-events","auto");
+            if(avail_email=="<span style='color: green;'>Email is available</span>")
+            {
+              $("#create-btn").css("pointer-events","auto");
           //console.log(avail_email);
-          }
-          else
-          {
-            $("#create-btn").css("pointer-events","none");
+            }
+            else
+            {
+              $("#create-btn").css("pointer-events","none");
           //console.log(avail_email);
+            }
           }
-        }
-      };
-      xhr.open("POST", "check_email.php", true);
-      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xhr.send("email=" + email);
+        };
+        xhr.open("POST", "check_email.php", true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.send("email=" + email);
 
 
 
-    }
-    else
-    {
-      $("#email-status").css("display","none");
-    }
-  });    
-}
+      }
+      else
+      {
+        $("#email-status").css("display","none");
+      }
+    });    
+  }
 
 
-function create(){
+  function create(){
 
-  $(".create-section").css("display","none");
-  $(".create-section").css("opacity","0");
+    $(".create-section").css("display","none");
+    $(".create-section").css("opacity","0");
 
-  $(".verify-section").css("display","flex");
-  $(".verify-section").css("opacity","1");
+    $(".verify-section").css("display","flex");
+    $(".verify-section").css("opacity","1");
 
 
-  const name = document.querySelector('#c-fullname').value;
-  const birthday = document.querySelector('#c-birthday').value;
-  const contact = document.querySelector('#c-contact').value;
-  const address = document.querySelector('#c-address').value;
-  const barangay = document.querySelector('#c-barangay').value;
-  const email = document.querySelector('#c-email').value;
-  const password = document.querySelector('#c-password').value;
+    const name = document.querySelector('#c-fullname').value;
+    const birthday = document.querySelector('#c-birthday').value;
+    const contact = document.querySelector('#c-contact').value;
+    const address = document.querySelector('#c-address').value;
+    const barangay = document.querySelector('#c-barangay').value;
+    const email = document.querySelector('#c-email').value;
+    const password = document.querySelector('#c-password').value;
 
-  const xhr = new XMLHttpRequest();
-  xhr.open('POST', 'otp.php');
-  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-  xhr.onload = () => {
-    if (xhr.status === 200) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'otp.php');
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.onload = () => {
+      if (xhr.status === 200) {
         //const output = document.querySelector('#output');
         //output.innerHTML = xhr.responseText;
         //alert(xhr.statusText+" : success");
-    } else {
-      console.error('Error:', xhr.statusText);
-    }
-  };
-  xhr.send('name=' + encodeURIComponent(name) + '&birthday=' + encodeURIComponent(birthday) + '&contact=' + encodeURIComponent(contact) + '&address=' + encodeURIComponent(address) + '&barangay=' + encodeURIComponent(barangay) + '&email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password));
+      } else {
+        console.error('Error:', xhr.statusText);
+      }
+    };
+    xhr.send('name=' + encodeURIComponent(name) + '&birthday=' + encodeURIComponent(birthday) + '&contact=' + encodeURIComponent(contact) + '&address=' + encodeURIComponent(address) + '&barangay=' + encodeURIComponent(barangay) + '&email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password));
 
-}
+  }
 
-function login() {
+  function login() {
   // Retrieve the email and password from the form
-  var email = document.getElementById('l-email').value;
-  var password = document.getElementById('l-password').value;
+    var email = document.getElementById('l-email').value;
+    var password = document.getElementById('l-password').value;
 
   // Create an AJAX request
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'login.php', true);
-  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === XMLHttpRequest.DONE) {
-      if (xhr.status === 200) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'login.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
 
 //alert(xhr.responseText + " asasa");
         // Check if the login was successful
-        if (xhr.responseText.trim() === 'success') {
+          if (xhr.responseText.trim() === 'success') {
           // Redirect to the index page
 
-          window.location.href = 'index.php';
-        } 
-        else 
-        {
+            window.location.href = 'index.php';
+          } 
+          else 
+          {
           // Display an error message
 
+            $("#error-message").css("display","block");
+            document.getElementById('error-message').textContent = 'Invalid email or password.';
+          }
+        }
+        else 
+        {
+        // Display an error message
           $("#error-message").css("display","block");
-          document.getElementById('error-message').textContent = 'Invalid email or password.';
+          document.getElementById('error-message').textContent = 'An error occurred.';
         }
       }
-      else 
-      {
-        // Display an error message
-        $("#error-message").css("display","block");
-        document.getElementById('error-message').textContent = 'An error occurred.';
-      }
-    }
-  };
+    };
 
   // Send the AJAX request with the email and password data
-  xhr.send('l-email=' + encodeURIComponent(email) + '&l-password=' + encodeURIComponent(password));
+    xhr.send('l-email=' + encodeURIComponent(email) + '&l-password=' + encodeURIComponent(password));
 
   // Prevent the form from submitting
-  return false;
-}
+    return false;
+  }
 
 </script>
 
