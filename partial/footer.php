@@ -406,7 +406,7 @@
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onload = () => {
       if (xhr.status === 200) {
-        alert(xhr.responseText);
+        //alert(xhr.responseText);
         if (xhr.responseText.trim()=='success') 
         {
           callCreate();
