@@ -1,7 +1,7 @@
  <?php 
 // Start the session
  session_start();
-include "includes/db.php";
+ include "includes/db.php";
 // Check if the session variable is set and display the email address
 
 //  if(isset($_SESSION['user_email'])) 
@@ -17,15 +17,15 @@ include "includes/db.php";
 // else
 // {
 //   $email = "";
-  
+ 
 // }
 
 
-?>
+ ?>
 
-<!DOCTYPE html><!--  Last Published: Mon Apr 10 2023 17:06:25 GMT+0000 (Coordinated Universal Time)  -->
-<html data-wf-page="64319b7a9d91c60f6fbcb9d9" data-wf-site="640c46a109bfca551c61da47">
-<head>
+ <!DOCTYPE html><!--  Last Published: Mon Apr 10 2023 17:06:25 GMT+0000 (Coordinated Universal Time)  -->
+ <html data-wf-page="64319b7a9d91c60f6fbcb9d9" data-wf-site="640c46a109bfca551c61da47">
+ <head>
   <meta charset="utf-8">
   <title>Request Certificate</title>
   <meta content="Request Certificate" property="og:title">
@@ -226,21 +226,21 @@ include "includes/db.php";
           text-decoration: underline;
         }
       </style>
-     <table id="myTable">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Gender</th>
-          <th>Barangay</th>
-          <th>Age</th>
-          <th>Date</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody id="result">
+      <table id="myTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Barangay</th>
+            <th>Age</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="result">
 
-      </tbody>
-    </table>
+        </tbody>
+      </table>
     </div>
   </div>
   <div data-w-id="0853b24f-7720-ae28-225f-1186ba5f3c1f" style="opacity:0" class="page-wrapper">
@@ -306,12 +306,15 @@ include "includes/db.php";
   });
 </script>
 <script>
-
-  $(".edit-btn-wrapper").click(function(){
+  function editTable()
+  {
     $(".edit-wrapper").hide();
     $(this).find(".edit-wrapper").attr("id","editbtn");
     $("#editbtn").css("display","flex !important");
-    alert("editss");
+    alert("edit");
+  }
+  $(".edit-btn-wrapper").click(function(){
+    
   });
 
   const container = document.querySelector('body');
@@ -480,15 +483,15 @@ function print()
     });
 
 
-var domain = window.location.hostname;
+  var domain = window.location.hostname;
 
-if (domain === 'localhost') {
+  if (domain === 'localhost') {
     domain = 'http://localhost/san-gregorio-magno-church/editor/baptism-certificates-list.xlsx';
-} else {
+  } else {
     domain = "http://parokya-ni-san-gregorio-magno.com/editor/baptism-certificates-list.xlsx";
-}
+  }
 
-window.open(domain, '_blank');
+  window.open(domain, '_blank');
 
 
 
