@@ -4,7 +4,7 @@ session_start();
 require_once "../connect.php";
  
 // Fetch data from the database
-$sql = "SELECT name, gender, barangay, age, date FROM formdata";
+$sql = "SELECT name, gender, barangay, age, date_time FROM formdata";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
