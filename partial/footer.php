@@ -256,8 +256,8 @@
 
 if (window.location.pathname.includes("/editor/")) 
 {
-  alert("sdsd");
-    $(".profile").hide();
+  //alert("sdsd");
+    $("#profile").hide();
 } else {
   // Current page is not inside the "editor" folder
  // alert("This page is not inside the 'editor' folder.");
