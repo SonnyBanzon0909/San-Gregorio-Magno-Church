@@ -4,9 +4,9 @@ require_once "connect.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
   // Get form data
-  $name = $_GET['change-name'];
-  $address = $_GET['change-address'];
-  $password = $_GET['change-password'];
+  $name = $_GET['name'];
+  $address = $_GET['address'];
+  $password = $_GET['password'];
 
   // Sanitize input
   $name = mysqli_real_escape_string($conn, $name);
