@@ -315,7 +315,7 @@
 <script>
   function editTable(s) {
   // Hide all edit wrappers
-    $(".edit-wrapper").hide();
+    //$(".edit-wrapper").hide();
     
   // Show only the edit wrapper inside the current clicked edit button wrapper
     
