@@ -306,13 +306,17 @@
   });
 </script>
 <script>
-  function editTable()
-  {
-    $(".edit-wrapper").hide();
-    $(this).find("edit-wrapper").css("display","flex !important");
-     
-      
-  }
+  function editTable() {
+  // Hide all edit wrappers
+  $(".edit-wrapper").hide();
+  
+  // Show only the edit wrapper inside the current clicked edit button wrapper
+  $(this).find(".edit-wrapper").show();
+  
+  // Disable other edit button wrappers
+  $(".edit-btn-wrapper").not(this).addClass("disabled");
+}
+
   
 
   const container = document.querySelector('body');
