@@ -182,7 +182,14 @@
             {
              position: relative;
            }
-           .edit-wrapper {
+           .edit-btn-wrapper {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            cursor: pointer;
+            position: absolute;
+          }
+          .edit-wrapper {
             position: absolute;
             top: 45px;
             right: 8px;
@@ -309,11 +316,11 @@
   function editTable(s) {
   // Hide all edit wrappers
     $(".edit-wrapper").hide();
-    alert(s);
+    
   // Show only the edit wrapper inside the current clicked edit button wrapper
-    var editid = "#"+$(this).find(".edit-wrapper").attr("id");
+    
 
-    $(editid).css("display","flex !important");
+    $("#"+s).css("display","flex !important");
     
 
   }
