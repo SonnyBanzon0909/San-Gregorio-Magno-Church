@@ -313,7 +313,7 @@
   // Show only the edit wrapper inside the current clicked edit button wrapper
     var editid = $(this).find(".edit-wrapper").attr("id");
 
-    editid.css("display","flex !important");
+    $("#"+editid).css("display","flex !important");
     alert(editid);
   }
 
