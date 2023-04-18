@@ -443,10 +443,11 @@ function setActivePage(pageBtn) {
   activePageBtn.classList.remove("active-page");
   pageBtn.classList.add("active-page");
 }
- 
-function loadPrint() 
-{ 
-// Make an AJAX request to the PHP script
+
+
+
+ function loadPrint() {
+  // Make an AJAX request to the PHP script
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'loadprint.php');
   xhr.responseType = 'blob';
