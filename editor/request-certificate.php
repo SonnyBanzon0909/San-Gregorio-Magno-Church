@@ -447,7 +447,7 @@ function setActivePage(pageBtn) {
 
 
 function loadPrint() {
-alert("True");
+
   //var cert_type = "my-cert-type"; // Replace with your actual element ID
   var printContents = document.getElementById("myTable").innerHTML;
   var originalContents = document.body.innerHTML;
@@ -516,7 +516,7 @@ function print()
   }
 
   window.open(domain, '_blank');
-
+alert("asasa");
 
 
 }
