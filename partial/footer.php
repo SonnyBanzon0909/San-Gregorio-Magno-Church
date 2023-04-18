@@ -255,15 +255,36 @@
 
  function resend_otp()
  {
+  const name = document.querySelector('#c-fullname').value;
+  const birthday = document.querySelector('#c-birthday').value;
+  const contact = document.querySelector('#c-contact').value;
+  const address = document.querySelector('#c-address').value;
+  const barangay = document.querySelector('#c-barangay').value;
+  const email = document.querySelector('#c-email').value;
+  const password = document.querySelector('#c-password').value;
 
- }
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', 'otp.php');
+  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  xhr.onload = () => {
+    if (xhr.status === 200) {
+        //const output = document.querySelector('#output');
+        //output.innerHTML = xhr.responseText;
+        //alert(xhr.statusText+" : success");
+    } else {
+      console.error('Error:', xhr.statusText);
+    }
+  };
+  xhr.send('name=' + encodeURIComponent(name) + '&birthday=' + encodeURIComponent(birthday) + '&contact=' + encodeURIComponent(contact) + '&address=' + encodeURIComponent(address) + '&barangay=' + encodeURIComponent(barangay) + '&email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password));
 
- function change_password()
- {
+}
 
- }
+function change_password()
+{
 
- $(document).ready(function(){
+}
+
+$(document).ready(function(){
 
 
 
@@ -286,7 +307,7 @@
   });
 
 });
- function callCreate(){
+function callCreate(){
 
 
   const name = document.querySelector('#c-fullname').value;
