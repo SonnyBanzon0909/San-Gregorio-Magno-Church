@@ -1,4 +1,5 @@
  <?php 
+ include "editor/includes/db.php";
  // Start the session
  session_start();
 
@@ -73,8 +74,8 @@ else
       </div>
     </div>
 
-    <?php include 'partial/custom-css.html'; ?>
-    <?php include 'partial/navigation.php'; ?>
+      <?php include 'partial/custom-css.html'; ?>
+      <?php include 'partial/navigation.php'; ?>
 
     <div class="section status-section wf-section">
       <div class="container">
