@@ -358,7 +358,7 @@ function verify()
   xhr.onload = () => {
     if (xhr.status === 200) {
       alert(xhr.responseText);
-      if (xhr.responseText=='success') 
+      if (xhr.responseText.trim()=='success') 
       {
         callCreate();
       }
