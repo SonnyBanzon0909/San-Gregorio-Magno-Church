@@ -573,11 +573,11 @@ function loadPrint() {
       location.reload(); // Reload the page after a delay
     }, 50); // Delay in milliseconds (adjust as needed)
   }, false);
-  // Fallback for browsers that don't support afterprint
-  setTimeout(function() {
-    location.reload();
-    alert("NOt");
-  }, 100); // Reload the page after a delay (adjust as needed)
+  // // Fallback for browsers that don't support afterprint
+  // setTimeout(function() {
+  //   location.reload();
+  //   alert("NOt");
+  // }, 100); // Reload the page after a delay (adjust as needed)
 
 }
 
