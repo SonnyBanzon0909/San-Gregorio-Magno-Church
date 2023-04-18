@@ -325,10 +325,13 @@ function callCreate(){
   xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
   xhr.onload = () => {
     if (xhr.status === 200) {
+      if(xhr.responseText==='success')
+      {
         //const output = document.querySelector('#output');
         //output.innerHTML = xhr.responseText;
-      alert("Registration successful");
-      window.location.href = 'index.php';
+        alert("Registration successful");
+        window.location.href = 'index.php';
+      }
 
     } else {
       console.error('Error:', xhr.statusText);
