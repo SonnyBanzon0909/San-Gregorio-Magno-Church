@@ -309,7 +309,9 @@ include "includes/db.php";
 
   $(".edit-btn-wrapper").click(function(){
     $(".edit-wrapper").hide();
-    $(this).find(".edit-wrapper").css("display","flex !important");
+    $(this).find(".edit-wrapper").attr("id","editbtn");
+    $("#editbtn").css("display","flex !important");
+    alert("editss");
   });
 
   const container = document.querySelector('body');
