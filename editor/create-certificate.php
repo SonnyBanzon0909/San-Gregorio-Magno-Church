@@ -1,7 +1,7 @@
  <?php 
  // Start the session
  session_start();
-
+include "includes/db.php";
  // Check if the session variable is set and display the email address
 
  if(isset($_SESSION['user_email'])) 
