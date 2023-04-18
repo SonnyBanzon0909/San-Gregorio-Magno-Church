@@ -149,7 +149,7 @@ else
                   echo '<a href="services.php?id='.$id.'" class="home-service-item">';
                   echo '<div class="service-card"><img src="editor/img/'.$icon.'" loading="eager" alt="" class="service-logo">';
                   echo '<h3 class="card-title service-card-title">'.$title.'</h3>';
-                  echo '<div class="body-text-medium service-excerpt">'.$content.'</div>';
+                  echo '<div class="body-text-medium service-excerpt line-clamp">'.$content.'</div>';
                   echo '<div class="underline-text">'.$button_text.'</div>';
                   echo "</div>";
                   echo "</a>";
