@@ -254,14 +254,14 @@
 
 <script type="text/javascript">
 
-if (window.location.pathname.includes("/editor/")) 
-{
+  if (window.location.pathname.includes("/editor/")) 
+  {
   //alert("sdsd");
     // $("#profile").hide();
-} else {
+  } else {
   // Current page is not inside the "editor" folder
  // alert("This page is not inside the 'editor' folder.");
-}
+  }
 
 
 
@@ -272,28 +272,35 @@ if (window.location.pathname.includes("/editor/"))
       var name = $('#change-name').val();
       var address = $('#change-address').val();
       var password = $('#change-password').val();
-
-    // Send AJAX request to update the data
-      $.ajax({
-        type: "GET",
-        url: "update-password.php",
-        data: { name: name, address: address, password: password },
-        success: function(data) {
-          if (data.trim() === 'success') {
+      if(name != "" && address =="" and password =="")
+      {
+        alert("Please fill it out before proceeding.");
+      }
+      else
+      {
+        // Send AJAX request to update the data
+        $.ajax({
+          type: "GET",
+          url: "update-password.php",
+          data: { name: name, address: address, password: password },
+          success: function(data) {
+            if (data.trim() === 'success') {
           // Display alert message
-            alert('Update successful');
+              alert('Update successful');
           // Redirect to index.html
-            window.location.href = 'index.php';
-          } else {
+              window.location.href = 'index.php';
+            } else {
           // Display error message
+              alert('Update failed');
+            }
+          },
+          error: function() {
+        // Display error message
             alert('Update failed');
           }
-        },
-        error: function() {
-        // Display error message
-          alert('Update failed');
-        }
-      });
+        });
+      }
+
     });
   });
 
