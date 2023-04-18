@@ -1,5 +1,5 @@
 <?php
-require_once "../editor/connect.php";
+require_once "../connect.php";
 
 
 $name = "";

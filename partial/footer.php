@@ -254,6 +254,15 @@
 
 <script type="text/javascript">
 
+if (window.location.pathname.includes("/editor/")) {
+  $(".profile").hide();
+} else {
+  // Current page is not inside the "editor" folder
+ // alert("This page is not inside the 'editor' folder.");
+}
+
+
+
   $(document).ready(function() {
   // Handle form submission
     $('#change-form').submit(function(e) {
