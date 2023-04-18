@@ -109,7 +109,9 @@ while($row = mysqli_fetch_array($user_query)){
           <div class="filter-form w-form">
 
             <form id="email-form" name="email-form" data-name="Email Form" method="get">
-              <div class="select-wrapper min-235"><select id="barangay" name="Barangay" data-name="Barangay" class="select filter-select w-select" id="date-filter" onchange="this.options[this.selectedIndex].value && (window.location.href = '?filter=' + this.options[this.selectedIndex].value);">
+              <div class="select-wrapper min-235">
+
+                <select id="barangay" name="Barangay" data-name="Barangay" class="select filter-select w-select" id="date-filter" onchange="this.options[this.selectedIndex].value && (window.location.href = '?filter=' + this.options[this.selectedIndex].value);">
                 <option value="">Sort by</option>
                 <option value="today" <?php if(isset($_GET['filter']) && $_GET['filter'] == 'today') echo 'selected'; ?>>Today</option>
                 <option value="this_week" <?php if(isset($_GET['filter']) && $_GET['filter'] == 'this_week') echo 'selected'; ?>>This Week</option>
@@ -303,6 +305,10 @@ while($row = mysqli_fetch_array($user_query)){
   <script src="../js/webflow.js" type="text/javascript"></script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
     <script>
+
+      $("#profile").hide();
+
+      
       function togglefunction()
       {  
        if ($(window).width() > 1023) 
