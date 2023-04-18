@@ -130,7 +130,7 @@
     </div>
   </div>
 </div>
-<div class="section login-section change-section wf-section">
+<div class="section login-section change-section wf-section" id="change-section">
   <div class="pass-wrapper">
     <div class="verify-text marg-bot-45">Change Password</div>
     <div class="w-form">
@@ -259,8 +259,8 @@ $("#update-button").click(function(){
   $('.login-section').css("display","none");
   $('.login-section').css("opacity","0");
 
-  $('.change-section').css("display","flex !important");
-  $('.change-section').css("opacity","1 !important");
+  $('#change-section').css("display","flex !important");
+  $('#change-section').css("opacity","1 !important");
 
   
 });
