@@ -1,5 +1,6 @@
 <?php
 //
+
 //require_once "../connect.php";
   // check if the filter parameter is set
 if (isset($_GET['filter'])) {
