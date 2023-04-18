@@ -190,7 +190,7 @@
             bottom: auto;
             z-index: 20;
             background-color: #fff;
-            display: none;
+/*            display: none;*/
             width: 80px;
             padding-top: 6px;
             padding-bottom: 6px;
@@ -311,7 +311,7 @@
     $(".edit-wrapper").hide();
     $(this).find("edit-wrapper").css("display","flex !important");
      
-     alert("asasa");
+      
   }
   
 
