@@ -17,7 +17,7 @@
 // else
 // {
 //   $email = "";
-
+//
 // }
 
 
@@ -45,7 +45,7 @@
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XREV9R6ECX"></script>
     <script type="text/javascript">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('set', 'developer_id.dZGVlNj', true);gtag('config', 'G-XREV9R6ECX');</script>
     <style>
-      .no-scroll
+      .no-scroll 
       {
         overflow-y: hidden!important;
         touch-action: none;
@@ -316,7 +316,7 @@
   function editTable(s) {
   // Hide all edit wrappers
     //$(".edit-wrapper").hide();
-    
+
   // Show only the edit wrapper inside the current clicked edit button wrapper
     var ids = "#"+s;
 
