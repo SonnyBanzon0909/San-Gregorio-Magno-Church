@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include "editor/includes/db.php";
 
 $query = "SELECT * FROM homepage_tbl";
@@ -29,7 +31,7 @@ $query = "SELECT * FROM homepage_tbl";
 
 <?php 
 // Start the session
-session_start();
+
 
 // Check if the session variable is set and display the email address
 
