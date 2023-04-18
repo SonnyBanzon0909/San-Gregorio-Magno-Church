@@ -74,7 +74,7 @@ include "includes/db.php";
     </div>
 
     <?php include '../partial/custom-css.html'; ?>
-    <?php include '/partial/navigation.php'; ?>
+    <?php include '../partial/navigation.php'; ?>
 
     <div class="section status-section wf-section">
       <div class="container">
