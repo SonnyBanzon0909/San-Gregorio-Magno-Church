@@ -306,10 +306,12 @@ include "includes/db.php";
   });
 </script>
 <script>
+
   $(".edit-btn-wrapper").click(function(){
     $(".edit-wrapper").hide();
-    $(this).find(".edit-wrapper").css("display","flex");
+    $(this).find(".edit-wrapper").css("display","flex !important");
   });
+
   const container = document.querySelector('body');
   container.addEventListener('click', function(event) {
     if (!event.target.closest('.edit-btn-wrapper')) {
