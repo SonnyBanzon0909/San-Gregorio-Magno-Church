@@ -4,21 +4,21 @@
 include "includes/db.php";
  // Check if the session variable is set and display the email address
 
- if(isset($_SESSION['user_email'])) 
- {
+//  if(isset($_SESSION['user_email'])) 
+//  {
 
-  $email = $_SESSION['user_email'];
-}
-else if(isset($_SESSION['user_email']) && $_SESSION['login_account'] == "true") 
-{
+//   $email = $_SESSION['user_email'];
+// }
+// else if(isset($_SESSION['user_email']) && $_SESSION['login_account'] == "true") 
+// {
 
-  $email = $_SESSION['user_email'];
-}
-else
-{
-  $email = "";
+//   $email = $_SESSION['user_email'];
+// }
+// else
+// {
+//   $email = "";
   
-}
+// }
 
 
 ?>
@@ -64,7 +64,7 @@ else
   <body>
 
    <?php include '../partial/custom-css.html'; ?>
-   <?php include '../partial/navigation.php'; ?>
+   <?php include 'partial/navigation.php'; ?>
 
 
    <div class="section header-section wf-section">
