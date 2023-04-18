@@ -357,12 +357,21 @@ function verify()
   xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
   xhr.onload = () => {
     if (xhr.status === 200) {
+
+      if (xhr.responseText==='success') 
+      {
+        callCreate();
+      }
+      else
+      {
+        alert("Invalid OTP");
+      }
         //const output = document.querySelector('#output');
         //output.innerHTML = xhr.responseText;
         //alert(xhr.statusText+" : success");
         //window.location.href = 'index.php?success'; //Turn off when session is okay
 
-      callCreate();
+      
 
 
 
