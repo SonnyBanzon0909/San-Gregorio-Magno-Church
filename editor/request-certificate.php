@@ -476,7 +476,7 @@ function loadPrint() {
 
   // Make a POST request to the PHP script to generate the Excel file
   var xhttp = new XMLHttpRequest();
-  xhttp.open("POST", "generate_excel.php", true);
+  xhttp.open("POST", "loadprint.php", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
