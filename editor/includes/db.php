@@ -1,27 +1,32 @@
 <?php
-/*
-$host = 'localhost';
-$port = '';
-$db = 'san-gregorio-db';
-$user = 'parokyan';
-$pass = 'l)UKks28.Jp67H';
 
+$servername = "localhost";///162.213.210.29//corporate.viplus1.noc401.com
+$username = "parokyan_parokyan";
+$password = "l)UKks28.Jp67H";
+$dbname = "parokyan_san_gregorio_db"; 
+/*
+$servername = "localhost";
+$username = "parokyan";
+$password = "l)UKks28.Jp67H";
+$dbname = "san-gregorio-db";
 */
-$host = 'localhost';
-$port = '';
-$db = 'parokyan_san-gregorio-db';
-$user = 'parokyan_parokyan';
-$pass = 'l)UKks28.Jp67H';
+
+
+
+// Create connection
+$connection = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($connection->connect_error) {
+  die("Connection failed: " . $connection->connect_error);
+}
+else
+{
+	 
+}
 
 
  
-define( 'SITE_NAME', 'Parokya' );
-//define( 'DSN', "mysql:host=$host;port=$port;dbname=$db" );
-define( 'DSN', "mysql:host=localhost;dbname=$db" );
-define( 'DB_HOST', $host );
-define( 'DB_USR', $user );
-define( 'DB_PWD', $pass );
-define( 'DB_NAME', $db );
+ 
 
-$connection = mysqli_connect(DB_HOST, DB_USR, DB_PWD, DB_NAME);
 ?>
