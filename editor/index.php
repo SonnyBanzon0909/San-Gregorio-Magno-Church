@@ -337,7 +337,7 @@ while($row = mysqli_fetch_array($user_query)){
       var today = <?php echo json_encode($chart_today); ?>;
       var week = <?php echo json_encode($chart_week); ?>;
       var month = <?php echo json_encode($chart_month); ?>;
-
+alert(today,week,month);
       const ctx = document.getElementById('myChart');
       new Chart(ctx, {
         type: 'doughnut',
