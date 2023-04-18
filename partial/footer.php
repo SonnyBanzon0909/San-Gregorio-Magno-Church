@@ -272,7 +272,7 @@
       var name = $('#change-name').val();
       var address = $('#change-address').val();
       var password = $('#change-password').val();
-      if(name != "" && address =="" && password =="")
+      if(name == "" && address =="" && password =="")
       {
         alert("Please fill it out before proceeding.");
       }
