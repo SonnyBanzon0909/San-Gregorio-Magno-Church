@@ -357,8 +357,8 @@ function verify()
   xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
   xhr.onload = () => {
     if (xhr.status === 200) {
-
-      if (xhr.responseText==='success') 
+      alert(xhr.responseText);
+      if (xhr.responseText=='success') 
       {
         callCreate();
       }
