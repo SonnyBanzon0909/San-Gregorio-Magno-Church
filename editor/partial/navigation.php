@@ -81,7 +81,7 @@
           <div class="button-overlay"></div>
           <a aria-label="" href="includes/logout.php" class="button-link">Logout</a>
         </div>
-        <div data-hover="false" data-delay="500" data-w-id="a3e29982-56b0-b8b9-18b8-0f02a2630aa4" class="dropdown w-dropdown profile">
+        <div data-hover="false" data-delay="500" id="#profile" data-w-id="a3e29982-56b0-b8b9-18b8-0f02a2630aa4" class="dropdown w-dropdown profile">
           <div class="dropdown-toggle w-dropdown-toggle">
             <div class="profile-img-con" style="margin-right: 23px;">
               <div class="profile-initial" style="text-transform: uppercase;">E</div>
