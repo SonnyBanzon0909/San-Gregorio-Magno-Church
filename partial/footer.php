@@ -255,9 +255,8 @@
 <script type="text/javascript">
 
 $("#update-button").click(function(){
-  console.log("Change Pass");
-  $('.login-section').css("display","none");
-  $('.login-section').css("opacity","0");
+  //console.log("Change Pass");
+
 
   $('#change-section').css("display","flex !important");
   $('#change-section').css("opacity","1 !important");
