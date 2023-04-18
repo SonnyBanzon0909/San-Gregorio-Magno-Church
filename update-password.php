@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
   $email = $_SESSION['user_email'];
   $sql = "UPDATE login SET fullname='$name', address='$address', password='$password' WHERE email='$email'";
   if (mysqli_query($conn, $sql)) {
-    echo "success";
+    echo "<script>alert('Information updated');</script>";
     header("Location: index.php");
   } else {
     echo "Error updating record: " . mysqli_error($conn);
