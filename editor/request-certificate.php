@@ -446,7 +446,7 @@ function setActivePage(pageBtn) {
 
 
 
- function loadPrint() {
+function loadPrint() {
   // Make an AJAX request to the PHP script
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'loadprint.php');
@@ -473,6 +473,17 @@ function setActivePage(pageBtn) {
 
   // Send the AJAX request
   xhr.send();
+
+  // Make a POST request to the PHP script to generate the Excel file
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("POST", "generate_excel.php", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      console.log("Excel file generated successfully!");
+    }
+  };
+  xhttp.send();
 }
 
 
