@@ -90,7 +90,7 @@ while ($row = mysqli_fetch_assoc($table_result)) {
   echo '<td class="edit">';
   echo '<div class="edit-btn-wrapper" onclick="editTable()">';
   echo '<img src="../images/edit-icon.svg">';
-  echo '<div class="edit-wrapper">';
+  echo '<div class="edit-wrapper" id=edit'.$c.'>';
   echo '<a href="#" class="edit-btn">Edit</a>';
   echo '<a href="#" class="edit-btn">Delete</a>';
   echo '</div>';
