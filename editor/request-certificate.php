@@ -516,7 +516,7 @@ function print()
   }
 
   window.open(domain, '_blank');
-alert("asasa");
+
 
 
 }

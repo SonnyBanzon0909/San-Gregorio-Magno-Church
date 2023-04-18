@@ -116,7 +116,8 @@
 
               <div id="w-node-b6ec6774-df05-e803-8d15-82867510d761-6fbcb9d9" class="print-wrapper">
                 <div id="w-node-_797a341e-e77b-3edb-abfc-8ecd7d3a3407-6fbcb9d9" class="print-con dl-con" onclick="print()"><img src="../images/Mask-group.svg" loading="lazy" alt="" class="print-icon"></div>
-                <div id="w-node-_707b0ddf-b844-fdc1-5875-afad95fc28e2-6fbcb9d9" class="print-con printer-con"><img src="../images/Mask-group-1.svg" loading="lazy" alt="" class="print-icon"></div>
+
+                <div id="w-node-_707b0ddf-b844-fdc1-5875-afad95fc28e2-6fbcb9d9" class="print-con printer-con" onclick="loadPrint()"><img src="../images/Mask-group-1.svg" loading="lazy" alt="" class="print-icon"></div>
               </div>
 
               <div id="w-node-_4cca64a6-0a55-4a6e-5412-4a46426bcb02-6fbcb9d9" class="input-wrapper">
@@ -557,6 +558,27 @@ $(document).ready(function() {
 });
 
 
+function loadPrint() {
+
+  //var cert_type = "my-cert-type"; // Replace with your actual element ID
+  var printContents = document.getElementById("myTable").innerHTML;
+  var originalContents = document.body.innerHTML;
+  document.body.innerHTML = printContents;
+  window.print();
+  document.body.innerHTML = originalContents;
+  // Add event listener for afterprint
+  window.addEventListener("afterprint", function(event) {
+    console.log("afterprint event:", event);
+    setTimeout(function() {
+      location.reload(); // Reload the page after a delay
+    }, 50); // Delay in milliseconds (adjust as needed)
+  }, false);
+  // Fallback for browsers that don't support afterprint
+  setTimeout(function() {
+    location.reload();
+  }, 100); // Reload the page after a delay (adjust as needed)
+
+}
 
 </script>
 </body>
