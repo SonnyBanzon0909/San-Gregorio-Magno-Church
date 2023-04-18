@@ -1,7 +1,7 @@
  <?php 
 // Start the session
  session_start();
-include "includes/db.php";
+ include "includes/db.php";
 // Check if the session variable is set and display the email address
 
  if(isset($_SESSION['user_email'])) 
@@ -476,7 +476,7 @@ function loadPrint() {
 
   // Make a POST request to the PHP script to generate the Excel file
   var xhttp = new XMLHttpRequest();
-  xhttp.open("POST", "loadprint.php", true);
+  xhttp.open("GET", "loadprint.php", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -485,6 +485,7 @@ function loadPrint() {
   };
   xhttp.send();
 }
+
 
 
 
@@ -524,15 +525,15 @@ function print()
     });
 
 
-var domain = window.location.hostname;
+  var domain = window.location.hostname;
 
-if (domain === 'localhost') {
+  if (domain === 'localhost') {
     domain = 'http://localhost/san-gregorio-magno-church/editor/requested-certificates-list.xlsx';
-} else {
+  } else {
     domain = "http://parokya-ni-san-gregorio-magno.com/editor/requested-certificates-list.xlsx";
-}
+  }
 
-window.open(domain, '_blank');
+  window.open(domain, '_blank');
 
 
 
