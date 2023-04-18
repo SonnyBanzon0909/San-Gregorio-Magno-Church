@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
   $password = password_hash($password, PASSWORD_DEFAULT);
 
   // Update database
-  $email = $_SESSION['email'];
+  $email = $_SESSION['user_email'];
   $sql = "UPDATE login SET fullname='$name', address='$address', password='$password' WHERE email='$email'";
   if (mysqli_query($conn, $sql)) {
     echo "success";
