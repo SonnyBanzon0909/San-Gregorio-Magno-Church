@@ -107,7 +107,7 @@ else
   <div class="section galery-list-section wf-section">
     <div class="container">
       <div class="gallery-title-wrapper">
-        <h2 data-w-id="97af9b72-b3a9-c363-2587-8ec441b953a7" style="opacity:0" class="block-title gallery-block-title"><?php echo $title; ?></h2>
+        <h2 data-w-id="97af9b72-b3a9-c363-2587-8ec441b953a7" style="opacity:0" class="block-title gallery-block-title"><?php echo $title; ?>cccc</h2>
         <div data-w-id="b32c8281-cce3-60c9-6f76-debf1e4b9e78" style="opacity:0" class="date-text marg-bot-29"><?php echo $gallery_date; ?></div>
         <div data-w-id="3e3da1fe-ab13-9350-3b23-4991f7922bb7" style="opacity:0" class="body-text-medium gallery-excerpt"><?php echo $details; ?></div>
       </div>
