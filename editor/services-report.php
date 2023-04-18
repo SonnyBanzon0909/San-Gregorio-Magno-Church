@@ -306,10 +306,10 @@
   });
 </script>
 <script>
-  function editTable($this)
+  function editTable()
   {
     $(".edit-wrapper").hide();
-    $this.find(".edit-wrapper").attr("id","editbtn");
+    $(this).find(".edit-wrapper").attr("id","editbtn");
     $("#editbtn").css("display","flex !important");
     alert("edit");
   }
