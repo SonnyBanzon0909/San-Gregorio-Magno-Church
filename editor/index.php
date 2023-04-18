@@ -342,9 +342,10 @@ while($row = mysqli_fetch_array($user_query)){
       new Chart(ctx, {
         type: 'doughnut',
         data: {
+          //parseInt(today), parseInt(week), parseInt(month)
           datasets: [{
             label: 'Appointments',
-            data: [parseInt(today), parseInt(week), parseInt(month)],
+            data: [10,30,60],
             backgroundColor: [
               '#FFE085',
               '#D0A72B',
