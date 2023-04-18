@@ -17,7 +17,7 @@
 // else
 // {
 //   $email = "";
- 
+
 // }
 
 
@@ -306,15 +306,15 @@
   });
 </script>
 <script>
-  function editTable()
+  function editTable($this)
   {
     $(".edit-wrapper").hide();
-    $(this).find(".edit-wrapper").attr("id","editbtn");
+    $this.find(".edit-wrapper").attr("id","editbtn");
     $("#editbtn").css("display","flex !important");
     alert("edit");
   }
   $(".edit-btn-wrapper").click(function(){
-    
+
   });
 
   const container = document.querySelector('body');
