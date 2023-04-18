@@ -21,25 +21,25 @@ include "includes/db.php";
 // else
 // {
 //   $email = "";
-  
+
 // }
 
 ////
 if(!isset($_SESSION['username'])){
-      header("Location: login.php");
-  }
+  header("Location: login.php");
+}
 
-  $username =  $_SESSION['username'];
+$username =  $_SESSION['username'];
 
 
-  $query = "SELECT * FROM admin_users WHERE username = '$username'";
-  $user_query = mysqli_query($connection, $query);
+$query = "SELECT * FROM admin_users WHERE username = '$username'";
+$user_query = mysqli_query($connection, $query);
 
-  while($row = mysqli_fetch_array($user_query)){
-    $id = $row['id'];
-    $username = $row['username'];
-    $password = $row['password'];
-  }
+while($row = mysqli_fetch_array($user_query)){
+  $id = $row['id'];
+  $username = $row['username'];
+  $password = $row['password'];
+}
 
 
 ?>
@@ -334,13 +334,17 @@ if(!isset($_SESSION['username'])){
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
   <script>
     function startChart(){
+      var today = <?php echo json_encode($chart_today); ?>;
+      var week = <?php echo json_encode($chart_week); ?>;
+      var month = <?php echo json_encode($chart_month); ?>;
+
       const ctx = document.getElementById('myChart');
       new Chart(ctx, {
         type: 'doughnut',
         data: {
           datasets: [{
             label: 'Appointments',
-            data: [<?php echo $chart_today; ?>, <?php echo $chart_week; ?>, <?php echo $chart_month; ?>],
+            data: [today, week, month],
             backgroundColor: [
               '#FFE085',
               '#D0A72B',
