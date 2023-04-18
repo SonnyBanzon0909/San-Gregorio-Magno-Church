@@ -17,15 +17,15 @@
 // else
 // {
 //   $email = "";
-  
+
 // }
 
 
-?>
+ ?>
 
-<!DOCTYPE html><!--  Last Published: Mon Apr 10 2023 17:06:25 GMT+0000 (Coordinated Universal Time)  -->
-<html data-wf-page="64319b7a9d91c60f6fbcb9d9" data-wf-site="640c46a109bfca551c61da47">
-<head>
+ <!DOCTYPE html><!--  Last Published: Mon Apr 10 2023 17:06:25 GMT+0000 (Coordinated Universal Time)  -->
+ <html data-wf-page="64319b7a9d91c60f6fbcb9d9" data-wf-site="640c46a109bfca551c61da47">
+ <head>
   <meta charset="utf-8">
   <title>Request Certificate</title>
   <meta content="Request Certificate" property="og:title">
@@ -447,43 +447,25 @@ function setActivePage(pageBtn) {
 
 
 function loadPrint() {
-  // Make an AJAX request to the PHP script
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'loadprint.php');
-  xhr.responseType = 'blob';
 
-  xhr.onload = function() {
-    if (this.status === 200) {
-      // Create a new URL object and create a link element
-      var url = window.URL.createObjectURL(this.response);
-      var link = document.createElement('a');
-      link.href = url;
-      link.download = 'file.xlsx';
+  //var cert_type = "my-cert-type"; // Replace with your actual element ID
+  var printContents = document.getElementById("myTable").innerHTML;
+  var originalContents = document.body.innerHTML;
+  document.body.innerHTML = printContents;
+  window.print();
+  document.body.innerHTML = originalContents;
+  // Add event listener for afterprint
+  window.addEventListener("afterprint", function(event) {
+    console.log("afterprint event:", event);
+    setTimeout(function() {
+      location.reload(); // Reload the page after a delay
+    }, 50); // Delay in milliseconds (adjust as needed)
+  }, false);
+  // Fallback for browsers that don't support afterprint
+  setTimeout(function() {
+    location.reload();
+  }, 100); // Reload the page after a delay (adjust as needed)
 
-      // Append the link element to the DOM
-      document.body.appendChild(link);
-
-      // Call the print function after a short delay to ensure the link has been added to the DOM
-      setTimeout(function() {
-        link.click();
-        window.print();
-      }, 1000);
-    }
-  };
-
-  // Send the AJAX request
-  xhr.send();
-
-  // Make a POST request to the PHP script to generate the Excel file
-  var xhttp = new XMLHttpRequest();
-  xhttp.open("GET", "loadprint.php", true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      console.log("Excel file generated successfully!");
-    }
-  };
-  xhttp.send();
 }
 
 
