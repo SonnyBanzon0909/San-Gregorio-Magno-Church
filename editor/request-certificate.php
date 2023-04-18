@@ -446,7 +446,32 @@ function setActivePage(pageBtn) {
  
 function loadPrint() 
 { 
-window.location.href = 'loadprint.php';
+// Make an AJAX request to the PHP script
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'loadprint.php');
+  xhr.responseType = 'blob';
+
+  xhr.onload = function() {
+    if (this.status === 200) {
+      // Create a new URL object and create a link element
+      var url = window.URL.createObjectURL(this.response);
+      var link = document.createElement('a');
+      link.href = url;
+      link.download = 'file.xlsx';
+
+      // Append the link element to the DOM
+      document.body.appendChild(link);
+
+      // Call the print function after a short delay to ensure the link has been added to the DOM
+      setTimeout(function() {
+        link.click();
+        window.print();
+      }, 1000);
+    }
+  };
+
+  // Send the AJAX request
+  xhr.send();
 }
 
 

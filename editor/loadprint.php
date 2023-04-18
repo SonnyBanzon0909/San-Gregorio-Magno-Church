@@ -3,35 +3,62 @@
 session_start();
 require_once "../connect.php";
  
+ 
+
 // Fetch data from the database
 $sql = "SELECT name, gender, barangay, age, date_time FROM formdata";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // Start creating the Word document
-    header("Content-type: application/vnd.ms-word");
-    header("Content-Disposition: attachment;Filename=document.doc");
+    // Create a new PHPExcel object
+    require_once 'path/to/PHPExcel.php';
+    $objPHPExcel = new PHPExcel();
 
-    echo "<html>";
-    echo "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=Windows-1252\">";
-    echo "<body>";
-    echo "<table>";
-    echo "<tr><th>Name</th><th>Gender</th><th>Barangay</th><th>Age</th><th>Date</th></tr>";
+    // Set document properties
+    $objPHPExcel->getProperties()->setCreator("Your Name")
+                                     ->setLastModifiedBy("Your Name")
+                                     ->setTitle("Title")
+                                     ->setSubject("Subject")
+                                     ->setDescription("Description")
+                                     ->setKeywords("office excel php")
+                                     ->setCategory("Category");
 
-    // Output the data as rows in the table
-    while($row = $result->fetch_assoc()) {
-        echo "<tr><td>".$row["name"]."</td><td>".$row["gender"]."</td><td>".$row["barangay"]."</td><td>".$row["age"]."</td><td>".$row["date"]."</td></tr>";
+    // Add data to the worksheet
+    $objPHPExcel->setActiveSheetIndex(0);
+    $objPHPExcel->getActiveSheet()->setCellValue('A1', 'Name')
+                                  ->setCellValue('B1', 'Gender')
+                                  ->setCellValue('C1', 'Barangay')
+                                  ->setCellValue('D1', 'Age')
+                                  ->setCellValue('E1', 'Date');
+    
+    $row = 2;
+    while($data = $result->fetch_assoc()) {
+        $objPHPExcel->getActiveSheet()->setCellValue('A'.$row, $data['name'])
+                                      ->setCellValue('B'.$row, $data['gender'])
+                                      ->setCellValue('C'.$row, $data['barangay'])
+                                      ->setCellValue('D'.$row, $data['age'])
+                                      ->setCellValue('E'.$row, $data['date']);
+        $row++;
     }
 
-    echo "</table>";
-    echo "</body>";
-    echo "</html>";
+    // Rename worksheet
+    $objPHPExcel->getActiveSheet()->setTitle('Worksheet');
+
+    // Set header and output the Excel file
+    header('Content-Type: application/vnd.ms-excel');
+    header('Content-Disposition: attachment;filename="file.xlsx"');
+    header('Cache-Control: max-age=0');
+    $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+    $objWriter->save('php://output');
+    exit;
 } else {
     echo "0 results";
 }
 
 // Close the database connection
 $conn->close();
+?>
+
 ?>
 
 
