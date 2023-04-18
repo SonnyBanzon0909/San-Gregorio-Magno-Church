@@ -15,16 +15,16 @@
           <nav class="nav-drop-list w-dropdown-list">
             <div class="nav-droplist-wrapper">
               <?php 
-                $query = "SELECT * FROM services_tbl";
-                $select_all_services = mysqli_query($connection, $query);
-                while($row = mysqli_fetch_array($select_all_services)){
-                  $id = $row['id'];
-                  $title = $row['title'];
+              $query = "SELECT * FROM services_tbl";
+              $select_all_services = mysqli_query($connection, $query);
+              while($row = mysqli_fetch_array($select_all_services)){
+                $id = $row['id'];
+                $title = $row['title'];
 
-                  echo '<a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ce-806977bd" href="services.php?id='.$id.'" class="link">'.$title.'</a>';
+                echo '<a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ce-806977bd" href="services.php?id='.$id.'" class="link">'.$title.'</a>';
 
-                }
-                ?>
+              }
+              ?>
               <!-- <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ce-806977bd" href="services.php" class="link">Baptism</a>
               <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977d0-806977bd" href="#" class="link">First Communion</a>
               <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977d2-806977bd" href="#" class="link">Confirmation</a>
@@ -44,15 +44,15 @@
           <nav class="nav-drop-list w-dropdown-list">
             <div class="nav-droplist-wrapper gallery-droplist-wrapper">
               <?php 
-                $query = "SELECT * FROM gallery_tbl";
-                $select_all_gallery = mysqli_query($connection, $query);
-                while($row = mysqli_fetch_array($select_all_gallery)){
-                  $id = $row['id'];
-                  $title = $row['title'];
+              $query = "SELECT * FROM gallery_tbl";
+              $select_all_gallery = mysqli_query($connection, $query);
+              while($row = mysqli_fetch_array($select_all_gallery)){
+                $id = $row['id'];
+                $title = $row['title'];
 
-                  echo '<a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="galleries.php?id='.$id.'" class="link">'.$title.'</a>';
+                echo '<a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="galleries.php?id='.$id.'" class="link">'.$title.'</a>';
 
-                }
+              }
 
               ?>
               <!-- <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="galleries.php" class="link">VISITA IGLESIA</a>
@@ -82,9 +82,15 @@
           </div>
           <nav class="dropdown-list w-dropdown-list">
             <div class="login-content-con">
+
               <a href="status.php" class="login-link w-inline-block"><img src="images/Status.svg" loading="lazy" alt="" class="login-icon">
                 <div class="login-text">Status</div>
               </a>
+
+              <a href="#" class="login-link w-inline-block" id="update-button"><img src="images/log-out.svg" loading="lazy" alt="" class="login-icon">
+                <div class="login-text">Change Password</div>
+              </a>
+
               <a href="#" class="login-link w-inline-block" id="log-out"><img src="images/log-out.svg" loading="lazy" alt="" class="login-icon">
                 <div class="login-text">Logout</div>
               </a>
@@ -153,4 +159,4 @@
   </div>
 </div>
 
- 
+

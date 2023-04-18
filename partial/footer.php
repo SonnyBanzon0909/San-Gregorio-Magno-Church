@@ -134,10 +134,16 @@
   <div class="pass-wrapper">
     <div class="verify-text marg-bot-45">Change Password</div>
     <div class="w-form">
-      <form id="wf-form-login" name="wf-form-login" data-name="login" method="get" class="login-form">
-        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Full-Name-2" data-name="Full Name 2" placeholder="Full Name" id="Full-Name-2"></div>
-        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Address-2" data-name="Address 2" placeholder="Address" id="Address-2"></div>
-        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Create-password-2" data-name="Create Password 2" placeholder="Create password" id="Create-password-2"></div>
+
+
+      <form id="wf-form-login" name="wf-form-login" data-name="login" method="get" class="login-form" action="update-password.php">
+
+        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="change-name" data-name="change-name" placeholder="Full Name" id="change-name"></div>
+
+        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="change-address" data-name="change-address" placeholder="Address" id="change-address"></div>
+
+        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="change-password" data-name="change-password" placeholder="Create password" id="change-password"></div>
+
         <div id="w-node-e836a998-e239-21e2-f726-d8e7131034ad-131034a1" class="save-grid-wrapper">
           <div id="w-node-e836a998-e239-21e2-f726-d8e7131034ae-131034a1" class="save-grid">
             <div data-w-id="e836a998-e239-21e2-f726-d8e7131034af" class="button rounded-button min-112">
@@ -145,17 +151,12 @@
             </div>
             <div data-w-id="e836a998-e239-21e2-f726-d8e7131034b2" class="button rounded-button trans-btn min-112">
               <div class="button-overlay bg-black"></div>
-              <a aria-label="" href="#" class="button-link color-black">CANCEL</a>
+              <a aria-label="" href="index.php" class="button-link color-black">CANCEL</a>
             </div>
           </div>
         </div>
       </form>
-      <div class="w-form-done">
-        <div>Thank you! Your submission has been received!</div>
-      </div>
-      <div class="w-form-fail">
-        <div>Oops! Something went wrong while submitting the form.</div>
-      </div>
+
     </div>
   </div>
 </div>
@@ -252,6 +253,17 @@
 
 
 <script type="text/javascript">
+
+$("#update-button").click(function(){
+  $('.login-section').css("display","none");
+  $('.login-section').css("opacity","0");
+
+  $('.change-section').css("display","flex");
+  $('.change-section').css("opacity","0");
+
+  
+});
+
 
  function resend_otp()
  {
