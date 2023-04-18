@@ -89,7 +89,7 @@
               </a>
 
               <a href="#" class="login-link w-inline-block" id="update-button"><img src="images/log-out.svg" loading="lazy" alt="" class="login-icon">
-                <div class="login-text">Change Password</div>
+                <div class="login-text">Edit Profile</div>
               </a>
 
               <a href="#" class="login-link w-inline-block" id="log-out"><img src="images/log-out.svg" loading="lazy" alt="" class="login-icon">
