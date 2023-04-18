@@ -306,16 +306,16 @@
   });
 </script>
 <script>
-  function editTable() {
+  function editTable(s) {
   // Hide all edit wrappers
     $(".edit-wrapper").hide();
-
+    alert(s);
   // Show only the edit wrapper inside the current clicked edit button wrapper
     var editid = "#"+$(this).find(".edit-wrapper").attr("id");
 
     $(editid).css("display","flex !important");
-    alert(editid);
     
+
   }
 
   
