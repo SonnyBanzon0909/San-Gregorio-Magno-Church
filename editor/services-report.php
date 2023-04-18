@@ -315,6 +315,7 @@
 
     $(editid).css("display","flex !important");
     alert(editid);
+    
   }
 
   
