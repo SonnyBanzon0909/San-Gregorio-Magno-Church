@@ -258,8 +258,11 @@ $("#update-button").click(function(){
   //console.log("Change Pass");
 
 
-  $('#change-section').css("display","flex !important");
-  $('#change-section').css("opacity","1 !important");
+$('#change-section').css({
+  display: "flex",
+  opacity: 1
+});
+
 
   
 });
