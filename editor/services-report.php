@@ -320,7 +320,7 @@
   const container = document.querySelector('body');
   container.addEventListener('click', function(event) {
     if (!event.target.closest('.edit-btn-wrapper')) {
-      $(".edit-wrapper").hide();
+      //$(".edit-wrapper").hide();
     }
   });
   $(".filter-select option").each(function(){
