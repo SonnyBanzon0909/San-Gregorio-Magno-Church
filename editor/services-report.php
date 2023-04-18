@@ -309,13 +309,11 @@
   function editTable()
   {
     $(".edit-wrapper").hide();
-    $(this).find(".edit-wrapper").css("display","flex !important");
+    $(this).find("edit-wrapper").css("display","flex !important");
      
      alert("asasa");
   }
-  $(".edit-btn-wrapper").click(function(){
-
-  });
+  
 
   const container = document.querySelector('body');
   container.addEventListener('click', function(event) {
