@@ -132,7 +132,7 @@
             <div>Oops! Something went wrong while submitting the form.</div>
           </div>
         </div>
-        <div data-w-id="a6ce49cc-23b9-46b0-3db0-c07c98e55d15" style="opacity:0" class="table-container report-table">
+        <div data-w-id="a6ce49cc-23b9-46b0-3db0-c07c98e55d15" style="opacity:0" class="table-container report-table" id="report">
           <div class="table-wrapper w-embed">
             <style>
               table {
@@ -449,7 +449,7 @@ function setActivePage(pageBtn) {
 function loadPrint() {
 
   //var cert_type = "my-cert-type"; // Replace with your actual element ID
-  var printContents = document.getElementById("myTable").innerHTML;
+  var printContents = document.getElementById("report").innerHTML;
   var originalContents = document.body.innerHTML;
   document.body.innerHTML = printContents;
   window.print();
@@ -458,6 +458,7 @@ function loadPrint() {
   window.addEventListener("afterprint", function(event) {
     console.log("afterprint event:", event);
     setTimeout(function() {
+
       location.reload(); // Reload the page after a delay
     }, 50); // Delay in milliseconds (adjust as needed)
   }, false);
