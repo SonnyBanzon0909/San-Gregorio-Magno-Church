@@ -144,7 +144,7 @@ if(!isset($_SESSION['username'])){
               <div class="canvas-wrapper w-embed"><canvas id="myChart" width="100%" height="100%"></canvas></div>
               <div class="today-wrapper">
                 <div class="chart-center-text">Today</div>
-                <div class="center-percent"><strong><?php echo $today_total; ?>%</strong></div>
+                <div class="center-percent"><strong><?php echo $today_total; ?></strong></div>
               </div>
             </div>
             <div class="legend-wrapper">
@@ -172,15 +172,15 @@ if(!isset($_SESSION['username'])){
             </div>
             <div id="w-node-c46ab1bd-e105-b9a6-c836-20cffb69fb57-e3ad4e69" class="appoint-card">
               <div class="appoint-title">Appointment Percentage Today</div>
-              <div class="appoint-count"><?php echo $today_total; ?>%</div>
+              <div class="appoint-count"><?php echo $today_total; ?></div>
             </div>
             <div id="w-node-_195674c3-f17a-6b16-9cd2-f23846d67e7d-e3ad4e69" class="appoint-card">
               <div class="appoint-title">Appointment Percentage in Month</div>
-              <div class="appoint-count"><?php echo $month_total; ?>%</div>
+              <div class="appoint-count"><?php echo $month_total; ?></div>
             </div>
             <div id="w-node-_0d1a5d18-608e-2d58-260a-9083af4d8d21-e3ad4e69" class="appoint-card">
               <div class="appoint-title">Appointment Percentage in Week</div>
-              <div class="appoint-count"><?php echo $week_total; ?>%</div>
+              <div class="appoint-count"><?php echo $week_total; ?></div>
             </div>
           </div>
         </div>
@@ -340,7 +340,7 @@ if(!isset($_SESSION['username'])){
         data: {
           datasets: [{
             label: 'Appointments',
-            data: [10, 30, 60],
+            data: [<?php echo $chart_today; ?>, <?php echo $chart_week; ?>, <?php echo $chart_month; ?>],
             backgroundColor: [
               '#FFE085',
               '#D0A72B',
