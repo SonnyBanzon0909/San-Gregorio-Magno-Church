@@ -190,7 +190,7 @@
             bottom: auto;
             z-index: 20;
             background-color: #fff;
-/*            display: none;*/
+            display: none;
             width: 80px;
             padding-top: 6px;
             padding-bottom: 6px;
@@ -308,14 +308,13 @@
 <script>
   function editTable() {
   // Hide all edit wrappers
-  $(".edit-wrapper").hide();
-  
+    $(".edit-wrapper").hide();
+    
   // Show only the edit wrapper inside the current clicked edit button wrapper
-  $(this).find(".edit-wrapper").show();
-  
-  // Disable other edit button wrappers
-  $(".edit-btn-wrapper").not(this).addClass("disabled");
-}
+    var editid = $(this).find(".edit-wrapper").attr("id");
+    
+    editid.css("display","flex !important");
+  }
 
   
 
