@@ -26,7 +26,7 @@
       <div class="form-grid">
         <div id="w-node-_7a260c29-eaea-38ca-7dd7-75753354bfb4-f1521fbf" data-w-id="7a260c29-eaea-38ca-7dd7-75753354bfb4" style="opacity:1" class="form-con-wrappera">
           <div class="form-container">
-            <div class="form-title">View Priests</div>
+            <div class="form-title">View Priest</div>
             <div class="w-form">
               <form id="appointment-form" method="post" action="includes/update_new_priest.php" enctype="multipart/form-data" class="form">
                 <div class="field-container">
