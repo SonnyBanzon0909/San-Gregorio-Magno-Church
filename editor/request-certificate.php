@@ -446,7 +446,7 @@ function setActivePage(pageBtn) {
  
 function loadPrint() 
 { 
-window.location.href = 'path/to/php/file.php';
+window.location.href = 'loadprint.php';
 }
 
 
