@@ -309,9 +309,9 @@
   function editTable()
   {
     $(".edit-wrapper").hide();
-    $(this).find(".edit-wrapper").attr("id","editbtn");
-    $("#editbtn").css("display","flex !important");
-    alert("edit");
+    $(this).find("edit-wrapper").css("display","flex !important");
+     
+     alert("asasa");
   }
   $(".edit-btn-wrapper").click(function(){
 
