@@ -181,7 +181,7 @@ include "editor/includes/db.php";
                   <div id="req-text" class="requirement-text w-node-ec9f49cd-3f54-5695-98c7-64fa17e824f2-f1521fbf"></div>
 
                   <div class="textarea-wrapper">
-                    <textarea class="input-area" placeholder="Message" name="Message"></textarea>
+                    <textarea class="input-area" required="" placeholder="Message" name="Message"></textarea>
                   </div>
                   <div data-w-id="5b8a60ca-0674-a70c-a128-7036f4b41cbe" class="button rounded-button">
                     <div style="opacity:0" class="button-overlay"></div><input id="send_req_btn" type="submit" value="Submit" data-wait="Please wait..." class="button-link w-button">
