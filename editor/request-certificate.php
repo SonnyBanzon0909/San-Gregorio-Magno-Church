@@ -115,8 +115,9 @@ else
             <div id="w-node-b4028a5b-c8ef-df80-9a35-75789bf105b1-6fbcb9d9" class="search-wrapper">
 
               <div id="w-node-b6ec6774-df05-e803-8d15-82867510d761-6fbcb9d9" class="print-wrapper">
-                <div id="w-node-_797a341e-e77b-3edb-abfc-8ecd7d3a3407-6fbcb9d9" class="print-con dl-con" onclick="print()"><img src="../images/Mask-group.svg" loading="lazy" alt="" class="print-icon"></div>
-                <div id="w-node-_707b0ddf-b844-fdc1-5875-afad95fc28e2-6fbcb9d9" class="print-con printer-con"><img src="../images/Mask-group-1.svg" loading="lazy" alt="" class="print-icon"></div>
+                <div id="w-node-_797a341e-e77b-3edb-abfc-8ecd7d3a3407-6fbcb9d9" class="print-con dl-con" onclick="print()"><img src="../images/Mask-group.svg" loading="lazy" alt="" class="print-icon"></div
+                >
+                <div id="w-node-_707b0ddf-b844-fdc1-5875-afad95fc28e2-6fbcb9d9" class="print-con printer-con" onclick="loadPrint()"><img src="../images/Mask-group-1.svg" loading="lazy" alt="" class="print-icon"></div>
               </div>
 
               <div id="w-node-_4cca64a6-0a55-4a6e-5412-4a46426bcb02-6fbcb9d9" class="input-wrapper">
@@ -442,6 +443,59 @@ function setActivePage(pageBtn) {
   activePageBtn.classList.remove("active-page");
   pageBtn.classList.add("active-page");
 }
+ 
+function loadPrint() 
+{
+     // Get the current values of all four select boxes and the search input
+  var gender = $("#gender").val();
+  var year = $("#year").val();
+  var barangay = $("#barangay").val();
+  var month = $("#month").val();
+  var name = $("#search").val();
+
+    // Send an AJAX request to the server-side PHP script
+  $.ajax({
+      url: "loadprint.php", // Replace with the URL of your PHP script
+      method: "POST",
+      data: {
+        gender: gender,
+        year: year,
+        barangay: barangay,
+        month: month,
+        name: name
+      },
+
+      success: function(response) {
+        // Handle the response from the PHP script
+        // For example, you could update the contents of a <div> element with the response data
+        if(response==='success')
+        {
+          window.print();
+        }
+
+      },
+      error: function(xhr, textStatus, errorThrown) {
+        // Handle any errors that occur during the AJAX request
+        console.log("Error: " + errorThrown);
+      }
+    });
+
+
+var domain = window.location.hostname;
+
+if (domain === 'localhost') {
+    domain = 'http://localhost/san-gregorio-magno-church/editor/requested-certificates-list.xlsx';
+} else {
+    domain = "http://parokya-ni-san-gregorio-magno.com/editor/requested-certificates-list.xlsx";
+}
+
+window.open(domain, '_blank');
+
+
+
+}
+
+
 
 
 
