@@ -121,7 +121,7 @@
           <input type="text" placeholder="0" id="code4" class="code" maxlength="1">
         </div>
       </div>
-      <div class="verify-excerpt marg-bot-50">Didn’t receive the OTP? <a href="#" class="otp-span" onclick="resend_otp()">Resend otp</a>
+      <div class="verify-excerpt marg-bot-50" id="resend_text">Didn’t receive the OTP? <a href="#" class="otp-span" onclick="resend_otp()">Resend otp</a>
       </div>
       <div data-w-id="6dc8872f-5289-90b7-23c0-0449d393680c" class="button rounded-button">
         <div class="button-overlay"></div>
@@ -262,6 +262,8 @@
   const barangay = document.querySelector('#c-barangay').value;
   const email = document.querySelector('#c-email').value;
   const password = document.querySelector('#c-password').value;
+
+  $("#resend_text").text("We've just sent a new OTP to your email address.");
 
   const xhr = new XMLHttpRequest();
   xhr.open('POST', 'otp.php');
