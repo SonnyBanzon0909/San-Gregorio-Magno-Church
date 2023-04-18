@@ -258,8 +258,8 @@ $("#update-button").click(function(){
   $('.login-section').css("display","none");
   $('.login-section').css("opacity","0");
 
-  $('.change-section').css("display","flex");
-  $('.change-section').css("opacity","0");
+  $('.change-section').css("display","flex !important");
+  $('.change-section').css("opacity","0 !important");
 
   
 });

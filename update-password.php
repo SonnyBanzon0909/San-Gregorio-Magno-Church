@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
   // Update database
   $email = $_SESSION['email'];
-  $sql = "UPDATE login SET name='$name', address='$address', password='$password' WHERE email='$email'";
+  $sql = "UPDATE login SET fullname='$name', address='$address', password='$password' WHERE email='$email'";
   if (mysqli_query($conn, $sql)) {
     echo "success";
     header("Location: index.html");
