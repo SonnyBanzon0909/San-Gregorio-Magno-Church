@@ -309,7 +309,7 @@
   function editTable()
   {
     $(".edit-wrapper").hide();
-    $(this).find("edit-wrapper").css("display","flex !important");
+    $(this).find(".edit-wrapper").css("display","flex !important");
      
      alert("asasa");
   }
