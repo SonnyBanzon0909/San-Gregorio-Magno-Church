@@ -80,7 +80,7 @@
               <div class="profile-initial" style="text-transform: uppercase;">E</div>
             </div><img src="images/down-chevron.svg" loading="lazy" alt="" class="drop-icon">
           </div>
-          <nav class="dropdown-list w-dropdown-list">
+          <nav class="dropdown-list w-dropdown-list" style="min-width:210px">
             <div class="login-content-con">
 
               <a href="status.php" class="login-link w-inline-block"><img src="images/Status.svg" loading="lazy" alt="" class="login-icon">
