@@ -320,7 +320,8 @@
   // Show only the edit wrapper inside the current clicked edit button wrapper
     var ids = "#"+s;
 
-    $(ids).css("display","flex !important");
+    const element = document.getElementById(ids);
+    element.style.display = 'flex';
     
 
   }
