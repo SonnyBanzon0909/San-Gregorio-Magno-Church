@@ -579,7 +579,7 @@
     });
   </script>
   <script>
-    const elementToSave = document.getElementById(cert_type);
+    var elementToSave = cert_type;
 
     $(".cert-input-wrapper").each(function(){
      var input = $(this).find(".cert-field");
