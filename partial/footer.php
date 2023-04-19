@@ -194,7 +194,7 @@
             </div>
             <div data-w-id="5c4e39d1-a274-468f-2c53-2949e8e75d8b" class="button rounded-button trans-btn min-112">
               <div class="button-overlay bg-black"></div>
-              <a aria-label="" href="#" class="button-link color-black">CANCEL</a>
+              <a aria-label="" href="index.php" class="button-link color-black">CANCEL</a>
             </div>
           </div>
         </div>
@@ -307,7 +307,7 @@
 
 
   $(".update-button").click(function(){
-  console.log("Change Pass");
+    console.log("Change Pass");
 
 
     //edit-password
@@ -350,6 +350,11 @@
 
   function change_password()
   {
+    $('#edit-sign-section').css({
+      display: "none",
+      opacity: 0
+    });
+
     $('#change-section').css({
       display: "flex",
       opacity: 1
