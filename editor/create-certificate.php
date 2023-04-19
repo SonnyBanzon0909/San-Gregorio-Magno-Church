@@ -643,7 +643,9 @@
         jsPDF: { 
           unit: 'px', 
           format: 'letter', 
-          orientation: 'portrait' 
+          orientation: 'portrait', 
+           // Set the scale to fit the entire element on the page
+          scale: 1
         }
       };
 
