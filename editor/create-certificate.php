@@ -629,45 +629,57 @@
     }
 
 
+const downloadButton = document.querySelector('#download-pdf');
+const elementToSave = document.getElementById('cert_type');
 
-    const downloadButton = document.querySelector('#download-pdf');
-    const elementToSave = document.getElementById(cert_type);
-
-    downloadButton.addEventListener('click', () => {
+downloadButton.addEventListener('click', () => {
   // get the filename for the PDF
-      const filename = `${$(".purpose_text").text()}.pdf`;
+  const filename = `${$(".purpose_text").text()}.pdf`;
 
   // define the options for the PDF, including the filename
-      const options = {
-        filename: filename,
-        jsPDF: { 
-          unit: 'px', 
-          format: 'letter', 
-          orientation: 'portrait', 
-           // Set the scale to fit the entire element on the page
-          scale: 1
-        }
-      };
+  const options = {
+    filename: filename,
+    jsPDF: { 
+      unit: 'in', 
+      format: 'letter', 
+      orientation: 'portrait',
+    }
+  };
 
-      // Adjust the dimensions of the element to match the PDF page size
-      elementToSave.style.width = '8.5in';
-      elementToSave.style.height = '11in';
+  // use html2canvas to capture a screenshot of the element
+  html2canvas(elementToSave, {
+    scale: 1, // Set the scale to fit the entire element on the page
+  }).then(canvas => {
+    // Adjust the dimensions of the element to match the PDF page size
+    elementToSave.style.width = '8.5in';
+    elementToSave.style.height = '11in';
 
-      // use html2pdf.js to create the PDF and download it
-      html2pdf()
-      .set(options)
-      .from(elementToSave)
-      .save()
-      .then(() => {
-      // the PDF was successfully generated
-        alert('PDF was successfully generated!');
-      })
-      .catch((error) => {
-      // there was a problem generating the PDF
-        console.error(error);
-        alert('There was an error generating the PDF.');
-      });
-    });
+    // get the base64-encoded image data
+    const imgData = canvas.toDataURL('image/png');
+
+    // create a new jsPDF instance and add the image to it
+    const doc = new jsPDF(options.jsPDF);
+    const width = doc.internal.pageSize.getWidth();
+    const height = doc.internal.pageSize.getHeight();
+    doc.addImage(imgData, 'PNG', 0, 0, width, height);
+
+    // save the PDF
+    doc.save(options.filename);
+
+    // reset the dimensions of the element
+    elementToSave.style.width = '';
+    elementToSave.style.height = '';
+  })
+  .then(() => {
+    // the PDF was successfully generated
+    alert('PDF was successfully generated!');
+  })
+  .catch((error) => {
+    // there was a problem generating the PDF
+    console.error(error);
+    alert('There was an error generating the PDF.');
+  });
+});
 
   </script>
 
