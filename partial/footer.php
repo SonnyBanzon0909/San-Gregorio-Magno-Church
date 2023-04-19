@@ -160,7 +160,7 @@
     </div>
   </div>
 </div>
-<div class="section login-section edit-section wf-section">
+<div class="section login-section edit-section wf-section" id="edit-sign-section">
   <div class="login-wrapper">
     <a data-w-id="5c4e39d1-a274-468f-2c53-2949e8e75d64" href="#" class="close-login w-inline-block"><img src="images/close-icon-2.svg" loading="lazy" alt="" class="close-icon"></a>
     <div class="login-title-wrapper">
@@ -310,10 +310,7 @@
   //console.log("Change Pass");
 
 
-    $('#change-section').css({
-      display: "flex",
-      opacity: 1
-    });
+    //edit-password
 
 
 
@@ -350,7 +347,10 @@
 
   function change_password()
   {
-
+    $('#change-section').css({
+      display: "flex",
+      opacity: 1
+    });
   }
 
   $(document).ready(function(){
