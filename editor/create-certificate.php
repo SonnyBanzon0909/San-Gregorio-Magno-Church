@@ -29,8 +29,9 @@
     <link href="../images/webclip.png" rel="apple-touch-icon">
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XREV9R6ECX"></script>
 
+    <!-- Add print -->
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
     <script type="text/javascript">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('set', 'developer_id.dZGVlNj', true);gtag('config', 'G-XREV9R6ECX');</script>
     <style>
@@ -633,25 +634,25 @@
     }
 
 
-const downloadButton = document.querySelector('#download-pdf');
-const elementToSave = document.getElementById(cert_type);
+    const downloadButton = document.querySelector('#download-pdf');
+    const elementToSave = document.getElementById(cert_type);
 
-downloadButton.addEventListener('click', () => {
+    downloadButton.addEventListener('click', () => {
   // get the filename for the PDF
-  const filename = `${$(".purpose_text").text()}.pdf`;
+      const filename = `${$(".purpose_text").text()}.pdf`;
 
   // define the options for the PDF, including the filename
-  const options = {
-    filename: filename,
-    jsPDF: { 
-      unit: 'in', 
-      format: 'letter', 
-      orientation: 'portrait',
-    }
-  };
+      const options = {
+        filename: filename,
+        jsPDF: { 
+          unit: 'in', 
+          format: 'letter', 
+          orientation: 'portrait',
+        }
+      };
 
   // use html2canvas to capture a screenshot of the element
-  html2canvas(elementToSave, {
+      html2canvas(elementToSave, {
     scale: 1, // Set the scale to fit the entire element on the page
   }).then(canvas => {
     // Adjust the dimensions of the element to match the PDF page size
@@ -685,7 +686,7 @@ downloadButton.addEventListener('click', () => {
   });
 });
 
-  </script>
+</script>
 
 
 
