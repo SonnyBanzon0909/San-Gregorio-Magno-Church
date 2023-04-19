@@ -29,7 +29,7 @@ else
 
 
 
-    $query = "SELECT * FROM gallery_tbl WHERE id = $gall_id";
+    $query = "SELECT * FROM gallery_tbl WHERE id = '$gall_id'";
     $view_query = mysqli_query($connection, $query);
 
     if(!$view_query){
