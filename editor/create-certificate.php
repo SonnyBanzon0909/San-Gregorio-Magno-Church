@@ -580,8 +580,7 @@
   </script>
   <script>
     var cert_type="Baptismal";
-    var elementToSave = document.getElementById(cert_type);
-
+    
     $(".cert-input-wrapper").each(function(){
      var input = $(this).find(".cert-field");
      var text = $(this).find(".text-cert");
@@ -646,7 +645,8 @@
     const jsPDF = window.jspdf.jsPDF;
 
     const downloadButton = document.querySelector('#download-pdf');
-    
+    var elementToSave = document.getElementById(cert_type);
+
 
     downloadButton.addEventListener('click', () => {
   // get the filename for the PDF
