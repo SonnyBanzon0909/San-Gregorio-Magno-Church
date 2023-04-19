@@ -587,7 +587,7 @@
        text.text($(this).val());
      });
    });
-    var cert_type="Baptismal";
+    var cert_type="";
     $("#cert-type").change(function(){
 
       $(".purpose_text").text(cert_type);
@@ -603,6 +603,7 @@
      {
        $(".cert-preview").hide();
        $("#Confirmation").show();
+       alert("sss");
      }
      else if(cert_type == "Communion")
      {
