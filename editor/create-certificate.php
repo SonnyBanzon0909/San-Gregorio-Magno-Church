@@ -630,38 +630,42 @@
 
 
 
- const downloadButton = document.querySelector('#download-pdf');
-const elementToSave = document.getElementById(cert_type);
+    const downloadButton = document.querySelector('#download-pdf');
+    const elementToSave = document.getElementById(cert_type);
 
-downloadButton.addEventListener('click', () => {
+    downloadButton.addEventListener('click', () => {
   // get the filename for the PDF
-  const filename = `${$(".purpose_text").text()}.pdf`;
+      const filename = `${$(".purpose_text").text()}.pdf`;
 
   // define the options for the PDF, including the filename
-  const options = {
-    filename: filename,
-    jsPDF: { 
-      unit: 'px', 
-      format: 'letter', 
-      orientation: 'portrait' 
-    }
-  };
+      const options = {
+        filename: filename,
+        jsPDF: { 
+          unit: 'px', 
+          format: 'letter', 
+          orientation: 'portrait' 
+        }
+      };
 
-  // use html2pdf.js to create the PDF and download it
-  html2pdf()
-    .set(options)
-    .from(elementToSave)
-    .save()
-    .then(() => {
+      // Adjust the dimensions of the element to match the PDF page size
+      elementToSave.style.width = '8.5in';
+      elementToSave.style.height = '11in';
+
+      // use html2pdf.js to create the PDF and download it
+      html2pdf()
+      .set(options)
+      .from(elementToSave)
+      .save()
+      .then(() => {
       // the PDF was successfully generated
-      alert('PDF was successfully generated!');
-    })
-    .catch((error) => {
+        alert('PDF was successfully generated!');
+      })
+      .catch((error) => {
       // there was a problem generating the PDF
-      console.error(error);
-      alert('There was an error generating the PDF.');
+        console.error(error);
+        alert('There was an error generating the PDF.');
+      });
     });
-});
 
   </script>
 
