@@ -645,6 +645,7 @@
 
     downloadButton.addEventListener('click', () => {
   // get the filename for the PDF
+      alert(cert_type);
       const filename = "Certificate.pdf";
 
   // define the options for the PDF, including the filename
