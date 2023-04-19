@@ -89,7 +89,7 @@
                 <div class="login-text">Status</div>
               </a>
 
-              <a href="#" class="login-link w-inline-block" id="update-button"><img src="images/editor.svg" loading="lazy" alt="" class="login-icon">
+              <a href="#" class="login-link w-inline-block update-button" id="update-button"><img src="images/editor.svg" loading="lazy" alt="" class="login-icon">
                 <div class="login-text">Edit Profile</div>
               </a>
 
@@ -174,7 +174,7 @@
               <div class="login-text">Status</div>
             </a>
 
-            <a href="#" class="login-link w-inline-block" id="update-button"><img src="images/editor.svg" loading="lazy" alt="" class="login-icon">
+            <a href="#" class="login-link w-inline-block update-button" id="update-button"><img src="images/editor.svg" loading="lazy" alt="" class="login-icon">
               <div class="login-text">Edit Profile</div>
             </a>
 
