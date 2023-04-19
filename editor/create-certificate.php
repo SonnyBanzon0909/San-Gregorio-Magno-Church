@@ -281,7 +281,7 @@
                     <form id="email-form-2" name="email-form-2" data-name="Email Form 2" method="get">
                       <div class="info-wrapper">
                         <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="cert-name" required="">
-                          <div class="cert-text text-cert">---</div>
+                          <div class="cert-text text-cert"><?php echo $name; ?></div>
                         </div>
                         <div class="text-field-wrapper">
                           <div class="cert-text">Child of</div>
@@ -417,7 +417,7 @@
                   <form id="email-form-3" name="email-form-3" data-name="Email Form 3" method="get" class="form-2">
                     <div class="com-input-title"><strong>Received by</strong></div>
                     <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="receive-by" required="">
-                      <div class="cert-text text-cert">---</div>
+                      <div class="cert-text text-cert"><?php echo $name; ?></div>
                     </div>
                     <div class="com-input-title marg-top-32"><strong>In the church of</strong></div>
                     <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="church-of" required="">
