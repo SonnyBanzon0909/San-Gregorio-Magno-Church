@@ -17,7 +17,7 @@ if (isset($_SESSION['user_email'])) {
 
   while($row = mysqli_fetch_array($view_query)){
 
-    $name = $row["fulname"];
+    $name = $row["fullname"];
     $birthday = $row["birthday"];
     $contact = $row["contact"];
     $address = $row["address"];
