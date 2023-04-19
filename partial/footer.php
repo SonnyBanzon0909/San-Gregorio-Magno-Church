@@ -1,6 +1,6 @@
 <?php
 
- 
+
 require_once "connect.php";
 
 if (isset($_SESSION['user_email'])) {
@@ -22,7 +22,7 @@ if (isset($_SESSION['user_email'])) {
     $contact = $row["contact"];
     $address = $row["address"];
     $barangay = $row["barangay"];
-     
+
   }
 }
 
@@ -167,11 +167,11 @@ if (isset($_SESSION['user_email'])) {
 
       <form id="change-form" name="wf-form-login" data-name="login" method="get" class="login-form" action="">
 
-        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="change-name" data-name="change-name" placeholder="Full Name" id="change-name"></div>
+        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="change-name" data-name="change-name" placeholder="Current password" id="change-name"></div>
 
-        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="change-address" data-name="change-address" placeholder="Address" id="change-address"></div>
+        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="change-address" data-name="change-address" placeholder="New password" id="change-address"></div>
 
-        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="change-password" data-name="change-password" placeholder="Create password" id="change-password"></div>
+        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="change-password" data-name="change-password" placeholder="Confirm password" id="change-password"></div>
 
         <div id="w-node-e836a998-e239-21e2-f726-d8e7131034ad-131034a1" class="save-grid-wrapper">
           <div id="w-node-e836a998-e239-21e2-f726-d8e7131034ae-131034a1" class="save-grid">
@@ -301,8 +301,8 @@ if (isset($_SESSION['user_email'])) {
   // Handle form submission
     $('#change-form').submit(function(e) {
       e.preventDefault();
-      var name = $('#change-name').val();
-      var address = $('#change-address').val();
+      var old_password = $('#change-name').val();
+      var new_password = $('#change-address').val();
       var password = $('#change-password').val();
       if(name == "" && address =="" && password =="")
       {
@@ -310,27 +310,35 @@ if (isset($_SESSION['user_email'])) {
       }
       else
       {
-        // Send AJAX request to update the data
-        $.ajax({
-          type: "GET",
-          url: "update-password.php",
-          data: { name: name, address: address, password: password },
-          success: function(data) {
-            if (data.trim() === 'success') {
+        if(new_password == password)
+        {
+          // Send AJAX request to update the data
+          $.ajax({
+            type: "GET",
+            url: "update-password.php",
+            data: { old_password: old_password, new_password: new_password, password: password },
+            success: function(data) {
+              if (data.trim() === 'success') {
           // Display alert message
-              alert('Update successful');
+                alert('Update successful');
           // Redirect to index.html
-              window.location.href = 'index.php';
-            } else {
+                window.location.href = 'index.php';
+              } else {
           // Display error message
+                alert('Update failed');
+              }
+            },
+            error: function() {
+        // Display error message
               alert('Update failed');
             }
-          },
-          error: function() {
-        // Display error message
-            alert('Update failed');
-          }
-        });
+          });
+        }
+        else
+        {
+          alert("Password did not match!");
+        }
+        
       }
 
     });
