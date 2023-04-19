@@ -160,6 +160,48 @@
     </div>
   </div>
 </div>
+
+
+<!-- For Geetting user info -->
+
+// Retrieve the email value from the session
+$email = $_SESSION['user_email'];
+
+// Build the SQL query with a prepared statement to prevent SQL injection
+$sql = "SELECT * FROM login WHERE email=?";
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, "s", $email);
+
+// Execute the query and check for errors
+if (mysqli_stmt_execute($stmt)) {
+  // Bind the result variables to the corresponding columns in the login table
+  mysqli_stmt_bind_result($stmt, $id, $email, $password, $full_name, $birthday, $contact_number, $address, $barangay);
+
+  // Fetch the results and store them in an array
+  mysqli_stmt_fetch($stmt);
+  $result = [
+  'id' => $id,
+  'email' => $email,
+  'password' => $password,
+  'full_name' => $full_name,
+  'birthday' => $birthday,
+  'contact_number' => $contact_number,
+  'address' => $address,
+  'barangay' => $barangay,
+  ];
+
+  // Display the results in a form for editing
+  echo '<form method="post" action="update.php">';
+    echo '<input type="text" name="Full-Name-3" value="' . $result['full_name'] . '">';
+    echo '<input type="text" name="Birthday-2" value="' . $result['birthday'] . '">';
+    echo '<input type="text" name="Contact-number-2" value="' . $result['contact_number'] . '">';
+    echo '<input type="text" name="Address-3" value="' . $result['address'] . '">';
+    echo '<input type="text" name="Barangay" value="' . $result['barangay'] . '">';
+    echo '<input type="submit" value="Update">';
+  echo '</form>';
+
+}
+<!--  -->
 <div class="section login-section edit-section wf-section" id="edit-sign-section">
   <div class="login-wrapper">
     <a data-w-id="5c4e39d1-a274-468f-2c53-2949e8e75d64" href="#" class="close-login w-inline-block"><img src="images/close-icon-2.svg" loading="lazy" alt="" class="close-icon"></a>
@@ -175,7 +217,7 @@
     <div class="w-form">
       <form id="wf-form-login" name="wf-form-login" data-name="login" method="post" class="login-form" action="update-login.php">
         <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d72-e8e75d62" class="personal-text">Personal Information</div>
-        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Full-Name-3" data-name="Full Name 3" placeholder="Full Name" id="edit-name"></div>
+        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Full-Name-3" data-name="Full Name 3" placeholder="Full Name" id="edit-name" value="<?php echo $result['full_name']; ?>"></div>
         <div class="input-con"><input required type="date" class="input-field w-input" maxlength="256" name="Birthday-2" data-name="Birthday 2" placeholder="Birthday" id="edit-birthday"><img src="images/calendar-2.svg" loading="lazy" alt="" class="calendar"></div>
         <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Contact-number-2" data-name="Contact Number 2" placeholder="Contact number" id="edit-phone"></div>
         <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Address-3" data-name="Address 3" placeholder="Address" id="edit-address"></div>
@@ -184,7 +226,7 @@
           <option value="Brgy. Aguado">Brgy. Aguado</option>
           <option value="Brgy. Inocencio">Brgy. Inocencio</option>
         </select><img src="images/down-chevron.svg" loading="lazy" alt="" class="select-icon"></div>
- 
+
         <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d82-e8e75d62" class="already-text chnage-text">Change Password? <a href="#" class="login-link-span" onclick="change_password()">Click here</a>
         </div>
         <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d86-e8e75d62" class="save-grid-wrapper">
