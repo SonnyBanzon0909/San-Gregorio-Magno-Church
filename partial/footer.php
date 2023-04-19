@@ -222,7 +222,7 @@ if (isset($_SESSION['user_email'])) {
         <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d86-e8e75d62" class="save-grid-wrapper">
           <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d87-e8e75d62" class="save-grid">
             <div data-w-id="5c4e39d1-a274-468f-2c53-2949e8e75d88" class="button rounded-button min-112">
-              <div class="button-overlay"></div><input type="submit" value="SIGN UP" data-wait="Please wait..." class="button-link w-button">
+              <div class="button-overlay"></div><input type="submit" value="SAVE" data-wait="Please wait..." class="button-link w-button">
             </div>
             <div data-w-id="5c4e39d1-a274-468f-2c53-2949e8e75d8b" class="button rounded-button trans-btn min-112">
               <div class="button-overlay bg-black"></div>
