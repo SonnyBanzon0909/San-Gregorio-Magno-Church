@@ -70,6 +70,7 @@
         </div>
         <a href="contact-us.php" id="w-node-_14e56277-239e-cc10-6aba-00a1806977f9-806977bd" class="nav-link">Contact us</a>
         <a href="#" id="nav-login" data-w-id="14e56277-239e-cc10-6aba-00a1806977fb" class="nav-link login-btn sign-btn">Log in</a>
+
         <div data-w-id="14e56277-239e-cc10-6aba-00a1806977fd" class="button rounded-button signup-btn">
           <div class="button-overlay"></div>
           <a aria-label="" href="#" class="button-link">Sign up</a>
@@ -98,6 +99,7 @@
             </div>
           </nav>
         </div>
+
       </div>
       <div data-w-id="14e56277-239e-cc10-6aba-00a180697801" class="hamburger">
         <div class="top"></div>
@@ -150,12 +152,38 @@
           </div>
         </nav>
       </div>
-      <a href="#" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4746-440d470d" class="nav-link">Contact us</a>
+      <a href="contact-us.php" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4746-440d470d" class="nav-link">Contact us</a>
       <a href="#" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4748-440d470d" data-w-id="cc8842c1-27e0-b9b5-b91f-d8b4440d4748" class="nav-link">Log in</a>
       <div data-w-id="cc8842c1-27e0-b9b5-b91f-d8b4440d474a" class="button rounded-button">
         <div class="button-overlay"></div>
         <a aria-label="" href="#" class="button-link">Sign up</a>
       </div>
+
+      <!--  -->
+      <div data-hover="false" id="profile" data-delay="500" data-w-id="a3e29982-56b0-b8b9-18b8-0f02a2630aa4" class="dropdown w-dropdown profile">
+        <div class="dropdown-toggle w-dropdown-toggle">
+          <div class="profile-img-con" style="margin-right: 23px;">
+            <div class="profile-initial" style="text-transform: uppercase;">E</div>
+          </div><img src="images/down-chevron.svg" loading="lazy" alt="" class="drop-icon">
+        </div>
+        <nav class="dropdown-list w-dropdown-list" style="min-width:210px">
+          <div class="login-content-con">
+
+            <a href="status.php" class="login-link w-inline-block"><img src="images/Status.svg" loading="lazy" alt="" class="login-icon">
+              <div class="login-text">Status</div>
+            </a>
+
+            <a href="#" class="login-link w-inline-block" id="update-button"><img src="images/editor.svg" loading="lazy" alt="" class="login-icon">
+              <div class="login-text">Edit Profile</div>
+            </a>
+
+            <a href="#" class="login-link w-inline-block" id="log-out"><img src="images/log-out.svg" loading="lazy" alt="" class="login-icon">
+              <div class="login-text">Logout</div>
+            </a>
+          </div>
+        </nav>
+      </div>
+      <!--  -->
     </div>
   </div>
 </div>
