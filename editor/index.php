@@ -14,6 +14,7 @@ if(isset($_SESSION['user_email']))
 {
 
  $_SESSION['user_email']="";
+ unset($_SESSION['user_email']);
 }
 // else if(isset($_SESSION['user_email']) && $_SESSION['login_account'] == "true") 
 // {
@@ -167,7 +168,7 @@ while($row = mysqli_fetch_array($user_query)){
               </div>
             </div>
 
-            
+
 
             <div id="w-node-_6f50c642-1746-d685-5ad0-f1397ed9d38f-e3ad4e69" class="appoint-wrapper">
               <div id="w-node-_2990f970-1969-159a-4c04-3b048b641480-e3ad4e69" class="appoint-card">
@@ -276,7 +277,7 @@ while($row = mysqli_fetch_array($user_query)){
                   echo '<td>'.$tbl_purpose.'</td>';
                   echo '<td>';
                   echo '<div class="btn-td">';
-                  
+
                   if($tbl_status=="pending")
                   {
                     echo '<div class="table-btn" style="background-color:#FFBF00 !important;">'.$tbl_status.'</div>';
@@ -310,7 +311,7 @@ while($row = mysqli_fetch_array($user_query)){
 
         $("#profile").hide();
 
-        
+
         function togglefunction()
         {  
          if ($(window).width() > 1023) 

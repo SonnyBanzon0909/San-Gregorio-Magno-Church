@@ -1,5 +1,10 @@
 
+<?php
+if(isset($_SESSION['username'])){
+ unset($_SESSION['username']);
+}
 
+?>
 
 <div class="section navigation wf-section">
   <div class="container">
