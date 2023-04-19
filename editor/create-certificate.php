@@ -645,7 +645,7 @@
 
     downloadButton.addEventListener('click', () => {
   // get the filename for the PDF
-      const filename = $(".purpose_text").text()+".pdf";
+      const filename = "Certificate.pdf";
 
   // define the options for the PDF, including the filename
       const options = {
