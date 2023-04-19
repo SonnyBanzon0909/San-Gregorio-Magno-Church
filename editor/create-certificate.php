@@ -31,7 +31,7 @@
 
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
-    
+
     <script type="text/javascript">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('set', 'developer_id.dZGVlNj', true);gtag('config', 'G-XREV9R6ECX');</script>
     <style>
       .no-scroll
@@ -634,7 +634,7 @@
 
 
 const downloadButton = document.querySelector('#download-pdf');
-const elementToSave = document.getElementById('cert_type');
+const elementToSave = document.getElementById(cert_type);
 
 downloadButton.addEventListener('click', () => {
   // get the filename for the PDF
