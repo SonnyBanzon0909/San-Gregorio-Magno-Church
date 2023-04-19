@@ -617,7 +617,7 @@
        $("#Baptismal").show();
      }
 
-     elementToSave = cert_type;
+      
    });
     $("#print-btn").click(function(){
       printDiv();
