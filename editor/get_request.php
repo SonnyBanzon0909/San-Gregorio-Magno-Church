@@ -76,7 +76,7 @@ while ($row = mysqli_fetch_assoc($table_result)) {
             // Get the base URL of the current page
   $base_url = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
   //name=$name&gender=$gender&barangay=$barangay&age=$age&date_time=$date_time
-  $url = $base_url ."/create-certificate.php?";
+  $url = $base_url ."/create-certificate.php?id=".$user;
 
 
 
@@ -86,7 +86,7 @@ while ($row = mysqli_fetch_assoc($table_result)) {
   echo '<td>'.$tbl_gender.'</td>';
   echo '<td>'.$tbl_barangay.'</td>';
   echo '<td>'.$tbl_age.' years old</td>';
-  echo '<td>'.$tbl_date.$user.'</td>';
+  echo '<td>'.$tbl_date.'</td>';
   echo '<td>';
   echo '<a class="create-edit" href="'.$url.'">CREATE</a>';
   echo '</td>';
