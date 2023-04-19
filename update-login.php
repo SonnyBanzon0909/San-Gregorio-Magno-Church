@@ -4,8 +4,15 @@ session_start();
 require_once "connect.php";
 
 // Retrieve the email value from the session
-$email = $_SESSION['user_email'];
+
  
+
+if (isset($_SESSION['user_email'])) {
+    $email = $_SESSION['user_email'];
+} else {
+    echo "string";
+}
+
 // Build the SQL query with a prepared statement to prevent SQL injection
 $sql = "UPDATE login SET Full_Name_3=?, Birthday_2=?, Contact_number_2=?, Address_3=?, Barangay=? WHERE email=?";
 $stmt = mysqli_prepare($conn, $sql);
