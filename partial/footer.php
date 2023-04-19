@@ -307,12 +307,15 @@
 
 
   $(".update-button").click(function(){
-  //console.log("Change Pass");
+  console.log("Change Pass");
 
 
     //edit-password
 
-
+    $('#edit-sign-section').css({
+      display: "flex",
+      opacity: 1
+    });
 
   });
 
