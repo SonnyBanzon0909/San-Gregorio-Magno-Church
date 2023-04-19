@@ -663,7 +663,7 @@
     elementToSave.style.height = '11in';
 
     // get the base64-encoded image data
-    const imgData = canvas.toDataURL('images/png');
+    const imgData = canvas.toDataURL('image/png');
 
     // create a new jsPDF instance and add the image to it
     const doc = new jsPDF(options.jsPDF);
