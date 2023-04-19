@@ -459,7 +459,7 @@
           </div>
           <div data-w-id="1bfae472-55c7-8dea-b277-bbaeff02cf6d" class="button rounded-button print-btn">
             <div style="opacity:0" class="button-overlay"></div>
-            <a aria-label="" href="#" class="button-link">SAVE</a>
+            <a aria-label="" href="#" class="button-link" id="download-pdf">SAVE</a>
           </div>
         </div>
         <div class="print-btn-con">
@@ -531,6 +531,11 @@
       </div>
     </div>
   </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+  
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=640c46a109bfca551c61da47" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="../js/webflow.js" type="text/javascript"></script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
@@ -622,6 +627,41 @@
         location.reload();
   }, 100); // Reload the page after a delay (adjust as needed)
     }
+
+
+
+    // get a reference to the button element
+    const downloadButton = document.querySelector('#download-pdf');
+
+// add a click event listener to the button
+    downloadButton.addEventListener('click', () => {
+  // get a reference to the HTML element you want to save as a PDF
+      const element = document.getElementById('cert_type');
+      var file = $(".purpose_text").text();
+
+
+  // define the options for the PDF, including the filename
+      const options = {
+        filename: file+'.pdf',
+        jsPDF: { 
+          unit: 'px', 
+          format: 'letter', 
+          orientation: 'portrait' 
+        }
+      };
+
+  // use html2pdf.js to create the PDF and download it
+      html2pdf()
+      .set(options)
+      .from(element)
+      .save();
+    });
+
   </script>
+
+
+
+
+
 </body>
 </html>
