@@ -74,8 +74,8 @@ else
       </div>
     </div>
 
-      <?php include 'partial/custom-css.html'; ?>
-      <?php include 'partial/navigation.php'; ?>
+    <?php include 'partial/custom-css.html'; ?>
+    <?php include 'partial/navigation.php'; ?>
 
     <div class="section status-section wf-section">
       <div class="container">
@@ -189,6 +189,9 @@ else
       {  
        if ($(window).width() > 1023) 
        {	
+        $('.update-button').click(function(){
+          $('body').toggleClass('no-scroll');
+        });
         $('.signup-btn').click(function(){
           $('body').toggleClass('no-scroll');
         });
