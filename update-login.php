@@ -10,7 +10,7 @@ require_once "connect.php";
 if (isset($_SESSION['user_email'])) {
     $email = $_SESSION['user_email'];
 } else {
-    echo "string";
+     
 }
 
 // Build the SQL query with a prepared statement to prevent SQL injection

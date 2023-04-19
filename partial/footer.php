@@ -1,3 +1,31 @@
+<?php
+
+session_start();
+require_once "connect.php";
+
+if (isset($_SESSION['user_email'])) {
+  $email = $_SESSION['user_email'];
+
+
+
+  $query = "SELECT * FROM login WHERE email = $email";
+  $view_query = mysqli_query($connection, $query);
+
+  if(!$view_query){
+    die("QUERY FAILED". mysqli_error($connection));
+  }
+
+  while($row = mysqli_fetch_array($view_query)){
+
+    $name = $row["fulname"];
+    $birthday = $row["birthday"];
+    $contact = $row["contact"];
+    $address = $row["address"];
+    $barangay = $row["barangay"];
+  }
+}
+
+?>
 
 
 <div class="section footer-section wf-section">
@@ -161,43 +189,7 @@
   </div>
 </div>
 
-<?php
 
-
-// <!-- For Geetting user info -->
-
-// Retrieve the email value from the session
-$email = $_SESSION['user_email'];
-
-
-// Build the SQL query with a prepared statement to prevent SQL injection
-$sql = "SELECT * FROM login WHERE email=?";
-$stmt = mysqli_prepare($conn, $sql);
-mysqli_stmt_bind_param($stmt, "s", $email);
-
-// Execute the query and check for errors
-if (mysqli_stmt_execute($stmt)) {
-  // Bind the result variables to the corresponding columns in the login table
-  mysqli_stmt_bind_result($stmt, $id, $email, $password, $full_name, $birthday, $contact_number, $address, $barangay);
-
-  // Fetch the results and store them in an array
-  mysqli_stmt_fetch($stmt);
-  $result = [
-  'id' => $id,
-  'email' => $email,
-   
-  'full_name' => $full_name,
-  'birthday' => $birthday,
-  'contact_number' => $contact_number,
-  'address' => $address,
-  'barangay' => $barangay,
-  ];
- 
-
-}
-
-?>
-<!--  -->
 <div class="section login-section edit-section wf-section" id="edit-sign-section">
   <div class="login-wrapper">
     <a data-w-id="5c4e39d1-a274-468f-2c53-2949e8e75d64" href="#" class="close-login w-inline-block"><img src="images/close-icon-2.svg" loading="lazy" alt="" class="close-icon"></a>
@@ -213,7 +205,7 @@ if (mysqli_stmt_execute($stmt)) {
     <div class="w-form">
       <form id="wf-form-login" name="wf-form-login" data-name="login" method="post" class="login-form" action="update-login.php">
         <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d72-e8e75d62" class="personal-text">Personal Information</div>
-        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Full-Name-3" data-name="Full Name 3" placeholder="Full Name" id="edit-name" value="<?php echo $full_name; ?>"></div>
+        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Full-Name-3" data-name="Full Name 3" placeholder="Full Name" id="edit-name" value="<?php echo $name; ?>"></div>
 
         <div class="input-con"><input required type="date" class="input-field w-input" maxlength="256" name="Birthday-2" data-name="Birthday 2" placeholder="Birthday" id="edit-birthday"><img src="images/calendar-2.svg" loading="lazy" alt="" class="calendar"></div>
         <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Contact-number-2" data-name="Contact Number 2" placeholder="Contact number" id="edit-phone"></div>
