@@ -616,8 +616,8 @@
        $(".cert-preview").hide();
        $("#Baptismal").show();
      }
-
-      
+     var elementToSave = document.getElementById(cert_type);
+     
    });
     $("#print-btn").click(function(){
       printDiv();
@@ -645,7 +645,7 @@
     const jsPDF = window.jspdf.jsPDF;
 
     const downloadButton = document.querySelector('#download-pdf');
-    var elementToSave = document.getElementById(cert_type);
+    
 
 
     downloadButton.addEventListener('click', () => {
