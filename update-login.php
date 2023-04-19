@@ -14,7 +14,7 @@ if (isset($_SESSION['user_email'])) {
 }
 
 // Build the SQL query with a prepared statement to prevent SQL injection
-$sql = "UPDATE login SET nameame_3=?, birthday=?, phone=?, address_3=?, barangay=? WHERE email=?";
+$sql = "UPDATE login SET fullname=?, birthday=?, contact=?, address=?, barangay=? WHERE email=?";
 $stmt = mysqli_prepare($conn, $sql);
 mysqli_stmt_bind_param($stmt, "ssssss", $full_name, $birthday, $contact_number, $address, $barangay, $email);
 
