@@ -580,6 +580,7 @@
   </script>
   <script>
     var cert_type="Baptismal";
+    var elementToSave;
     
     $(".cert-input-wrapper").each(function(){
      var input = $(this).find(".cert-field");
@@ -616,8 +617,8 @@
        $(".cert-preview").hide();
        $("#Baptismal").show();
      }
-     var elementToSave = document.getElementById(cert_type);
-     
+     elementToSave = document.getElementById(cert_type);
+
    });
     $("#print-btn").click(function(){
       printDiv();
