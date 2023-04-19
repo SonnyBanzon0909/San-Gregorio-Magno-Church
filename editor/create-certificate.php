@@ -1,27 +1,38 @@
  <?php 
  // Start the session
  session_start();
-include "includes/db.php";
- // Check if the session variable is set and display the email address
+ include "includes/db.php";
+ 
+ 
+ if(isset($_GET['id'])){
+  $id = $_GET['id'];
 
-//  if(isset($_SESSION['user_email'])) 
-//  {
 
-//   $email = $_SESSION['user_email'];
-// }
-// else if(isset($_SESSION['user_email']) && $_SESSION['login_account'] == "true") 
-// {
 
-//   $email = $_SESSION['user_email'];
-// }
-// else
-// {
-//   $email = "";
-  
-// }
 
+  $query = "SELECT * FROM formdata WHERE id = '$id'";
+  $view_query = mysqli_query($connection, $query);
+
+  if(!$view_query){
+    die("QUERY FAILED". mysqli_error($connection));
+  }
+
+  while($row = mysqli_fetch_array($view_query)){
+    $id = $row["id"];
+    $name = $row["name"];
+    $age = $row["age"];
+    $address = $row["address"];
+    $phone = $row["phone"];
+    $gender = $row["gender"];
+    $barangay = $row["barangay"];
+
+
+  }
+}
 
 ?>
+
+
 
 <!DOCTYPE html><!--  Last Published: Mon Apr 10 2023 17:06:25 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="6431a5f101d447259d53b872" data-wf-site="640c46a109bfca551c61da47">
@@ -118,7 +129,7 @@ include "includes/db.php";
                   <div class="cert-form w-form">
                     <form id="email-form-2" name="email-form-2" data-name="Email Form 2" method="get">
 
-                     
+
 
                       <div class="info-wrapper">
                         <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="cert-name" required="">
