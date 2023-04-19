@@ -306,7 +306,7 @@
 
 
 
-  $("#update-button").click(function(){
+  $(".update-button").click(function(){
   //console.log("Change Pass");
 
 
