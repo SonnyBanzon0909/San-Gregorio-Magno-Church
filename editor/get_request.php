@@ -48,7 +48,7 @@ $sheet = array();
 //$_SESSION['sheet']  = '';
 
 $table_result = mysqli_query($conn, $table);
- 
+
 
 //$table_total = mysqli_num_rows($table_result);
 if (!$table_result) {
@@ -72,7 +72,7 @@ while ($row = mysqli_fetch_assoc($table_result)) {
   $barangay = urlencode($row['barangay']);
   $age = urlencode($row['age']);
   $date_time = urlencode($row['date_time']);
-
+  $email = urlencode($row['user']);
             // Get the base URL of the current page
   $base_url = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
   //name=$name&gender=$gender&barangay=$barangay&age=$age&date_time=$date_time
@@ -86,14 +86,14 @@ while ($row = mysqli_fetch_assoc($table_result)) {
   echo '<td>'.$tbl_gender.'</td>';
   echo '<td>'.$tbl_barangay.'</td>';
   echo '<td>'.$tbl_age.' years old</td>';
-  echo '<td>'.$tbl_date.'</td>';
+  echo '<td>'.$tbl_date.$user.'</td>';
   echo '<td>';
   echo '<a class="create-edit" href="'.$url.'">CREATE</a>';
   echo '</td>';
   echo '</tr>';
 }
 $_SESSION['sheet']  = $sheet;
- 
- 
+
+
 mysqli_close($conn);
 ?>
