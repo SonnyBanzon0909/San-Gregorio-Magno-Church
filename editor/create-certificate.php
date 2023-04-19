@@ -646,7 +646,7 @@
 
   // define the options for the PDF, including the filename
       const options = {
-        filename: filename,
+        filename: "filename.pdf",
         jsPDF: { 
           unit: 'in', 
           format: 'letter', 
