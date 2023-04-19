@@ -164,11 +164,11 @@
 <?php
 
 
-<!-- For Geetting user info -->
+// <!-- For Geetting user info -->
 
 // Retrieve the email value from the session
 $email = $_SESSION['user_email'];
-
+require_once "connect.php";
 // Build the SQL query with a prepared statement to prevent SQL injection
 $sql = "SELECT * FROM login WHERE email=?";
 $stmt = mysqli_prepare($conn, $sql);
