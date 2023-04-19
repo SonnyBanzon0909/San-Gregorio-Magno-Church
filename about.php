@@ -188,6 +188,10 @@ else
     {  
      if ($(window).width() > 1023) 
      {	
+      $('.update-button').click(function(){
+        $('body').toggleClass('no-scroll');
+      });
+      
       $('.signup-btn').click(function(){
         $('body').toggleClass('no-scroll');
       });
