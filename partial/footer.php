@@ -130,7 +130,7 @@
     </div>
   </div>
 </div>
-<div class="section login-section change-section wf-section" id="change-section">
+<div class="section login-section change-section wf-section" id="change-section" style="    padding: 0 25px">
   <div class="pass-wrapper">
     <div class="verify-text marg-bot-45">Change Password</div>
     <div class="w-form">
