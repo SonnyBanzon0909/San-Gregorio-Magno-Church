@@ -579,6 +579,8 @@
     });
   </script>
   <script>
+    const elementToSave = document.getElementById(cert_type);
+
     $(".cert-input-wrapper").each(function(){
      var input = $(this).find(".cert-field");
      var text = $(this).find(".text-cert");
@@ -587,7 +589,7 @@
        text.text($(this).val());
      });
    });
-    var cert_type="";
+    var cert_type="Baptismal";
     $("#cert-type").change(function(){
 
       $(".purpose_text").text(cert_type);
@@ -603,7 +605,6 @@
      {
        $(".cert-preview").hide();
        $("#Confirmation").show();
-       alert("sss");
      }
      else if(cert_type == "Communion")
      {
@@ -615,6 +616,8 @@
        $(".cert-preview").hide();
        $("#Baptismal").show();
      }
+
+     elementToSave = cert_type;
    });
     $("#print-btn").click(function(){
       printDiv();
@@ -642,11 +645,10 @@
     const jsPDF = window.jspdf.jsPDF;
 
     const downloadButton = document.querySelector('#download-pdf');
-    const elementToSave = document.getElementById(cert_type);
+    
 
     downloadButton.addEventListener('click', () => {
   // get the filename for the PDF
-      alert(cert_type);
       const filename = "Certificate.pdf";
 
   // define the options for the PDF, including the filename
