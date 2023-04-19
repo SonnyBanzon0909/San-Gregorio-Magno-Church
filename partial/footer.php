@@ -169,6 +169,7 @@
 // Retrieve the email value from the session
 $email = $_SESSION['user_email'];
 require_once "connect.php";
+
 // Build the SQL query with a prepared statement to prevent SQL injection
 $sql = "SELECT * FROM login WHERE email=?";
 $stmt = mysqli_prepare($conn, $sql);
@@ -184,7 +185,7 @@ if (mysqli_stmt_execute($stmt)) {
   $result = [
   'id' => $id,
   'email' => $email,
-  'password' => $password,
+   
   'full_name' => $full_name,
   'birthday' => $birthday,
   'contact_number' => $contact_number,
@@ -212,7 +213,7 @@ if (mysqli_stmt_execute($stmt)) {
     <div class="w-form">
       <form id="wf-form-login" name="wf-form-login" data-name="login" method="post" class="login-form" action="update-login.php">
         <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d72-e8e75d62" class="personal-text">Personal Information</div>
-        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Full-Name-3" data-name="Full Name 3" placeholder="Full Name" id="edit-name" value="<?php echo $result['full_name']; ?>"></div>
+        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Full-Name-3" data-name="Full Name 3" placeholder="Full Name" id="edit-name" value="<?php echo $full_name; ?>"></div>
 
         <div class="input-con"><input required type="date" class="input-field w-input" maxlength="256" name="Birthday-2" data-name="Birthday 2" placeholder="Birthday" id="edit-birthday"><img src="images/calendar-2.svg" loading="lazy" alt="" class="calendar"></div>
         <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Contact-number-2" data-name="Contact Number 2" placeholder="Contact number" id="edit-phone"></div>
