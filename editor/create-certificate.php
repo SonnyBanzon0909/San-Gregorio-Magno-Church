@@ -579,7 +579,8 @@
     });
   </script>
   <script>
-    var elementToSave = cert_type;
+    var cert_type="Baptismal";
+    var elementToSave = document.getElementById(cert_type);
 
     $(".cert-input-wrapper").each(function(){
      var input = $(this).find(".cert-field");
@@ -589,7 +590,7 @@
        text.text($(this).val());
      });
    });
-    var cert_type="Baptismal";
+    
     $("#cert-type").change(function(){
 
       $(".purpose_text").text(cert_type);
