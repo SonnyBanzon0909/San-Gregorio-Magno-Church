@@ -8,7 +8,7 @@ if (isset($_SESSION['user_email'])) {
 
 
 
-  $query = "SELECT * FROM login WHERE email = $email";
+  $query = "SELECT * FROM login WHERE email = '$email'";
   $view_query = mysqli_query($connection, $query);
 
   if(!$view_query){
