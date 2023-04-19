@@ -236,7 +236,7 @@
                           <div class="text-field-wrapper">
                             <div class="cert-text">Purpose:</div>
                             <div class="cert-input-wrapper">
-                              <div class="cert-text text-cert">---</div><input type="email" class="cert-field purpose w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="">
+                              <div class="cert-text text-cert purpose_text">---</div><input type="email" class="cert-field purpose w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="">
                             </div>
                           </div>
                         </div>
@@ -375,7 +375,7 @@
                           <div class="text-field-wrapper">
                             <div class="cert-text">Purpose:</div>
                             <div class="cert-input-wrapper"><input type="email" class="cert-field purpose w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="">
-                              <div class="cert-text text-cert">---</div>
+                              <div class="cert-text text-cert purpose_text">---</div>
                             </div>
                           </div>
                         </div>
@@ -574,10 +574,13 @@
    });
     var cert_type="Baptismal";
     $("#cert-type").change(function(){
-     $(".cert-cont-wrapper").show();
-     cert_type = $(this).val();
-     if(cert_type == "Baptismal")
-     {
+
+      $(".purpose_text").text(cert_type);
+
+      $(".cert-cont-wrapper").show();
+      cert_type = $(this).val();
+      if(cert_type == "Baptismal")
+      {
        $(".cert-preview").hide();
        $("#Baptismal").show();
      }
