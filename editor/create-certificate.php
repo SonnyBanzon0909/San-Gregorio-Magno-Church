@@ -631,7 +631,7 @@
 
 
  const downloadButton = document.querySelector('#download-pdf');
-const elementToSave = document.getElementById('cert_type');
+const elementToSave = document.getElementById(cert_type);
 
 downloadButton.addEventListener('click', () => {
   // get the filename for the PDF
