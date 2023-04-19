@@ -160,13 +160,13 @@
       </div>
 
       <!--  -->
-      <div data-hover="false" id="profile" data-delay="500" data-w-id="a3e29982-56b0-b8b9-18b8-0f02a2630aa4" class="dropdown w-dropdown profile">
-        <div class="dropdown-toggle w-dropdown-toggle">
+      <div data-hover="false" id="profile" data-delay="500" data-w-id="a3e29982-56b0-b8b9-18b8-0f02a2630aa4" class="dropdown w-dropdown profile" style="width: 100%;">
+        <div class="dropdown-toggle w-dropdown-toggle" style="width: 100%;">
           <div class="profile-img-con" style="margin-right: 23px;">
             <div class="profile-initial" style="text-transform: uppercase;">E</div>
           </div><img src="images/down-chevron.svg" loading="lazy" alt="" class="drop-icon">
         </div>
-        <nav class="dropdown-list w-dropdown-list" style="min-width:210px">
+        <nav class="dropdown-list w-dropdown-list" style="width:100%">
           <div class="login-content-con">
 
             <a href="status.php" class="login-link w-inline-block"><img src="images/Status.svg" loading="lazy" alt="" class="login-icon">
