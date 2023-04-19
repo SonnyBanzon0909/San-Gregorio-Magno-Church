@@ -12,11 +12,11 @@ $stmt = mysqli_prepare($conn, $sql);
 mysqli_stmt_bind_param($stmt, "ssssss", $full_name, $birthday, $contact_number, $address, $barangay, $email);
 
 // Set the values of the parameters based on the form input
-$full_name = $_GET['Full-Name-3'];
-$birthday = $_GET['Birthday-2'];
-$contact_number = $_GET['Contact-number-2'];
-$address = $_GET['Address-3'];
-$barangay = $_GET['Barangay'];
+$full_name = $_POST['Full-Name-3'];
+$birthday = $_POST['Birthday-2'];
+$contact_number = $_POST['Contact-number-2'];
+$address = $_POST['Address-3'];
+$barangay = $_POST['Barangay'];
 
 // Execute the query and check for errors
 if (mysqli_stmt_execute($stmt)) {

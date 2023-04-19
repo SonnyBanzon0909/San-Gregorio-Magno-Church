@@ -173,7 +173,7 @@
       <div class="text-block">Edit Profile</div>
     </div>
     <div class="w-form">
-      <form id="wf-form-login" name="wf-form-login" data-name="login" method="get" class="login-form" action="update-login.php">
+      <form id="wf-form-login" name="wf-form-login" data-name="login" method="post" class="login-form" action="update-login.php">
         <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d72-e8e75d62" class="personal-text">Personal Information</div>
         <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Full-Name-3" data-name="Full Name 3" placeholder="Full Name" id="edit-name"></div>
         <div class="input-con"><input required type="date" class="input-field w-input" maxlength="256" name="Birthday-2" data-name="Birthday 2" placeholder="Birthday" id="edit-birthday"><img src="images/calendar-2.svg" loading="lazy" alt="" class="calendar"></div>
