@@ -638,12 +638,12 @@
       alert("HEY");
   // get a reference to the HTML element you want to save as a PDF
       const element = document.getElementById('cert_type');
-      var file = $(".purpose_text").text();
+      var file = $(".purpose_text").text()+"pdf";
 
 
   // define the options for the PDF, including the filename
       const options = {
-        filename: file+'.pdf',
+        filename: file,
         jsPDF: { 
           unit: 'px', 
           format: 'letter', 
