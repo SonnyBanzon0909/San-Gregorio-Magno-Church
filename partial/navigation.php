@@ -152,11 +152,12 @@
           </div>
         </nav>
       </div>
+
       <a href="contact-us.php" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4746-440d470d" class="nav-link">Contact us</a>
-      <a href="#" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4748-440d470d" data-w-id="cc8842c1-27e0-b9b5-b91f-d8b4440d4748" class="nav-link">Log in</a>
+      <a href="#" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4748-440d470d" data-w-id="cc8842c1-27e0-b9b5-b91f-d8b4440d4748" class="nav-link sign-btn">Log in</a>
       <div data-w-id="cc8842c1-27e0-b9b5-b91f-d8b4440d474a" class="button rounded-button">
         <div class="button-overlay"></div>
-        <a aria-label="" href="#" class="button-link">Sign up</a>
+        <a aria-label="" href="#" class="button-link signup-btn">Sign up</a>
       </div>
 
       <!--  -->
