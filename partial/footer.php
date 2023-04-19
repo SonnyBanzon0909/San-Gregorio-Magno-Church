@@ -304,7 +304,7 @@ if (isset($_SESSION['user_email'])) {
       var old_password = $('#change-name').val();
       var new_password = $('#change-address').val();
       var password = $('#change-password').val();
-      if(name == "" && address =="" && password =="")
+      if(old_password == "" && new_password =="" && password =="")
       {
         alert("Please fill it out before proceeding.");
       }
