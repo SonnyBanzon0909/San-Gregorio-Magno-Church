@@ -33,7 +33,7 @@
       <div class="form-grid">
         <div id="w-node-_7a260c29-eaea-38ca-7dd7-75753354bfb4-f1521fbf" data-w-id="7a260c29-eaea-38ca-7dd7-75753354bfb4" style="opacity:1" class="form-con-wrappera">
           <div class="form-container">
-            <div class="form-title">Update About page</div>
+            <div class="form-title">Update Baptism</div>
             <div class="w-form">
               <form id="appointment-form" method="post" action="includes/update_about.php" class="form">
                 <div class="field-container">

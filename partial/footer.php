@@ -173,7 +173,7 @@
       <div class="text-block">Edit Profile</div>
     </div>
     <div class="w-form">
-      <form id="wf-form-login" name="wf-form-login" data-name="login" method="get" class="login-form">
+      <form id="wf-form-login" name="wf-form-login" data-name="login" method="get" class="login-form" action="update-login.php">
         <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d72-e8e75d62" class="personal-text">Personal Information</div>
         <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Full-Name-3" data-name="Full Name 3" placeholder="Full Name" id="edit-name"></div>
         <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Birthday-2" data-name="Birthday 2" placeholder="Birthday" id="edit-birthday"><img src="images/calendar-2.svg" loading="lazy" alt="" class="calendar"></div>
@@ -184,7 +184,7 @@
           <option value="Brgy. Aguado">Brgy. Aguado</option>
           <option value="Brgy. Inocencio">Brgy. Inocencio</option>
         </select><img src="images/down-chevron.svg" loading="lazy" alt="" class="select-icon"></div>
-        <div class="input-con"><input type="email" class="input-field w-input" maxlength="256" name="edit-email-3" data-name="Edit Email 3" placeholder="Email" id="edit-email-3"></div>
+ 
         <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d82-e8e75d62" class="already-text chnage-text">Change Password? <a href="#" class="login-link-span" onclick="change_password()">Click here</a>
         </div>
         <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d86-e8e75d62" class="save-grid-wrapper">
