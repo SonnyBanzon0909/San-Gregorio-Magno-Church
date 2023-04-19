@@ -166,7 +166,7 @@
             <div class="profile-initial" style="text-transform: uppercase;">E</div>
           </div><img src="images/down-chevron.svg" loading="lazy" alt="" class="drop-icon">
         </div>
-        <nav class="dropdown-list w-dropdown-list" style="width:100%">
+        <nav class="dropdown-list w-dropdown-list" style="width:100%; min-width: 350px;">
           <div class="login-content-con">
 
             <a href="status.php" class="login-link w-inline-block"><img src="images/Status.svg" loading="lazy" alt="" class="login-icon">
