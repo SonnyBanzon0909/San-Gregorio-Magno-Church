@@ -208,11 +208,11 @@ if (isset($_SESSION['user_email'])) {
         <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d72-e8e75d62" class="personal-text">Personal Information</div>
         <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Full-Name-3" data-name="Full Name 3" placeholder="Full Name" id="edit-name" value="<?php echo $name; ?>"></div>
 
-        <div class="input-con"><input required type="date" class="input-field w-input" maxlength="256" name="Birthday-2" data-name="Birthday 2" placeholder="Birthday" id="edit-birthday"><img src="images/calendar-2.svg" loading="lazy" alt="" class="calendar"></div>
-        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Contact-number-2" data-name="Contact Number 2" placeholder="Contact number" id="edit-phone"></div>
+        <div class="input-con"><input required type="date" class="input-field w-input" maxlength="256" name="Birthday-2" data-name="Birthday 2" placeholder="Birthday" id="edit-birthday" value="<?php echo $birthday; ?>"><img src="images/calendar-2.svg" loading="lazy" alt="" class="calendar"></div>
+        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Contact-number-2" data-name="Contact Number 2" placeholder="Contact number" id="edit-phone" value="<?php echo $contact; ?>"></div>
         <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Address-3" data-name="Address 3" placeholder="Address" id="edit-address"></div>
         <div class="select-wrapper"><select id="edit-barangay" name="Barangay" data-name="Barangay" class="select login-select w-select">
-          <option value="">Barangay</option>
+          <option value="<?php echo $name; ?>"><?php echo $name; ?></option>
           <option value="Brgy. Aguado">Brgy. Aguado</option>
           <option value="Brgy. Inocencio">Brgy. Inocencio</option>
         </select><img src="images/down-chevron.svg" loading="lazy" alt="" class="select-icon"></div>
