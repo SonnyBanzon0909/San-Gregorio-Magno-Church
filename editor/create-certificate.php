@@ -618,6 +618,8 @@
        $("#Baptismal").show();
      }
      elementToSave = document.getElementById(cert_type);
+     var printContents = document.getElementById(cert_type).innerHTML;
+     
 
    });
     $("#print-btn").click(function(){
