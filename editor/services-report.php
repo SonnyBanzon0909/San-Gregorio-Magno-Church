@@ -572,9 +572,9 @@ function loadPrint() {
 
 alert("Click loadprint");
   const jsPDF = window.jspdf.jsPDF;
-  const downloadButton = document.querySelector('#download-pdf');
+  // const downloadButton = document.querySelector('#download-pdf');
 
-  downloadButton.addEventListener('click', () => {
+  $(this).addEventListener('click', () => {
   // get the filename for the PDF
     const filename = "Certificate.pdf";
 
