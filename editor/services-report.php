@@ -593,6 +593,7 @@ $(document).ready(function() {
     .then(response => response.json())
     .then(data => {
       // create a table to display the data
+      alert(response.responseText);
       const table = document.createElement('table');
       const headerRow = document.createElement('tr');
       const headers = ['Name', 'Gender', 'Barangay', 'Age', 'Date'];
