@@ -1,26 +1,26 @@
 <?php
   //include "includes/db.php";
 
-echo json_encode("DITO SAY");
-  // try {
-  //   // fetch data from the database
-  //   $sql = "SELECT name, gender, barangay, age, date FROM formdata";
-  //   $result = $conn->query($sql);
 
-  //   if ($result->num_rows > 0) {
-  //     // output data as JSON
-  //     $data = array();
-  //     while($row = $result->fetch_assoc()) {
-  //       $data[] = $row;
-  //     }
-  //     echo json_encode($data);
-  //   } else {
-  //     echo "0 results";
-  //   }
+  try {
+    // fetch data from the database
+    $sql = "SELECT name, gender, barangay, age, date FROM formdata";
+    $result = $conn->query($sql);
 
-  //   $conn->close();
+    if ($result->num_rows > 0) {
+      // output data as JSON
+      $data = array();
+      while($row = $result->fetch_assoc()) {
+        $data[] = $row;
+      }
+      echo json_encode($data);
+    } else {
+      echo "0 results";
+    }
 
-  // } catch (Exception $e) {
-  //   echo "Error: " . $e->getMessage();
-  // }
+    $conn->close();
+
+  } catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+  }
 ?>
