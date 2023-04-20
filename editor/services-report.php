@@ -569,7 +569,7 @@ $(document).ready(function() {
 
 
 
-
+<?php include "print-service-data.php"; ?>
 
 const jsPDF = window.jspdf.jsPDF;
 const downloadButton = document.querySelector('#download-pdf');
@@ -587,6 +587,10 @@ downloadButton.addEventListener('click', () => {
       orientation: 'portrait',
     }
   };
+
+  
+  
+
 
   // fetch data from the server using AJAX
   fetch('print-service-data.php')
