@@ -283,12 +283,12 @@
 
 
 
-  <!-- Add print -->
-  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<!-- Add print -->
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
 
 
 <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=640c46a109bfca551c61da47" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -570,50 +570,53 @@ $(document).ready(function() {
 
 
 
- 
-  const jsPDF = window.jspdf.jsPDF;
-  const downloadButton = document.querySelector('#download-pdf');
 
-  downloadButton.addEventListener('click', () => {
+const jsPDF = window.jspdf.jsPDF;
+const downloadButton = document.querySelector('#download-pdf');
+
+downloadButton.addEventListener('click', () => {
   // get the filename for the PDF
-    const filename = "Certificate.pdf";
+  const filename = "Certificate.pdf";
 
   // define the options for the PDF, including the filename
-    const options = {
-      filename: filename,
-      jsPDF: { 
-        unit: 'in', 
-        format: 'letter', 
-        orientation: 'portrait',
-      }
-    };
+  const options = {
+    filename: filename,
+    jsPDF: { 
+      unit: 'in', 
+      format: 'letter', 
+      orientation: 'portrait',
+    }
+  };
 
   // fetch data from the server using AJAX
-    fetch('print-service-data.php')
-    .then(response => response.json())
-    .then(data => {
+  fetch('print-service-data.php')
+  .then(response => response.json())
+  .then(data => {
       // create a table to display the data
-       
-      const table = document.createElement('table');
-      const headerRow = document.createElement('tr');
-      const headers = ['Name', 'Gender', 'Barangay', 'Age', 'Date'];
-      headers.forEach(header => {
-        const th = document.createElement('th');
-        th.textContent = header;
-        headerRow.appendChild(th);
-      });
-      table.appendChild(headerRow);
-      data.forEach(rowData => {
-        const row = document.createElement('tr');
-        Object.values(rowData).forEach(value => {
-          const td = document.createElement('td');
-          td.textContent = value;
-          row.appendChild(td);
-        });
-        table.appendChild(row);
-      });
 
-      // use html2canvas to capture a screenshot of the table
+    const table = document.createElement('table');
+    const headerRow = document.createElement('tr');
+    const headers = ['Name', 'Gender', 'Barangay', 'Age', 'Date'];
+    headers.forEach(header => {
+      const th = document.createElement('th');
+      th.textContent = header;
+      headerRow.appendChild(th);
+    });
+    table.appendChild(headerRow);
+    data.forEach(rowData => {
+      const row = document.createElement('tr');
+      Object.values(rowData).forEach(value => {
+        const td = document.createElement('td');
+        td.textContent = value;
+        row.appendChild(td);
+      });
+      table.appendChild(row);
+    });
+
+
+    setTimeout(() => {
+
+// use html2canvas to capture a screenshot of the table
       html2canvas(table, {
         scale: 1, // Set the scale to fit the entire element on the page
       }).then(canvas => {
@@ -646,8 +649,13 @@ $(document).ready(function() {
         console.error(error);
         alert('There was an error generating the PDF.');
       });
-    });
+
+
+    }, 2000);  
+
+
   });
+});
 
 
 function loadPrint() {
