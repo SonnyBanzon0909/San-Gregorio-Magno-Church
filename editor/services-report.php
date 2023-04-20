@@ -560,19 +560,22 @@ $(document).ready(function() {
 
 function loadPrint() {
 
-  //var cert_type = "my-cert-type"; // Replace with your actual element ID
-  var printContents = document.getElementById("report").innerHTML;
-  var originalContents = document.body.innerHTML;
-  document.body.innerHTML = printContents;
-  window.print();
-  document.body.innerHTML = originalContents;
-  // Add event listener for afterprint
-  window.addEventListener("afterprint", function(event) {
-    console.log("afterprint event:", event);
-    setTimeout(function() {
-      location.reload(); // Reload the page after a delay
-    }, 50); // Delay in milliseconds (adjust as needed)
-  }, false);
+  // //var cert_type = "my-cert-type"; // Replace with your actual element ID
+  // var printContents = document.getElementById("report").innerHTML;
+  // var originalContents = document.body.innerHTML;
+  // document.body.innerHTML = printContents;
+  // window.print();
+  // document.body.innerHTML = originalContents;
+  // // Add event listener for afterprint
+  // window.addEventListener("afterprint", function(event) {
+  //   console.log("afterprint event:", event);
+  //   setTimeout(function() {
+  //     location.reload(); // Reload the page after a delay
+  //   }, 50); // Delay in milliseconds (adjust as needed)
+  // }, false);
+
+// eto lang ending
+
   // // Fallback for browsers that don't support afterprint
   // setTimeout(function() {
   //   location.reload();
