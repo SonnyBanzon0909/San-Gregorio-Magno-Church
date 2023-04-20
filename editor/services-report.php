@@ -570,11 +570,11 @@ $(document).ready(function() {
 
 
 
-alert("Click loadprint");
+ 
   const jsPDF = window.jspdf.jsPDF;
   const downloadButton = document.querySelector('#download-pdf');
 
-  $(this).addEventListener('click', () => {
+  downloadButton.addEventListener('click', () => {
   // get the filename for the PDF
     const filename = "Certificate.pdf";
 
