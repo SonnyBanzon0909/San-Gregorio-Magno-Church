@@ -643,10 +643,12 @@
   }, 100); // Reload the page after a delay (adjust as needed)
     }
 
+
+
+
     const jsPDF = window.jspdf.jsPDF;
 
     const downloadButton = document.querySelector('#download-pdf');
-    
 
 
     downloadButton.addEventListener('click', () => {

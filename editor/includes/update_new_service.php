@@ -21,7 +21,7 @@
         move_uploaded_file($photo_tmp, "../img/$photo");
 
         if(empty($icon)){
-			$query = "SELECT * FROM services_tbl WHERE id = $id";
+			$query = "SELECT * FROM services_tbl WHERE id = '$id'";
 
 			$icon_query = mysqli_query($connection, $query);
 
@@ -43,7 +43,7 @@
 		$query = "UPDATE services_tbl SET ";
 		$query .= "icon = '$icon', ";
 		$query .= "title = '$title', ";
-		$query .= "content = '$content', ";
+		$query .= "content = '"$content"', ";
 		$query .= "button_text = '$button_text', ";
 		$query .= "button_link = '$button_link', ";
 		$query .= "icon = '$icon', ";
