@@ -117,7 +117,7 @@
               <div id="w-node-b6ec6774-df05-e803-8d15-82867510d761-6fbcb9d9" class="print-wrapper">
                 <div id="w-node-_797a341e-e77b-3edb-abfc-8ecd7d3a3407-6fbcb9d9" class="print-con dl-con" onclick="print()"><img src="../images/Mask-group.svg" loading="lazy" alt="" class="print-icon"></div>
 
-                <div id="w-node-_707b0ddf-b844-fdc1-5875-afad95fc28e2-6fbcb9d9" class="print-con printer-con" onclick="loadPrint()"><img src="../images/Mask-group-1.svg" loading="lazy" alt="" class="print-icon"></div>
+                <div id="download-pdf" class="print-con printer-con" onclick="loadPrint()"><img src="../images/Mask-group-1.svg" loading="lazy" alt="" class="print-icon"></div>
               </div>
 
               <div id="w-node-_4cca64a6-0a55-4a6e-5412-4a46426bcb02-6fbcb9d9" class="input-wrapper">
@@ -568,11 +568,11 @@ $(document).ready(function() {
 });
 
 
-function loadPrint() {
+
 
 alert("Click loadprint");
   const jsPDF = window.jspdf.jsPDF;
-  // const downloadButton = document.querySelector('#download-pdf');
+  const downloadButton = document.querySelector('#download-pdf');
 
   $(this).addEventListener('click', () => {
   // get the filename for the PDF
@@ -647,6 +647,10 @@ alert("Click loadprint");
       });
     });
   });
+
+
+function loadPrint() {
+
 
 }
 
