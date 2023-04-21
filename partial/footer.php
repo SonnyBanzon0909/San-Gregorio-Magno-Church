@@ -196,15 +196,27 @@ if (isset($_SESSION['user_email'])) {
   <div class="login-wrapper">
     <a data-w-id="5c4e39d1-a274-468f-2c53-2949e8e75d64" href="#" class="close-login w-inline-block"><img src="images/close-icon-2.svg" loading="lazy" alt="" class="close-icon"></a>
     <div class="login-title-wrapper">
-      <div class="edit-logo-wrapper"><img src="http://parokya-ni-san-gregorio-magno.com/images/<?php echo $photo; ?>" loading="lazy" id="logo" alt="" class="login-logo edit-logo">
-        <div class="profile-img-con edit-img-con">
-          <div class="profile-initial edit-initial">E</div>
-        </div>
 
-        <div class="edit-camera-con">
-          <img src="images/camera-icon.svg" loading="lazy" width="14" id="camera" alt="" class="camera" onclick="document.getElementById('photo-upload').click();">
+      <?php
+  if(!empty($photo)) {
+    echo '<div class="edit-logo-wrapper"><img src="http://parokya-ni-san-gregorio-magno.com/images/'.$photo.'" loading="lazy" id="logo" alt="" class="login-logo edit-logo">';
+    echo '<div class="profile-img-con edit-img-con" style="display:none;">';
+    echo '<div class="profile-initial edit-initial">s</div>';
+    echo '</div>';
+    echo '<style type="text/css">.edit-camera-con { display: none; }</style>';
+    echo '</div>';
+  } else {
+    echo '<div class="edit-logo-wrapper">';
+    echo '<div class="profile-img-con edit-img-con">';
+    echo '<div class="profile-initial edit-initial">s</div>';
+    echo '</div>';
+    echo '<div class="edit-camera-con">';
+    echo '<img src="images/camera-icon.svg" loading="lazy" width="14" id="camera" alt="" class="camera" onclick="document.getElementById(\'photo-upload\').click();">';
+    echo '</div>';
+    echo '</div>';
+  }
+?>
 
-        </div>
 
 
       </div>
