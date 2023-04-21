@@ -30,12 +30,12 @@
       </div>
       <div class="footer-link-wrapper">
         <div data-w-id="0070e048-3023-2eb5-4e69-91f82fdae256" class="footer-link-grid">
-          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae257-2fdae237" href="index.php" aria-current="page" class="nav-link footer-link w--current">Home</a>
-          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae259-2fdae237" href="about.html" class="nav-link footer-link">About</a>
-          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae25b-2fdae237" href="services.html" class="nav-link footer-link">Services</a>
-          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae25d-2fdae237" href="galleries.html" class="nav-link footer-link">Galleries</a>
-          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae25f-2fdae237" href="contact-us.html" class="nav-link footer-link">Contact us</a>
-          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae261-2fdae237" data-w-id="0070e048-3023-2eb5-4e69-91f82fdae261" href="#" class="nav-link footer-link login-btn sign-btn">Log in</a>
+          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae257-2fdae237" href="home.php?source=update_homepage" aria-current="page" class="nav-link footer-link w--current">Home</a>
+          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae259-2fdae237" href="about-us.php" class="nav-link footer-link">About</a>
+          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae25b-2fdae237" href="services.php?source=update_service&id=1" class="nav-link footer-link">Services</a>
+          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae25d-2fdae237" href="galleries.php?source=update_gallery&id=1" class="nav-link footer-link">Galleries</a>
+          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae25f-2fdae237" href="contact.php" class="nav-link footer-link">Contact us</a>
+           
         </div>
       </div>
       <div class="footer-note-wrapper">
