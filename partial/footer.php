@@ -196,7 +196,7 @@ if (isset($_SESSION['user_email'])) {
   <div class="login-wrapper">
     <a data-w-id="5c4e39d1-a274-468f-2c53-2949e8e75d64" href="#" class="close-login w-inline-block"><img src="images/close-icon-2.svg" loading="lazy" alt="" class="close-icon"></a>
     <div class="login-title-wrapper">
-      <div class="edit-logo-wrapper"><img src="http://parokya-ni-san-gregorio-magno.com/images/<?php $photo; ?>" loading="lazy" id="logo" alt="" class="login-logo edit-logo">
+      <div class="edit-logo-wrapper"><img src="http://parokya-ni-san-gregorio-magno.com/images/<?php echo $photo; ?>" loading="lazy" id="logo" alt="" class="login-logo edit-logo">
         <div class="profile-img-con edit-img-con">
           <div class="profile-initial edit-initial">E</div>
         </div>
