@@ -196,18 +196,27 @@ if (isset($_SESSION['user_email'])) {
   <div class="login-wrapper">
     <a data-w-id="5c4e39d1-a274-468f-2c53-2949e8e75d64" href="#" class="close-login w-inline-block"><img src="images/close-icon-2.svg" loading="lazy" alt="" class="close-icon"></a>
     <div class="login-title-wrapper">
-      <div class="edit-logo-wrapper"><img src="http://parokya-ni-san-gregorio-magno.com/images/<?php echo $photo; ?>" loading="lazy" id="logo" alt="" class="login-logo edit-logo">
-        <div class="profile-img-con edit-img-con">
-          <div class="profile-initial edit-initial">E</div>
-        </div>
+
+      <div class="edit-logo-wrapper">
+
+        <?php if (!empty($photo)) : ?>
+          <img src="http://parokya-ni-san-gregorio-magno.com/images/<?php echo $photo; ?>" loading="lazy" id="logo" alt="" class="login-logo edit-logo">
+          <div class="profile-img-con edit-img-con" style="display: none;">
+            <div class="profile-initial edit-initial">s</div>
+          </div>
+        <?php else : ?>
+          <img src="" loading="lazy" id="logo" alt="" class="login-logo edit-logo" style="display: none;">
+          <div class="profile-img-con edit-img-con">
+            <div class="profile-initial edit-initial">s</div>
+          </div>
+        <?php endif; ?>
 
         <div class="edit-camera-con">
           <img src="images/camera-icon.svg" loading="lazy" width="14" id="camera" alt="" class="camera" onclick="document.getElementById('photo-upload').click();">
-
         </div>
-
-
       </div>
+
+<!--  -->
       <div class="text-block">Edit Profile</div>
     </div>
     <div class="w-form">
