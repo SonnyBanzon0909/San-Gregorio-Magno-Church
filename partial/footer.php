@@ -205,7 +205,7 @@ if (isset($_SESSION['user_email'])) {
             <div class="profile-initial edit-initial">s</div>
           </div>
         <?php else : ?>
-          <img src="" loading="lazy" id="logo" alt="" class="login-logo edit-logo" style="display: none;">
+          <img src="" loading="lazy" id="logo" alt="" class="login-logo edit-logo" >
           <div class="profile-img-con edit-img-con">
             <div class="profile-initial edit-initial">s</div>
           </div>
