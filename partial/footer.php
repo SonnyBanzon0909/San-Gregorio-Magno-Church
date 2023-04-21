@@ -305,7 +305,7 @@ if (isset($_SESSION['user_email'])) {
   });
   // $("#photo-upload").change(function(){
 
-  
+
   // });
 
   var photoUpload = document.getElementById('photo-upload');
@@ -321,7 +321,7 @@ if (isset($_SESSION['user_email'])) {
       if (this.status == 200) {
         if(this.responseText=="success")
         {
-          var src = $("#photo-upload").val();
+          var src = "images/"+$("#photo-upload").val();
           $("#logo").attr("src",src );
         }
       }
