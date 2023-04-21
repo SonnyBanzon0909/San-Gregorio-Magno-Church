@@ -312,22 +312,23 @@ if (isset($_SESSION['user_email'])) {
 
   photoUpload.addEventListener('change', function() {
     var file = this.files[0];
-    var formData = new FormData();
-    formData.append('file', file);
+  var filename = file.name.replace(/\s+/g, '-'); // Replace spaces with hyphens
+  var formData = new FormData();
+  formData.append('file', file);
 
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'update-photo.php', true);
-    xhr.onload = function() {
-      if (this.status == 200) {
-        if(this.responseText=="success")
-        {
-          var src = "http://parokya-ni-san-gregorio-magno.com/images/"+$("#photo-upload").val();
-          $("#logo").attr("src",src );
-        }
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'update-photo.php', true);
+  xhr.onload = function() {
+    if (this.status == 200) {
+      if(this.responseText=="success")
+      {
+        // Success, do something here
+        console.log('File uploaded successfully:', filename);
       }
-    };
-    xhr.send(formData);
-  });
+    }
+  };
+  xhr.send(formData);
+});
 
 
   if (window.location.pathname.includes("/editor/")) 
