@@ -13,6 +13,7 @@ if (isset($_SESSION['user_email'])) {
 
 // Get the filename and file path of the uploaded logo
 $logo_filename = $_FILES['file']['name'];
+$logo_filename = str_replace(' ', '-', $logo_filename); // Replace spaces with hyphens
 $logo_filepath = "images/" . $logo_filename;
 
 // Build the SQL query with a prepared statement to prevent SQL injection
