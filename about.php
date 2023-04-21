@@ -106,7 +106,7 @@ else
             <div class="abt-date"><strong><?php echo $about_date; ?></strong></div>
             <div class="abt-block-title"><strong><?php echo $about_title; ?></strong></div>
             <div class="rich-text-block w-richtext">
-              <pre>&lt;?php echo $about_content; ?&gt;</pre>
+              <pre><?php echo $about_content; ?></pre>
             </div>
           </div>
         </div>
