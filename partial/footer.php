@@ -198,69 +198,69 @@ if (isset($_SESSION['user_email'])) {
     <div class="login-title-wrapper">
 
       <?php
-  if(!empty($photo)) {
-    echo '<div class="edit-logo-wrapper"><img src="http://parokya-ni-san-gregorio-magno.com/images/'.$photo.'" loading="lazy" id="logo" alt="" class="login-logo edit-logo">';
-    echo '<div class="profile-img-con edit-img-con" style="display:none;">';
-    echo '<div class="profile-initial edit-initial">s</div>';
-    echo '</div>';
-    echo '<style type="text/css">.edit-camera-con { display: none; }</style>';
-    echo '</div>';
-  } else {
-    echo '<div class="edit-logo-wrapper">';
-    echo '<div class="profile-img-con edit-img-con">';
-    echo '<div class="profile-initial edit-initial">s</div>';
-    echo '</div>';
-    echo '<div class="edit-camera-con">';
-    echo '<img src="images/camera-icon.svg" loading="lazy" width="14" id="camera" alt="" class="camera" onclick="document.getElementById(\'photo-upload\').click();">';
-    echo '</div>';
-    echo '</div>';
-  }
-?>
+      if(!empty($photo)) {
+        echo '<div class="edit-logo-wrapper"><img src="http://parokya-ni-san-gregorio-magno.com/images/'.$photo.'" loading="lazy" id="logo" alt="" class="login-logo edit-logo">';
+        echo '<div class="profile-img-con edit-img-con" style="display:none;">';
+        echo '<div class="profile-initial edit-initial">s</div>';
+        echo '</div>';
+        echo '<style type="text/css">.edit-camera-con { display: none; }</style>';
+        echo '</div>';
+      } else {
+        echo '<div class="edit-logo-wrapper">';
+        echo '<div class="profile-img-con edit-img-con">';
+        echo '<div class="profile-initial edit-initial">s</div>';
+        echo '</div>';
+        echo '<div class="edit-camera-con">';
+        echo '<img src="images/camera-icon.svg" loading="lazy" width="14" id="camera" alt="" class="camera" onclick="document.getElementById(\'photo-upload\').click();">';
+        echo '</div>';
+        echo '</div>';
+      }
+      ?>
 
 
 
-      </div>
-      <div class="text-block">Edit Profile</div>
     </div>
-    <div class="w-form">
-      <form id="wf-form-login" name="wf-form-login" data-name="login" method="post" class="login-form" action="update-login.php">
-        <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d72-e8e75d62" class="personal-text">Personal Information</div>
+    <div class="text-block">Edit Profile</div>
+  </div>
+  <div class="w-form">
+    <form id="wf-form-login" name="wf-form-login" data-name="login" method="post" class="login-form" action="update-login.php">
+      <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d72-e8e75d62" class="personal-text">Personal Information</div>
 
-        <input type="file" id="photo-upload" style="display: none;" name="photo" accept="image/*" class="upload-input">
+      <input type="file" id="photo-upload" style="display: none;" name="photo" accept="image/*" class="upload-input">
 
-        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Full-Name-3" data-name="Full Name 3" placeholder="Full Name" id="edit-name" value="<?php echo $name; ?>"></div>
+      <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Full-Name-3" data-name="Full Name 3" placeholder="Full Name" id="edit-name" value="<?php echo $name; ?>"></div>
 
-        <div class="input-con"><input required type="date" class="input-field w-input" maxlength="256" name="Birthday-2" data-name="Birthday 2" placeholder="Birthday" id="edit-birthday" value="<?php echo $birthday; ?>"><img src="images/calendar-2.svg" loading="lazy" alt="" class="calendar"></div>
-        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Contact-number-2" data-name="Contact Number 2" placeholder="Contact number" id="edit-phone" value="<?php echo $contact; ?>"></div>
-        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Address-3" data-name="Address 3" placeholder="Address" id="edit-address" value="<?php echo $address; ?>"></div>
-        <div class="select-wrapper"><select id="edit-barangay" name="Barangay" data-name="Barangay" class="select login-select w-select">
-          <option value="<?php echo $barangay; ?>"><?php echo $barangay; ?></option>
-          <option value="Brgy. Aguado">Brgy. Aguado</option>
-          <option value="Brgy. Inocencio">Brgy. Inocencio</option>
-        </select><img src="images/down-chevron.svg" loading="lazy" alt="" class="select-icon"></div>
+      <div class="input-con"><input required type="date" class="input-field w-input" maxlength="256" name="Birthday-2" data-name="Birthday 2" placeholder="Birthday" id="edit-birthday" value="<?php echo $birthday; ?>"><img src="images/calendar-2.svg" loading="lazy" alt="" class="calendar"></div>
+      <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Contact-number-2" data-name="Contact Number 2" placeholder="Contact number" id="edit-phone" value="<?php echo $contact; ?>"></div>
+      <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Address-3" data-name="Address 3" placeholder="Address" id="edit-address" value="<?php echo $address; ?>"></div>
+      <div class="select-wrapper"><select id="edit-barangay" name="Barangay" data-name="Barangay" class="select login-select w-select">
+        <option value="<?php echo $barangay; ?>"><?php echo $barangay; ?></option>
+        <option value="Brgy. Aguado">Brgy. Aguado</option>
+        <option value="Brgy. Inocencio">Brgy. Inocencio</option>
+      </select><img src="images/down-chevron.svg" loading="lazy" alt="" class="select-icon"></div>
 
-        <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d82-e8e75d62" class="already-text chnage-text">Change Password? <a href="#" class="login-link-span" onclick="change_password()">Click here</a>
-        </div>
-        <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d86-e8e75d62" class="save-grid-wrapper">
-          <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d87-e8e75d62" class="save-grid">
-            <div data-w-id="5c4e39d1-a274-468f-2c53-2949e8e75d88" class="button rounded-button min-112">
-              <div class="button-overlay"></div><input type="submit" value="SAVE" data-wait="Please wait..." class="button-link w-button">
-            </div>
-            <div data-w-id="5c4e39d1-a274-468f-2c53-2949e8e75d8b" class="button rounded-button trans-btn min-112">
-              <div class="button-overlay bg-black"></div>
-              <a aria-label="" href="index.php" class="button-link color-black">CANCEL</a>
-            </div>
+      <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d82-e8e75d62" class="already-text chnage-text">Change Password? <a href="#" class="login-link-span" onclick="change_password()">Click here</a>
+      </div>
+      <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d86-e8e75d62" class="save-grid-wrapper">
+        <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d87-e8e75d62" class="save-grid">
+          <div data-w-id="5c4e39d1-a274-468f-2c53-2949e8e75d88" class="button rounded-button min-112">
+            <div class="button-overlay"></div><input type="submit" value="SAVE" data-wait="Please wait..." class="button-link w-button">
+          </div>
+          <div data-w-id="5c4e39d1-a274-468f-2c53-2949e8e75d8b" class="button rounded-button trans-btn min-112">
+            <div class="button-overlay bg-black"></div>
+            <a aria-label="" href="index.php" class="button-link color-black">CANCEL</a>
           </div>
         </div>
-      </form>
-      <div class="w-form-done">
-        <div>Thank you! Your submission has been received!</div>
       </div>
-      <div class="w-form-fail">
-        <div>Oops! Something went wrong while submitting the form.</div>
-      </div>
+    </form>
+    <div class="w-form-done">
+      <div>Thank you! Your submission has been received!</div>
+    </div>
+    <div class="w-form-fail">
+      <div>Oops! Something went wrong while submitting the form.</div>
     </div>
   </div>
+</div>
 </div>
 <div class="section login-section sign-in-section wf-section">
   <div class="login-wrapper">
