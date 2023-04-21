@@ -28,23 +28,7 @@ if (isset($_SESSION['user_email'])) {
 
 ?>
 
-<style>
-  .upload-label {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
 
-  .upload-text {
-    margin-left: 8px;
-    font-size: 14px;
-  }
-
-  .upload-input {
-    display: none;
-  }
-
-</style>
 <div class="section footer-section wf-section">
   <div class="container">
     <div class="cta-grid">
@@ -215,28 +199,12 @@ if (isset($_SESSION['user_email'])) {
         <div class="profile-img-con edit-img-con">
           <div class="profile-initial edit-initial">E</div>
         </div>
-
-        <div class="w-form">
-          <form id="wf-form-login" name="wf-form-login" data-name="login" method="post" class="login-form" action="update-login.php">
-
-            <!--  -->
-            <div class="edit-camera-con">
-              <label for="photo-upload" class="upload-label">
-                <img src="images/camera-icon.svg" loading="lazy" width="14" alt="" class="camera">
-                <span class="upload-text">Upload Photo</span>
-              </label>
-              <input type="file" id="photo-upload" name="photo" accept="image/*" class="upload-input">
-            </div>
-
-            <!--  -->
-          </div>
-          <div class="text-block">Edit Profile</div>
-        </div>
-        
-
-
-
-        <!--  -->
+        <div class="edit-camera-con"><img src="images/camera-icon.svg" loading="lazy" width="14" alt="" class="camera"></div>
+      </div>
+      <div class="text-block">Edit Profile</div>
+    </div>
+    <div class="w-form">
+      <form id="wf-form-login" name="wf-form-login" data-name="login" method="post" class="login-form" action="update-login.php">
         <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d72-e8e75d62" class="personal-text">Personal Information</div>
         <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Full-Name-3" data-name="Full Name 3" placeholder="Full Name" id="edit-name" value="<?php echo $name; ?>"></div>
 
