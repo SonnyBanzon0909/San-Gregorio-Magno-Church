@@ -165,7 +165,7 @@ if(isset($_POST['update_homepage'])){
                   <input type="text" class="input-field w-input"  name="office_2" id="office_2" value="<?php echo $office_2; ?>">
                 </div>
                 <div class="field-wrapper">
-                  <input type="text" class="input-field w-input"  name="office_2" id="office_2" value="<?php echo $office_2; ?>">
+                  <input type="text" class="input-field w-input"  name="office_3" id="office_3" value="<?php echo $office_3; ?>">
                   <input type="hidden" class="input-field w-input"  name="id" id="id" value="<?php echo $id; ?>">
                 </div>
                 <div class="field-wrapper">
