@@ -5,12 +5,12 @@ require_once "connect.php";
 
 // Retrieve the email value from the session
 
- 
+
 
 if (isset($_SESSION['user_email'])) {
     $email = $_SESSION['user_email'];
 } else {
-     
+
 }
 
 // Build the SQL query with a prepared statement to prevent SQL injection
@@ -19,6 +19,7 @@ $stmt = mysqli_prepare($conn, $sql);
 mysqli_stmt_bind_param($stmt, "sssssss", $logo, $full_name, $birthday, $contact_number, $address, $barangay, $email);
 
 // Set the values of the parameters based on the form input
+$old_logo = "http://parokya-ni-san-gregorio-magno.com/images/".$_POST['oldphoto'];
 $logo = $_POST['photo'];
 $full_name = $_POST['Full-Name-3'];
 $birthday = $_POST['Birthday-2'];

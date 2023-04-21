@@ -216,12 +216,14 @@ if (isset($_SESSION['user_email'])) {
         </div>
       </div>
 
-<!--  -->
+      <!--  -->
       <div class="text-block">Edit Profile</div>
     </div>
     <div class="w-form">
       <form id="wf-form-login" name="wf-form-login" data-name="login" method="post" class="login-form" action="update-login.php">
         <div id="w-node-_5c4e39d1-a274-468f-2c53-2949e8e75d72-e8e75d62" class="personal-text">Personal Information</div>
+
+        <input type="hidden" name="oldphoto" value="<?php echo $photo; ?>">
 
         <input type="file" id="photo-upload" style="display: none;" name="photo" accept="image/*" class="upload-input">
 
