@@ -212,7 +212,7 @@ if (isset($_SESSION['user_email'])) {
         <?php endif; ?>
 
         <div class="edit-camera-con">
-          <img src="images/camera-icon.svg" loading="lazy" width="14" id="camera" alt="" class="camera" onclick="document.getElementById('photo-upload').click();">
+          <img src="images/camera-icon.svg" loading="lazy" width="14" id="camera" alt="" class="camera" onclick="document.getElementById('photo-upload').click();" style="    cursor: pointer;">
         </div>
       </div>
 
