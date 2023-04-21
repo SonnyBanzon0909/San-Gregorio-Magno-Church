@@ -44,9 +44,7 @@ if (isset($_SESSION['user_email'])) {
     display: none;
   }
 
-</style>>
-
-
+</style>
 <div class="section footer-section wf-section">
   <div class="container">
     <div class="cta-grid">
@@ -218,23 +216,23 @@ if (isset($_SESSION['user_email'])) {
           <div class="profile-initial edit-initial">E</div>
         </div>
 
+        <div class="w-form">
+          <form id="wf-form-login" name="wf-form-login" data-name="login" method="post" class="login-form" action="update-login.php">
 
-        <form id="wf-form-login" name="wf-form-login" data-name="login" method="post" class="login-form" action="update-login.php">
+            <!--  -->
+            <div class="edit-camera-con">
+              <label for="photo-upload" class="upload-label">
+                <img src="images/camera-icon.svg" loading="lazy" width="14" alt="" class="camera">
+                <span class="upload-text">Upload Photo</span>
+              </label>
+              <input type="file" id="photo-upload" name="photo" accept="image/*" class="upload-input">
+            </div>
 
-          <!--  -->
-          <div class="edit-camera-con">
-            <label for="photo-upload" class="upload-label">
-              <img src="images/camera-icon.svg" loading="lazy" width="14" alt="" class="camera">
-              <span class="upload-text">Upload Photo</span>
-            </label>
-            <input type="file" id="photo-upload" name="photo" accept="image/*" class="upload-input">
+            <!--  -->
           </div>
-
-          <!--  -->
+          <div class="text-block">Edit Profile</div>
         </div>
-        <div class="text-block">Edit Profile</div>
-      </div>
-      <div class="w-form">
+        
 
 
 
