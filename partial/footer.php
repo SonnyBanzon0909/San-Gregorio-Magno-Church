@@ -303,12 +303,33 @@ if (isset($_SESSION['user_email'])) {
     
     
   });
-  $("#photo-upload").change(function(){
+  // $("#photo-upload").change(function(){
 
-    var src = $("#photo-upload").val();
-    $("#logo").attr("src",src );
-  });
   
+  // });
+
+  var photoUpload = document.getElementById('photo-upload');
+
+  photoUpload.addEventListener('change', function() {
+    var file = this.files[0];
+    var formData = new FormData();
+    formData.append('file', file);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'update-photo.php', true);
+    xhr.onload = function() {
+      if (this.status == 200) {
+        if(this.responseText=="success")
+        {
+          var src = $("#photo-upload").val();
+          $("#logo").attr("src",src );
+        }
+      }
+    };
+    xhr.send(formData);
+  });
+
+
   if (window.location.pathname.includes("/editor/")) 
   {
   //alert("sdsd");
