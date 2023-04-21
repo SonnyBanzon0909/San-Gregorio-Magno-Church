@@ -314,10 +314,21 @@ if (isset($_SESSION['user_email'])) {
     
     
   });
-  // $("#photo-upload").change(function(){
 
+  document.getElementById("close-edit-button").addEventListener("click", function() {
+    var oldphoto = document.querySelector('input[name="oldphoto"]').value;
 
-  // });
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "reset-photo.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        $("#logo").attr("src",oldphoto);
+      }
+    };
+    xhr.send("oldphoto=" + oldphoto);
+  });
+
 
   var photoUpload = document.getElementById('photo-upload');
 
@@ -717,19 +728,7 @@ if (isset($_SESSION['user_email'])) {
   });
 
 
-  document.getElementById("close-edit-button").addEventListener("click", function() {
-    var oldphoto = document.querySelector('input[name="oldphoto"]').value;
 
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "reset-photo.php", true);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        //alert(this.responseText);
-      }
-    };
-    xhr.send("oldphoto=" + oldphoto);
-  });
 </script>
 
 
