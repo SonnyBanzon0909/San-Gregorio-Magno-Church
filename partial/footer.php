@@ -322,8 +322,7 @@ if (isset($_SESSION['user_email'])) {
     if (this.status == 200) {
       if(this.responseText=="success")
       {
-        // Success, do something here
-        console.log('File uploaded successfully:', filename);
+        $("#logo").attr("src","http://parokya-ni-san-gregorio-magno.com/images/"+filename);
       }
     }
   };
