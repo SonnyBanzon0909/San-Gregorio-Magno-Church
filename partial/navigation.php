@@ -4,6 +4,22 @@ if(isset($_SESSION['username'])){
  unset($_SESSION['username']);
 }
 
+
+$query = "SELECT * FROM login WHERE email = '$email'";
+$view_query = mysqli_query($connection, $query);
+
+if(!$view_query){
+  die("QUERY FAILED". mysqli_error($connection));
+}
+
+while($row = mysqli_fetch_array($view_query)){
+
+  $photo = $row["logo"];
+
+
+}
+
+
 ?>
 
 <div class="section navigation wf-section">
@@ -83,9 +99,13 @@ if(isset($_SESSION['username'])){
 
         <div data-hover="false" id="profile" data-delay="500" data-w-id="a3e29982-56b0-b8b9-18b8-0f02a2630aa4" class="dropdown w-dropdown profile">
           <div class="dropdown-toggle w-dropdown-toggle">
+
             <div class="profile-img-con" style="margin-right: 23px;">
               <div class="profile-initial" style="text-transform: uppercase;">E</div>
-            </div><img src="images/down-chevron.svg" loading="lazy" alt="" class="drop-icon">
+              <img src="http://parokya-ni-san-gregorio-magno.com/images/<?php echo $photo; ?>">
+            </div>
+
+            <img src="images/down-chevron.svg" loading="lazy" alt="" class="drop-icon">
           </div>
           <nav class="dropdown-list w-dropdown-list" style="min-width:210px">
             <div class="login-content-con">
