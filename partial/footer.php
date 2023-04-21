@@ -194,7 +194,7 @@ if (isset($_SESSION['user_email'])) {
 
 <div class="section login-section edit-section wf-section" id="edit-sign-section">
   <div class="login-wrapper">
-    <a data-w-id="5c4e39d1-a274-468f-2c53-2949e8e75d64" href="#" class="close-login w-inline-block"><img src="images/close-icon-2.svg" loading="lazy" alt="" class="close-icon"></a>
+    <a data-w-id="5c4e39d1-a274-468f-2c53-2949e8e75d64" href="#" class="close-login w-inline-block"><img src="images/close-icon-2.svg" loading="lazy" alt="" class="close-icon" id="close-edit-button"></a>
     <div class="login-title-wrapper">
 
       <div class="edit-logo-wrapper">
@@ -716,6 +716,20 @@ if (isset($_SESSION['user_email'])) {
 
   });
 
+
+  document.getElementById("close-edit-button").addEventListener("click", function() {
+    var oldphoto = document.querySelector('input[name="oldphoto"]').value;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "reset-photo.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        //alert(this.responseText);
+      }
+    };
+    xhr.send("oldphoto=" + oldphoto);
+  });
 </script>
 
 
