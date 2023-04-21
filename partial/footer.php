@@ -17,6 +17,7 @@ if (isset($_SESSION['user_email'])) {
 
   while($row = mysqli_fetch_array($view_query)){
 
+    $photo = $row["logo"];
     $name = $row["fullname"];
     $birthday = $row["birthday"];
     $contact = $row["contact"];
@@ -195,13 +196,13 @@ if (isset($_SESSION['user_email'])) {
   <div class="login-wrapper">
     <a data-w-id="5c4e39d1-a274-468f-2c53-2949e8e75d64" href="#" class="close-login w-inline-block"><img src="images/close-icon-2.svg" loading="lazy" alt="" class="close-icon"></a>
     <div class="login-title-wrapper">
-      <div class="edit-logo-wrapper"><img src="images/parokya-ni-San-Gregorio-Magno.png" loading="lazy" alt="" class="login-logo edit-logo">
+      <div class="edit-logo-wrapper"><img src="images/<?php $photo; ?>" loading="lazy" id="logo" alt="" class="login-logo edit-logo">
         <div class="profile-img-con edit-img-con">
           <div class="profile-initial edit-initial">E</div>
         </div>
 
         <div class="edit-camera-con">
-          <img src="images/camera-icon.svg" loading="lazy" width="14" alt="" class="camera" onclick="document.getElementById('photo-upload').click();">
+          <img src="images/camera-icon.svg" loading="lazy" width="14" id="camera" alt="" class="camera" onclick="document.getElementById('photo-upload').click();">
 
         </div>
 
@@ -295,6 +296,19 @@ if (isset($_SESSION['user_email'])) {
 
 <script type="text/javascript">
 
+  $("#camera").click(function(){
+    $(".edit-img-con").css("display", "none");
+    $("#logo").css("display", "block");
+
+    
+    
+  });
+  $("#photo-upload").change(function(){
+
+    var src = $("#photo-upload").val();
+    $("#logo").attr("src",src );
+  });
+  
   if (window.location.pathname.includes("/editor/")) 
   {
   //alert("sdsd");
