@@ -200,12 +200,12 @@ if (isset($_SESSION['user_email'])) {
       <div class="edit-logo-wrapper">
 
         <?php if (!empty($photo)) : ?>
-          <img src="http://parokya-ni-san-gregorio-magno.com/images/<?php echo $photo; ?>" loading="lazy" id="logo" alt="" class="login-logo edit-logo">
-          <div class="profile-img-con edit-img-con">
+          <img src="http://parokya-ni-san-gregorio-magno.com/images/<?php echo $photo; ?>" loading="lazy" id="logo" alt="" class="login-logo edit-logo" style="display: block;">
+          <div class="profile-img-con edit-img-con" style="display: none !important;">
             <div class="profile-initial edit-initial">s</div>
           </div>
         <?php else : ?>
-          <img src="" loading="lazy" id="logo" alt="" class="login-logo edit-logo" >
+          <img src="" loading="lazy" id="logo" alt="" class="login-logo edit-logo" style="display: none !important;">
           <div class="profile-img-con edit-img-con">
             <div class="profile-initial edit-initial">s</div>
           </div>
