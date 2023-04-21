@@ -201,7 +201,7 @@ if (isset($_SESSION['user_email'])) {
 
         <?php if (!empty($photo)) : ?>
           <img src="http://parokya-ni-san-gregorio-magno.com/images/<?php echo $photo; ?>" loading="lazy" id="logo" alt="" class="login-logo edit-logo">
-          <div class="profile-img-con edit-img-con" style="display: none;">
+          <div class="profile-img-con edit-img-con">
             <div class="profile-initial edit-initial">s</div>
           </div>
         <?php else : ?>
