@@ -16,8 +16,8 @@ $stmt = mysqli_prepare($conn, $sql);
 mysqli_stmt_bind_param($stmt, "sssssss", $logo, $full_name, $birthday, $contact_number, $address, $barangay, $email);
 
 // Set the values of the parameters based on the form input
-$old_logo = $_POST['oldphoto'];
-$logo = $_POST['photo'];
+$old_logo = str_replace(' ', '-', $_POST['oldphoto']);
+$logo = str_replace(' ', '-', $_POST['photo']);
 if (empty($logo)) {
     $logo = $old_logo;
 }
