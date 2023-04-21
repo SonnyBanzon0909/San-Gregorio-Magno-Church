@@ -14,11 +14,12 @@ if (isset($_SESSION['user_email'])) {
 }
 
 // Build the SQL query with a prepared statement to prevent SQL injection
-$sql = "UPDATE login SET fullname=?, birthday=?, contact=?, address=?, barangay=? WHERE email=?";
+$sql = "UPDATE login SET logo=?, fullname=?, birthday=?, contact=?, address=?, barangay=? WHERE email=?";
 $stmt = mysqli_prepare($conn, $sql);
-mysqli_stmt_bind_param($stmt, "ssssss", $full_name, $birthday, $contact_number, $address, $barangay, $email);
+mysqli_stmt_bind_param($stmt, "sssssss", $logo, $full_name, $birthday, $contact_number, $address, $barangay, $email);
 
 // Set the values of the parameters based on the form input
+$logo = $_POST['photo'];
 $full_name = $_POST['Full-Name-3'];
 $birthday = $_POST['Birthday-2'];
 $contact_number = $_POST['Contact-number-2'];
