@@ -75,7 +75,7 @@ include "editor/includes/db.php";
         <div class="header-wrapper">
           <div class="header-content-con">
             <h1 data-w-id="f5a4fc5a-5d6d-4bff-6a35-f1cbc2dc81f4" style="opacity:0" class="header-title header-title-text">Services</h1>
-            <div data-w-id="f5a4fc5a-5d6d-4bff-6a35-f1cbc2dc81f6" style="opacity:0" class="body-text-medium header-excerpt" style="max-width: 850px;">We offer baptism, first communion, confirmation, faith formation, mass wedding, blessings, funeral mass, and request certificate for Brgy. Aguado and Brgy. Inocencio community</div>
+            <div data-w-id="f5a4fc5a-5d6d-4bff-6a35-f1cbc2dc81f6" style="opacity:0" class="body-text-medium header-excerpt" style="max-width: 850px; ">We offer baptism, first communion, confirmation, faith formation, mass wedding, blessings, funeral mass, and request certificate for Brgy. Aguado and Brgy. Inocencio community</div>
           </div>
         </div>
       </div>
