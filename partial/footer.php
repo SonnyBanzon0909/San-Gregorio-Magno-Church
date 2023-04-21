@@ -314,7 +314,7 @@ if (isset($_SESSION['user_email'])) {
     
     
   });
-
+  
   document.getElementById("close-edit-button").addEventListener("click", function() {
     var oldphoto = document.querySelector('input[name="oldphoto"]').value;
 
@@ -323,7 +323,7 @@ if (isset($_SESSION['user_email'])) {
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        $("#logo").attr("src",oldphoto);
+        $("#logo").attr("src","http://parokya-ni-san-gregorio-magno.com/images/"+oldphoto);
       }
     };
     xhr.send("oldphoto=" + oldphoto);
