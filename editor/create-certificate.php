@@ -641,25 +641,50 @@
     $("#print-btn").click(function(){
       printDiv();
     });
+
+    var id = <?php echo json_encode($id); ?>;
+
     function printDiv() {
-      $(".text-cert").css("opacity",'1');
-      //var cert_type = "my-cert-type"; // Replace with your actual element ID
-      var printContents = document.getElementById(cert_type).innerHTML;
-      var originalContents = document.body.innerHTML;
-      document.body.innerHTML = printContents;
-      window.print();
-      document.body.innerHTML = originalContents;
-        // Add event listener for afterprint
-      window.addEventListener("afterprint", function(event) {
-        console.log("afterprint event:", event);
-        setTimeout(function() {
-      location.reload(); // Reload the page after a delay
-    }, 50); // Delay in milliseconds (adjust as needed)
-      }, false);
-      // Fallback for browsers that don't support afterprint
-      setTimeout(function() {
-        location.reload();
-      }, 100); // Reload the page after a delay (adjust as needed)
+
+
+      if(confirm("Are you sure you want to update the status and print file?")) 
+      {
+
+        $(".text-cert").css("opacity",'1');
+        $.ajax({
+          type: "POST",
+          url: "update_status.php",
+          data: { id: id },
+          success: function(response) {
+
+          },
+          error: function(response) {
+
+          }
+        });
+
+        var printContents = document.getElementById(cert_type).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+        
+        window.addEventListener("afterprint", function(event) 
+        {
+          console.log("afterprint event:", event);
+          setTimeout(function() 
+          {
+            location.reload();  
+          }, 50);  
+        }, false);
+
+        setTimeout(function() 
+        {
+          location.reload();
+        }, 100); 
+      }
+
+
     }
 
 
@@ -672,80 +697,79 @@
 
     downloadButton.addEventListener('click', () => {
 
-      $(".cert-field").each(function(){
+      $(".cert-field").each(function()
+      {
         $(this).removeClass("active-input");
 
       });
       $(".text-cert").css("opacity",'1');
 
-      var id = <?php echo json_encode($id); ?>;
-      // Confirm the user wants to update the status
-      //alert(id);
-      if(confirm("Are you sure you want to update the status and download file?")) {
+      // var id = <?php echo json_encode($id); ?>;
+      
+      // if(confirm("Are you sure you want to update the status and download file?")) {
 
-      //certUpdate();
-  // get the filename for the PDF
-        const filename = name+".pdf";
 
-  // define the options for the PDF, including the filename
-        const options = {
-          filename: filename,
-          jsPDF: { 
-            unit: 'in', 
-            format: 'letter', 
-            orientation: 'portrait',
-          }
-        };
+      //   const filename = name+".pdf";
 
-  // use html2canvas to capture a screenshot of the element
-        html2canvas(elementToSave, {
-    scale: 1, // Set the scale to fit the entire element on the page
-  }).then(canvas => {
-    // Adjust the dimensions of the element to match the PDF page size
-    elementToSave.style.width = '8.5in';
-    elementToSave.style.height = '11in';
 
-    // get the base64-encoded image data
-    const imgData = canvas.toDataURL('image/png');
+      //   const options = {
+      //     filename: filename,
+      //     jsPDF: { 
+      //       unit: 'in', 
+      //       format: 'letter', 
+      //       orientation: 'portrait',
+      //     }
+      //   };
 
-    // create a new jsPDF instance and add the image to it
-    const doc = new jsPDF(options.jsPDF);
-    const width = doc.internal.pageSize.getWidth();
-    const height = doc.internal.pageSize.getHeight();
-    doc.addImage(imgData, 'PNG', 0, 0, width, height);
 
-    // save the PDF
-    doc.save(options.filename);
+      //   html2canvas(elementToSave, {
+      //     scale: 1,  
+      //   }).then(canvas => {
 
-    // reset the dimensions of the element
-    elementToSave.style.width = '';
-    elementToSave.style.height = '';
-  })
-  .then(() => {
-    // the PDF was successfully generated
-    alert('PDF was successfully generated!');
-  })
-  .catch((error) => {
-    // there was a problem generating the PDF
-    console.error(error);
-    alert('There was an error generating the PDF.');
-  });
-  $.ajax({
-    type: "POST",
-    url: "update_status.php",
-    data: { id: id },
-    success: function(response) {
-          //alert(response); // Show the success message
-    },
-    error: function(response) {
-            //alert("Error updating status"); // Show an error message
-    }
-  });
-}
+      //     elementToSave.style.width = '8.5in';
+      //     elementToSave.style.height = '11in';
+
+
+      //     const imgData = canvas.toDataURL('image/png');
+
+
+      //     const doc = new jsPDF(options.jsPDF);
+      //     const width = doc.internal.pageSize.getWidth();
+      //     const height = doc.internal.pageSize.getHeight();
+      //     doc.addImage(imgData, 'PNG', 0, 0, width, height);
+
+
+      //     doc.save(options.filename);
+
+
+      //     elementToSave.style.width = '';
+      //     elementToSave.style.height = '';
+      //   })
+      //   .then(() => {
+
+      //     alert('PDF was successfully generated!');
+      //   })
+      //   .catch((error) => {
+
+      //     console.error(error);
+      //     alert('There was an error generating the PDF.');
+      //   });
+      //   $.ajax({
+      //     type: "POST",
+      //     url: "update_status.php",
+      //     data: { id: id },
+      //     success: function(response) {
+
+      //     },
+      //     error: function(response) {
+
+      //     }
+      //   });
+      // }
 
 
 
-});
+    });
 
 
     function certUpdate()
