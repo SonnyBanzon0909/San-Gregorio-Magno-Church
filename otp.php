@@ -97,7 +97,7 @@ try {
     //Recipients
     $mail->setFrom('admin@parokya-ni-san-gregorio-magno.com', 'San Gregorio Magno');
     $mail->addAddress($email);            //Add a recipient
-    $mail->addReplyTo('admin@parokya-ni-san-gregorio-magno.com');
+    $mail->addReplyTo('sangregoriomagnochurch@gmail.com');
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
