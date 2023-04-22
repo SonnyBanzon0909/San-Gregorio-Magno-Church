@@ -706,7 +706,7 @@
 
     function certUpdate()
     {
-      var id = <?php echo json_encode($_POST['id']); ?>;
+      var id = <?php echo json_encode($_POST['id'])?>;
       // Confirm the user wants to update the status
       alert(id);
       if(confirm("Are you sure you want to update the status?")) {
