@@ -378,7 +378,7 @@ if (isset($_SESSION['user_email'])) {
 
 
   </div>
-  <div class="already-text marg-bot-45">Not you? <a href="#" data-w-id="55624acf-f15f-fc5e-8f62-de9f34de7ea8">Use another account</a>
+  <div class="already-text marg-bot-45">Not you? <a href="#" data-w-id="55624acf-f15f-fc5e-8f62-de9f34de7ea8"onclick="resetInput()">Use another account</a>
   </div>
   <div class="already-text">Don’t you have an account? <a href="#" data-w-id="55624acf-f15f-fc5e-8f62-de9f34de7eac">Sign up</a>
   </div>
@@ -391,7 +391,12 @@ if (isset($_SESSION['user_email'])) {
 
 
 <script type="text/javascript">
-
+  function resetInput()
+  {
+    $("#l-email").val("");
+    $("#l-password").val("");
+  }
+  
   $("#camera").click(function(){
     $(".edit-img-con").css("display", "none");
     $("#logo").css("display", "block");
