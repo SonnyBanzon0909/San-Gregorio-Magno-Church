@@ -279,6 +279,17 @@ if (isset($_SESSION['user_email'])) {
        if (isset($_COOKIE['cookie_email']) && isset($_COOKIE['cookie_password']) && isset($_COOKIE['cookie_image'])) {
 
 
+        echo '
+        <div id="w-node-_55624acf-f15f-fc5e-8f62-de9f34de7e8b-34de7e81" class="not-save-wrapper" style="display: none;">
+        <div class="input-con"><input required type="email" class="input-field w-input" maxlength="256" name="l-email" data-name="Login Email 3" placeholder="Email" id="l-email"></div>
+
+        <div class="input-con" style="align-items: flex-start !important;flex-direction: column !important;"><input required type="password" class="input-field w-input" maxlength="256" name="l-password" data-name="Login Password 3" placeholder="Password" id="l-password">
+        <p id="error-message" class="requirement-text" style="margin-top: 5px; display: none;"></p>
+        </div>
+        </div>
+        ';
+
+
         echo '<div class="save-wrapper">
         <div class="welcome-text"><strong>Welcome back!</strong></div>
         <div class="edit-logo-wrapper"><img src="images/parokya-ni-San-Gregorio-Magno.png" loading="lazy" alt="" class="login-logo edit-logo">
@@ -294,39 +305,54 @@ if (isset($_SESSION['user_email'])) {
       } 
       else 
       {
-       echo '
-       <div id="w-node-_55624acf-f15f-fc5e-8f62-de9f34de7e8b-34de7e81" class="not-save-wrapper" style="display: grid;">
-       <div class="input-con"><input required type="email" class="input-field w-input" maxlength="256" name="l-email" data-name="Login Email 3" placeholder="Email" id="l-email"></div>
-
-       <div class="input-con" style="align-items: flex-start !important;flex-direction: column !important;"><input required type="password" class="input-field w-input" maxlength="256" name="l-password" data-name="Login Password 3" placeholder="Password" id="l-password">
-       <p id="error-message" class="requirement-text" style="margin-top: 5px; display: none;"></p>
-       </div>
-       </div>
-       ';
-     }
-     ?>
 
 
 
+        echo '
+        <div id="w-node-_55624acf-f15f-fc5e-8f62-de9f34de7e8b-34de7e81" class="not-save-wrapper" style="display: grid;">
+        <div class="input-con"><input required type="email" class="input-field w-input" maxlength="256" name="l-email" data-name="Login Email 3" placeholder="Email" id="l-email"></div>
+
+        <div class="input-con" style="align-items: flex-start !important;flex-direction: column !important;"><input required type="password" class="input-field w-input" maxlength="256" name="l-password" data-name="Login Password 3" placeholder="Password" id="l-password">
+        <p id="error-message" class="requirement-text" style="margin-top: 5px; display: none;"></p>
+        </div>
+        </div>
+        ';
+
+
+        echo '<div class="save-wrapper" style="display:none">
+        <div class="welcome-text"><strong>Welcome back!</strong></div>
+        <div class="edit-logo-wrapper"><img src="images/parokya-ni-San-Gregorio-Magno.png" loading="lazy" alt="" class="login-logo edit-logo">
+        <div class="profile-img-con welcome-img-con">
+        <div class="profile-initial save-initial">E</div>
+        </div>
+        <div class="edit-camera-con hide"><img src="images/camera-icon.svg" loading="lazy" width="14" alt="" class="camera"></div>
+        </div>
+        <div class="already-text normal">esample000@gmail.com</div>
+        </div>';
+      }
+      ?>
 
 
 
 
 
 
-     <div data-w-id="55624acf-f15f-fc5e-8f62-de9f34de7e9d" class="button rounded-button">
-      <div class="button-overlay"></div><input type="submit" value="LOG IN" data-wait="Please wait..." class="button-link w-button">
-    </div>
 
 
-  </form>
+
+      <div data-w-id="55624acf-f15f-fc5e-8f62-de9f34de7e9d" class="button rounded-button">
+        <div class="button-overlay"></div><input type="submit" value="LOG IN" data-wait="Please wait..." class="button-link w-button">
+      </div>
 
 
-</div>
-<div class="already-text marg-bot-45">Not you? <a href="#" data-w-id="55624acf-f15f-fc5e-8f62-de9f34de7ea8">Use another account</a>
-</div>
-<div class="already-text">Don’t you have an account? <a href="#" data-w-id="55624acf-f15f-fc5e-8f62-de9f34de7eac">Sign up</a>
-</div>
+    </form>
+
+
+  </div>
+  <div class="already-text marg-bot-45">Not you? <a href="#" data-w-id="55624acf-f15f-fc5e-8f62-de9f34de7ea8">Use another account</a>
+  </div>
+  <div class="already-text">Don’t you have an account? <a href="#" data-w-id="55624acf-f15f-fc5e-8f62-de9f34de7eac">Sign up</a>
+  </div>
 </div>
 </div>
 
