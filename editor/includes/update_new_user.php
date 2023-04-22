@@ -5,9 +5,11 @@
 		$id = $_POST['id'];
 		$username = $_POST['username'];
         $password = $_POST['password'];
+        $role = $_POST['role'];
 
 		$query = "UPDATE admin_users SET ";
 		$query .= "username = '$username', ";
+		$role .= "role = '$role', ";
 		$query .= "password = '$password' ";
 		$query .= "WHERE id = $id";
 
