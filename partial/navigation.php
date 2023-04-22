@@ -150,15 +150,27 @@ while($row = mysqli_fetch_array($view_query)){
 <div class="section navigation-list-section wf-section">
   <div class="container">
     <div class="nav-links-grid mobile-nav-link-grid">
-      <a href="#" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4710-440d470d" class="nav-link">Home</a>
-      <a href="#" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4712-440d470d" class="nav-link">About</a>
+      <a href="index.php" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4710-440d470d" class="nav-link">Home</a>
+      <a href="about.php" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4712-440d470d" class="nav-link">About</a>
       <div data-hover="false" data-delay="500" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4714-440d470d" data-w-id="cc8842c1-27e0-b9b5-b91f-d8b4440d4714" class="nav-dropdown w-dropdown">
         <div class="nav-dropdown-toggle w-dropdown-toggle">
           <div class="nav-link">Services</div><img src="images/down-icon.svg" loading="lazy" alt="" class="dropdown-icon">
         </div>
         <nav class="nav-drop-list w-dropdown-list">
           <div class="nav-droplist-wrapper">
-            <a id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d471b-440d470d" href="services.php" class="link">Baptism</a>
+
+            <?php 
+            $query = "SELECT * FROM services_tbl";
+            $select_all_services = mysqli_query($connection, $query);
+            while($row = mysqli_fetch_array($select_all_services)){
+              $id = $row['id'];
+              $title = $row['title'];
+
+              echo '<a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ce-806977bd" href="services.php?id='.$id.'" class="link">'.$title.'</a>';
+
+            }
+            ?>
+            <!-- <a id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d471b-440d470d" href="services.php" class="link">Baptism</a>
             <a id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d471d-440d470d" href="#" class="link">First Communion</a>
             <a id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d471f-440d470d" href="#" class="link">Confirmation</a>
             <a id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4721-440d470d" href="#" class="link">Faith Formation</a>
@@ -166,7 +178,7 @@ while($row = mysqli_fetch_array($view_query)){
             <a id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4725-440d470d" href="#" class="link">Blessings</a>
             <a id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4727-440d470d" href="#" class="link">Funeral Mass</a>
             <a id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4729-440d470d" href="#" class="link">Request Certificate</a>
-            <a id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d472b-440d470d" href="#" class="link">Sick Call</a>
+            <a id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d472b-440d470d" href="#" class="link">Sick Call</a> -->
           </div>
         </nav>
       </div>
@@ -176,7 +188,20 @@ while($row = mysqli_fetch_array($view_query)){
         </div>
         <nav class="nav-drop-list w-dropdown-list">
           <div class="nav-droplist-wrapper gallery-droplist-wrapper">
-            <a id="w-node-c2b21419-ad24-f15e-ca54-d65a1ce158ff-440d470d" href="galleries.php" class="link">VISITA IGLESIA</a>
+
+            <?php 
+            $query = "SELECT * FROM gallery_tbl";
+            $select_all_gallery = mysqli_query($connection, $query);
+            while($row = mysqli_fetch_array($select_all_gallery)){
+              $id = $row['id'];
+              $title = $row['title'];
+
+              echo '<a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="galleries.php?id='.$id.'" class="link">'.$title.'</a>';
+
+            }
+
+            ?>
+      <!--       <a id="w-node-c2b21419-ad24-f15e-ca54-d65a1ce158ff-440d470d" href="galleries.php" class="link">VISITA IGLESIA</a>
             <a id="w-node-c2b21419-ad24-f15e-ca54-d65a1ce15901-440d470d" href="#" class="link">Renewal of Vows</a>
             <a id="w-node-c2b21419-ad24-f15e-ca54-d65a1ce15903-440d470d" href="#" class="link">Panunuluyan 2022</a>
             <a id="w-node-c2b21419-ad24-f15e-ca54-d65a1ce15905-440d470d" href="#" class="link">Solemnity of Christ the King</a>
@@ -185,7 +210,7 @@ while($row = mysqli_fetch_array($view_query)){
             <a id="w-node-c2b21419-ad24-f15e-ca54-d65a1ce1590b-440d470d" href="#" class="link">WALK OF FAITH 2022</a>
             <a id="w-node-c2b21419-ad24-f15e-ca54-d65a1ce1590d-440d470d" href="#" class="link">Misa Concelebrada ...</a>
             <a id="w-node-c2b21419-ad24-f15e-ca54-d65a1ce1590f-440d470d" href="#" class="link">Banal na Misa Kapistahan ...</a>
-            <a id="w-node-c2b21419-ad24-f15e-ca54-d65a1ce15911-440d470d" href="#" class="link">KARAKOL 2022</a>
+            <a id="w-node-c2b21419-ad24-f15e-ca54-d65a1ce15911-440d470d" href="#" class="link">KARAKOL 2022</a> -->
           </div>
         </nav>
       </div>
