@@ -1,4 +1,18 @@
+<?php
 
+ob_start();
+include "includes/db.php";
+
+$query = "SELECT * FROM admin_users WHERE username = '$username'";
+$user_query = mysqli_query($connection, $query);
+
+while($row = mysqli_fetch_array($user_query)){
+
+  $role = $row['role'];
+}
+
+
+?>
 
 
 <div class="section navigation wf-section">
@@ -15,18 +29,18 @@
           <nav class="nav-drop-list w-dropdown-list">
             <div class="nav-droplist-wrapper">
               <?php 
-                $query = "SELECT * FROM services_tbl";
-                $select_all_services = mysqli_query($connection, $query);
-                while($row = mysqli_fetch_array($select_all_services)){
-                  $id = $row['id'];
-                  $title = $row['title'];
+              $query = "SELECT * FROM services_tbl";
+              $select_all_services = mysqli_query($connection, $query);
+              while($row = mysqli_fetch_array($select_all_services)){
+                $id = $row['id'];
+                $title = $row['title'];
 
-                  echo '<a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ce-806977bd" href="services.php?source=services&id='.$id.'" class="link">'.$title.'</a>';
+                echo '<a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ce-806977bd" href="services.php?source=services&id='.$id.'" class="link">'.$title.'</a>';
 
-                }
-                echo "</br>";
-                echo '<a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ce-806977bd" href="services.php?source=add_service" class="link">Add new service</a>';
-                echo '<a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ce-806977bd" href="services.php" class="link">Service list</a>';
+              }
+              echo "</br>";
+              echo '<a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ce-806977bd" href="services.php?source=add_service" class="link">Add new service</a>';
+              echo '<a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ce-806977bd" href="services.php" class="link">Service list</a>';
 
               ?>
             </div>
@@ -40,18 +54,18 @@
           <nav class="nav-drop-list w-dropdown-list">
             <div class="nav-droplist-wrapper gallery-droplist-wrapper">
               <?php 
-                $query = "SELECT * FROM gallery_tbl";
-                $select_all_gallery = mysqli_query($connection, $query);
-                while($row = mysqli_fetch_array($select_all_gallery)){
-                  $id = $row['id'];
-                  $title = $row['title'];
+              $query = "SELECT * FROM gallery_tbl";
+              $select_all_gallery = mysqli_query($connection, $query);
+              while($row = mysqli_fetch_array($select_all_gallery)){
+                $id = $row['id'];
+                $title = $row['title'];
 
-                  echo '<a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="galleries.php?source=update_gallery&id='.$id.'" class="link">'.$title.'</a>';
+                echo '<a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="galleries.php?source=update_gallery&id='.$id.'" class="link">'.$title.'</a>';
 
-                }
-                echo "</br>";
-                echo '<a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ce-806977bd" href="galleries.php?source=add_gallery" class="link">Add new gallery</a>';
-                echo '<a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ce-806977bd" href="galleries.php" class="link">Gallery list</a>';
+              }
+              echo "</br>";
+              echo '<a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ce-806977bd" href="galleries.php?source=add_gallery" class="link">Add new gallery</a>';
+              echo '<a id="w-node-_14e56277-239e-cc10-6aba-00a1806977ce-806977bd" href="galleries.php" class="link">Gallery list</a>';
 
               ?>
             </div>
@@ -66,10 +80,23 @@
             <div class="nav-droplist-wrapper gallery-droplist-wrapper">
               <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="announcement.php" class="link">Announcement</a>
               <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="moments.php" class="link">Moments</a>
-              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="request-certificate.php" class="link">Request Certificate</a>
-              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="services-report.php" class="link">Services Report</a>
-              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="priests.php" class="link">Priests</a>
-              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="users.php" class="link">Add User</a>
+
+              <?php
+
+              if($role !='sub-admin')
+              {
+                echo '
+                <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="request-certificate.php" class="link">Request Certificate</a>
+
+                <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="services-report.php" class="link">Services Report</a>
+
+                <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="priests.php" class="link">Priests</a>
+                
+                <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="users.php" class="link">Add User</a>';
+              }
+
+              ?>
+
               
             </div>
           </nav>
@@ -162,4 +189,4 @@
   </div>
 </div>
 
- 
+
