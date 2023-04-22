@@ -279,7 +279,7 @@ if (isset($_SESSION['user_email'])) {
 
        if (isset($_COOKIE['cookie_email']) && isset($_COOKIE['cookie_password'])) {
 
-
+        $cookie_email = $_COOKIE['cookie_email'];
         echo '
         <div id="w-node-_55624acf-f15f-fc5e-8f62-de9f34de7e8b-34de7e81" class="not-save-wrapper" style="display: none;">
         <div class="input-con"><input required type="email" class="input-field w-input" maxlength="256" name="l-email" data-name="Login Email 3" placeholder="Email" id="l-email"></div>
@@ -306,7 +306,7 @@ if (isset($_SESSION['user_email'])) {
 
           <div class="edit-camera-con hide"><img src="images/camera-icon.svg" loading="lazy" width="14" alt="" class="camera"></div>
           </div>
-          <div class="already-text normal">esample000@gmail.com</div>
+          <div class="already-text normal">'.$cookie_email.'</div>
           </div>';
 
         }
