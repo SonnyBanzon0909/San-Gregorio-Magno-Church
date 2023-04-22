@@ -8,7 +8,7 @@ if(isset($_POST['id'])) {
 
   // Perform the SQL update query
   require_once "../connect.php"; // Include your database connection file
-  $query = "UPDATE formdata SET status='DONE' WHERE id=$id";
+  $query = "UPDATE formdata SET status='done' WHERE id=$id";
   $result = mysqli_query($conn, $query);
 
   if($result) {
