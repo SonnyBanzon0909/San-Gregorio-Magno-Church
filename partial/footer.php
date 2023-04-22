@@ -316,7 +316,7 @@ if (isset($_SESSION['user_email'])) {
         }
         else
         {
-          
+
           echo '<img src="" loading="lazy" alt="" class="login-logo edit-logo" style="display: none !important;">';
 
           echo '<div class="profile-img-con welcome-img-con" style="display: grid !important">
@@ -409,6 +409,10 @@ if (isset($_SESSION['user_email'])) {
   });
 
   document.getElementById("close-edit-button").addEventListener("click", function() {
+
+    $(".edit-img-con").css("display", "block");
+    $("#logo").css("display", "none");
+
     var oldphoto = document.querySelector('input[name="oldphoto"]').value;
 
     var xhr = new XMLHttpRequest();
