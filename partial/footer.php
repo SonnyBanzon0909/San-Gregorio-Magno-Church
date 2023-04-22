@@ -276,7 +276,8 @@ if (isset($_SESSION['user_email'])) {
 
 
        <?php
-       if (isset($_COOKIE['cookie_email']) && isset($_COOKIE['cookie_password']) && isset($_COOKIE['cookie_image'])) {
+
+       if (isset($_COOKIE['cookie_email']) && isset($_COOKIE['cookie_password'])) {
 
 
         echo '
@@ -289,17 +290,31 @@ if (isset($_SESSION['user_email'])) {
         </div>
         ';
 
+        
 
         echo '<div class="save-wrapper">
         <div class="welcome-text"><strong>Welcome back!</strong></div>
-        <div class="edit-logo-wrapper"><img src="images/parokya-ni-San-Gregorio-Magno.png" loading="lazy" alt="" class="login-logo edit-logo">
-        <div class="profile-img-con welcome-img-con">
-        <div class="profile-initial save-initial">E</div>
-        </div>
-        <div class="edit-camera-con hide"><img src="images/camera-icon.svg" loading="lazy" width="14" alt="" class="camera"></div>
-        </div>
-        <div class="already-text normal">esample000@gmail.com</div>
-        </div>';
+        <div class="edit-logo-wrapper">';
+
+        if (isset($_COOKIE['cookie_image'])) {
+          $cookie_img = $_COOKIE['cookie_image'];
+          echo '<img src="' . $cookie_img . '" loading="lazy" alt="" class="login-logo edit-logo">';
+        }
+        else
+        {
+          echo '<div class="profile-img-con welcome-img-con">
+          <div class="profile-initial save-initial">E</div>
+          </div>
+
+          <div class="edit-camera-con hide"><img src="images/camera-icon.svg" loading="lazy" width="14" alt="" class="camera"></div>
+          </div>
+          <div class="already-text normal">esample000@gmail.com</div>
+          </div>';
+        }
+
+        
+
+        
 
 
       } 
