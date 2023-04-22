@@ -63,10 +63,10 @@ else
   <meta content="Lorem ipsum dolor sit amet consectetur lementum sed sollicitudin auctor ac suspendisse." name="description">
   <meta content="Be blessed everyday | San Gregorio Magno Church" property="og:title">
   <meta content="Lorem ipsum dolor sit amet consectetur lementum sed sollicitudin auctor ac suspendisse." property="og:description">
-  <meta content="http://parokya-ni-san-gregorio-magno.com/images/640de9652f969628889bc889_baptism%20thumbnail.jpg" property="og:image">
+  <meta content="http://parokya-ni-san-gregorio-magno.com/images/baptism-thumbnail.jpg" property="og:image">
   <meta content="Be blessed everyday | San Gregorio Magno Church" property="twitter:title">
   <meta content="Lorem ipsum dolor sit amet consectetur lementum sed sollicitudin auctor ac suspendisse." property="twitter:description">
-  <meta content="https://uploads-ssl.webflow.com/640c46a109bfca551c61da47/640de9652f969628889bc889_baptism%20thumbnail.jpg" property="twitter:image">
+  <meta content="http://parokya-ni-san-gregorio-magno.com/images/baptism-thumbnail.jpg" property="twitter:image">
   <meta property="og:type" content="website">
   <meta content="summary_large_image" name="twitter:card">
   <meta content="width=device-width, initial-scale=1" name="viewport">
