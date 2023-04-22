@@ -672,6 +672,11 @@
 
     downloadButton.addEventListener('click', () => {
 
+      $(".cert-field").each(function(){
+        $(this).removeClass("active-input");
+
+      });
+      $(".text-cert").css("opacity",'1');
 
       var id = <?php echo json_encode($id); ?>;
       // Confirm the user wants to update the status
