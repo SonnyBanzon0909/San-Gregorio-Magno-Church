@@ -410,7 +410,7 @@ if (isset($_SESSION['user_email'])) {
 
   document.getElementById("close-edit-button").addEventListener("click", function() {
 
-    $(".edit-img-con").css("display", "block");
+    $(".edit-img-con").css("display", "flex");
     $("#logo").css("display", "none");
 
     var oldphoto = document.querySelector('input[name="oldphoto"]').value;
