@@ -280,11 +280,12 @@ if (isset($_SESSION['user_email'])) {
        if (isset($_COOKIE['cookie_email']) && isset($_COOKIE['cookie_password'])) {
 
         $cookie_email = $_COOKIE['cookie_email'];
+        $cookie_password = $_COOKIE['cookie_password'];
         echo '
         <div id="w-node-_55624acf-f15f-fc5e-8f62-de9f34de7e8b-34de7e81" class="not-save-wrapper" style="display: none;">
-        <div class="input-con"><input required type="email" class="input-field w-input" maxlength="256" name="l-email" data-name="Login Email 3" placeholder="Email" id="l-email"></div>
+        <div class="input-con"><input required type="email" class="input-field w-input" maxlength="256" name="l-email" data-name="Login Email 3" placeholder="Email" id="l-email" value="'.$cookie_email.'"></div>
 
-        <div class="input-con" style="align-items: flex-start !important;flex-direction: column !important;"><input required type="password" class="input-field w-input" maxlength="256" name="l-password" data-name="Login Password 3" placeholder="Password" id="l-password">
+        <div class="input-con" style="align-items: flex-start !important;flex-direction: column !important;"><input required type="password" class="input-field w-input" maxlength="256" name="l-password" data-name="Login Password 3" placeholder="Password" id="l-password" value="'.$cookie_password.'">
         <p id="error-message" class="requirement-text" style="margin-top: 5px; display: none;"></p>
         </div>
         </div>
