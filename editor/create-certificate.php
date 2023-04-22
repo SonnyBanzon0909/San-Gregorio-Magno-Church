@@ -654,22 +654,29 @@
     var name = <?php echo json_encode($name); ?>;
 
     downloadButton.addEventListener('click', () => {
-      certUpdate();
+
+
+      var id = <?php echo json_encode($id); ?>;
+      // Confirm the user wants to update the status
+      alert(id);
+      if(confirm("Are you sure you want to update the status?")) {
+       
+      //certUpdate();
   // get the filename for the PDF
-      const filename = name+".pdf";
+        const filename = name+".pdf";
 
   // define the options for the PDF, including the filename
-      const options = {
-        filename: filename,
-        jsPDF: { 
-          unit: 'in', 
-          format: 'letter', 
-          orientation: 'portrait',
-        }
-      };
+        const options = {
+          filename: filename,
+          jsPDF: { 
+            unit: 'in', 
+            format: 'letter', 
+            orientation: 'portrait',
+          }
+        };
 
   // use html2canvas to capture a screenshot of the element
-      html2canvas(elementToSave, {
+        html2canvas(elementToSave, {
     scale: 1, // Set the scale to fit the entire element on the page
   }).then(canvas => {
     // Adjust the dimensions of the element to match the PDF page size
@@ -701,28 +708,27 @@
     console.error(error);
     alert('There was an error generating the PDF.');
   });
+  $.ajax({
+    type: "POST",
+    url: "update_status.php",
+    data: { id: id },
+    success: function(response) {
+          //alert(response); // Show the success message
+    },
+    error: function(response) {
+            //alert("Error updating status"); // Show an error message
+    }
+  });
+}
+
+
+
 });
 
 
     function certUpdate()
     {
-      var id = <?php echo json_encode($id); ?>;
-      // Confirm the user wants to update the status
-      alert(id);
-      if(confirm("Are you sure you want to update the status?")) {
-           // Send the ID to the PHP file using AJAX
-        $.ajax({
-          type: "POST",
-          url: "update_status.php",
-          data: { id: id },
-          success: function(response) {
-          alert(response); // Show the success message
-        },
-        error: function(response) {
-            alert("Error updating status"); // Show an error message
-          }
-        });
-      }
+
 
     }
   </script>
