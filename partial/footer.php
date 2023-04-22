@@ -281,6 +281,9 @@ if (isset($_SESSION['user_email'])) {
 
         $cookie_email = $_COOKIE['cookie_email'];
         $cookie_password = $_COOKIE['cookie_password'];
+        $first_initial = strtoupper(substr($cookie_email, 0, 1));
+
+
         echo '
         <div id="w-node-_55624acf-f15f-fc5e-8f62-de9f34de7e8b-34de7e81" class="not-save-wrapper" style="display: none;">
         <div class="input-con"><input required type="email" class="input-field w-input" maxlength="256" name="l-email" data-name="Login Email 3" placeholder="Email" id="l-email" value="'.$cookie_email.'"></div>
@@ -302,7 +305,7 @@ if (isset($_SESSION['user_email'])) {
           echo '<img src="http://parokya-ni-san-gregorio-magno.com/images/' . $cookie_img . '" loading="lazy" alt="" class="login-logo edit-logo" style="display: block !important;">';
 
           echo '<div class="profile-img-con welcome-img-con" style="display: none !important">
-          <div class="profile-initial save-initial">E</div>
+          <div class="profile-initial save-initial">'.$first_initial.'</div>
           </div>
 
           <div class="edit-camera-con hide"><img src="images/camera-icon.svg" loading="lazy" width="14" alt="" class="camera"></div>
@@ -313,16 +316,16 @@ if (isset($_SESSION['user_email'])) {
         }
         else
         {
-          $cookie_img = $_COOKIE['cookie_image'];
+          
           echo '<img src="" loading="lazy" alt="" class="login-logo edit-logo" style="display: none !important;">';
 
           echo '<div class="profile-img-con welcome-img-con" style="display: grid !important">
-          <div class="profile-initial save-initial">E</div>
+          <div class="profile-initial save-initial">'.$first_initial.'</div>
           </div>
 
           <div class="edit-camera-con hide"><img src="images/camera-icon.svg" loading="lazy" width="14" alt="" class="camera"></div>
           </div>
-          <div class="already-text normal">esample000@gmail.com</div>
+          <div class="already-text normal">'.$cookie_email.'</div>
           </div>';
         }
 
@@ -396,7 +399,7 @@ if (isset($_SESSION['user_email'])) {
     $("#l-email").val("");
     $("#l-password").val("");
   }
-  
+
   $("#camera").click(function(){
     $(".edit-img-con").css("display", "none");
     $("#logo").css("display", "block");
