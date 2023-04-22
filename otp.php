@@ -74,12 +74,21 @@ try {
     //Server settings
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                       //Set the SMTP server to send through
+    $mail->Host       = 'mail.parokya-ni-san-gregorio-magno.com';                       //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'sangregoriomagnochurch@gmail.com';      //SMTP username
-    $mail->Password   = 'osntdckzynpsqfwl';                      //SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;             //Enable implicit TLS encryption
-    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    $mail->Username   = 'admin@parokya-ni-san-gregorio-magno.com';      //SMTP username
+    $mail->Password   = 'l)UKks28.Jp67H';                      //SMTP password
+    $mail->SMTPSecure = 'TLS';             //Enable implicit TLS encryption
+    $mail->Port       = 465;     
+// 
+    // $mail->Host       = 'smtp.gmail.com';                       //Set the SMTP server to send through
+    // $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    // $mail->Username   = 'sangregoriomagnochurch@gmail.com';      //SMTP username
+    // $mail->Password   = 'osntdckzynpsqfwl';                      //SMTP password
+    // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;             //Enable implicit TLS encryption
+    // $mail->Port       = 465; 
+// 
+                                   //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
     $mail->setFrom('sangregoriomagnochurch@gmail.com', 'San Gregorio Magno');
