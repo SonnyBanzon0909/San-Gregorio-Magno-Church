@@ -258,7 +258,7 @@ while($row = mysqli_fetch_array($user_query)){
               <tbody>
                 <?php
               //$user = $email;
-                $table = "SELECT * FROM formdata ORDER BY date_time ASC";
+                $table = "SELECT * FROM formdata ORDER BY date_time DESC";
                 $table_result = mysqli_query($conn, $table);
                 $table_total = mysqli_num_rows($table_result);
 
