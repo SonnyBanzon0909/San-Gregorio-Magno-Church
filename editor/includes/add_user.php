@@ -7,7 +7,9 @@
             <div class="w-form">
               <form id="appointment-form" method="post" action="includes/add_new_user.php" enctype="multipart/form-data" class="form">
                 <div class="field-container">
+
                   <div class="field-wrapper">
+
                     <label>Username</label>
                     <input type="text" class="input-field w-input"  name="username" id="username" value="" autocomplete="off">
                   </div>
@@ -16,6 +18,15 @@
                     <label>Password</label>
                     <input type="password" class="input-field w-input"  name="password" id="password" value="" autocomplete="off">
                     <input type="hidden" class="input-field w-input"  name="role" id="role" value="admin">
+
+                    <div class="field-wrapper">
+                    <label>Role</label>
+                    <select id="role" name="role" data-name="role" class="select w-select">
+                      <option value="admin">Admin</option>
+                      <option value="sub-admin">Sub Admin</option>
+                  </select>
+                  </div>
+
                   </div>
 
                 </div>
