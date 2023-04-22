@@ -629,7 +629,7 @@ if (isset($_SESSION['user_email'])) {
       if (xhr.status === 200) {
         //const output = document.querySelector('#output');
         //output.innerHTML = xhr.responseText;
-        //alert(xhr.statusText+" : success");
+        alert(xhr.statusText+" : success");
       } else {
         console.error('Error:', xhr.statusText);
       }
