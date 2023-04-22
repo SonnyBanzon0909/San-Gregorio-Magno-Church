@@ -26,7 +26,10 @@ $num_purposes = mysqli_num_rows($dis_result);
 while ($row = mysqli_fetch_assoc($dis_result)) {
   $purpose = $row['purpose'];
   
-  $query = "SELECT * from formdata WHERE purpose='$purpose' AND $date_filter ORDER BY date_time DESC";
+  SELECT * FROM formdata
+  WHERE purpose='$purpose' AND $date_filter
+  ORDER BY STR_TO_DATE(date_time, '%Y-%m-%d %H:%i:%s') DESC;
+
 
   // $query = "SELECT * from formdata WHERE purpose='$purpose' AND $date_filter";
 
