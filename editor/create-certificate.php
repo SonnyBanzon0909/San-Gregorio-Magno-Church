@@ -658,9 +658,9 @@
 
       var id = <?php echo json_encode($id); ?>;
       // Confirm the user wants to update the status
-      alert(id);
-      if(confirm("Are you sure you want to update the status?")) {
-       
+      //alert(id);
+      if(confirm("Are you sure you want to update the status and download file?")) {
+
       //certUpdate();
   // get the filename for the PDF
         const filename = name+".pdf";
