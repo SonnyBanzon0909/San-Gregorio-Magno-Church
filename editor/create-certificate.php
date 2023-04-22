@@ -642,6 +642,7 @@
       printDiv();
     });
     function printDiv() {
+      $(".text-cert").css("opacity",'1');
       //var cert_type = "my-cert-type"; // Replace with your actual element ID
       var printContents = document.getElementById(cert_type).innerHTML;
       var originalContents = document.body.innerHTML;
