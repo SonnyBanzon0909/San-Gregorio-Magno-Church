@@ -1,14 +1,13 @@
 <?php
  // Start the session
-session_start();
-include "includes/db.php";
+ 
 
 // Check if the ID is set in the POST request
 if(isset($_POST['id'])) {
   $id = $_POST['id'];
 
   // Perform the SQL update query
-  require_once "connect.php"; // Include your database connection file
+  require_once "../connect.php"; // Include your database connection file
   $query = "UPDATE formdata SET status='DONE' WHERE id=$id";
   $result = mysqli_query($conn, $query);
 
