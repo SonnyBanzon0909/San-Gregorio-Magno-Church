@@ -298,11 +298,24 @@ if (isset($_SESSION['user_email'])) {
 
         if (isset($_COOKIE['cookie_image'])) {
           $cookie_img = $_COOKIE['cookie_image'];
-          echo '<img src="' . $cookie_img . '" loading="lazy" alt="" class="login-logo edit-logo">';
+          echo '<img src="' . $cookie_img . '" loading="lazy" alt="" class="login-logo edit-logo" style="display: block !important;">';
+
+          echo '<div class="profile-img-con welcome-img-con" style="display: none !important">
+          <div class="profile-initial save-initial">E</div>
+          </div>
+
+          <div class="edit-camera-con hide"><img src="images/camera-icon.svg" loading="lazy" width="14" alt="" class="camera"></div>
+          </div>
+          <div class="already-text normal">esample000@gmail.com</div>
+          </div>';
+
         }
         else
         {
-          echo '<div class="profile-img-con welcome-img-con">
+          $cookie_img = $_COOKIE['cookie_image'];
+          echo '<img src="" loading="lazy" alt="" class="login-logo edit-logo" style="display: none !important;">';
+
+          echo '<div class="profile-img-con welcome-img-con" style="display: grid !important">
           <div class="profile-initial save-initial">E</div>
           </div>
 
