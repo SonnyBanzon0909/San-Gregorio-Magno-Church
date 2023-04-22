@@ -552,16 +552,19 @@
     <script>
 
 
-      $("#edit-cert").click(function() {
-        $(".cert-field").css({
-          "outline": "1px #000 solid",
-          "opacity": "1 !important",
-          "background-color": "#fff !important",
-          "color": "#000 !important"
+      $(document).ready(function() {
+        $("#edit-cert").click(function() {
+          $(".cert-field").css({
+            "outline": "1px #000 solid",
+            "opacity": "1 !important",
+            "background-color": "#fff !important",
+            "color": "#000 !important"
+          });
         });
       });
 
-      
+
+
       function togglefunction()
       {  
        if ($(window).width() > 1023) 
