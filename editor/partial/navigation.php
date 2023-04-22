@@ -3,6 +3,12 @@
 ob_start();
 include "includes/db.php";
 
+if(!isset($_SESSION['username'])){
+  header("Location: login.php");
+}
+
+$username =  $_SESSION['username'];
+
 $query = "SELECT * FROM admin_users WHERE username = '$username'";
 $user_query = mysqli_query($connection, $query);
 
@@ -94,7 +100,7 @@ while($row = mysqli_fetch_array($user_query)){
 
                 <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="users.php" class="link">Add User</a>';
               }
-               
+
 
               ?>
 
