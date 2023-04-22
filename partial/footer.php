@@ -716,7 +716,7 @@ if (isset($_SESSION['user_email'])) {
 
     }*/ 
 
-    document.getElementById("log-out").addEventListener("click", function() {
+    document.getElementsByClassName("log-out").addEventListener("click", function() {
     // make an AJAX request to a PHP script that removes the session
       var xhr = new XMLHttpRequest();
       xhr.open("GET", "logout.php", true);

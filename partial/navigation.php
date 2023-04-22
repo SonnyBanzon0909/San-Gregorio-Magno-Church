@@ -130,7 +130,7 @@ while($row = mysqli_fetch_array($view_query)){
                 <div class="login-text">Edit Profile</div>
               </a>
 
-              <a href="#" class="login-link w-inline-block" id="log-out"><img src="images/log-out.svg" loading="lazy" alt="" class="login-icon">
+              <a href="#" class="login-link w-inline-block log-out" id="log-out"><img src="images/log-out.svg" loading="lazy" alt="" class="login-icon">
                 <div class="login-text">Logout</div>
               </a>
             </div>
@@ -229,7 +229,7 @@ while($row = mysqli_fetch_array($view_query)){
               <div class="login-text">Edit Profile</div>
             </a>
 
-            <a href="#" class="login-link w-inline-block" id="log-out"><img src="images/log-out.svg" loading="lazy" alt="" class="login-icon">
+            <a href="#" class="login-link w-inline-block log-out" id="log-out"><img src="images/log-out.svg" loading="lazy" alt="" class="login-icon">
               <div class="login-text">Logout</div>
             </a>
           </div>
