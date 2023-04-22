@@ -458,7 +458,7 @@
         <div class="print-btn-wrapper">
           <div data-w-id="264267ad-4410-94ee-9c94-b4619ad31d51" class="button rounded-button print-btn">
             <div style="opacity:0" class="button-overlay"></div>
-            <a aria-label="" href="#" class="button-link">EDIT</a>
+            <a aria-label="" href="#" class="button-link" id="edit-cert">EDIT</a>
           </div>
           <div data-w-id="1bfae472-55c7-8dea-b277-bbaeff02cf6d" class="button rounded-button print-btn">
             <div style="opacity:0" class="button-overlay"></div>
@@ -550,6 +550,18 @@
   <script src="../js/webflow.js" type="text/javascript"></script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
     <script>
+
+
+      $("#edit-cert").click(function() {
+        $(".cert-field").css({
+          "outline": "1px #000 solid",
+          "opacity": "1 !important",
+          "background-color": "#fff !important",
+          "color": "#000 !important"
+        });
+      });
+
+      
       function togglefunction()
       {  
        if ($(window).width() > 1023) 
