@@ -25,7 +25,11 @@ $num_purposes = mysqli_num_rows($dis_result);
   // loop through each purpose and display the data
 while ($row = mysqli_fetch_assoc($dis_result)) {
   $purpose = $row['purpose'];
-  $query = "SELECT * from formdata WHERE purpose='$purpose' AND $date_filter";
+  
+  $query = "SELECT * from formdata WHERE purpose='$purpose' AND $date_filter ORDER BY date_time ASC";
+
+  // $query = "SELECT * from formdata WHERE purpose='$purpose' AND $date_filter";
+
   $result = mysqli_query($conn, $query);
   $num_results = mysqli_num_rows($result);
   //echo '<h1>'.$num_results.'</h1>';
