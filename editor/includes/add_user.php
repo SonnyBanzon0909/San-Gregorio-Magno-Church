@@ -20,12 +20,12 @@
                     <input type="hidden" class="input-field w-input"  name="role" id="role" value="admin">
 
                     <div class="field-wrapper">
-                    <label>Role</label>
-                    <select id="role" name="role" data-name="role" class="select w-select">
-                      <option value="admin">Admin</option>
-                      <option value="sub-admin">Sub Admin</option>
-                  </select>
-                  </div>
+                      <label>Role</label>
+                      <select id="role" name="role" data-name="role" class="select w-select">
+                        <option value="admin">Admin</option>
+                        <option value="sub-admin">Sub Admin</option>
+                      </select>
+                    </div>
 
                   </div>
 

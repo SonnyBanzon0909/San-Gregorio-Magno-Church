@@ -1,6 +1,6 @@
   <?php
-    
-    if(isset($_GET['id'])){
+
+  if(isset($_GET['id'])){
     $id = $_GET['id'];
 
 
@@ -15,10 +15,11 @@
       $id = $row["id"];
       $username = $row["username"];
       $password = $row["password"];
+      $role = $row["role"];
     }
   }
 
-?>
+  ?>
 
 
   <div class="section contact-section wf-section">
@@ -37,18 +38,27 @@
                   </div>
 
                   <div class="field-wrapper">
-                    <label>New Password</label>
-                    <input type="password" class="input-field w-input"  name="password" id="password" required>
-                    <input type="hidden" class="input-field w-input"  name="id" id="id" value="<?php echo $id; ?> ">
-                  </div>
+                    <label>Role</label>
+                    <select id="role" name="role" data-name="role" class="select w-select">
+                     <option value="<?php echo $role; ?> "><?php echo $role; ?> </option>
+                     <option value="admin">Admin</option>
+                     <option value="sub-admin">Sub Admin</option>
+                   </select>
+                 </div>
 
+                 <div class="field-wrapper">
+                  <label>New Password</label>
+                  <input type="password" class="input-field w-input"  name="password" id="password" required>
+                  <input type="hidden" class="input-field w-input"  name="id" id="id" value="<?php echo $id; ?> ">
                 </div>
 
-                <div data-w-id="5b8a60ca-0674-a70c-a128-7036f4b41cbe" class="button rounded-button">
-                  <div style="opacity:0" class="button-overlay"></div>
-                  <button class="button-link w-button" name="update_user" id="update_user">Update User</button>
-                </div>
-              </form>
+              </div>
+
+              <div data-w-id="5b8a60ca-0674-a70c-a128-7036f4b41cbe" class="button rounded-button">
+                <div style="opacity:0" class="button-overlay"></div>
+                <button class="button-link w-button" name="update_user" id="update_user">Update User</button>
+              </div>
+            </form>
               <!-- <div class="w-form-done">
                 <div>Thank you! Your submission has been received!</div>
               </div>
@@ -62,15 +72,15 @@
     </div>
   </div>
 
-<script>
-function readURL(input) {
-  if (input.files && input.files[0]) {
-    var reader = new FileReader();
-    
-    reader.onload = function(e) {
-      $('#blah').attr('src', e.target.result);
-    }
-    
+  <script>
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+          $('#blah').attr('src', e.target.result);
+        }
+
     reader.readAsDataURL(input.files[0]); // convert to base64 string
   }
 }
