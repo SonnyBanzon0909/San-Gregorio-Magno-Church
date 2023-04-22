@@ -654,6 +654,7 @@
     var name = <?php echo json_encode($name); ?>;
 
     downloadButton.addEventListener('click', () => {
+      certUpdate();
   // get the filename for the PDF
       const filename = name+".pdf";
 
@@ -702,7 +703,27 @@
   });
 });
 
-</script>
+
+    function certUpdate()
+    {
+  // Confirm the user wants to update the status
+      if(confirm("Are you sure you want to update the status?")) {
+  // Send the ID to the PHP file using AJAX
+        $.ajax({
+          type: "POST",
+          url: "update_status.php",
+          data: { id: <?php echo $_POST['id']; ?> },
+          success: function(response) {
+      alert(response); // Show the success message
+    },
+    error: function(response) {
+      alert("Error updating status"); // Show an error message
+    }
+  });
+      }
+
+    }
+  </script>
 
 
 
