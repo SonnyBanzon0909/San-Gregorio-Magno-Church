@@ -640,8 +640,8 @@
     }, 50); // Delay in milliseconds (adjust as needed)
       }, false);
       // Fallback for browsers that don't support afterprint
-          setTimeout(function() {
-            location.reload();
+      setTimeout(function() {
+        location.reload();
       }, 100); // Reload the page after a delay (adjust as needed)
     }
 
@@ -651,11 +651,11 @@
     const jsPDF = window.jspdf.jsPDF;
 
     const downloadButton = document.querySelector('#download-pdf');
-
+    var name = <?php echo json_encode($name); ?>;
 
     downloadButton.addEventListener('click', () => {
   // get the filename for the PDF
-      const filename = "Certificate.pdf";
+      const filename = name+".pdf";
 
   // define the options for the PDF, including the filename
       const options = {
