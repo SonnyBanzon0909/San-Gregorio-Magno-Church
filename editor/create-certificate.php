@@ -706,13 +706,14 @@
 
     function certUpdate()
     {
+      var id = <?php echo json_encode($_POST['id']); ?>;
       // Confirm the user wants to update the status
       if(confirm("Are you sure you want to update the status?")) {
            // Send the ID to the PHP file using AJAX
         $.ajax({
           type: "POST",
           url: "update_status.php",
-          data: { id: <?php echo $_POST['id']; ?> },
+          data: { id: id },
           success: function(response) {
           alert(response); // Show the success message
         },
