@@ -269,40 +269,35 @@ if (isset($_SESSION['user_email'])) {
     </div>
     <div class="form-block w-form">
 
-<?php
-if (isset($_COOKIE['cookie_email']) && isset($_COOKIE['cookie_password']) && isset($_COOKIE['cookie_image'])) {
-    // show save-wrapper if all cookies are set
-    $wrapperClass = 'save-wrapper';
-    $notWrapperClass = 'not-save-wrapper display-none';
-} else {
-    // show not-save-wrapper if any of the cookies is not set
-    $wrapperClass = 'not-save-wrapper';
-    $notWrapperClass = 'save-wrapper display-none';
-}
-?>
 
-<form id="wf-form-login" name="wf-form-login" data-name="login" method="post" class="login-form display-block" action="" onsubmit="return login()" aria-label="login">
+      <form id="wf-form-login" name="wf-form-login" data-name="login" method="post" class="login-form display-block" action="" onsubmit="return login()">
 
-    <div id="w-node-_55624acf-f15f-fc5e-8f62-de9f34de7e8b-34de7e81" class="<?php echo $notWrapperClass; ?>" style="display: grid;">
-        <div class="input-con"><input required="" type="email" class="input-field w-input" maxlength="256" name="l-email" data-name="Login Email 3" placeholder="Email" id="l-email"></div>
-        <div class="input-con" style="align-items: flex-start !important;flex-direction: column !important;"><input required="" type="password" class="input-field w-input" maxlength="256" name="l-password" data-name="Login Password 3" placeholder="Password" id="l-password">
-            <p id="error-message" class="requirement-text" style="margin-top: 5px; display: none;"></p>
-        </div>
-    </div>
-    <div class="<?php echo $wrapperClass; ?>" style="<?php echo isset($wrapperClass) ? '' : 'display: none;' ?>">
-        <div class="welcome-text"><strong>Welcome back!</strong></div>
-        <div class="edit-logo-wrapper"><img src="images/parokya-ni-San-Gregorio-Magno.png" loading="lazy" alt="" class="login-logo edit-logo">
-            <div class="profile-img-con welcome-img-con">
-                <div class="profile-initial save-initial">E</div>
+        <div id="w-node-_55624acf-f15f-fc5e-8f62-de9f34de7e8b-34de7e81" class="not-save-wrapper" style="display: grid;">
+          <div class="input-con">
+            <input required type="email" class="input-field w-input" maxlength="256" name="l-email" data-name="Login Email 3" placeholder="Email" id="l-email"></div>
+
+            <div class="input-con" style="align-items: flex-start !important;flex-direction: column !important;">
+              <input required type="password" class="input-field w-input" maxlength="256" name="l-password" data-name="Login Password 3" placeholder="Password" id="l-password">
+              <p id="error-message" class="requirement-text" style="margin-top: 5px; display: none;"></p>
             </div>
-            <div class="edit-camera-con hide"><img src="images/camera-icon.svg" loading="lazy" width="14" alt="" class="camera"></div>
-        </div>
-        <div class="already-text normal">esample000@gmail.com</div>
-    </div>
-    <div data-w-id="55624acf-f15f-fc5e-8f62-de9f34de7e9d" class="button rounded-button">
-        <div class="button-overlay" style="opacity: 0;"></div><input type="submit" value="LOG IN" data-wait="Please wait..." class="button-link w-button">
-    </div>
-</form>
+          </div>
+
+
+          <div class="save-wrapper" style="display: none;">
+            <div class="welcome-text"><strong>Welcome back!</strong></div>
+            <div class="edit-logo-wrapper"><img src="images/parokya-ni-San-Gregorio-Magno.png" loading="lazy" alt="" class="login-logo edit-logo">
+              <div class="profile-img-con welcome-img-con">
+                <div class="profile-initial save-initial">E</div>
+              </div>
+              <div class="edit-camera-con hide"><img src="images/camera-icon.svg" loading="lazy" width="14" alt="" class="camera"></div>
+            </div>
+            <div class="already-text normal">esample000@gmail.com</div>
+          </div>
+
+          <div data-w-id="55624acf-f15f-fc5e-8f62-de9f34de7e9d" class="button rounded-button">
+            <div class="button-overlay"></div><input type="submit" value="LOG IN" data-wait="Please wait..." class="button-link w-button">
+          </div>
+        </form>
 
 
       </div>
