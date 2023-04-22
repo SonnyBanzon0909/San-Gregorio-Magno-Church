@@ -298,7 +298,7 @@ if (isset($_SESSION['user_email'])) {
 
         if (isset($_COOKIE['cookie_image'])) {
           $cookie_img = $_COOKIE['cookie_image'];
-          echo '<img src="' . $cookie_img . '" loading="lazy" alt="" class="login-logo edit-logo" style="display: block !important;">';
+          echo '<img src="http://parokya-ni-san-gregorio-magno.com/images/' . $cookie_img . '" loading="lazy" alt="" class="login-logo edit-logo" style="display: block !important;">';
 
           echo '<div class="profile-img-con welcome-img-con" style="display: none !important">
           <div class="profile-initial save-initial">E</div>
