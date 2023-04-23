@@ -351,7 +351,7 @@
   // }
 
   $(document).ready(function() {
-    
+
     var i=0;
 
     $(".edit-btn-wrapper").each(function(){
@@ -363,7 +363,7 @@
 
     });
 
-  }
+  });
   
 
   const container = document.querySelector('body');
