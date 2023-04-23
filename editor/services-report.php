@@ -351,11 +351,12 @@
   // }
 
 $(document).ready(function() {
-  $(document).on("click", ".edit-btn-wrapper", function(){
-    // Hide all edit wrappers
-    //$(".edit-wrapper").hide();
-    // Show the edit wrapper for the clicked edit button
-    $(this).next(".edit-wrapper").show();
+  var i = 0;
+
+  $(document).on("click", ".edit-btn-wrapper", function() {
+    //$(".edit-wrapper").css("display", "none");
+    var edit = $("#edit-" + $(this).attr("id"));
+    edit.css("display", "block");
   });
 });
 
