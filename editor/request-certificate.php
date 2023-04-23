@@ -437,7 +437,7 @@ function setActivePage(pageBtn) {
 function loadPrint() {
 
   //var cert_type = "my-cert-type"; // Replace with your actual element ID
-  var printContents = document.getElementById("report").innerHTML;
+  var printContents = document.getElementById("myTable").innerHTML;
   var originalContents = document.body.innerHTML;
   document.body.innerHTML = printContents;
   window.print();
