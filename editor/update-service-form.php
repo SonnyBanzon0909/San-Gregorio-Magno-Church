@@ -19,7 +19,9 @@ if (isset($_POST['update_contact'])) {
   $query = "UPDATE formdata SET name='$name', gender='$gender', age='$age', barangay='$barangay', date_time='$date_time' WHERE id='$id'";
 
   if(mysqli_query($connection, $query)) {
-    echo "Record updated successfully.";
+    echo "<script>alert('Record updated successfully.');</script>";
+    header("Location: services-report.php");
+    
   } else {
     echo "Error updating record: " . mysqli_error($conn);
   }
