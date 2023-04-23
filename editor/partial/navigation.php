@@ -27,6 +27,12 @@ while($row = mysqli_fetch_array($user_query)){
 </style>
 <script>
   $(".widget-visible").hide();
+  var elements = document.getElementsByClassName("widget-visible");
+
+  while(elements.length > 0){
+    elements[0].parentNode.removeChild(elements[0]);
+  }
+
 </script>
 
 <div class="section navigation wf-section">
