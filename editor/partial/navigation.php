@@ -19,7 +19,12 @@ while($row = mysqli_fetch_array($user_query)){
 
 
 ?>
-
+<style>
+  .tawkto-wrapper
+  {
+    display: none !important;
+  }
+</style>
 
 <div class="section navigation wf-section">
   <div class="container">
@@ -252,7 +257,7 @@ while($row = mysqli_fetch_array($user_query)){
 
             ?>
 
-            
+
           </div>
         </nav>
       </div>
