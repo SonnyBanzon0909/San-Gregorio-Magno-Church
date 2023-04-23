@@ -350,14 +350,14 @@
 
   // }
 
- window.addEventListener('DOMContentLoaded', function() {
-  var editBtns = document.querySelectorAll('.edit-btn-wrapper');
-  for (var i = 0; i < editBtns.length; i++) {
-    var editBtn = editBtns[i];
-    editBtn.addEventListener('click', function() {
-      alert(this.id);
-    });
-  }
+ $(document).ready(function() {
+
+  var i=0;
+
+  $(document).on("click", ".edit-btn-wrapper", function(){
+    alert($(this).attr("id"));
+  });
+
 });
 
   
