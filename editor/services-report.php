@@ -564,15 +564,15 @@ function print()
     });
 
 
-  // var domain = window.location.hostname;
+  var domain = window.location.hostname;
 
-  // if (domain === 'localhost') {
-  //   domain = 'http://localhost/san-gregorio-magno-church/editor/baptism-certificates-list.xlsx';
-  // } else {
-  //   domain = "http://parokya-ni-san-gregorio-magno.com/editor/baptism-certificates-list.xlsx";
-  // }
+  if (domain === 'localhost') {
+    domain = 'http://localhost/san-gregorio-magno-church/editor/baptism-certificates-list.xlsx';
+  } else {
+    domain = "http://parokya-ni-san-gregorio-magno.com/editor/baptism-certificates-list.xlsx";
+  }
 
-  // window.open(domain, '_blank');
+  window.open(domain, '_blank');
 
 
 
