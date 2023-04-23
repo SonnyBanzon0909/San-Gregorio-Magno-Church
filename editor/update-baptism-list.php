@@ -124,7 +124,7 @@ if(!isset($_SESSION['username'])){
               <div class="w-form">
                 <form id="appointment-form" method="post" action="includes/update_contact.php" class="form">
                   <div class="field-container">
-                    <h4><?php echo $name;?> " Information"</h4>
+                    <h4><?php echo $name;?> Report Information</h4>
                     <div class="field-wrapper">
                       <label>Title</label>
                       <input type="text" class="input-field w-input"  name="hero_header" id="hero_header" value="<?php echo $hero_header; ?>">
