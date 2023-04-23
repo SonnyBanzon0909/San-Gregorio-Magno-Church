@@ -44,7 +44,7 @@
                       $id = $row['id'];
                       $name = $row['name'];
 
-                      echo '<div class="announcement_wrapper">'.$name.'
+                      echo '<div class="announcement_wrapper" id="'.$id.'">'.$name.'
                       <div data-w-id="14e56277-239e-cc10-6aba-00a1806977fd" class="button rounded-button signup-btn">
                         <div class="button-overlay"></div>
                         <a aria-label="" href="announcement.php?source=view_announcement&id='.$id.'" class="button-link">View</a>
