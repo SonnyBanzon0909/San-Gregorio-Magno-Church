@@ -120,16 +120,27 @@
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=640c46a109bfca551c61da47" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
   <script>
+
 // Loop through all the remove-pic elements and add an event listener to each one
     var removePics = document.querySelectorAll('.remove-pic');
     for (var i = 0; i < removePics.length; i++) {
       var removePic = removePics[i];
       removePic.addEventListener('click', function() {
         var galcon = this.parentNode;
-        galcon.parentNode.removeChild(galcon);
-      });
+    var id = galcon.getAttribute('id').replace('galcon-', ''); // Get the ID number from the galcon- container's ID attribute
+    // Send a request to the server to update the gallery_images_tbl table
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        console.log(this.responseText); // Log the response from the server to the console
+      }
+    };
+    xhttp.open('GET', 'draft-gallery-pic.php?id=' + id, true); // Replace 'update_gallery_images.php' with the actual URL of your PHP script
+    xhttp.send();
+    galcon.parentNode.removeChild(galcon);
+  });
     }
-    
+
     function readURL(input) {
       if (input.files && input.files[0]) {
         var reader = new FileReader();
