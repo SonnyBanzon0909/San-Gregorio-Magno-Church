@@ -160,7 +160,7 @@
         <div data-w-id="a6ce49cc-23b9-46b0-3db0-c07c98e55d15" style="opacity:0" class="table-container report-table" id="report">
           <div class="table-wrapper w-embed">
             <style>
-              table {
+              table { 
                 border-collapse: collapse;
                 width: 100%;
                 border-radius: 0px;
