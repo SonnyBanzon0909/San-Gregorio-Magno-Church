@@ -337,18 +337,18 @@
   });
 </script>
 <script>
-  function editTable(s) {
-  // Hide all edit wrappers
-    //$(".edit-wrapper").hide();
+  // function editTable(s) {
+  // // Hide all edit wrappers
+  //   //$(".edit-wrapper").hide();
 
-  // Show only the edit wrapper inside the current clicked edit button wrapper
-    var ids = "#"+s;
+  // // Show only the edit wrapper inside the current clicked edit button wrapper
+  //   var ids = "#"+s;
 
-    const element = document.getElementById(ids);
-    element.style.display = 'flex';
+  //   const element = document.getElementById(ids);
+  //   element.style.display = 'flex';
     
 
-  }
+  // }
   var i=0;
 
   $(".edit-btn-wrapper").each(function(){
