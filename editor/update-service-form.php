@@ -7,7 +7,7 @@ $id = $_GET['id'];
 
 
 if (isset($_POST['update_contact'])) {
-  // $id = $_GET['id']; // assuming the id is passed through the URL
+  $id = $_GET['id']; // assuming the id is passed through the URL
   $name = $_POST['name'];
   $gender = $_POST['gender'];
   $age = $_POST['age'];
