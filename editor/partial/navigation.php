@@ -25,6 +25,9 @@ while($row = mysqli_fetch_array($user_query)){
     display: none !important;
   }
 </style>
+<script>
+  $(".widget-visible").hide();
+</script>
 
 <div class="section navigation wf-section">
   <div class="container">
