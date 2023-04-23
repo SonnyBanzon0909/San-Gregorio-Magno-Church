@@ -302,26 +302,56 @@
 <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
   <script>
 
-    $("#download-pdf").click(function(){
-      printTable();
-    });
-    function printTable() {
-  // Get the table element
-      var table = document.getElementById('myTable');
+    
+function loadPrint() {
 
-  // Create a new window
-      var win = window.open('', 'Print Window');
+  $("#myTable th:last-child").css("display", "none");
+  $("#myTable td:last-child").css("display", "none");
+  $("table").css({
+    "border-collapse": "collapse",
+    "width": "100%",
+    "border-radius": "0px",
+    "overflow": "hidden",
+    "position": "relative",
+    "border": "1px solid #C7C6B8 !important;"
+  });
 
-  // Set the new window's content to the table
-      win.document.write('<html><head><title>Print Table</title>');
-      win.document.write('</head><body>');
-      win.document.write(table.outerHTML);
-      win.document.write('</body></html>');
+  $("table td, table th").css({
+    "border": "1px solid #C7C6B8 !important;",
+    "text-align": "start"
+  });
 
-  // Print the new window
-      win.print();
-      win.close();
-    }
+
+
+// Create a new window
+  var win = window.open('', 'Print Window');
+
+// Retrieve the contents of the myTable element
+  var printContents = document.getElementById("report").innerHTML;
+
+// Replace the contents of the new window with the table contents
+  win.document.body.innerHTML = printContents;
+
+// Print the new window
+  win.print();
+
+// Close the new window
+  win.close();
+
+// Add event listener for afterprint
+  window.addEventListener("afterprint", function(event) {
+    console.log("afterprint event:", event);
+    setTimeout(function() {
+    location.reload(); // Reload the page after a delay
+  }, 100); // Delay in milliseconds (adjust as needed)
+  }, false);
+
+  // // Fallback for browsers that don't support afterprint
+  setTimeout(function() {
+    location.reload();
+  }, 100); // Reload the page after a delay (adjust as needed)
+
+}
 
 
 
@@ -626,56 +656,6 @@ $(document).ready(function() {
 
  
 
-
-function loadPrint() {
-
-  $("#myTable th:last-child").css("display", "none");
-  $("#myTable td:last-child").css("display", "none");
-  $("table").css({
-    "border-collapse": "collapse",
-    "width": "100%",
-    "border-radius": "0px",
-    "overflow": "hidden",
-    "position": "relative",
-    "border": "1px solid #C7C6B8 !important;"
-  });
-
-  $("table td, table th").css({
-    "border": "1px solid #C7C6B8 !important;",
-    "text-align": "start"
-  });
-
-
-
-// Create a new window
-  var win = window.open('', 'Print Window');
-
-// Retrieve the contents of the myTable element
-  var printContents = document.getElementById("report").innerHTML;
-
-// Replace the contents of the new window with the table contents
-  win.document.body.innerHTML = printContents;
-
-// Print the new window
-  win.print();
-
-// Close the new window
-  win.close();
-
-// Add event listener for afterprint
-  window.addEventListener("afterprint", function(event) {
-    console.log("afterprint event:", event);
-    setTimeout(function() {
-    location.reload(); // Reload the page after a delay
-  }, 100); // Delay in milliseconds (adjust as needed)
-  }, false);
-
-  // // Fallback for browsers that don't support afterprint
-  setTimeout(function() {
-    location.reload();
-  }, 100); // Reload the page after a delay (adjust as needed)
-
-}
 
 
 </script>
