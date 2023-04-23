@@ -49,7 +49,7 @@ if(isset($_GET['id'])){
 
                 <img class="remove-pic" src="images/close-icon-2.svg" style="position: absolute; top: auto; left: auto; right: 0px; bottom: auto; cursor: pointer;">
 
-                <div class="announcement_wrapper style="width: 100%;">'.$name.'
+                <div class="announcement_wrapper" style="width: 100% !important;">'.$name.'
                 <div data-w-id="14e56277-239e-cc10-6aba-00a1806977fd" class="button rounded-button signup-btn">
                 <div class="button-overlay"></div>
                 <a aria-label="" href="announcement.php?source=view_announcement&id='.$id.'" class="button-link">View</a>
