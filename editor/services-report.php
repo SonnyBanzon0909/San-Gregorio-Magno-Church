@@ -86,7 +86,7 @@
 
               <!--  -->
 
-              <div class="select-wrapper"><select id="gender" name="Gender" data-name="Gender" class="select filter-select w-select">
+              <div class="select-wrapper"><select id="purpose" name="purpose" data-name="purpose" class="select filter-select w-select">
 
                 
 
@@ -559,6 +559,7 @@ $(document).ready(function() {
     var barangay = $("#barangay").val();
     var month = $("#month").val();
     var name = $("#search").val();
+    var purpose = $("#purpose").val();
 
     // Send an AJAX request to the server-side PHP script
     $.ajax({
@@ -569,7 +570,9 @@ $(document).ready(function() {
         year: year,
         barangay: barangay,
         month: month,
-        name: name
+        name: name,
+        purpose: purpose
+
       },
 
       success: function(response) {
