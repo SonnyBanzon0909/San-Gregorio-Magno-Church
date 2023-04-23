@@ -132,7 +132,7 @@
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        console.log(this.responseText); // Log the response from the server to the console
+        //console.log(this.responseText); // Log the response from the server to the console
       }
     };
     xhttp.open('GET', '/editor/includes/draft-gallery-pic.php?id=' + id, true); // Replace 'update_gallery_images.php' with the actual URL of your PHP script
