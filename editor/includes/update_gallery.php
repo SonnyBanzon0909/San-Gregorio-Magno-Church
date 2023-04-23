@@ -76,7 +76,7 @@
                         $photo = $row["photo"];
 
                         echo '
-                        <div style="position: relative; display: inline-block;">
+                        <div id ="galcon-'.$id.'" style="position: relative; display: inline-block;">
 
                         <img class="remove-pic" src="images/close-icon-2.svg" style="position: absolute; top: 10px; left: auto; right: 10px; bottom: auto; cursor: pointer;">
 
@@ -116,6 +116,13 @@
   </div>
 
   <script>
+    
+    document.querySelector('#galcon-<?php echo $id; ?> .remove-pic').addEventListener('click', function() {
+      var galcon = document.querySelector('#galcon-<?php echo $id; ?>');
+      galcon.parentNode.removeChild(galcon);
+    });
+
+
     function readURL(input) {
       if (input.files && input.files[0]) {
         var reader = new FileReader();
