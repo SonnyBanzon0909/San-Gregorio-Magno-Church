@@ -14,15 +14,11 @@ if (isset($_POST['update_contact'])) {
   $barangay = $_POST['barangay'];
   $date_time = $_POST['date'];
 
-echo $name;
-echo $gender;
-echo $age;
-echo $barangay;
-echo $date_time;
+ 
 
   $query = "UPDATE formdata SET name='$name', gender='$gender', age='$age', barangay='$barangay', date_time='$date_time' WHERE id='$id'";
 
-  if(mysqli_query($conn, $query)) {
+  if(mysqli_query($connection, $query)) {
     echo "Record updated successfully.";
   } else {
     echo "Error updating record: " . mysqli_error($conn);
