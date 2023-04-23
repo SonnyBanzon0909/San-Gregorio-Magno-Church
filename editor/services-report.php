@@ -309,20 +309,26 @@
 <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
   <script>
 
+$("#download-pdf").click(function(){
+  printTable();
+});
+function printTable() {
+  // Get the table element
+  var table = document.getElementById('myTable');
 
+  // Create a new window
+  var win = window.open('', 'Print Window');
 
-// Get the button element by its id
-    const downloadBtn = document.getElementById('download-pdf');
+  // Set the new window's content to the table
+  win.document.write('<html><head><title>Print Table</title>');
+  win.document.write('</head><body>');
+  win.document.write(table.outerHTML);
+  win.document.write('</body></html>');
 
-// Add a click event listener to the button
-    downloadBtn.addEventListener('click', () => {
-  // Get the table element by its id
-      alert("Hey");
-      const table = document.getElementById('myTable');
-
-  // Open the print dialog box
-      window.print();
-    });
+  // Print the new window
+  win.print();
+  win.close();
+}
 
 
 
