@@ -20,7 +20,7 @@ while($row = mysqli_fetch_array($user_query)){
 
 ?>
 <style>
-  .tawkto-wrapper
+  .tawkto-wrapper, #upbqpi68nkog1682256762967.widget-visible 
   {
     display: none !important;
   }
