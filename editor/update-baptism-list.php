@@ -86,7 +86,7 @@ while($row = mysqli_fetch_array($user_query)){
   <body>
 
     <?php include '../partial/custom-css.html'; ?>
-    <?php include '../partial/navigation.php'; ?>
+    <?php include 'partial/navigation.php'; ?>
 
     <!-- Start of Baptism -->
 
