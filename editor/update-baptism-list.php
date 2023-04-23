@@ -92,8 +92,9 @@ if(!isset($_SESSION['username'])){
 
 
     <?php
+    $ids = $_POST['id'];
 
-    $query = "SELECT * FROM formdata WHERE id='$id'";
+    $query = "SELECT * FROM formdata WHERE id='$ids'";
     $view_query = mysqli_query($connection, $query);
 
     if(!$view_query){
@@ -101,7 +102,7 @@ if(!isset($_SESSION['username'])){
     }
 
     while($row = mysqli_fetch_array($view_query)){
-      //$id = $row["id"];
+      //$ids = $row["id"];
       $name = $row["name"];
       $gender = $row["gender"];
 
