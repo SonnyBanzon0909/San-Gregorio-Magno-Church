@@ -97,7 +97,7 @@ while ($row = mysqli_fetch_assoc($table_result)) {
 
   echo '<img src="../images/edit-icon.svg">';
   echo '<div class="edit-wrapper" id=edit'.$id.'>';
-  echo '<a href="editor/update-baptism-list.php?id='.$id.'" class="edit-btn" style="display: block;">Edit</a>';
+  echo '<a href="update-baptism-list.php?id='.$id.'" class="edit-btn" style="display: block;">Edit</a>';
   echo '<a href="#" class="edit-btn" style="display: block;" onclick="deleteBaptism('.$id.')">Delete</a>';
   echo '</div>';
   echo '</div>';
