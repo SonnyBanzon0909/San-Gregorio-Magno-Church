@@ -2,7 +2,7 @@
 // Get the ID parameter from the request
 $picid = $_GET['id'];
 include "db.php";
-
+echo $picid;
 try {
   $stmt = $connection->prepare('UPDATE gallery_images_tbl SET status = "Draft" WHERE id = :picid');
   $stmt->execute(array('id' => $picid));
