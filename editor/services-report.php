@@ -350,42 +350,42 @@
 
   // }
 
-$(document).ready(function() {
+  $(document).ready(function() {
 
-  var i=0;
+    var i=0;
 
-  $(document).on("click", ".edit-btn-wrapper", function(){
-     
-    var edit = $(this).find(".edit-wrapper");
-    edit.css("display", "block");
+    $(document).on("click", ".edit-btn-wrapper", function(){
+     $(".edit-wrapper").css("display", "none");
+    // var edit = $(this).find(".edit-wrapper");
+     $("#edit-"+$(this).attr("id")).css("display", "block !important");
+   });
+
+
+
   });
 
-   
-
-});
 
 
 
-
- const container = document.querySelector('body');
- container.addEventListener('click', function(event) {
-  if (!event.target.closest('.edit-btn-wrapper')) {
+  const container = document.querySelector('body');
+  container.addEventListener('click', function(event) {
+    if (!event.target.closest('.edit-btn-wrapper')) {
       //$(".edit-wrapper").hide();
-  }
-});
- $(".filter-select option").each(function(){
+    }
+  });
+  $(".filter-select option").each(function(){
    $(this).addClass("option");
  });
 // pagination"
 // number of rows to display per page
- var rowsPerPage = 10;
+  var rowsPerPage = 10;
 // get the table and rows
- var table = document.getElementById("myTable");
- var rows = table.getElementsByTagName("tr");
+  var table = document.getElementById("myTable");
+  var rows = table.getElementsByTagName("tr");
 // calculate the number of pages
- var totalPages = Math.ceil((rows.length - 1) / rowsPerPage);
- if(totalPages <= 1)
- {
+  var totalPages = Math.ceil((rows.length - 1) / rowsPerPage);
+  if(totalPages <= 1)
+  {
    totalPages = 1;
    $(".pagination").hide();
  }
