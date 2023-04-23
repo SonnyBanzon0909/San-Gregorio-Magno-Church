@@ -223,14 +223,49 @@ while($row = mysqli_fetch_array($user_query)){
           </div>
         </nav>
       </div>
+
+
+      <div data-hover="false" data-delay="500" id="w-node-_14e56277-239e-cc10-6aba-00a1806977e0-806977bd" data-w-id="14e56277-239e-cc10-6aba-00a1806977e0" class="nav-dropdown w-dropdown">
+        <div class="nav-dropdown-toggle w-dropdown-toggle">
+          <div class="nav-link">Others</div><img src="images/down-icon.svg" loading="lazy" alt="" class="dropdown-icon">
+        </div>
+        <nav class="nav-drop-list w-dropdown-list">
+          <div class="nav-droplist-wrapper gallery-droplist-wrapper">
+            <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="index.php?filter=today" class="link">Dashboard</a>
+            <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="announcement.php" class="link">Announcement</a>
+            <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="moments.php" class="link">Moments</a>
+
+            <?php
+
+            if($role !='sub-admin')
+            {
+              echo '
+              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="request-certificate.php" class="link">Request Certificate</a>
+
+              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="services-report.php" class="link">Services Report</a>
+
+              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="priests.php" class="link">Priests</a>
+
+              <a id="w-node-_14e56277-239e-cc10-6aba-00a1806977e7-806977bd" href="users.php" class="link">Add User</a>';
+            }
+
+
+            ?>
+
+            
+          </div>
+        </nav>
+      </div>
+
+
       <a href="contact.php" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4746-440d470d" class="nav-link">Contact us</a><!-- 
-      <a href="#" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4748-440d470d" data-w-id="cc8842c1-27e0-b9b5-b91f-d8b4440d4748" class="nav-link">Log in</a> -->
-      <div data-w-id="cc8842c1-27e0-b9b5-b91f-d8b4440d474a" class="button rounded-button">
-        <div class="button-overlay"></div>
-        <a aria-label="" href="includes/logout.php" class="button-link">Logout</a>
+        <a href="#" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4748-440d470d" data-w-id="cc8842c1-27e0-b9b5-b91f-d8b4440d4748" class="nav-link">Log in</a> -->
+        <div data-w-id="cc8842c1-27e0-b9b5-b91f-d8b4440d474a" class="button rounded-button">
+          <div class="button-overlay"></div>
+          <a aria-label="" href="includes/logout.php" class="button-link">Logout</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 
