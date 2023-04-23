@@ -710,6 +710,7 @@ const downloadBtn = document.getElementById('download-pdf');
 // Add a click event listener to the button
 downloadBtn.addEventListener('click', () => {
   // Get the table element by its id
+  alert("Hey");
   const table = document.getElementById('myTable');
 
   // Open the print dialog box
