@@ -448,7 +448,7 @@ function loadPrint() {
     setTimeout(function() {
 
       location.reload(); // Reload the page after a delay
-    }, 50); // Delay in milliseconds (adjust as needed)
+    }, 100); // Delay in milliseconds (adjust as needed)
   }, false);
   // // Fallback for browsers that don't support afterprint
   setTimeout(function() {
