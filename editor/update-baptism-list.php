@@ -140,20 +140,25 @@ if(!isset($_SESSION['username'])){
                     <label>Barangay</label>
                     <input type="text" class="input-field w-input"  name="barangay" id="barangay" value="<?php echo $barangay; ?>">
                   </div>
+
+
+                  <div class="field-wrapper">
+                    <label>Date</label>
+                    <input type="date" class="input-field w-input"  name="date" id="date" value="<?php echo $date_time; ?>">
+                  </div>
                 </div>
 
-                <div class="field-wrapper">
-                  <label>Date</label>
-                  <input type="date" class="input-field w-input"  name="date" id="date" value="<?php echo $date_time; ?>">
+
+
+                <div data-w-id="5b8a60ca-0674-a70c-a128-7036f4b41cbe" class="button rounded-button">
+                  <div style="opacity:0" class="button-overlay"></div>
+                  <button class="button-link w-button" name="update_contact" id="update_contact">Update</button>
                 </div>
+
+                
               </div>
 
 
-
-              <div data-w-id="5b8a60ca-0674-a70c-a128-7036f4b41cbe" class="button rounded-button">
-                <div style="opacity:0" class="button-overlay"></div>
-                <button class="button-link w-button" name="update_contact" id="update_contact">Update</button>
-              </div>
             </form>
               <!-- <div class="w-form-done">
                 <div>Thank you! Your submission has been received!</div>
