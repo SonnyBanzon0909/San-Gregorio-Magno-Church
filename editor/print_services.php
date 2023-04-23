@@ -72,9 +72,9 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $sheet->setCellValue('A' . $row_num, $row['id']);
         $sheet->setCellValue('B' . $row_num, $row['name']);
-        $sheet->setCellValue('C' . $row_num, $row['user']);
-        $sheet->setCellValue('D' . $row_num, $row['gender']);
-        $sheet->setCellValue('E' . $row_num, $row['barangay']);
+        $sheet->setCellValue('C' . $row_num, $row['gender']);
+        $sheet->setCellValue('D' . $row_num, $row['barangay']);
+        $sheet->setCellValue('E' . $row_num, $row['age']);
         $sheet->setCellValue('F' . $row_num, $row['date_time']);
         $row_num++;
     }
