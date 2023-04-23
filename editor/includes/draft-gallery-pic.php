@@ -4,8 +4,8 @@ $picid = $_GET['id'];
 include "db.php";
  
 try {
-  $stmt = $connection->prepare('UPDATE gallery_images_tbl SET status = "Draft" WHERE id = :picid');
-  $stmt->execute(array('picid' => $picid));
+  $stmt = $connection->prepare('UPDATE gallery_images_tbl SET status = "Draft" WHERE id = ?');
+  $stmt->execute([$picid]);
   echo 'Success'; // Send a success response back to the client
 } 
 catch(PDOException $e) 
