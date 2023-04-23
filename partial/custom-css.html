@@ -1,5 +1,12 @@
   <div class="custom-css w-embed">
     <style>
+      /* styles for screens with a width of 1024 pixels or more */
+      @media only screen and (min-width: 1024px) {
+        #select-filter-wrapper {
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+      }
+
       .cert-field {
         pointer-events: none;
       }

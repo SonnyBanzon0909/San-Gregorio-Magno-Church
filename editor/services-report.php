@@ -22,15 +22,7 @@
 
 
  ?>
- <style>
-/* styles for screens with a width of 1024 pixels or more */
-/*@media only screen and (min-width: 1024px) {
-  .select-filter-wrapper {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  }
-}*/
-
-</style>
+  
 
 <!DOCTYPE html><!--  Last Published: Mon Apr 10 2023 17:06:25 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="64319b7a9d91c60f6fbcb9d9" data-wf-site="640c46a109bfca551c61da47">
@@ -86,45 +78,32 @@
     <?php include 'partial/navigation.php'; ?>
 
     <div class="section status-section wf-section">
-
-
-
-
-      <!--  -->
-
-      <div class="select-wrapper"><select id="purpose" name="purpose" data-name="purpose" class="select filter-select w-select">
-
-
-
-        <?php 
-        $query = "SELECT * FROM services_tbl WHERE status ='Publish'";
-        $select_all_services = mysqli_query($connection, $query);
-        while($row = mysqli_fetch_array($select_all_services)){
-          $id = $row['id'];
-          $title = $row['title'];
-
-          echo '<option value="'.$title.'">'.$title.'</option>';
-
-        }
-        ?>
-
-      </select><img src="../images/down-chevron-1.svg" loading="lazy" alt="" class="select-icon"></div>
-
-
-      <!--  -->
-      
       <div class="container">
-
-
         <div id="w-node-e11252ee-d72a-90fa-2d26-73bcf10fd970-6fbcb9d9" class="w-form">
           <form method="get" name="email-form" data-name="Email Form" style="opacity:0" data-w-id="e11252ee-d72a-90fa-2d26-73bcf10fd971" id="email-form" class="filter-wrapper">
 
+            <div id="select-filter-wrapper" class="select-filter-wrapper">
+
+
+              <!--  -->
+
+              <div class="select-wrapper"><select id="purpose" name="purpose" data-name="purpose" class="select filter-select w-select">
 
 
 
-            <div id="w-node-_80536e23-6151-9975-adb2-35980bf7c7b0-6fbcb9d9" class="select-filter-wrapper">
+                <?php 
+                $query = "SELECT * FROM services_tbl WHERE status ='Publish'";
+                $select_all_services = mysqli_query($connection, $query);
+                while($row = mysqli_fetch_array($select_all_services)){
+                  $id = $row['id'];
+                  $title = $row['title'];
 
+                  echo '<option value="'.$title.'">'.$title.'</option>';
 
+                }
+                ?>
+
+              </select><img src="../images/down-chevron-1.svg" loading="lazy" alt="" class="select-icon"></div>
 
 
 
