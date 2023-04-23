@@ -436,7 +436,11 @@ function setActivePage(pageBtn) {
 
 function loadPrint() {
 
-$(".create-edit").css("display", "none");
+$("#myTable th:last-child").css("display", "none");
+$("#myTable td:last-child").css("display", "none");
+        
+
+        
 // Create a new window
 var win = window.open('', 'Print Window');
 
