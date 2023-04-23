@@ -354,8 +354,8 @@ $(document).ready(function() {
   var i = 0;
 
   $(document).on("click", ".edit-btn-wrapper", function() {
-    //$(".edit-wrapper").css("display", "none");
-    var edit = $("#edit-" + $(this).attr("id"));
+    $(".edit-wrapper").css("display", "none");
+    var edit = $("#edit" + $(this).attr("id"));
     edit.css("display", "block");
   });
 });
