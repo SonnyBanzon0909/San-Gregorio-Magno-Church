@@ -19,21 +19,7 @@ while($row = mysqli_fetch_array($user_query)){
 
 
 ?>
-<style>
-  .tawkto-wrapper, .widget-visible 
-  {
-    display: none !important;
-  }
-</style>
-<script>
-  $(".widget-visible").hide();
-  var elements = document.getElementsByClassName("widget-visible");
-
-  while(elements.length > 0){
-    elements[0].parentNode.removeChild(elements[0]);
-  }
-
-</script>
+ 
 
 <div class="section navigation wf-section">
   <div class="container">
