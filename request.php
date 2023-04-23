@@ -48,34 +48,7 @@ if($user!="")
         echo "success";
             //header("Location: index.php?");
 
-
-
-
-
-// Start of Email
-        
-
-        use PHPMailer\PHPMailer\PHPMailer;
-        use PHPMailer\PHPMailer\SMTP;
-        use PHPMailer\PHPMailer\Exception;
-
-//Load Composer's autoloader
-        require 'phpmailer/vendor/autoload.php';
-
-//Create an instance; passing `true` enables exceptions
-        $mail = new PHPMailer(true);
-
-
-
-
-///
-
-
-
-// END of Email
-
-
-
+ 
 
 } else 
 {
