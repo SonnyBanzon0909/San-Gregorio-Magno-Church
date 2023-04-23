@@ -135,7 +135,7 @@ else
         <div data-w-id="c87f5a81-8723-5526-ab4f-77fb505fc816" style="opacity:0" class="home-service-list-wrapper">
           <div class="home-service-list owl-carousel owl-theme">
             <?php 
-            $query = "SELECT * FROM services_tbl";
+            $query = "SELECT * FROM services_tbl WHERE status ='Publish'";
             $select_all_services = mysqli_query($connection, $query);
             while($row = mysqli_fetch_array($select_all_services)){
               $id = $row['id'];
