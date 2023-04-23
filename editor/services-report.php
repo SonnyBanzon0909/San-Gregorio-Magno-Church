@@ -346,19 +346,24 @@
 
   //   const element = document.getElementById(ids);
   //   element.style.display = 'flex';
-    
+
 
   // }
-  var i=0;
 
-  $(".edit-btn-wrapper").each(function(){
+  $(document).ready(function() {
+    
+    var i=0;
 
-    i = i + 1;
-    $(this).click(function(){
+    $(".edit-btn-wrapper").each(function(){
+
+      i = i + 1;
+      $(this).click(function(){
         alert($(this).attr("id"));
+      });
+
     });
 
-  });
+  }
   
 
   const container = document.querySelector('body');
