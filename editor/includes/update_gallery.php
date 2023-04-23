@@ -135,7 +135,7 @@
         console.log(this.responseText); // Log the response from the server to the console
       }
     };
-    xhttp.open('GET', '/editor/includes/draft-gallery-pic.php?id=' + id, true); // Replace 'update_gallery_images.php' with the actual URL of your PHP script
+    xhttp.open('GET', 'draft-gallery-pic.php?id=' + id, true); // Replace 'update_gallery_images.php' with the actual URL of your PHP script
     xhttp.send();
     galcon.parentNode.removeChild(galcon);
   });
