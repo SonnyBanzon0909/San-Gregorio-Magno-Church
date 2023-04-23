@@ -118,6 +118,7 @@
   <script>
 
     document.querySelector('#galcon-<?php echo $gal_pic_id; ?> .remove-pic').addEventListener('click', function() {
+      alert("asas");
       var galcon = document.querySelector('#galcon-<?php echo $gal_pic_id; ?>');
       galcon.parentNode.removeChild(galcon);
     });
