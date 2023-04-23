@@ -440,7 +440,7 @@ function loadPrint() {
 var win = window.open('', 'Print Window');
 
 // Retrieve the contents of the myTable element
-var printContents = document.getElementById("myTable").innerHTML;
+var printContents = document.getElementById("report").innerHTML;
 
 // Replace the contents of the new window with the table contents
 win.document.body.innerHTML = printContents;
