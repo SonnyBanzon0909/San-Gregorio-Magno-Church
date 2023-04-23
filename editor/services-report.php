@@ -22,11 +22,11 @@
 
 
  ?>
-  
 
-<!DOCTYPE html><!--  Last Published: Mon Apr 10 2023 17:06:25 GMT+0000 (Coordinated Universal Time)  -->
-<html data-wf-page="64319b7a9d91c60f6fbcb9d9" data-wf-site="640c46a109bfca551c61da47">
-<head>
+
+ <!DOCTYPE html><!--  Last Published: Mon Apr 10 2023 17:06:25 GMT+0000 (Coordinated Universal Time)  -->
+ <html data-wf-page="64319b7a9d91c60f6fbcb9d9" data-wf-site="640c46a109bfca551c61da47">
+ <head>
   <meta charset="utf-8">
   <title>Request Certificate</title>
   <meta content="Request Certificate" property="og:title">
@@ -288,7 +288,7 @@
 
 <div class="tawkto-wrapper">
   <div class="tawkto-embed w-embed w-script">
-     
+
   </div>
 </div>
 </div>
@@ -349,7 +349,16 @@
     
 
   }
+  var i=0;
 
+  $(".edit-btn-wrapper").each(function(){
+
+    i = i + 1;
+    $(this).click(function(){
+        alert($(this).attr("id"));
+    });
+
+  });
   
 
   const container = document.querySelector('body');
