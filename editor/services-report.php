@@ -726,8 +726,41 @@ $(document).ready(function() {
 
 function loadPrint() {
 
+$("#myTable th:last-child").css("display", "none");
+$("#myTable td:last-child").css("display", "none");
+        
+
+        
+// Create a new window
+var win = window.open('', 'Print Window');
+
+// Retrieve the contents of the myTable element
+var printContents = document.getElementById("report").innerHTML;
+
+// Replace the contents of the new window with the table contents
+win.document.body.innerHTML = printContents;
+
+// Print the new window
+win.print();
+
+// Close the new window
+win.close();
+
+// Add event listener for afterprint
+window.addEventListener("afterprint", function(event) {
+  console.log("afterprint event:", event);
+  setTimeout(function() {
+    location.reload(); // Reload the page after a delay
+  }, 100); // Delay in milliseconds (adjust as needed)
+}, false);
+
+  // // Fallback for browsers that don't support afterprint
+  setTimeout(function() {
+    location.reload();
+  }, 100); // Reload the page after a delay (adjust as needed)
 
 }
+
 
 </script>
 </body>
