@@ -624,97 +624,7 @@ $(document).ready(function() {
 
 
 
-
-
-// const jsPDF = window.jspdf.jsPDF;
-// const downloadButton = document.querySelector('#download-pdf');
-
-// downloadButton.addEventListener('click', () => {
-//   // get the filename for the PDF
-//   const filename = "Certificate.pdf";
-
-//   // define the options for the PDF, including the filename
-//   const options = {
-//     filename: filename,
-//     jsPDF: { 
-//       unit: 'in', 
-//       format: 'letter', 
-//       orientation: 'portrait',
-//     }
-//   };
-
-
-
-
-
-//   // fetch data from the server using AJAX
-//   fetch('print-service-data.php')
-//   .then(response => response.json())
-//   .then(data => {
-//       // create a table to display the data
-
-//     const table = document.createElement('table');
-//     const headerRow = document.createElement('tr');
-//     const headers = ['Name', 'Gender', 'Barangay', 'Age', 'Date'];
-//     headers.forEach(header => {
-//       const th = document.createElement('th');
-//       th.textContent = header;
-//       headerRow.appendChild(th);
-//     });
-//     table.appendChild(headerRow);
-//     data.forEach(rowData => {
-//       const row = document.createElement('tr');
-//       Object.values(rowData).forEach(value => {
-//         const td = document.createElement('td');
-//         td.textContent = value;
-//         row.appendChild(td);
-//       });
-//       table.appendChild(row);
-//     });
-
-
-//     setTimeout(() => {
-
-// // use html2canvas to capture a screenshot of the table
-//       html2canvas(table, {
-//         scale: 1, // Set the scale to fit the entire element on the page
-//       }).then(canvas => {
-//         // Adjust the dimensions of the element to match the PDF page size
-//         table.style.width = '8.5in';
-//         table.style.height = '11in';
-
-//         // get the base64-encoded image data
-//         const imgData = canvas.toDataURL('image/png');
-
-//         // create a new jsPDF instance and add the image to it
-//         const doc = new jsPDF(options.jsPDF);
-//         const width = doc.internal.pageSize.getWidth();
-//         const height = doc.internal.pageSize.getHeight();
-//         doc.addImage(imgData, 'PNG', 0, 0, width, height);
-
-//         // save the PDF
-//         doc.save(options.filename);
-
-//         // reset the dimensions of the element
-//         table.style.width = '';
-//         table.style.height = '';
-//       })
-//       .then(() => {
-//         // the PDF was successfully generated
-//         alert('PDF was successfully generated!');
-//       })
-//       .catch((error) => {
-//         // there was a problem generating the PDF
-//         console.error(error);
-//         alert('There was an error generating the PDF.');
-//       });
-
-
-//     }, 2000);  
-
-
-//   });
-// });
+ 
 
 
 function loadPrint() {
@@ -727,16 +637,16 @@ function loadPrint() {
     "border-radius": "0px",
     "overflow": "hidden",
     "position": "relative",
-    "border": "1px solid #C7C6B8"
+    "border": "1px solid #C7C6B8 !important;"
   });
 
   $("table td, table th").css({
-    "border": "1px solid #C7C6B8",
+    "border": "1px solid #C7C6B8 !important;",
     "text-align": "start"
   });
-  
 
-  
+
+
 // Create a new window
   var win = window.open('', 'Print Window');
 
