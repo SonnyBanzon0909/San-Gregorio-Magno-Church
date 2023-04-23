@@ -1,7 +1,7 @@
 <?php
 
 ob_start();
-include "db.php";
+require_once "../connect.php";
 
 session_start();
 
