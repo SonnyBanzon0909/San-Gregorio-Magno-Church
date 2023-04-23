@@ -92,7 +92,7 @@ if(!isset($_SESSION['username'])){
 
 
     <?php
-    $ids = $_POST['id'];
+    $ids = $_GET['id'];
 
     $query = "SELECT * FROM formdata WHERE id='$ids'";
     $view_query = mysqli_query($connection, $query);
