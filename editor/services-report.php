@@ -338,34 +338,37 @@
 </script>
 <script>
 
-function deleteBaptism(id)
-{
+  function deleteBaptism(id)
+  {
     if(confirm("Are you sure you want to delete this?"))
     {
-        // $.ajax({
-        //     type: 'GET',
-        //     url: '/editor/includes/delete-user.php',
-        //     data: {id: id},
-        //     success: function(response){
-        //         // handle success response
-        //     },
-        //     error: function(xhr){
-        //         // handle error response
-        //     }
-        // });
+      $.ajax({
+        type: 'GET',
+        url: '/editor/includes/delete-baptism.php',
+        data: {id: id},
+        success: function(response){
+          if(response.responseText=='Success')
+          {
+            alert("Deleted");
+          }
+        },
+        error: function(xhr){
+                // handle error response
+        }
+      });
     }
-}
+  }
 
 
-$(document).ready(function() {
-  var i = 0;
+  $(document).ready(function() {
+    var i = 0;
 
-  $(document).on("click", ".edit-btn-wrapper", function() {
-    $(".edit-wrapper").css("display", "none");
-    var edit = $("#edit" + $(this).attr("id"));
-    edit.css("display", "block");
+    $(document).on("click", ".edit-btn-wrapper", function() {
+      $(".edit-wrapper").css("display", "none");
+      var edit = $("#edit" + $(this).attr("id"));
+      edit.css("display", "block");
+    });
   });
-});
 
 
 

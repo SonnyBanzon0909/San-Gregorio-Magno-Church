@@ -65,6 +65,7 @@ $c=0;
 while ($row = mysqli_fetch_assoc($table_result)) {
   $sheet[]=$row;
   $c=$c+1;
+  $id = $row['id'];
   $tbl_name = $row['name'];
   $tbl_gender = $row['gender'];
   $tbl_barangay = $row['barangay'];
@@ -92,12 +93,12 @@ while ($row = mysqli_fetch_assoc($table_result)) {
   echo '<td>'.$tbl_age.' years old</td>';
   echo '<td>'.$tbl_date.'</td>';
   echo '<td class="edit">';
-  echo '<div class="edit-btn-wrapper"  id="'.$c.'"></div>';
+  echo '<div class="edit-btn-wrapper"  id="'.$id.'"></div>';
 
   echo '<img src="../images/edit-icon.svg">';
-  echo '<div class="edit-wrapper" id=edit'.$c.'>';
+  echo '<div class="edit-wrapper" id=edit'.$id.'>';
   echo '<a href="#" class="edit-btn" style="display: block;">Edit</a>';
-  echo '<a href="#" class="edit-btn" style="display: block;" onclick="deleteBaptism()">Delete</a>';
+  echo '<a href="#" class="edit-btn" style="display: block;" onclick="deleteBaptism('.$id.')">Delete</a>';
   echo '</div>';
   echo '</div>';
   echo '</td>';
