@@ -92,7 +92,7 @@ while ($row = mysqli_fetch_assoc($table_result)) {
   echo '<td>'.$tbl_age.' years old</td>';
   echo '<td>'.$tbl_date.'</td>';
   echo '<td class="edit">';
-  echo '<div class="edit-btn-wrapper" onclick="editTable(\'edit' . $c . '\')"></div>';
+  echo '<div class="edit-btn-wrapper"></div>';
 
   echo '<img src="../images/edit-icon.svg">';
   echo '<div class="edit-wrapper" id=edit'.$c.'>';
