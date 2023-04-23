@@ -1,5 +1,13 @@
   <div class="custom-css w-embed">
     <style>
+      @media print {
+        /* Hide the last column when printing */
+        #my-table th:last-child,
+        #my-table td:last-child {
+          display: none;
+        }
+      }
+
       /* styles for screens with a width of 1024 pixels or more */
       @media only screen and (min-width: 1024px) {
         #select-filter-wrapper {

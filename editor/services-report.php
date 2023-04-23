@@ -704,27 +704,18 @@ function loadPrint() {
 
 }
 
-$("#download-pdf").click(function(){
-
-  // Get the button element by its id
-  const downloadBtn = document.getElementById('download-pdf');
+// Get the button element by its id
+const downloadBtn = document.getElementById('download-pdf');
 
 // Add a click event listener to the button
-  downloadBtn.addEventListener('click', () => {
+downloadBtn.addEventListener('click', () => {
   // Get the table element by its id
-    const table = document.getElementById('myTable');
+  const table = document.getElementById('myTable');
 
-  // Use the jsPDF library to create a new PDF document
-    const doc = new jsPDF();
-
-  // Add the table to the PDF document
-    doc.autoTable({ html: '#myTable' });
-
-  // Save the PDF document
-    doc.save('document.pdf');
-  });
-
+  // Open the print dialog box
+  window.print();
 });
+
 </script>
 </body>
 </html>
