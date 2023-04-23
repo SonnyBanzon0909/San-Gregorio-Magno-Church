@@ -22,7 +22,7 @@ if ($connection->connect_error) {
 }
 else
 {
-	 echo "success connection";
+	 //echo "success connection";
 }
 
 
