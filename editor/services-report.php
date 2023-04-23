@@ -86,35 +86,42 @@
     <?php include 'partial/navigation.php'; ?>
 
     <div class="section status-section wf-section">
+
+
+
+
+      <!--  -->
+
+      <div class="select-wrapper"><select id="purpose" name="purpose" data-name="purpose" class="select filter-select w-select">
+
+
+
+        <?php 
+        $query = "SELECT * FROM services_tbl WHERE status ='Publish'";
+        $select_all_services = mysqli_query($connection, $query);
+        while($row = mysqli_fetch_array($select_all_services)){
+          $id = $row['id'];
+          $title = $row['title'];
+
+          echo '<option value="'.$title.'">'.$title.'</option>';
+
+        }
+        ?>
+
+      </select><img src="../images/down-chevron-1.svg" loading="lazy" alt="" class="select-icon"></div>
+
+
+      <!--  -->
+      
       <div class="container">
+
+
         <div id="w-node-e11252ee-d72a-90fa-2d26-73bcf10fd970-6fbcb9d9" class="w-form">
           <form method="get" name="email-form" data-name="Email Form" style="opacity:0" data-w-id="e11252ee-d72a-90fa-2d26-73bcf10fd971" id="email-form" class="filter-wrapper">
 
 
 
 
-            <!--  -->
-
-            <div class="select-wrapper"><select id="purpose" name="purpose" data-name="purpose" class="select filter-select w-select">
-
-
-
-              <?php 
-              $query = "SELECT * FROM services_tbl WHERE status ='Publish'";
-              $select_all_services = mysqli_query($connection, $query);
-              while($row = mysqli_fetch_array($select_all_services)){
-                $id = $row['id'];
-                $title = $row['title'];
-
-                echo '<option value="'.$title.'">'.$title.'</option>';
-
-              }
-              ?>
-
-            </select><img src="../images/down-chevron-1.svg" loading="lazy" alt="" class="select-icon"></div>
-
-
-            <!--  -->
             <div id="w-node-_80536e23-6151-9975-adb2-35980bf7c7b0-6fbcb9d9" class="select-filter-wrapper">
 
 
