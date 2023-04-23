@@ -2,7 +2,7 @@
 
 ob_start();
 include "includes/db.php";
- $id = $_POST['id'];
+$id = $_POST['id'];
 session_start();
 
 if(!isset($_SESSION['username'])){
@@ -107,10 +107,11 @@ if(!isset($_SESSION['username'])){
 
       $barangay = $row["barangay"];
       $age = $row["age"];
+      $date_time = $row["date_time"];
       // $touch_details = $row["date"];
- 
+
     }
- 
+
     ?>
 
 
@@ -124,77 +125,36 @@ if(!isset($_SESSION['username'])){
               <div class="w-form">
                 <form id="appointment-form" method="post" action="includes/update_contact.php" class="form">
                   <div class="field-container">
-                    <h4><?php echo $name;?> Report Information</h4>
+                    <!-- <h4> Report Information</h4> -->
                     <div class="field-wrapper">
-                      <label>Title</label>
-                      <input type="text" class="input-field w-input"  name="hero_header" id="hero_header" value="<?php echo $hero_header; ?>">
+                      <label>Name</label>
+                      <input type="text" class="input-field w-input"  name="name" id="name" value="<?php echo $name;?>">
                     </div>
                     <div class="field-wrapper">
-                      <label>Sub text</label>
-                      <input type="text" class="input-field w-input"  name="hero_subtext" id="hero_subtext" value="<?php echo $hero_subtext; ?>">
-                    </div>
-                  </div>
-
-                  <div class="field-container">
-                    <h4>Let's get in touch section</h4>
-                    <div class="field-wrapper">
-                      <label>Overline text</label>
-                      <input type="text" class="input-field w-input"  name="touch_overline" id="touch_overline" value="<?php echo $touch_overline; ?>">
-                    </div>
-                    <div class="field-wrapper">
-                      <label>Title</label>
-                      <input type="text" class="input-field w-input"  name="touch_header" id="touch_header" value="<?php echo $touch_header; ?>">
-                    </div>
-                    <div class="field-wrapper">
-                      <label>Details</label>
-                      <input type="text" class="input-field w-input"  name="touch_details" id="touch_details" value="<?php echo $touch_details; ?>">
+                      <label>Gender</label>
+                      <input type="text" class="input-field w-input"  name="gender" id="gender" value="<?php echo $gender; ?>">
                     </div>
                   </div>
 
-                  <!--  --> 
-
-                  <div class="field-container">
-                    <h4>Trece Martires</h4>
-                    <div class="field-wrapper">
-                      <input type="text" class="input-field w-input"  name="contact_address" id="office_1" value="<?php echo $contact_address; ?>">
-                    </div>
-                    <div class="field-wrapper">
-                      <input type="text" class="input-field w-input"  name="contact_number" id="office_2" value="<?php echo $contact_number; ?>">
-                    </div>
-                    <div class="field-wrapper">
-                      <input type="text" class="input-field w-input"  name="contact_email" id="office_2" value="<?php echo $contact_email; ?>">
-                      <input type="hidden" class="input-field w-input"  name="id" id="id" value="<?php echo $id; ?>">
-                    </div>
-                    <div class="field-wrapper">
-
-                    </div>
+                  <div class="field-wrapper">
+                    <label>Barangay</label>
+                    <input type="text" class="input-field w-input"  name="barangay" id="barangay" value="<?php echo $barangay; ?>">
                   </div>
+                </div>
+
+                <div class="field-wrapper">
+                  <label>Date</label>
+                  <input type="date" class="input-field w-input"  name="date" id="date" value="<?php echo $date_time; ?>">
+                </div>
+              </div>
 
 
 
-                  <div class="field-container">
-                    <h4>Office hours</h4>
-                    <div class="field-wrapper">
-                      <input type="text" class="input-field w-input"  name="office_1" id="office_1" value="<?php echo $office_1; ?>">
-                    </div>
-                    <div class="field-wrapper">
-                      <input type="text" class="input-field w-input"  name="office_2" id="office_2" value="<?php echo $office_2; ?>">
-                    </div>
-                    <div class="field-wrapper">
-                      <input type="text" class="input-field w-input"  name="office_3" id="office_3" value="<?php echo $office_3; ?>">
-                      <input type="hidden" class="input-field w-input"  name="id" id="id" value="<?php echo $id; ?>">
-                    </div>
-                    <div class="field-wrapper">
-
-                    </div>
-                  </div>
-
-
-                  <div data-w-id="5b8a60ca-0674-a70c-a128-7036f4b41cbe" class="button rounded-button">
-                    <div style="opacity:0" class="button-overlay"></div>
-                    <button class="button-link w-button" name="update_contact" id="update_contact">Update</button>
-                  </div>
-                </form>
+              <div data-w-id="5b8a60ca-0674-a70c-a128-7036f4b41cbe" class="button rounded-button">
+                <div style="opacity:0" class="button-overlay"></div>
+                <button class="button-link w-button" name="update_contact" id="update_contact">Update</button>
+              </div>
+            </form>
               <!-- <div class="w-form-done">
                 <div>Thank you! Your submission has been received!</div>
               </div>
