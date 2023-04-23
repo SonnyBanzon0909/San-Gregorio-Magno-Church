@@ -35,7 +35,7 @@ while($row = mysqli_fetch_array($user_query)){
           <nav class="nav-drop-list w-dropdown-list">
             <div class="nav-droplist-wrapper">
               <?php 
-              $query = "SELECT * FROM services_tbl";
+              $query = "SELECT * FROM services_tbl WHERE status='Publish'";
               $select_all_services = mysqli_query($connection, $query);
               while($row = mysqli_fetch_array($select_all_services)){
                 $id = $row['id'];
@@ -60,7 +60,7 @@ while($row = mysqli_fetch_array($user_query)){
           <nav class="nav-drop-list w-dropdown-list">
             <div class="nav-droplist-wrapper gallery-droplist-wrapper">
               <?php 
-              $query = "SELECT * FROM gallery_tbl";
+              $query = "SELECT * FROM gallery_tbl WHERE status='Publish'";
               $select_all_gallery = mysqli_query($connection, $query);
               while($row = mysqli_fetch_array($select_all_gallery)){
                 $id = $row['id'];
@@ -158,7 +158,7 @@ while($row = mysqli_fetch_array($user_query)){
           <div class="nav-droplist-wrapper">
 
             <?php 
-            $query = "SELECT * FROM services_tbl";
+            $query = "SELECT * FROM services_tbl WHERE status='Publish'";
             $select_all_services = mysqli_query($connection, $query);
             while($row = mysqli_fetch_array($select_all_services)){
               $id = $row['id'];
@@ -194,7 +194,7 @@ while($row = mysqli_fetch_array($user_query)){
           <div class="nav-droplist-wrapper gallery-droplist-wrapper">
 
            <?php 
-           $query = "SELECT * FROM gallery_tbl";
+           $query = "SELECT * FROM gallery_tbl WHERE status='Publish'";
            $select_all_gallery = mysqli_query($connection, $query);
            while($row = mysqli_fetch_array($select_all_gallery)){
             $id = $row['id'];
