@@ -1,6 +1,6 @@
   <?php
-    
-    if(isset($_GET['id'])){
+
+  if(isset($_GET['id'])){
     $id = $_GET['id'];
     $gall_id = $_GET['id'];
 
@@ -20,7 +20,7 @@
     }
   }
 
-?>
+  ?>
 
 
   <div class="section contact-section wf-section">
@@ -37,7 +37,7 @@
                     <select id="status" name="status" data-name="Purpose" class="select w-select">
                       <option value="Publish">Publish</option>
                       <option value="Draft">Draft</option>
-                  </select>
+                    </select>
                   </div>
                   <!-- <div class="field-wrapper">
                     <label>Select image for announcement</label>
@@ -64,21 +64,24 @@
                     <div style="margin-bottom:40px;">
                       <?php
 
-                        $query = "SELECT * FROM gallery_images_tbl WHERE gallery_id = $id";
-                        $view_query = mysqli_query($connection, $query);
+                      $query = "SELECT * FROM gallery_images_tbl WHERE gallery_id = $id";
+                      $view_query = mysqli_query($connection, $query);
 
-                        if(!$view_query){
-                          die("QUERY FAILED". mysqli_error($connection));
-                        }
+                      if(!$view_query){
+                        die("QUERY FAILED". mysqli_error($connection));
+                      }
 
-                        while($row = mysqli_fetch_array($view_query)){
-                          $id = $row["id"];
-                          $photo = $row["photo"];
+                      while($row = mysqli_fetch_array($view_query)){
+                        $id = $row["id"];
+                        $photo = $row["photo"];
 
-                          echo '
-                              <img src="img/'.$photo.'" style="max-width:180px;margin:5px;">
-                          ';
-                        }
+                        echo '
+                        <div style="position: relative;">
+                        <img class="remove-pic" src="images/close-icon-2.svg" style="position: absolute; top 5px; left: auto; right: 5px; bottom: auto;">
+                        <img src="img/'.$photo.'" style="max-width:180px;margin:5px;">
+                        </div>
+                        ';
+                      }
 
                       ?>
                     </div>
@@ -110,15 +113,15 @@
     </div>
   </div>
 
-<script>
-function readURL(input) {
-  if (input.files && input.files[0]) {
-    var reader = new FileReader();
-    
-    reader.onload = function(e) {
-      $('#blah').attr('src', e.target.result);
-    }
-    
+  <script>
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+          $('#blah').attr('src', e.target.result);
+        }
+
     reader.readAsDataURL(input.files[0]); // convert to base64 string
   }
 }
