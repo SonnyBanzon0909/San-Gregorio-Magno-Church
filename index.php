@@ -212,7 +212,7 @@ else
           <div data-w-id="4a3f9287-ec14-f9d6-67cd-09ea55d01cb5" style="opacity:0" class="moment-list-wrapper">
             <div class="moment-list owl-carousel owl-theme">
               <?php 
-              $query = "SELECT * FROM moments_tbl";
+              $query = "SELECT * FROM moments_tbl WHERE status = Publish";
               $select_all_services = mysqli_query($connection, $query);
               while($row = mysqli_fetch_array($select_all_services)){
                 $id = $row['id'];
