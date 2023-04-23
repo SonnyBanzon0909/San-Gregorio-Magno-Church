@@ -337,18 +337,11 @@
   });
 </script>
 <script>
-  // function editTable(s) {
-  // // Hide all edit wrappers
-  //   //$(".edit-wrapper").hide();
 
-  // // Show only the edit wrapper inside the current clicked edit button wrapper
-  //   var ids = "#"+s;
-
-  //   const element = document.getElementById(ids);
-  //   element.style.display = 'flex';
-
-
-  // }
+function deleteBaptism()
+{
+  alert(confirm("Are you sure you want to delete this?"));
+}
 
 $(document).ready(function() {
   var i = 0;
