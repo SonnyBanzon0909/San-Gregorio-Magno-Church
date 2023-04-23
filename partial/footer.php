@@ -801,18 +801,28 @@ if (isset($_SESSION['user_email'])) {
 
 
 
-    var data = <?php echo json_encode($email); ?>;
+    if (window.location.href.indexOf("editor") > -1) {
+     
+      
+    } 
+    else 
+    {
+      var data = <?php echo json_encode($email); ?>;
 
     //alert(data);
-    if(data.trim() != "")
-    {
+      if(data.trim() != "")
+      {
 
-      $(".signup-btn").hide();
-      $(".sign-btn").hide();
-      $(".profile").show();
-      var firstLetter = data[0];
-      $(".profile-initial").text(firstLetter);
+        $(".signup-btn").hide();
+        $(".sign-btn").hide();
+        $(".profile").show();
+        var firstLetter = data[0];
+        $(".profile-initial").text(firstLetter);
+      }
     }
+
+
+    
    /* else
     {
       setTimeout(function() {
