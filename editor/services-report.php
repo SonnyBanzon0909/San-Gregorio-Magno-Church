@@ -353,7 +353,7 @@
 $(document).ready(function() {
   $(document).on("click", ".edit-btn-wrapper", function(){
     // Hide all edit wrappers
-    $(".edit-wrapper").hide();
+    //$(".edit-wrapper").hide();
     // Show the edit wrapper for the clicked edit button
     $(this).next(".edit-wrapper").show();
   });
