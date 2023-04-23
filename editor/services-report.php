@@ -308,6 +308,25 @@
 <script src="../js/webflow.js" type="text/javascript"></script>
 <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
   <script>
+
+
+
+// Get the button element by its id
+    const downloadBtn = document.getElementById('download-pdf');
+
+// Add a click event listener to the button
+    downloadBtn.addEventListener('click', () => {
+  // Get the table element by its id
+      alert("Hey");
+      const table = document.getElementById('myTable');
+
+  // Open the print dialog box
+      window.print();
+    });
+
+
+
+
     function togglefunction()
     {  
      if ($(window).width() > 1023) 
@@ -703,19 +722,6 @@ function loadPrint() {
 
 
 }
-
-// Get the button element by its id
-const downloadBtn = document.getElementById('download-pdf');
-
-// Add a click event listener to the button
-downloadBtn.addEventListener('click', () => {
-  // Get the table element by its id
-  alert("Hey");
-  const table = document.getElementById('myTable');
-
-  // Open the print dialog box
-  window.print();
-});
 
 </script>
 </body>
