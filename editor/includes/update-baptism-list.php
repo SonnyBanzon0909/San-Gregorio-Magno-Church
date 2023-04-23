@@ -1,7 +1,7 @@
 <?php
 
 ob_start();
-include "includes/db.php";
+include "db.php";
 
 session_start();
 
@@ -90,7 +90,7 @@ while($row = mysqli_fetch_array($user_query)){
 
     <!-- Start of Baptism -->
 
-    
+
     <?php
 
     $query = "SELECT * FROM contact_tbl";
@@ -242,7 +242,7 @@ while($row = mysqli_fetch_array($user_query)){
                       <input type="hidden" class="input-field w-input"  name="id" id="id" value="<?php echo $id; ?>">
                     </div>
                     <div class="field-wrapper">
-                      
+
                     </div>
                   </div>
 
