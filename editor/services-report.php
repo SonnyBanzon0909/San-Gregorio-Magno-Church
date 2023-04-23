@@ -350,20 +350,16 @@
 
   // }
 
-  $(document).ready(function() {
-
-    var i=0;
-
-    $(".edit-btn-wrapper").each(function(){
-      alert($(this).attr("id"));
-      i = i + 1;
-      $(this).click(function(){
-        alert($(this).attr("id"));
-      });
-
+ window.addEventListener('DOMContentLoaded', function() {
+  var editBtns = document.querySelectorAll('.edit-btn-wrapper');
+  for (var i = 0; i < editBtns.length; i++) {
+    var editBtn = editBtns[i];
+    editBtn.addEventListener('click', function() {
+      alert(this.id);
     });
+  }
+});
 
-  });
   
 
   const container = document.querySelector('body');
