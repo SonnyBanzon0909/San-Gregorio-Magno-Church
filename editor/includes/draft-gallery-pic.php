@@ -1,7 +1,7 @@
 <?php
 // Get the ID parameter from the request
 $id = $_GET['id'];
-include "editor/includes/db.php";
+require_once "../connect.php";
 
 try {
   $stmt = $connection->prepare('UPDATE gallery_images_tbl SET status = "Draft" WHERE id = :id');
