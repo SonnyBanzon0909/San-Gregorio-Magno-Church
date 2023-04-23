@@ -350,19 +350,16 @@
 
   // }
 
-  $(document).ready(function() {
+ $(document).ready(function() {
+  var i = 0;
 
-    var i=0;
-
-    $(document).on("click", ".edit-btn-wrapper", function(){
-     $(".edit-wrapper").css("display", "none");
-    // var edit = $(this).find(".edit-wrapper");
-     $("#edit-"+$(this).attr("id")).css("display", "block !important");
-   });
-
-
-
+  $(document).on("click", ".edit-btn-wrapper", function() {
+    $(".edit-wrapper").css("display", "none");
+    var edit = $("#edit-" + $(this).attr("id"));
+    edit.css("display", "block");
   });
+});
+
 
 
 
