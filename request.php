@@ -80,28 +80,18 @@ if($user!="")
     //Recipients
     $mail->setFrom('admin@parokya-ni-san-gregorio-magno.com', 'San Gregorio Magno');
     $mail->addAddress('sangregoriomagnochurch@gmail.com');            //Add a recipient
-    $mail->addReplyTo('sangregoriomagnochurch@gmail.com');
+    $mail->addReplyTo('admin@parokya-ni-san-gregorio-magno.com');
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'A new form submission from '.$name;
 
 
-    $name = $_POST['name'];
-    $age = $_POST['Age'];
-    $address = $_POST['Address'];
-    $phone = $_POST['Phone'];
-    $gender = $_POST['Gender'];
-    $barangay = $_POST['Barangay'];
-    $message = $_POST['Message'];
-    $purpose = $_POST['Purpose'];
+    
 
 
     $mail->Body    = '
-    Name: '.$name.'
-    Email: '.$form_email.'
-    Subject: [Subject of the email]
-    Message: [Content of the email]
+    
 
     We kindly request that you take the necessary steps to respond to this email as soon as possible. Your prompt attention to this matter would be greatly appreciated.
 
