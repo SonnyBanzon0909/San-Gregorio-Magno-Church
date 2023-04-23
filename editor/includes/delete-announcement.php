@@ -2,7 +2,7 @@
 // Get the ID parameter from the request
 $id = $_GET['id'];
 include "db.php";
- echo $id;
+ 
 try {
   $query = "DELETE FROM announcement_tbl WHERE id ='$id'";
    

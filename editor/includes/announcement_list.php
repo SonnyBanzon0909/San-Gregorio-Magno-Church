@@ -45,7 +45,7 @@ if(isset($_GET['id'])){
                 $name = $row['name'];
 
                 echo '
-                <div id ="galcon-'.$gal_pic_id.'" style="position: relative; padding-right: 30px; display: flex; align-items: center">
+                <div id ="galcon-'.$id.'" style="position: relative; padding-right: 30px; display: flex; align-items: center">
 
                 <img class="remove-pic" src="images/close-icon-2.svg" style="position: absolute; top: auto; left: auto; right: 0px; bottom: auto; cursor: pointer;">
 
