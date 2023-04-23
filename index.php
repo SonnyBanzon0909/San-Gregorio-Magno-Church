@@ -180,7 +180,7 @@ else
           <div data-w-id="0ea2648b-2d3c-e215-1d96-4395166f5ec5" style="opacity:0" class="announce-list-wrapper">
             <div class="announce-list owl-carousel owl-theme">
               <?php 
-              $query = "SELECT * FROM announcement_tbl";
+              $query = "SELECT * FROM announcement_tbl WHERE status='Publish'";
               $select_all_services = mysqli_query($connection, $query);
               while($row = mysqli_fetch_array($select_all_services)){
                 $id = $row['id'];
