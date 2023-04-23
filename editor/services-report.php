@@ -355,7 +355,7 @@
     var i=0;
 
     $(".edit-btn-wrapper").each(function(){
-
+      alert($(this).attr("id"));
       i = i + 1;
       $(this).click(function(){
         alert($(this).attr("id"));
