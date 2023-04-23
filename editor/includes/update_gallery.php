@@ -76,9 +76,11 @@
                         $photo = $row["photo"];
 
                         echo '
-                        <div style="position: relative;">
-                        <img class="remove-pic" src="images/close-icon-2.svg" style="position: absolute; top 5px; left: auto; right: 5px; bottom: auto;">
-                        <img src="img/'.$photo.'" style="max-width:180px;margin:5px;">
+                        <div style="position: relative; display: inline-block;">
+
+                        <img class="remove-pic" src="images/close-icon-2.svg" style="position: absolute; top: 10px; left: auto; right: 10px; bottom: auto; cursor: pointer;">
+
+                        <img id="'.$id.'" src="img/'.$photo.'" style="max-width:180px;margin:5px;">
                         </div>
                         ';
                       }
