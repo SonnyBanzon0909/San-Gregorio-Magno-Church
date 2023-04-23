@@ -96,8 +96,8 @@ while ($row = mysqli_fetch_assoc($table_result)) {
 
   echo '<img src="../images/edit-icon.svg">';
   echo '<div class="edit-wrapper" id=edit'.$c.'>';
-  echo '<a href="#" class="edit-btn">Edit</a>';
-  echo '<a href="#" class="edit-btn">Delete</a>';
+  echo '<a href="#" class="edit-btn" style="display: block;">Edit</a>';
+  echo '<a href="#" class="edit-btn" style="display: block;">Delete</a>';
   echo '</div>';
   echo '</div>';
   echo '</td>';
