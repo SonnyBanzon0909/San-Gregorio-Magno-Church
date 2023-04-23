@@ -14,7 +14,7 @@ $id = $_GET['id'];
   $barangay = $_POST['barangay'];
   $date_time = $_POST['date'];
 
-  $query = "UPDATE formdata SET name='$name', gender='$gender', age='$age', barangay='$barangay', date_time='$date_time' WHERE id=$id";
+  $query = "UPDATE formdata SET name='$name', gender='$gender', age='$age', barangay='$barangay', date_time='$date_time' WHERE id='$id'";
 
   if(mysqli_query($conn, $query)) {
     echo "Record updated successfully.";
