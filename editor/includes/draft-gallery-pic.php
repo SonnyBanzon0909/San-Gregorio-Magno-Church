@@ -1,7 +1,7 @@
 <?php
 // Get the ID parameter from the request
 $picid = $_GET['id'];
-require_once "db.php";
+require_once "../db.php";
 
 try {
   $stmt = $connection->prepare('UPDATE gallery_images_tbl SET status = "Draft" WHERE id = :picid');
