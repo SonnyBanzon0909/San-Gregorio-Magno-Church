@@ -338,15 +338,24 @@
 </script>
 <script>
 
-function deleteBaptism()
+function deleteBaptism(id)
 {
-  alert(confirm("Are you sure you want to delete this?"))
-  {
-    // xhttp.open('GET', '/editor/includes/delete-user.php?id=' + id, true); // Replace  
-    // xhttp.send();
-    
-  }
+    if(confirm("Are you sure you want to delete this?"))
+    {
+        // $.ajax({
+        //     type: 'GET',
+        //     url: '/editor/includes/delete-user.php',
+        //     data: {id: id},
+        //     success: function(response){
+        //         // handle success response
+        //     },
+        //     error: function(xhr){
+        //         // handle error response
+        //     }
+        // });
+    }
 }
+
 
 $(document).ready(function() {
   var i = 0;
