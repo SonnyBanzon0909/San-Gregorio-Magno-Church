@@ -209,7 +209,7 @@ while($row = mysqli_fetch_array($user_query)){
 
           ?>
 
-          
+
             <!-- <a id="w-node-c2b21419-ad24-f15e-ca54-d65a1ce158ff-440d470d" href="galleries.php" class="link">VISITA IGLESIA</a>
             <a id="w-node-c2b21419-ad24-f15e-ca54-d65a1ce15901-440d470d" href="#" class="link">Renewal of Vows</a>
             <a id="w-node-c2b21419-ad24-f15e-ca54-d65a1ce15903-440d470d" href="#" class="link">Panunuluyan 2022</a>
@@ -223,7 +223,7 @@ while($row = mysqli_fetch_array($user_query)){
           </div>
         </nav>
       </div>
-      <a href="#" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4746-440d470d" class="nav-link">Contact us</a>
+      <a href="contact.php" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4746-440d470d" class="nav-link">Contact us</a>
       <a href="#" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4748-440d470d" data-w-id="cc8842c1-27e0-b9b5-b91f-d8b4440d4748" class="nav-link">Log in</a>
       <div data-w-id="cc8842c1-27e0-b9b5-b91f-d8b4440d474a" class="button rounded-button">
         <div class="button-overlay"></div>
