@@ -338,26 +338,25 @@
 </script>
 <script>
 
-  function deleteBaptism(id)
-  {
-    if(confirm("Are you sure you want to delete this?"))
-    {
-      $.ajax({
-        type: 'GET',
-        url: '/editor/includes/delete-baptism.php',
-        data: {id: id},
-        success: function(response){
-          if(response.responseText=='Success')
-          {
-            alert("Deleted");
-          }
-        },
-        error: function(xhr){
-                // handle error response
+  function deleteBaptism(id) {
+  if (confirm("Are you sure you want to delete this?")) {
+    $.ajax({
+      type: 'GET',
+      url: '/editor/includes/delete-baptism.php',
+      data: { id: id },
+      success: function(response) {
+        if (response == 'Success') {
+          alert("Deleted");
+          window.location = "services-report.php";
         }
-      });
-    }
+      },
+      error: function(xhr) {
+        // handle error response
+      }
+    });
   }
+}
+
 
 
   $(document).ready(function() {
