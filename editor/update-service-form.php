@@ -3,7 +3,7 @@
 // $conn = mysqli_connect("localhost", "username", "password", "database_name");
 ob_start();
 include "includes/db.php";
-$id = $_POST['id'];
+$id = $_GET['id'];
 
 
 if (isset($_POST['update_contact'])) {
