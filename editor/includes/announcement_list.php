@@ -45,11 +45,11 @@ if(isset($_GET['id'])){
                 $name = $row['name'];
 
                 echo '
-                <div id ="galcon-'.$gal_pic_id.'" style="position: relative; padding-right: 30px; display: flex;">
+                <div id ="galcon-'.$gal_pic_id.'" style="position: relative; padding-right: 30px; display: flex; align-items: center">
 
                 <img class="remove-pic" src="images/close-icon-2.svg" style="position: absolute; top: auto; left: auto; right: 0px; bottom: auto; cursor: pointer;">
 
-                <div class="announcement_wrapper">'.$name.'
+                <div class="announcement_wrapper style="width: 100%;">'.$name.'
                 <div data-w-id="14e56277-239e-cc10-6aba-00a1806977fd" class="button rounded-button signup-btn">
                 <div class="button-overlay"></div>
                 <a aria-label="" href="announcement.php?source=view_announcement&id='.$id.'" class="button-link">View</a>
