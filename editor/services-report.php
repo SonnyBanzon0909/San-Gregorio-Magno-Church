@@ -340,7 +340,12 @@
 
 function deleteBaptism()
 {
-  alert(confirm("Are you sure you want to delete this?"));
+  alert(confirm("Are you sure you want to delete this?"))
+  {
+    // xhttp.open('GET', '/editor/includes/delete-user.php?id=' + id, true); // Replace  
+    // xhttp.send();
+    
+  }
 }
 
 $(document).ready(function() {
