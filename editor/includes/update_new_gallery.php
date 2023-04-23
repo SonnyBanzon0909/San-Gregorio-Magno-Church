@@ -48,7 +48,7 @@ if(isset($_POST['update_gallery'])){
 
 //  for deleting draft gallery images
 
-	$query_pic = "DELETE FROM gallery_images_tbl WHERE status = 'Draft'";
+	$query_pic = "DELETE FROM gallery_images_tbl WHERE status = 'Draft' AND gallery_id='$id'";
 	$stmt = $connection->prepare($query_pic);
 	$stmt->execute();
 
