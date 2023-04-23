@@ -17,6 +17,7 @@
       $title = $row["title"];
       $gallery_date = $row["gallery_date"];
       $details = $row["details"];
+      $status = $row["status"];
     }
   }
 
@@ -35,6 +36,7 @@
                   <div class="field-wrapper">
                     <label>Status</label>
                     <select id="status" name="status" data-name="Purpose" class="select w-select">
+                      <option value="<?php echo $status; ?> "><?php echo $status; ?> </option>
                       <option value="Publish">Publish</option>
                       <option value="Draft">Draft</option>
                     </select>

@@ -6,6 +6,7 @@ if(isset($_POST['update_gallery'])){
 	$title = $_POST['title'];
 	$gallery_date = $_POST['gallery_date'];
 	$details = $_POST['details'];
+	$status = $_POST['status'];
 
         // $icon = $_FILES['icon']['name'];
         // $icon_tmp = $_FILES['icon']['tmp_name'];
@@ -42,6 +43,7 @@ if(isset($_POST['update_gallery'])){
 	$query .= "title = '$title', ";
 	$query .= "gallery_date = '$gallery_date', ";
 	$query .= "details = '$details' ";
+	$query .= "status = '$status' ";
 	$query .= "WHERE id = $id";
 
 	$update_query = mysqli_query($connection, $query);
