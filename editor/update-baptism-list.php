@@ -121,9 +121,9 @@ if(!isset($_SESSION['username'])){
         <div class="form-grid">
           <div id="w-node-_7a260c29-eaea-38ca-7dd7-75753354bfb4-f1521fbf" data-w-id="7a260c29-eaea-38ca-7dd7-75753354bfb4" style="opacity:1" class="form-con-wrappera">
             <div class="form-container">
-              <div class="form-title">Update Baptism Report page </div>
+              <div class="form-title">Update Service Report page </div>
               <div class="w-form">
-                <form id="appointment-form" method="post" action="includes/update_contact.php" class="form">
+                <form id="appointment-form" method="post" action="update_contact.php" class="form">
                   <div class="field-container">
                     <!-- <h4> Report Information</h4> -->
                     <div class="field-wrapper">
@@ -134,7 +134,12 @@ if(!isset($_SESSION['username'])){
                       <label>Gender</label>
                       <input type="text" class="input-field w-input"  name="gender" id="gender" value="<?php echo $gender; ?>">
                     </div>
-                    
+
+                    <div class="field-wrapper">
+                      <label>Age</label>
+                      <input type="text" class="input-field w-input"  name="age" id="age" value="<?php echo $age; ?>">
+                    </div>
+
 
                     <div class="field-wrapper">
                       <label>Barangay</label>
