@@ -62,7 +62,7 @@ $sheet = $spreadsheet->getActiveSheet();
 // Add table headers
 $sheet->setCellValue('A1', 'ID');
 $sheet->setCellValue('B1', 'Name');
-$sheet->setCellValue('C1', 'Gender');
+$sheet->setCellValue('C1', 'Email');
 $sheet->setCellValue('D1', 'Barangay');
 $sheet->setCellValue('E1', 'Age');
 $sheet->setCellValue('F1', 'Date');
@@ -72,7 +72,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $sheet->setCellValue('A' . $row_num, $row['id']);
         $sheet->setCellValue('B' . $row_num, $row['name']);
-        $sheet->setCellValue('C' . $row_num, $row['gender']);
+        $sheet->setCellValue('C' . $row_num, $row['user']);
         $sheet->setCellValue('D' . $row_num, $row['barangay']);
         $sheet->setCellValue('E' . $row_num, $row['age']);
         $sheet->setCellValue('F' . $row_num, $row['date_time']);
