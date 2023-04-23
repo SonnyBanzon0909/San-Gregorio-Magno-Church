@@ -2,7 +2,7 @@
 
 ob_start();
 include "includes/db.php";
-$id = $_POST['id'];
+
 session_start();
 
 if(!isset($_SESSION['username'])){
@@ -101,7 +101,7 @@ if(!isset($_SESSION['username'])){
     }
 
     while($row = mysqli_fetch_array($view_query)){
-      $id = $row["id"];
+      //$id = $row["id"];
       $name = $row["name"];
       $gender = $row["gender"];
 
