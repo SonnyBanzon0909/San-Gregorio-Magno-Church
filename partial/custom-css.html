@@ -2,9 +2,17 @@
     <style>
       @media print {
         /* Hide the last column when printing */
-        #my-table th:last-child,
-        #my-table td:last-child {
+        #myTable th:last-child,
+        #myTable td:last-child {
           display: none;
+        }
+        /* Styles for print go here */
+        table {
+          border-collapse: collapse;
+        }
+        th, td {
+          border: 1px solid black;
+          padding: 0.5rem;
         }
       }
 
