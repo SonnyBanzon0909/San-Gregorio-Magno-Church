@@ -223,8 +223,8 @@ while($row = mysqli_fetch_array($user_query)){
           </div>
         </nav>
       </div>
-      <a href="contact.php" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4746-440d470d" class="nav-link">Contact us</a>
-      <a href="#" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4748-440d470d" data-w-id="cc8842c1-27e0-b9b5-b91f-d8b4440d4748" class="nav-link">Log in</a>
+      <a href="contact.php" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4746-440d470d" class="nav-link">Contact us</a><!-- 
+      <a href="#" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4748-440d470d" data-w-id="cc8842c1-27e0-b9b5-b91f-d8b4440d4748" class="nav-link">Log in</a> -->
       <div data-w-id="cc8842c1-27e0-b9b5-b91f-d8b4440d474a" class="button rounded-button">
         <div class="button-overlay"></div>
         <a aria-label="" href="includes/logout.php" class="button-link">Logout</a>
