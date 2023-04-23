@@ -22,31 +22,31 @@ else
 
 include "editor/includes/db.php";
 
-    $query = "SELECT * FROM contact_tbl";
-    $view_query = mysqli_query($connection, $query);
+$query = "SELECT * FROM contact_tbl";
+$view_query = mysqli_query($connection, $query);
 
-    if(!$view_query){
-      die("QUERY FAILED". mysqli_error($connection));
-    }
+if(!$view_query){
+  die("QUERY FAILED". mysqli_error($connection));
+}
 
-    while($row = mysqli_fetch_array($view_query)){
-      $id = $row["id"];
-      $hero_header = $row["hero_header"];
-      $hero_subtext = $row["hero_subtext"];
+while($row = mysqli_fetch_array($view_query)){
+  $id = $row["id"];
+  $hero_header = $row["hero_header"];
+  $hero_subtext = $row["hero_subtext"];
 
-      $touch_overline = $row["touch_overline"];
-      $touch_header = $row["touch_header"];
-      $touch_details = $row["touch_details"];
+  $touch_overline = $row["touch_overline"];
+  $touch_header = $row["touch_header"];
+  $touch_details = $row["touch_details"];
 
-      $contact_address = $row["contact_address"];
-      $contact_number = $row["contact_number"];
+  $contact_address = $row["contact_address"];
+  $contact_number = $row["contact_number"];
 
-      $contact_email = $row["contact_email"];
-      $office_1 = $row["office_1"];
+  $contact_email = $row["contact_email"];
+  $office_1 = $row["office_1"];
 
-      $office_2 = $row["office_2"];
-      $office_3 = $row["office_3"];
-    }
+  $office_2 = $row["office_2"];
+  $office_3 = $row["office_3"];
+}
 
 
 ?>
@@ -146,7 +146,7 @@ include "editor/includes/db.php";
 
                   <input type="text" class="input-field w-input" maxlength="256" name="name" data-name="Name" placeholder="Full Name" id="name" required="">
 
-
+                  <input type="hidden" class="input-field w-input" maxlength="256" name="email" data-name="email" placeholder="Email" id="email" value="<?php echo $email; ?>">
 
                   <input type="text" class="input-field w-input" maxlength="256" name="Age" data-name="Age" placeholder="Age" id="age" required="">
 
@@ -187,7 +187,7 @@ include "editor/includes/db.php";
                     <div style="opacity:0" class="button-overlay"></div><input id="send_req_btn" type="submit" value="Submit" data-wait="Please wait..." class="button-link w-button">
                   </div>
                 </form>
- 
+
               </div>
             </div>
           </div>
@@ -273,8 +273,8 @@ include "editor/includes/db.php";
 
 <script>
 
-$(document).ready(function() {
-  $('#appointment-form').submit(function(event) {
+  $(document).ready(function() {
+    $('#appointment-form').submit(function(event) {
     event.preventDefault(); // prevent the form from submitting normally
 
     // get the form data
@@ -290,6 +290,7 @@ $(document).ready(function() {
         //alert(' ssss submitting form: ');
           $(".section-success").css('display', 'flex');
           $(".section-success").css('opacity', '1');
+          //notifyAdmin();
         }
       },
       error: function(xhr, status, error) {
@@ -297,7 +298,7 @@ $(document).ready(function() {
       }
     });
   });
-});
+  });
 
 
 
