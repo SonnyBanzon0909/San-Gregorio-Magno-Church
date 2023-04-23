@@ -2,9 +2,12 @@
 // assuming you have already established a connection to the database
 // $conn = mysqli_connect("localhost", "username", "password", "database_name");
 ob_start();
+
+echo "wee";
+
 include "includes/db.php";
 $id = $_GET['id'];
-
+echo $id;
 
 if (isset($_POST['update_contact'])) {
   $id = $_GET['id']; // assuming the id is passed through the URL
