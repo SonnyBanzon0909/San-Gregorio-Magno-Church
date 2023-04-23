@@ -160,7 +160,7 @@
         <div data-w-id="a6ce49cc-23b9-46b0-3db0-c07c98e55d15" style="opacity:0" class="table-container report-table" id="report">
           <div class="table-wrapper w-embed">
             <style>
-              table { 
+              table {
                 border-collapse: collapse;
                 width: 100%;
                 border-radius: 0px;
@@ -208,14 +208,7 @@
             {
              position: relative;
            }
-           .edit-btn-wrapper {
-            width: 100% !important;
-            height: 100% !important;
-            margin: 0 auto;
-            cursor: pointer;
-            position: absolute;
-          }
-          .edit-wrapper {
+           .edit-wrapper {
             position: absolute;
             top: 45px;
             right: 8px;
