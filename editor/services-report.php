@@ -355,16 +355,12 @@ $(document).ready(function() {
   var i=0;
 
   $(document).on("click", ".edit-btn-wrapper", function(){
-    alert("hey");
+     
     var edit = $(this).find(".edit-wrapper");
     edit.css("display", "block");
   });
 
-  $(document).on("click", function(event){
-    if(!$(event.target).closest(".edit-wrapper").length){
-      $(".edit-wrapper").css("display", "none");
-    }
-  });
+   
 
 });
 
