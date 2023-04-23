@@ -72,15 +72,15 @@
                       }
 
                       while($row = mysqli_fetch_array($view_query)){
-                        $id = $row["id"];
+                        $gal_pic_id = $row["id"];
                         $photo = $row["photo"];
 
                         echo '
-                        <div id ="galcon-'.$id.'" style="position: relative; display: inline-block;">
+                        <div id ="galcon-'.$gal_pic_id.'" style="position: relative; display: inline-block;">
 
                         <img class="remove-pic" src="images/close-icon-2.svg" style="position: absolute; top: 10px; left: auto; right: 10px; bottom: auto; cursor: pointer;">
 
-                        <img id="'.$id.'" src="img/'.$photo.'" style="max-width:180px;margin:5px;">
+                        <img id="'.$gal_pic_id.'" src="img/'.$photo.'" style="max-width:180px;margin:5px;">
                         </div>
                         ';
                       }
@@ -116,9 +116,9 @@
   </div>
 
   <script>
-    
-    document.querySelector('#galcon-<?php echo $id; ?> .remove-pic').addEventListener('click', function() {
-      var galcon = document.querySelector('#galcon-<?php echo $id; ?>');
+
+    document.querySelector('#galcon-<?php echo $gal_pic_id; ?> .remove-pic').addEventListener('click', function() {
+      var galcon = document.querySelector('#galcon-<?php echo $gal_pic_id; ?>');
       galcon.parentNode.removeChild(galcon);
     });
 
