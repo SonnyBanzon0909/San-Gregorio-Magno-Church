@@ -124,7 +124,7 @@ if(!isset($_SESSION['username'])){
             <div class="form-container">
               <div class="form-title">Update Service Report page </div>
               <div class="w-form">
-                <form id="appointment-form" method="post" action="update-service-form.php?id=<?php echo $id;?>" class="form">
+                <form id="appointment-form" method="post" action="update-service-form.php?id=<?php echo $ids;?>" class="form">
                   <div class="field-container">
                     <!-- <h4> Report Information</h4> -->
                     <div class="field-wrapper">
