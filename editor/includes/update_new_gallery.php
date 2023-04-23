@@ -7,17 +7,32 @@ if(isset($_POST['update_gallery'])){
 	$gallery_date = $_POST['gallery_date'];
 	$details = $_POST['details'];
 	$status = $_POST['status'];
-echo $status;
-        
+	
+	
 
-	$query = "UPDATE gallery_tbl SET ";
-	$query .= "title = '$title', ";
-	$query .= "gallery_date = '$gallery_date', ";
-	$query .= "details = '$details' ";
-	$query .= "status = '$status' ";
-	$query .= "WHERE id = $id";
+	// Prepare the SQL statement with placeholders for the values
+	$query = "UPDATE gallery_tbl SET title=?, gallery_date=?, details=?, status=? WHERE id=?";
+	$gal_query = $connection->prepare($query);
 
-	$update_query = mysqli_query($connection, $query);
+// Bind the parameters
+	$gal_query->bind_param("ssssi", $title, $gallery_date, $details, $status, $id);
+
+// Set the parameter values
+	$title = $_POST['title'];
+	$gallery_date = $_POST['gallery_date'];
+	$details = $_POST['details'];
+	$status = $_POST['status'];
+	$id = $_POST['id'];
+
+// Execute the statement
+	$gal_query->execute();
+
+// Check if the update query was successful
+	if($gal_query->affected_rows > 0){
+   // Success
+	} else {
+   // Error
+	}
 
 //  for deleting draft gallery images
 
@@ -27,7 +42,7 @@ echo $status;
 
 
 
-	if(!$update_query){
+	if(!$gal_query){
 		die("QUERY FAILED". mysqli_error($connection));
 	}
 
