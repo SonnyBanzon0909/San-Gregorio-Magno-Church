@@ -1,7 +1,8 @@
 <?php
 // Get the ID parameter from the request
 $id = $_GET['id'];
-include "editor/includes/db.php";
+ ob_start();
+  include "db.php";
 
 
 try {
