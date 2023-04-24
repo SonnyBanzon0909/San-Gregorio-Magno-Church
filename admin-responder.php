@@ -64,7 +64,7 @@ try {
 
 
 
-    $mail->Body    = 'Dear Admin,
+    $mail->Body    = 'Dear Admin,<br>
 
     You have received a new form submission on your website. The details are as follows:<br><br>
 
