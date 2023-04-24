@@ -59,17 +59,17 @@ try {
     $mail->Subject = 'You have a new form submission';
 
     $name = $_POST['name'];
-    $age = $_POST['Age'];
-    $address = $_POST['Address'];
-    $phone = $_POST['Phone'];
-    $gender = $_POST['Gender'];
-    $barangay = $_POST['Barangay'];
-    $barangay = $_POST['Purpose'];
-    $message = $_POST['Message'];
+    $age = $_POST['age'];
+    $address = $_POST['address'];
+    $phone = $_POST['phone'];
+    $gender = $_POST['gender'];
+    $barangay = $_POST['barangay'];
+    $barangay = $_POST['purpose'];
+    $message = $_POST['message'];
 
     $mail->Body    = 'Dear Admin,
 
-    You have received a new form submission on your website. The details are as follows:
+    You have received a new form submission on your website. The details are as follows:<br><br>
 
     Name: '.$name.' <br>
     Age: '.$age.' <br>
