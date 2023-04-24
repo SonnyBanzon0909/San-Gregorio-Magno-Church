@@ -8,6 +8,7 @@ $barangay = "";
 $year = "";
 $gender = "";
 $table ="";
+$purpose = "";
 /*
 if(isset($_POST['name']) && isset($_POST['age']) && isset($_POST['barangay']) && isset($_POST['year']) && isset($_POST['gender'])){
     // The variables are set, so you can proceed with processing the form data.
