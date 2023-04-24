@@ -395,7 +395,7 @@
         data: { id: id },
         success: function(response) {
           if (response == 'Success') {
-            alert("Deleted");
+            alert("Status set as Done");
             window.location = "services-report.php";
           }
         },
