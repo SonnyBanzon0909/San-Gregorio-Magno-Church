@@ -1,143 +1,163 @@
   <div class="custom-css w-embed">
     <style>
+
+      .edit {
+        position: relative;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+      }
+      .edit-btn-wrapper {
+        width: 20px;
+        height: 20px;
+        margin: 0 auto;
+        cursor: pointer;
+        position: absolute;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+      }
+
+
 /* */
 
-      /* styles for screens with a width of 1024 pixels or more */
-      @media only screen and (min-width: 1024px) {
-        #select-filter-wrapper {
-          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        }
-      }
-
-      .cert-field {
-        pointer-events: none;
-      }
-      .section-success
-      {
-        backdrop-filter: blur(3px);
-      }
-      .active-input
-      {
-        pointer-events: auto !important;
-        outline: 1px #000 solid;
-        opacity: 1 !important;
-        background-color: #fff !important;
-        color: #000 !important;
-
-      }
-      .header-excerpt
-      {
-        max-width: 850px;
-      }
-      .login-logo.edit-logo 
-      {
-        height: 90px;
-        border-radius: 100%;
-      }
-      .service-content
-      {
-        line-height: 32px;
-      }
-      .vision-excerpt
-      {
-        text-transform: none !important;
-      }
-      .announce-card, .moment-card
-      {
-        min-height: 0;
-      }
-      .section-success
-      {
-        z-index: 999;
-      }
-      @media screen and (min-width: 1024px)
-      {
-        .parokya-img {
-          position: sticky;
-
-          top: 120px;
-        }
-      }
-      /*CUSTOM CSS*/
-      h1,h2,h3,h4,h5,h6
-      {
-       padding: 0;
-       margin: 0;
-     }
-     .richtext ul li::marker
-     {
-       font-size: 20px;
-       color: green;
-     }
-     /*FOR Removing Select Icon*/
-     select 
-     {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      text-indent: 1px;
-      text-overflow: '';
-    }
-    
-    .select-icon, .calendar
-    {
-      pointer-events:none;
-    }
-    .underline-text, .cta-link ,.social-text
-    {
-      overflow: hidden;
-      position: relative;
-    }
-    .underline-text::before , .cta-link::before, .social-text::before
-    {
-     content: "";
-     position: absolute;
-     top: auto;
-     left: auto;
-     right: auto;
-     bottom:0;
-     width: 100%;
-     height: 2px;
-     background-color: #52070B;
-     transition: all .5s;
-     transform: translateX(-110%);
-   }
-   .cta-link::before
-   {
-     background-color: #100A0A;
-     height: 1px;
-   }
-   .underline-text:hover::before , .cta-link:hover::before, .social-text:hover::before
-   {
-     transform: translateX(0);
-   }
-   .home-service-list.owl-carousel .owl-item img
-   {
-     width: auto;
-   }
-   .service-dot-container .owl-dot, .announce-dot-container .owl-dot, .gallery-dot-container .owl-dot
-   {
-     width:10px;
-     height: 10px;
-     background-color: #C7C6B8;
-     border-radius: 100%;
-     margin: 0 5px;
-     padding:0px;
-   }
-   .service-dot-container .owl-dot.active, .announce-dot-container .owl-dot.active, .gallery-dot-container .owl-dot.active
-   {
-    background-color: #9FA28C;
+/* styles for screens with a width of 1024 pixels or more */
+@media only screen and (min-width: 1024px) {
+  #select-filter-wrapper {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
-  .moment-list.owl-carousel .owl-item:nth-child(even)
-  {
-   padding-top: 40px;
- }
- .cta-link
- {
-   word-break: break-all;
- }
- /* For Chrome and Safari */
- .table-container::-webkit-scrollbar 
- {
+}
+
+.cert-field {
+  pointer-events: none;
+}
+.section-success
+{
+  backdrop-filter: blur(3px);
+}
+.active-input
+{
+  pointer-events: auto !important;
+  outline: 1px #000 solid;
+  opacity: 1 !important;
+  background-color: #fff !important;
+  color: #000 !important;
+
+}
+.header-excerpt
+{
+  max-width: 850px;
+}
+.login-logo.edit-logo 
+{
+  height: 90px;
+  border-radius: 100%;
+}
+.service-content
+{
+  line-height: 32px;
+}
+.vision-excerpt
+{
+  text-transform: none !important;
+}
+.announce-card, .moment-card
+{
+  min-height: 0;
+}
+.section-success
+{
+  z-index: 999;
+}
+@media screen and (min-width: 1024px)
+{
+  .parokya-img {
+    position: sticky;
+
+    top: 120px;
+  }
+}
+/*CUSTOM CSS*/
+h1,h2,h3,h4,h5,h6
+{
+ padding: 0;
+ margin: 0;
+}
+.richtext ul li::marker
+{
+ font-size: 20px;
+ color: green;
+}
+/*FOR Removing Select Icon*/
+select 
+{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+.select-icon, .calendar
+{
+  pointer-events:none;
+}
+.underline-text, .cta-link ,.social-text
+{
+  overflow: hidden;
+  position: relative;
+}
+.underline-text::before , .cta-link::before, .social-text::before
+{
+ content: "";
+ position: absolute;
+ top: auto;
+ left: auto;
+ right: auto;
+ bottom:0;
+ width: 100%;
+ height: 2px;
+ background-color: #52070B;
+ transition: all .5s;
+ transform: translateX(-110%);
+}
+.cta-link::before
+{
+ background-color: #100A0A;
+ height: 1px;
+}
+.underline-text:hover::before , .cta-link:hover::before, .social-text:hover::before
+{
+ transform: translateX(0);
+}
+.home-service-list.owl-carousel .owl-item img
+{
+ width: auto;
+}
+.service-dot-container .owl-dot, .announce-dot-container .owl-dot, .gallery-dot-container .owl-dot
+{
+ width:10px;
+ height: 10px;
+ background-color: #C7C6B8;
+ border-radius: 100%;
+ margin: 0 5px;
+ padding:0px;
+}
+.service-dot-container .owl-dot.active, .announce-dot-container .owl-dot.active, .gallery-dot-container .owl-dot.active
+{
+  background-color: #9FA28C;
+}
+.moment-list.owl-carousel .owl-item:nth-child(even)
+{
+ padding-top: 40px;
+}
+.cta-link
+{
+ word-break: break-all;
+}
+/* For Chrome and Safari */
+.table-container::-webkit-scrollbar 
+{
   width: 5px; /* width of the scrollbar */
   background-color: #CDCDCD; /* background color of the scrollbar */
 }

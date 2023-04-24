@@ -412,7 +412,7 @@ function loadPrint() {
 
     $(document).on("click", ".edit-btn-wrapper", function() {
 
-      alert("SAS");
+       
       $(".edit-wrapper").css("display", "none");
       var edit = $("#edit" + $(this).attr("id"));
       edit.css("display", "block");
