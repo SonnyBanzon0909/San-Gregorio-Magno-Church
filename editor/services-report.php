@@ -339,12 +339,12 @@ function loadPrint() {
   win.close();
 
 // Add event listener for afterprint
-  window.addEventListener("afterprint", function(event) {
-    console.log("afterprint event:", event);
-    setTimeout(function() {
-    location.reload(); // Reload the page after a delay
-  }, 100); // Delay in milliseconds (adjust as needed)
-  }, false);
+  // window.addEventListener("afterprint", function(event) {
+  //   console.log("afterprint event:", event);
+  //   setTimeout(function() {
+  //   location.reload(); // Reload the page after a delay
+  // }, 100); // Delay in milliseconds (adjust as needed)
+  // }, false);
 
   // // Fallback for browsers that don't support afterprint
   setTimeout(function() {
