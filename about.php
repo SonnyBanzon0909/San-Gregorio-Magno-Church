@@ -105,7 +105,7 @@ else
           <div data-w-id="55009323-918f-1a08-2812-cfa3a29a3eb1" style="opacity:0" class="abt-content-wrapper">
             <div class="abt-date"><strong><?php echo $about_date; ?></strong></div>
             <div class="abt-block-title"><strong><?php echo $about_title; ?></strong></div>
-            <div class="rich-text-block w-richtext" style="line-height: 32px;">
+            <div class="rich-text-block w-richtext" style="line-height: 28px; letter-spacing:0 ;">
               <pre style="white-space: pre-wrap;"><?php echo $about_content; ?></pre>
             </div>
           </div>
