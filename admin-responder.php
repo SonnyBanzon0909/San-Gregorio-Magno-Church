@@ -10,6 +10,16 @@ require_once "connect.php";
 /// Email
 
 $email = "sangregoriomagnochurch@gmail.com"; 
+$name = $_POST['name'];
+$age = $_POST['Age'];
+$address = $_POST['Address'];
+$phone = $_POST['Phone'];
+$gender = $_POST['Gender'];
+$barangay = $_POST['Barangay'];
+$purpose = $_POST['Purpose'];
+$message = $_POST['Message'];
+
+
 
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
@@ -48,19 +58,32 @@ try {
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'You have a new form submission';
 
+    $name = $_POST['name'];
+    $age = $_POST['Age'];
+    $address = $_POST['Address'];
+    $phone = $_POST['Phone'];
+    $gender = $_POST['Gender'];
+    $barangay = $_POST['Barangay'];
+    $barangay = $_POST['Purpose'];
+    $message = $_POST['Message'];
+
     $mail->Body    = 'Dear Admin,
 
     You have received a new form submission on your website. The details are as follows:
 
-    Name: [Name]
-    Email: [Email]
-    Message: [Message]
+    Name: '.$name.' <br>
+    Age: '.$age.' <br>
+    Address: '.$address.' <br>
+    Phone: '.$phone.' <br>
+    Gender: '.$gender.' <br>
+    Barangay: '.$barangay.' <br>
+    Parangay: '.$barangay.' <br>
+    Message: '.$message.' <br><br>
 
     Please take a look at the message and respond to the user as soon as possible.
     <br><br>
 
     Best regards,<br>
-    Admin<br>
     Parokya ni San Gregorio Magno<br><br>
     ';
 

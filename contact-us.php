@@ -273,6 +273,36 @@ while($row = mysqli_fetch_array($view_query)){
 
 <script>
 
+  function notifyAdmin()
+  {
+    const name = document.querySelector('#name').value;
+    const age = document.querySelector('#age').value;
+    const address = document.querySelector('#address').value;
+    const phone = document.querySelector('#phone').value;
+    const gender = document.querySelector('#gender').value;
+    const barangay = document.querySelector('#barangay').value;
+    const purpose = document.querySelector('#purpose').value;
+    const message = document.querySelector('#message').value;
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'admin-responder.php');
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.onload = () => {
+      if (xhr.status === 200) {
+    // const output = document.querySelector('#output');
+    // output.innerHTML = xhr.responseText;
+    // alert(xhr.statusText+" : success");
+      } else {
+        console.error('Error:', xhr.statusText);
+      }
+    };
+    xhr.send('name=' + encodeURIComponent(name) + '&age=' + encodeURIComponent(age) + '&address=' + encodeURIComponent(address) + '&phone=' + encodeURIComponent(phone) + '&gender=' + encodeURIComponent(gender) + '&barangay=' + encodeURIComponent(barangay) + '&purpose=' + encodeURIComponent(purpose) + '&message=' + encodeURIComponent(message));
+
+  }
+
+
+
+
   $(document).ready(function() {
     $('#appointment-form').submit(function(event) {
     event.preventDefault(); // prevent the form from submitting normally
@@ -290,7 +320,7 @@ while($row = mysqli_fetch_array($view_query)){
         //alert(' ssss submitting form: ');
           $(".section-success").css('display', 'flex');
           $(".section-success").css('opacity', '1');
-          //notifyAdmin();
+          notifyAdmin();
         }
       },
       error: function(xhr, status, error) {
