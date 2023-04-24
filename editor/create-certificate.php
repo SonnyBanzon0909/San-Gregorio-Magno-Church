@@ -675,13 +675,13 @@
           setTimeout(function() 
           {
             location.reload();  
-          }, 50);  
+          }, 1000);  
         }, false);
 
         setTimeout(function() 
         {
           location.reload();
-        }, 100); 
+        }, 1000); 
       }
 
 
