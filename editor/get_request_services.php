@@ -41,13 +41,13 @@ if(isset($_POST['name']) && isset($_POST['age']) && isset($_POST['barangay']) &&
 
   if($purpose=='all')
   {
-    $table = "SELECT * FROM formdata WHERE name LIKE '$name%' AND IF('$month'='', 1, date_time_month='$month') AND IF('$barangay'='', 1, barangay='$barangay') AND IF('$year'='', 1, date_time_year='$year') AND IF('$gender'='', 1, gender='$gender')";
+    $table = "SELECT * FROM formdata WHERE name LIKE '$name%' AND IF('$month'='', 1, date_time_month='$month') AND IF('$barangay'='', 1, barangay='$barangay') AND IF('$year'='', 1, date_time_year='$year') AND IF('$gender'='', 1, gender='$gender') ORDER BY date_time DESC";
 
   }
   else
   {
 
-    $table = "SELECT * FROM formdata WHERE name LIKE '$name%' AND IF('$month'='', 1, date_time_month='$month') AND IF('$barangay'='', 1, barangay='$barangay') AND IF('$year'='', 1, date_time_year='$year') AND IF('$gender'='', 1, gender='$gender') and purpose='$purpose'";
+    $table = "SELECT * FROM formdata WHERE name LIKE '$name%' AND IF('$month'='', 1, date_time_month='$month') AND IF('$barangay'='', 1, barangay='$barangay') AND IF('$year'='', 1, date_time_year='$year') AND IF('$gender'='', 1, gender='$gender') and purpose='$purpose' ORDER BY date_time DESC";
 
   }
 
