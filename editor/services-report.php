@@ -603,7 +603,7 @@ function print()
       success: function(response) {
         // Handle the response from the PHP script
         // For example, you could update the contents of a <div> element with the response data
-        alert(response.responseText);
+        alert(response);
 
       },
       error: function(xhr, textStatus, errorThrown) {
