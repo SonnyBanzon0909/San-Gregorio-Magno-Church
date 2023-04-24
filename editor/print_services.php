@@ -97,6 +97,7 @@ $date = date('Y-m-d H-i-s');
 $filename = "baptism-certificates-list_$date.xlsx";
 $writer = new Xlsx($spreadsheet);
 $writer->save($filename);
+echo $filename;
 
 
 // Close database connection
