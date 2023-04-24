@@ -603,7 +603,17 @@ function print()
       success: function(response) {
         // Handle the response from the PHP script
         // For example, you could update the contents of a <div> element with the response data
-        alert(response);
+        //alert(response);
+
+        var domain = window.location.hostname;
+
+        if (domain === 'localhost') {
+          domain = 'http://localhost/san-gregorio-magno-church/editor/'+response;
+        } else {
+          domain = "http://parokya-ni-san-gregorio-magno.com/editor/"+response;
+        }
+
+        window.open(domain, '_blank');
 
       },
       error: function(xhr, textStatus, errorThrown) {
@@ -613,15 +623,7 @@ function print()
     });
 
 
-  var domain = window.location.hostname;
 
-  if (domain === 'localhost') {
-    //domain = 'http://localhost/san-gregorio-magno-church/editor/baptism-certificates-list.xlsx';
-  } else {
-    //domain = "http://parokya-ni-san-gregorio-magno.com/editor/baptism-certificates-list.xlsx";
-  }
-
-  window.open(domain, '_blank');
 
 
 
