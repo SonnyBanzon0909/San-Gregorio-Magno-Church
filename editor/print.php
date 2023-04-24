@@ -10,6 +10,7 @@ $barangay = "";
 $year = "";
 $gender = "";
 $table ="";
+$purpose="";
 
 if(isset($_POST['name']))
 {
@@ -32,14 +33,12 @@ if(isset($_POST['gender']))
     $gender = $_POST['gender'];
 }
 
+if(isset($_POST['purpose']))
+{
+    $purpose = $_POST['purpose'];
+}
 
 
-///$table = "SELECT * FROM formdata WHERE IF('$name'='', 1, name='$name') AND IF('$month'='', 1, date_time_month='$month') AND IF('$barangay'='', 1, barangay='$barangay') AND IF('$year'='', 1, date_time_year='$year') AND IF('$gender'='', 1, gender='$gender') and purpose='Request Certificate'";
-
-
-
-
-//$table_result = mysqli_query($conn, $table);
 
 
 
@@ -48,9 +47,14 @@ require '../vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
- 
-// SQL query
-$sql = "SELECT * FROM formdata WHERE IF('$name'='', 1, name='$name') AND IF('$month'='', 1, date_time_month='$month') AND IF('$barangay'='', 1, barangay='$barangay') AND IF('$year'='', 1, date_time_year='$year') AND IF('$gender'='', 1, gender='$gender') and purpose='Request Certificate'";
+
+
+
+
+$sql = "SELECT * FROM formdata WHERE name LIKE '$name%' AND IF('$month'='', 1, date_time_month='$month') AND IF('$barangay'='', 1, barangay='$barangay') AND IF('$year'='', 1, date_time_year='$year') AND IF('$gender'='', 1, gender='$gender') and purpose='Request Certificate'";
+
+
+
 
 // Execute query and get result set
 $result = $conn->query($sql);
@@ -62,7 +66,7 @@ $sheet = $spreadsheet->getActiveSheet();
 // Add table headers
 $sheet->setCellValue('A1', 'ID');
 $sheet->setCellValue('B1', 'Name');
-$sheet->setCellValue('C1', 'Gender');
+$sheet->setCellValue('C1', 'Email');
 $sheet->setCellValue('D1', 'Barangay');
 $sheet->setCellValue('E1', 'Age');
 $sheet->setCellValue('F1', 'Date');
@@ -73,8 +77,8 @@ if ($result->num_rows > 0) {
         $sheet->setCellValue('A' . $row_num, $row['id']);
         $sheet->setCellValue('B' . $row_num, $row['name']);
         $sheet->setCellValue('C' . $row_num, $row['user']);
-        $sheet->setCellValue('D' . $row_num, $row['gender']);
-        $sheet->setCellValue('E' . $row_num, $row['barangay']);
+        $sheet->setCellValue('D' . $row_num, $row['barangay']);
+        $sheet->setCellValue('E' . $row_num, $row['age']);
         $sheet->setCellValue('F' . $row_num, $row['date_time']);
         $row_num++;
     }
@@ -82,9 +86,15 @@ if ($result->num_rows > 0) {
 
 // Save spreadsheet to file
 $writer = new Xlsx($spreadsheet);
-$writer->save('requested-certificates-list.xlsx');
+// Save spreadsheet to file with current date and time in filename
+$date = date('Y-m-d H-i-s');
+$filename = "Request_Certificate_$date.xlsx";
+$writer = new Xlsx($spreadsheet);
+$writer->save($filename);
+echo $filename;
+
 
 // Close database connection
 $conn->close();
- 
+
 ?>

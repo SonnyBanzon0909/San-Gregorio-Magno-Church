@@ -259,7 +259,7 @@
 
 <div class="tawkto-wrapper">
   <div class="tawkto-embed w-embed w-script">
-     
+
   </div>
 </div>
 </div>
@@ -436,33 +436,33 @@ function setActivePage(pageBtn) {
 
 function loadPrint() {
 
-$("#myTable th:last-child").css("display", "none");
-$("#myTable td:last-child").css("display", "none");
-        
+  $("#myTable th:last-child").css("display", "none");
+  $("#myTable td:last-child").css("display", "none");
 
-        
+
+
 // Create a new window
-var win = window.open('', 'Print Window');
+  var win = window.open('', 'Print Window');
 
 // Retrieve the contents of the myTable element
-var printContents = document.getElementById("report").innerHTML;
+  var printContents = document.getElementById("report").innerHTML;
 
 // Replace the contents of the new window with the table contents
-win.document.body.innerHTML = printContents;
+  win.document.body.innerHTML = printContents;
 
 // Print the new window
-win.print();
+  win.print();
 
 // Close the new window
 //win.close();
 
 // Add event listener for afterprint
-window.addEventListener("afterprint", function(event) {
-  console.log("afterprint event:", event);
-  setTimeout(function() {
+  window.addEventListener("afterprint", function(event) {
+    console.log("afterprint event:", event);
+    setTimeout(function() {
     location.reload(); // Reload the page after a delay
   }, 1000); // Delay in milliseconds (adjust as needed)
-}, false);
+  }, false);
 
   // // Fallback for browsers that don't support afterprint
   setTimeout(function() {
@@ -479,12 +479,13 @@ window.addEventListener("afterprint", function(event) {
 
 function print() 
 {
-     // Get the current values of all four select boxes and the search input
+// Get the current values of all four select boxes and the search input
   var gender = $("#gender").val();
   var year = $("#year").val();
   var barangay = $("#barangay").val();
   var month = $("#month").val();
   var name = $("#search").val();
+  var purpose = $("#purpose").val();
 
     // Send an AJAX request to the server-side PHP script
   $.ajax({
@@ -495,12 +496,24 @@ function print()
         year: year,
         barangay: barangay,
         month: month,
-        name: name
+        name: name,
+        purpose: purpose
       },
 
       success: function(response) {
         // Handle the response from the PHP script
         // For example, you could update the contents of a <div> element with the response data
+        //alert(response);
+
+        var domain = window.location.hostname;
+
+        if (domain === 'localhost') {
+          domain = 'http://localhost/san-gregorio-magno-church/editor/'+response;
+        } else {
+          domain = "http://parokya-ni-san-gregorio-magno.com/editor/"+response;
+        }
+
+        window.open(domain, '_blank');
 
       },
       error: function(xhr, textStatus, errorThrown) {
@@ -510,15 +523,8 @@ function print()
     });
 
 
-  var domain = window.location.hostname;
 
-  if (domain === 'localhost') {
-    domain = 'http://localhost/san-gregorio-magno-church/editor/requested-certificates-list.xlsx';
-  } else {
-    domain = "http://parokya-ni-san-gregorio-magno.com/editor/requested-certificates-list.xlsx";
-  }
 
-  window.open(domain, '_blank');
 
 
 
