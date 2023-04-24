@@ -386,7 +386,7 @@
 </script>
 <script>
 
-  function markDone()
+  function markDone(id)
   {
     if (confirm("Mark as Done?")) {
       $.ajax({
