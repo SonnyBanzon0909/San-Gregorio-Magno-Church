@@ -302,56 +302,56 @@
 <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
   <script>
 
-    
-function loadPrint() {
 
-  $("#myTable th:last-child").css("display", "none");
-  $("#myTable td:last-child").css("display", "none");
-  $("table").css({
-    "border-collapse": "collapse",
-    "width": "100%",
-    "border-radius": "0px",
-    "overflow": "hidden",
-    "position": "relative",
-    "border": "1px solid #C7C6B8 !important;"
-  });
+    function loadPrint() {
 
-  $("table td, table th").css({
-    "border": "1px solid #C7C6B8 !important;",
-    "text-align": "start"
-  });
+      $("#myTable th:last-child").css("display", "none");
+      $("#myTable td:last-child").css("display", "none");
+      $("table").css({
+        "border-collapse": "collapse",
+        "width": "100%",
+        "border-radius": "0px",
+        "overflow": "hidden",
+        "position": "relative",
+        "border": "1px solid #C7C6B8 !important;"
+      });
+
+      $("table td, table th").css({
+        "border": "1px solid #C7C6B8 !important;",
+        "text-align": "start"
+      });
 
 
 
 // Create a new window
-  var win = window.open('', 'Print Window');
+      var win = window.open('', 'Print Window');
 
 // Retrieve the contents of the myTable element
-  var printContents = document.getElementById("report").innerHTML;
+      var printContents = document.getElementById("report").innerHTML;
 
 // Replace the contents of the new window with the table contents
-  win.document.body.innerHTML = printContents;
+      win.document.body.innerHTML = printContents;
 
 // Print the new window
-  win.print();
+      win.print();
 
 // Close the new window
-  win.close();
+      win.close();
 
 // Add event listener for afterprint
-  window.addEventListener("afterprint", function(event) {
-    console.log("afterprint event:", event);
-    setTimeout(function() {
+      window.addEventListener("afterprint", function(event) {
+        console.log("afterprint event:", event);
+        setTimeout(function() {
     location.reload(); // Reload the page after a delay
   }, 100); // Delay in milliseconds (adjust as needed)
-  }, false);
+      }, false);
 
   // // Fallback for browsers that don't support afterprint
-  setTimeout(function() {
-    location.reload();
+      setTimeout(function() {
+        location.reload();
   }, 100); // Reload the page after a delay (adjust as needed)
 
-}
+    }
 
 
 
@@ -385,6 +385,27 @@ function loadPrint() {
   });
 </script>
 <script>
+
+  function markDone()
+  {
+    if (confirm("Mark as Done?")) {
+      $.ajax({
+        type: 'GET',
+        url: '/editor/includes/done-baptism.php',
+        data: { id: id },
+        success: function(response) {
+          if (response == 'Success') {
+            alert("Deleted");
+            window.location = "services-report.php";
+          }
+        },
+        error: function(xhr) {
+        // handle error response
+        }
+      });
+    }
+
+  }
 
   function deleteBaptism(id) {
     if (confirm("Are you sure you want to delete this?")) {
@@ -656,7 +677,7 @@ $(document).ready(function() {
 
 
 
- 
+
 
 
 
