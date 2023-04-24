@@ -23,7 +23,7 @@
 
 
                 <div class="announcement_wrapper" style="width: 100% !important;">'.$name.'
-                <div data-w-id="14e56277-239e-cc10-6aba-00a1806977fd" class="button rounded-button signup-btn">
+                <div data-w-id="" class="button rounded-button signup-btn">
                 <div class="button-overlay"></div>
                 <a aria-label="" href="moments.php?source=view_moments&id='.$id.'" class="button-link">View</a>
                 </div>
