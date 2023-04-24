@@ -10,14 +10,18 @@ require_once "connect.php";
 /// Email
 
 $email = "sangregoriomagnochurch@gmail.com"; 
+
+
+
 $name = $_POST['name'];
-$age = $_POST['Age'];
-$address = $_POST['Address'];
-$phone = $_POST['Phone'];
-$gender = $_POST['Gender'];
-$barangay = $_POST['Barangay'];
-$purpose = $_POST['Purpose'];
-$message = $_POST['Message'];
+$age = $_POST['age'];
+$address = $_POST['address'];
+$phone = $_POST['phone'];
+$gender = $_POST['gender'];
+$barangay = $_POST['barangay'];
+$purpose = $_POST['purpose'];
+$message = $_POST['message'];
+
 
 
 
@@ -58,14 +62,7 @@ try {
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'You have a new form submission';
 
-    $name = $_POST['name'];
-    $age = $_POST['age'];
-    $address = $_POST['address'];
-    $phone = $_POST['phone'];
-    $gender = $_POST['gender'];
-    $barangay = $_POST['barangay'];
-    $barangay = $_POST['purpose'];
-    $message = $_POST['message'];
+
 
     $mail->Body    = 'Dear Admin,
 
@@ -77,7 +74,7 @@ try {
     Phone: '.$phone.' <br>
     Gender: '.$gender.' <br>
     Barangay: '.$barangay.' <br>
-    Parangay: '.$barangay.' <br>
+    Purpose: '.$purpose.' <br>
     Message: '.$message.' <br><br>
 
     Please take a look at the message and respond to the user as soon as possible.
