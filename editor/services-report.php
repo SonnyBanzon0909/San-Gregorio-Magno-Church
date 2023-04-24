@@ -88,7 +88,7 @@
               <!--  -->
 
               <div class="select-wrapper"><select id="purpose" name="purpose" data-name="purpose" class="select filter-select w-select">
-
+                <option value="all">All</option>
 
 
                 <?php 
