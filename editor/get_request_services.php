@@ -97,7 +97,7 @@ while ($row = mysqli_fetch_assoc($table_result)) {
   echo '<div class="edit-btn-wrapper"  id="'.$id.'"></div>';
 
   echo '<img src="../images/edit-icon.svg">';
-  echo '<div class="edit-wrapper" style="top: 10px !important" id=edit'.$id.'>';
+  echo '<div class="edit-wrapper" style="top: 10px;" id=edit'.$id.'>';
 
   echo '<a href="#" class="edit-btn" style="display: block;" onclick="markDone('.$id.')">Done</a>';
 
