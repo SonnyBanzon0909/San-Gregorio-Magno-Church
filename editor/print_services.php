@@ -38,12 +38,7 @@ if(isset($_POST['purpose']))
     $purpose = $_POST['purpose'];
 }
 
-///$table = "SELECT * FROM formdata WHERE IF('$name'='', 1, name='$name') AND IF('$month'='', 1, date_time_month='$month') AND IF('$barangay'='', 1, barangay='$barangay') AND IF('$year'='', 1, date_time_year='$year') AND IF('$gender'='', 1, gender='$gender') and purpose='Request Certificate'";
 
-
-
-
-//$table_result = mysqli_query($conn, $table);
 
 
 
@@ -66,9 +61,6 @@ else
 
 }
 
-
-// // SQL query
-// $sql = "SELECT * FROM formdata WHERE IF('$name'='', 1, name='$name') AND IF('$month'='', 1, date_time_month='$month') AND IF('$barangay'='', 1, barangay='$barangay') AND IF('$year'='', 1, date_time_year='$year') AND IF('$gender'='', 1, gender='$gender') and purpose='Baptism'";
 
 // Execute query and get result set
 $result = $conn->query($sql);
@@ -100,7 +92,12 @@ if ($result->num_rows > 0) {
 
 // Save spreadsheet to file
 $writer = new Xlsx($spreadsheet);
-$writer->save('baptism-certificates-list.xlsx');
+// Save spreadsheet to file with current date and time in filename
+$date = date('Y-m-d H-i-s');
+$filename = "baptism-certificates-list_$date.xlsx";
+$writer = new Xlsx($spreadsheet);
+$writer->save($filename);
+
 
 // Close database connection
 $conn->close();
