@@ -585,6 +585,7 @@ function print()
   var barangay = $("#barangay").val();
   var month = $("#month").val();
   var name = $("#search").val();
+  var purpose = $("#purpose").val();
 
     // Send an AJAX request to the server-side PHP script
   $.ajax({
@@ -595,7 +596,8 @@ function print()
         year: year,
         barangay: barangay,
         month: month,
-        name: name
+        name: name,
+        purpose: purpose
       },
 
       success: function(response) {
