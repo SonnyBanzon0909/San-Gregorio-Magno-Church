@@ -454,7 +454,7 @@ win.document.body.innerHTML = printContents;
 win.print();
 
 // Close the new window
-win.close();
+//win.close();
 
 // Add event listener for afterprint
 window.addEventListener("afterprint", function(event) {

@@ -338,18 +338,18 @@
 // Close the new window
      // win.close();
 
-// // Add event listener for afterprint
-//       window.addEventListener("afterprint", function(event) {
-//         console.log("afterprint event:", event);
-//         setTimeout(function() {
-//     location.reload(); // Reload the page after a delay
-//   }, 1000); // Delay in milliseconds (adjust as needed)
-//       }, false);
+// Add event listener for afterprint
+      window.addEventListener("afterprint", function(event) {
+        console.log("afterprint event:", event);
+        setTimeout(function() {
+    location.reload(); // Reload the page after a delay
+  }, 1000); // Delay in milliseconds (adjust as needed)
+      }, false);
 
-//   // // Fallback for browsers that don't support afterprint
-//       setTimeout(function() {
-//         location.reload();
-//   }, 1000); // Reload the page after a delay (adjust as needed)
+  // // Fallback for browsers that don't support afterprint
+      setTimeout(function() {
+        location.reload();
+  }, 1000); // Reload the page after a delay (adjust as needed)
 
     }
 
