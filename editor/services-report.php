@@ -158,6 +158,9 @@
           </div>
         </div>
         <div data-w-id="a6ce49cc-23b9-46b0-3db0-c07c98e55d15" style="opacity:0" class="table-container report-table" id="report">
+
+          <h1 data-w-id="" style="display: none;" id="report-title" class="header-title header-title-text">Services Reports</h1>
+
           <div class="table-wrapper w-embed">
             <style>
               table {
@@ -325,6 +328,8 @@
 
 // Create a new window
       var win = window.open('', 'Print Window');
+      $("#report-title").show();
+      $("#report-title").text($("#purpose").val());
 
 // Retrieve the contents of the myTable element
       var printContents = document.getElementById("report").innerHTML;
