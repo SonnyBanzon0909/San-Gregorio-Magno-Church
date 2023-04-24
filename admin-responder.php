@@ -52,7 +52,7 @@ try {
 
     Thank you for using our service. As requested, please find your one-time password (OTP) below:<br><br>
 
-    OTP: ' . $otp . '<br><br>
+    OTP: <br><br>
 
     This OTP is valid for 5 Minutes and can only be used once. Please enter the OTP code on our website/app to complete the login/sign-up process.<br><br>
 
