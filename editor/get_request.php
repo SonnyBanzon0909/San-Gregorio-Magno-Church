@@ -33,7 +33,7 @@ if(isset($_POST['name']) && isset($_POST['age']) && isset($_POST['barangay']) &&
     $gender = $_POST['gender'];
   }
 
-  $table = "SELECT * FROM formdata WHERE name LIKE '$name%' AND IF('$month'='', 1, date_time_month='$month') AND IF('$barangay'='', 1, barangay='$barangay') AND IF('$year'='', 1, date_time_year='$year') AND IF('$gender'='', 1, gender='$gender') and purpose='Request Certificate'";
+  $table = "SELECT * FROM formdata WHERE name LIKE '$name%' AND IF('$month'='', 1, date_time_month='$month') AND IF('$barangay'='', 1, barangay='$barangay') AND IF('$year'='', 1, date_time_year='$year') AND IF('$gender'='', 1, gender='$gender') and purpose='Request Certificate' ORDER BY date_time DESC";
 
 
   // $table = "SELECT * FROM formdata WHERE IF('$name'='', 1, name='$name') AND IF('$month'='', 1, date_time_month='$month') AND IF('$barangay'='', 1, barangay='$barangay') AND IF('$year'='', 1, date_time_year='$year') AND IF('$gender'='', 1, gender='$gender') and purpose='Request Certificate'";
