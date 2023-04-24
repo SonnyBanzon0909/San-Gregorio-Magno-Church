@@ -329,7 +329,13 @@
 // Create a new window
       var win = window.open('', 'Print Window');
       $("#report-title").show();
-      $("#report-title").text($("#purpose").val());
+      
+      var title = $("#purpose").val();
+      if(title=='all')
+      {
+        title = "All services reports";
+      }
+      $("#report-title").text(title);
 
 // Retrieve the contents of the myTable element
       var printContents = document.getElementById("report").innerHTML;
