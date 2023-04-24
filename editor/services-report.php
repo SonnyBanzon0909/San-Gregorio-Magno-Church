@@ -343,13 +343,13 @@
         console.log("afterprint event:", event);
         setTimeout(function() {
     location.reload(); // Reload the page after a delay
-  }, 100); // Delay in milliseconds (adjust as needed)
+  }, 1000); // Delay in milliseconds (adjust as needed)
       }, false);
 
   // // Fallback for browsers that don't support afterprint
       setTimeout(function() {
         location.reload();
-  }, 100); // Reload the page after a delay (adjust as needed)
+  }, 1000); // Reload the page after a delay (adjust as needed)
 
     }
 
