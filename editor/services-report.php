@@ -324,7 +324,7 @@ function loadPrint() {
 
 
 // Create a new window
-  var win = window.open('', 'Print Window');
+  var win = window;//.open('', 'Print Window');
 
 // Retrieve the contents of the myTable element
   var printContents = document.getElementById("report").innerHTML;
@@ -412,7 +412,7 @@ function loadPrint() {
 
     $(document).on("click", ".edit-btn-wrapper", function() {
 
-       
+
       $(".edit-wrapper").css("display", "none");
       var edit = $("#edit" + $(this).attr("id"));
       edit.css("display", "block");
