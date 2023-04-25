@@ -678,10 +678,10 @@
           }, 100);  
         }, false);
 
-        setTimeout(function() 
-        {
-          location.reload();
-        }, 100); 
+        // setTimeout(function() 
+        // {
+        //   location.reload();
+        // }, 100); 
       }
 
 
