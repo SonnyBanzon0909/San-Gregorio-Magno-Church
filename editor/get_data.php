@@ -40,7 +40,7 @@ while ($row = mysqli_fetch_assoc($dis_result)) {
 
   $logo='';
   while ($nurow = mysqli_fetch_assoc($num_results)) {
-    $logo = $nurow['logo'];
+    $logo = $nurow['icon'];
   }
 
 
