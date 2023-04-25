@@ -669,14 +669,14 @@
         window.print();
         document.body.innerHTML = originalContents;
         
-        window.addEventListener("afterprint", function(event) 
-        {
-          console.log("afterprint event:", event);
-          setTimeout(function() 
-          {
-            location.reload();  
-          }, 100);  
-        }, false);
+        // window.addEventListener("afterprint", function(event) 
+        // {
+        //   console.log("afterprint event:", event);
+        //   setTimeout(function() 
+        //   {
+        //     location.reload();  
+        //   }, 1000);  
+        // }, false);
 
         // setTimeout(function() 
         // {
