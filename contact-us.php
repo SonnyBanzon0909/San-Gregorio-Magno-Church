@@ -112,7 +112,7 @@ while($row = mysqli_fetch_array($view_query)){
             <div data-w-id="694e3e1d-164a-a0e1-0e9b-9c92061e54f6" style="opacity:0" class="touch-title-wrapper">
               <div class="touch-overline"><?php echo $touch_overline; ?></div>
               <div class="needs-title"><?php echo $touch_header; ?></div>
-              <div class="touch-excerpt">L<?php echo $touch_details; ?></div>
+              <div class="touch-excerpt"><?php echo $touch_details; ?></div>
               <div class="line-wrapper">
                 <div class="line"></div>
               </div>
