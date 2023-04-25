@@ -33,15 +33,14 @@ while ($row = mysqli_fetch_assoc($dis_result)) {
   JOIN services_tbl ON formdata.purpose = services_tbl.title 
   WHERE formdata.purpose = '$purpose' AND $date_filter";
 
+$result = mysqli_query($conn, $query);
+$num_results = mysqli_num_rows($result);
 
+$logo='';
+while ($nurow = mysqli_fetch_assoc($result)) {
+  $logo = $nurow['logo'];
+}
 
-  $result = mysqli_query($conn, $query);
-  $num_results = mysqli_num_rows($result);
-
-  $logo='';
-  while ($nurow = mysqli_fetch_assoc($num_results)) {
-    $logo = $nurow['icon'];
-  }
 
 
   //echo '<h1>'.$num_results.'</h1>';
