@@ -1,6 +1,6 @@
 <?php
 //
-
+require_once "../connect.php";
 //require_once "../connect.php";
   // check if the filter parameter is set
 if (isset($_GET['filter'])) {
@@ -39,7 +39,7 @@ while ($row = mysqli_fetch_assoc($dis_result)) {
   $num_results = mysqli_num_rows($result);
 
   $logo='';
-  while ($nurow = mysqli_fetch_assoc($result)) {
+  while ($nurow = mysqli_fetch_assoc($num_results)) {
     $logo = $nurow['logo'];
   }
 
