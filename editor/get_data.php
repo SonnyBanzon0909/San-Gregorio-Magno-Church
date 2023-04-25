@@ -1,6 +1,6 @@
 <?php
 //
-require_once "../connect.php";
+
 //require_once "../connect.php";
   // check if the filter parameter is set
 if (isset($_GET['filter'])) {
@@ -25,21 +25,10 @@ $num_purposes = mysqli_num_rows($dis_result);
   // loop through each purpose and display the data
 while ($row = mysqli_fetch_assoc($dis_result)) {
   $purpose = $row['purpose'];
-  // $query = "SELECT * from formdata WHERE purpose='$purpose' AND $date_filter";
-
-
-  $query = "SELECT formdata.*, services_tbl.icon 
-  FROM formdata 
-  JOIN services_tbl ON formdata.purpose = services_tbl.title 
-  WHERE formdata.purpose = '$purpose' AND $date_filter";
-
-$result = mysqli_query($conn, $query);
-$num_results = mysqli_num_rows($result);
-
-$logo='';
-while ($nurow = mysqli_fetch_assoc($result)) {
-  $logo = $nurow['icon'];
-
+  $logo = $row['logo'];
+  $query = "SELECT * from formdata WHERE purpose='$purpose' AND $date_filter";
+  $result = mysqli_query($conn, $query);
+  $num_results = mysqli_num_rows($result);
 
 
 
@@ -53,7 +42,7 @@ while ($nurow = mysqli_fetch_assoc($result)) {
   echo '<div class="categ-name">Total Appointment</div>';
   echo '<div class="counter">' . $num_results . '</div>';
   echo '</div>';
-  echo '</div>';} 
+  echo '</div>';
 }
 $percent ='SELECT * FROM formdata WHERE status="pending"';
 $percent_result = mysqli_query($conn, $percent);
