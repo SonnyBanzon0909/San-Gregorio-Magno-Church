@@ -28,7 +28,7 @@ while ($row = mysqli_fetch_assoc($dis_result)) {
   // $query = "SELECT * from formdata WHERE purpose='$purpose' AND $date_filter";
 
 
-  $query = "SELECT formdata.*, services_tbl.logo 
+  $query = "SELECT formdata.*, services_tbl.icon 
   FROM formdata 
   JOIN services_tbl ON formdata.purpose = services_tbl.title 
   WHERE formdata.purpose = '$purpose' AND $date_filter";
