@@ -342,41 +342,6 @@ while($row = mysqli_fetch_array($user_query)){
     </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
     <script>
-
-      <?php
-
-
-      $percent ='SELECT * FROM formdata WHERE status="pending"';
-      $percent_result = mysqli_query($conn, $percent);
-      $total = mysqli_num_rows($percent_result);
-      $chat_total = $total;
-
-
-      $today ='SELECT * FROM formdata WHERE status="pending" and DATE(date_time) = CURDATE()';
-      $today_result = mysqli_query($conn, $today);
-      $today_total = mysqli_num_rows($today_result);
-//$today_total = ($today_total/$total)*100;
-      $chart_today = ($today_total/$chat_total)*100;
-//$chart_today = (float)$chart_today;
-
-      $week ='SELECT * FROM formdata WHERE status="pending" and YEARWEEK(date_time) = YEARWEEK(NOW())';
-      $week_result = mysqli_query($conn, $week);
-      $week_total = mysqli_num_rows($week_result);
-//$week_total = ($week_total/$total)*100;
-      $chart_week = ($chart_week/$chat_total)*100;
-//$chart_week = (float)$chart_week;
-
-      $month ='SELECT * FROM formdata WHERE status="pending" and MONTH(date_time) = MONTH(NOW())';
-      $month_result = mysqli_query($conn, $month);
-      $month_total = mysqli_num_rows($month_result);
-//$month_total = ($month_total/$total)*100;
-      $chart_month = ($chart_month/$chat_total)*100;
-//$chart_month = (float)$chart_month;
-
-      ?>
-
-
-
       function startChart(){
         var today = <?php echo json_encode($chart_today); ?>;
         var week = <?php echo json_encode($chart_week); ?>;
@@ -389,7 +354,7 @@ while($row = mysqli_fetch_array($user_query)){
           //parseInt(today), parseInt(week), parseInt(month)
             datasets: [{
               label: 'Appointments',
-              data: [today,week,month],
+              data: [10,30,60],
               backgroundColor: [
                 '#FFE085',
                 '#D0A72B',
