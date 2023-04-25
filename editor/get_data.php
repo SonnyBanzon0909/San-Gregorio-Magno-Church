@@ -38,7 +38,7 @@ $num_results = mysqli_num_rows($result);
 
 $logo='';
 while ($nurow = mysqli_fetch_assoc($result)) {
-  $logo = $nurow['logo'];
+  $logo = $nurow['icon'];
 }
 
 
