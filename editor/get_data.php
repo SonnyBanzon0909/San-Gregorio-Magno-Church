@@ -25,12 +25,28 @@ $num_purposes = mysqli_num_rows($dis_result);
   // loop through each purpose and display the data
 while ($row = mysqli_fetch_assoc($dis_result)) {
   $purpose = $row['purpose'];
-  $query = "SELECT * from formdata WHERE purpose='$purpose' AND $date_filter";
+  // $query = "SELECT * from formdata WHERE purpose='$purpose' AND $date_filter";
+
+
+  $query = "SELECT formdata.*, services_tbl.logo 
+  FROM formdata 
+  JOIN services_tbl ON formdata.purpose = services_tbl.title 
+  WHERE formdata.purpose = '$purpose' AND $date_filter";
+
+
+
   $result = mysqli_query($conn, $query);
   $num_results = mysqli_num_rows($result);
+
+  $logo='';
+  while ($nurow = mysqli_fetch_assoc($result)) {
+    $logo = $nurow['logo'];
+  }
+
+
   //echo '<h1>'.$num_results.'</h1>';
   echo '<div id="w-node-fd420557-f27d-1ee9-638f-2ed0318bf2a4-e3ad4e69" class="admin-service-item">';
-  echo '<div class="logo-wrapper"><img src="../images/Baptism-1.png" loading="lazy" alt="" class="admin-service-logo"></div>';
+  echo '<div class="logo-wrapper"><img src="../images/'.$logo.'" loading="lazy" alt="" class="admin-service-logo"></div>';
   echo '<div class="admin-service-card">';
   echo '<div class="serv-card-line-wrapper">';
   echo '<div class="serv-card-title">' . $purpose . '</div>';
