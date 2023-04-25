@@ -39,7 +39,7 @@ $num_results = mysqli_num_rows($result);
 $logo='';
 while ($nurow = mysqli_fetch_assoc($result)) {
   $logo = $nurow['icon'];
-} 
+
 
 
 
@@ -53,7 +53,7 @@ while ($nurow = mysqli_fetch_assoc($result)) {
   echo '<div class="categ-name">Total Appointment</div>';
   echo '<div class="counter">' . $num_results . '</div>';
   echo '</div>';
-  echo '</div>';
+  echo '</div>';} 
 }
 $percent ='SELECT * FROM formdata WHERE status="pending"';
 $percent_result = mysqli_query($conn, $percent);
