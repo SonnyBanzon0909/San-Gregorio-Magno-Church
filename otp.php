@@ -80,7 +80,7 @@ try {
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'mail.parokya-ni-san-gregorio-magno.com';                       //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'admin@parokya-ni-san-gregorio-magno.com';      //SMTP username
+    $mail->Username   = 'noreply@parokya-ni-san-gregorio-magno.com';      //SMTP username
     $mail->Password   = 'l)UKks28.Jp67H';                      //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;          //Enable implicit TLS encryption
     $mail->Port       = 465;     
@@ -95,7 +95,7 @@ try {
                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('admin@parokya-ni-san-gregorio-magno.com', 'San Gregorio Magno');
+    $mail->setFrom('noreply@parokya-ni-san-gregorio-magno.com', 'San Gregorio Magno');
     $mail->addAddress($email);            //Add a recipient
     $mail->addReplyTo('sangregoriomagnochurch@gmail.com');
 
