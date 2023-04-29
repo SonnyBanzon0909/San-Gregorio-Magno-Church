@@ -30,7 +30,6 @@ if (isset($_SESSION['user_email'])) {
 ?>
 
  
-<script src="https://www.google.com/recaptcha/api.js?render=explicit"></script>
 
 
 <div class="section footer-section wf-section">
@@ -103,6 +102,9 @@ if (isset($_SESSION['user_email'])) {
     </div>
   </div>
 </div>
+
+
+
 
 <div class="section login-section create-section wf-section">
   <div class="login-wrapper">
@@ -410,6 +412,7 @@ if (isset($_SESSION['user_email'])) {
 
 
 
+<script src="https://www.google.com/recaptcha/api.js?render=explicit"></script>
 
 <script type="text/javascript">
   function resetInput()
