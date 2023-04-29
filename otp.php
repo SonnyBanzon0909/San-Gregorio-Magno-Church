@@ -81,7 +81,7 @@ try {
     $mail->Host       = 'mail.parokya-ni-san-gregorio-magno.com';                       //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     $mail->Username   = 'noreply@parokya-ni-san-gregorio-magno.com';      //SMTP username
-    $mail->Password   = '?CY(eXcQo^;3';//'l)UKks28.Jp67H';                      //SMTP password
+    $mail->Password   = 'yir7h@^A5+#)';//'l)UKks28.Jp67H';                      //SMTP password
     $mail->SMTPSecure =  PHPMailer::ENCRYPTION_SMTPS;          //Enable implicit TLS encryption
     $mail->Port       = 465;//465;     
 // 
