@@ -100,7 +100,7 @@ try {
                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('noreply@parokya-ni-san-gregorio-magno.com', 'San Gregorio Magno');
+    $mail->setFrom($config['smtp_username'], 'San Gregorio Magno');
     $mail->addAddress($email);            //Add a recipient
     $mail->addReplyTo('sangregoriomagnochurch@gmail.com');
 

@@ -56,7 +56,7 @@ try {
     $mail->Port = $config['smtp_port'];    
 
     //Recipients
-$mail->setFrom('noreply@parokya-ni-san-gregorio-magno.com', 'San Gregorio Magno');
+    $mail->setFrom($config['smtp_username'], 'San Gregorio Magno');
     $mail->addAddress($email);            //Add a recipient
     $mail->addReplyTo('sangregoriomagnochurch@gmail.com');
 
