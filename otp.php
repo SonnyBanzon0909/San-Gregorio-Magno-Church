@@ -5,7 +5,7 @@
 $secretKey = "6Leix8olAAAAABdydlg0fA0TaLbIMgSaS17QW3iK";
 
 // Verify reCAPTCHA response
-$verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secretKey . '&response=' . $_POST['g-recaptcha-response']);
+$verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secretKey . '&response=' . $_POST['token']);
 $responseData = json_decode($verifyResponse);
 
 // If reCAPTCHA is not valid
