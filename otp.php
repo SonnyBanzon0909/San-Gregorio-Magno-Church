@@ -1,4 +1,21 @@
 <?php
+
+// Verify the reCAPTCHA response
+$secretKey = "your_secret_key";
+$responseKey = $_POST['g-recaptcha-response'];
+$remoteIP = $_SERVER['REMOTE_ADDR'];
+$url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$remoteIP";
+$response = file_get_contents($url);
+$response = json_decode($response);
+if ($response->success == false) {
+    // reCAPTCHA verification failed, handle error
+    echo "reCAPTCHA verification failed!";
+    exit;
+} 
+
+
+
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
