@@ -44,16 +44,16 @@ $config = parse_ini_file('config.ini');
 
 try {
 
-   // Create PHPMailer object
+   / Create PHPMailer object
     $mail = new PHPMailer(true);
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;  // Enable verbose debug output
     $mail->isSMTP();  // Send using SMTP
-    $mail->Host = $config['smtp_server'];  // Set the SMTP server to send through
+    $mail->Host = "mail.parokya-ni-san-gregorio-magno.com";  // Set the SMTP server to send through
     $mail->SMTPAuth = true;  // Enable SMTP authentication
     $mail->Username = $config['smtp_username'];  // SMTP username
     $mail->Password = $config['smtp_password'];  // SMTP password
-    $mail->SMTPSecure = $config['smtp_encryption'];  // Enable implicit TLS encryption
-    $mail->Port = $config['smtp_port'];    
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;  // Enable implicit TLS encryption
+    $mail->Port = 465;    
 
     //Recipients
     $mail->setFrom($config['smtp_username'], 'San Gregorio Magno');

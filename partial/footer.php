@@ -76,12 +76,12 @@ if (isset($_SESSION['user_email'])) {
         <!-- Start of Tawk.to Script -->
         <script type="text/javascript">
           if (window.location.href.indexOf("editor") > -1) {
-
-
+           
+            
           } 
           else 
           {
-
+            
 
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
             (function(){
@@ -734,13 +734,9 @@ if (isset($_SESSION['user_email'])) {
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onload = () => {
       if (xhr.status === 200) {
-        alert(xhr.responseText+" : success");
         //const output = document.querySelector('#output');
         //output.innerHTML = xhr.responseText;
-        if(xhr.responseText==success)
-        {
-          alert(xhr.responseText+" : success");
-        }
+        //alert(xhr.statusText+" : success");
       } else {
         console.error('Error:', xhr.statusText);
       }
@@ -806,8 +802,8 @@ if (isset($_SESSION['user_email'])) {
 
 
     if (window.location.href.indexOf("editor") > -1) {
-
-
+     
+      
     } 
     else 
     {
