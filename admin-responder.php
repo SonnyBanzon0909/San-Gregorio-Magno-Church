@@ -1,4 +1,5 @@
 <?php
+
 // admin-responder.php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -37,24 +38,25 @@ require 'phpmailer/vendor/autoload.php';
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
-
+$config = parse_ini_file('config.ini');
 
 
 
 try {
 
-    //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'mail.parokya-ni-san-gregorio-magno.com';                       //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'noreply@parokya-ni-san-gregorio-magno.com';      //SMTP username
-    $mail->Password   = 'yir7h@^A5+#)';//'l)UKks28.Jp67H';                      //SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;          //Enable implicit TLS encryption
-    $mail->Port       = 465;     
+   // Create PHPMailer object
+    $mail = new PHPMailer(true);
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;  // Enable verbose debug output
+    $mail->isSMTP();  // Send using SMTP
+    $mail->Host = $config['smtp_server'];  // Set the SMTP server to send through
+    $mail->SMTPAuth = true;  // Enable SMTP authentication
+    $mail->Username = $config['smtp_username'];  // SMTP username
+    $mail->Password = $config['smtp_password'];  // SMTP password
+    $mail->SMTPSecure = $config['smtp_encryption'];  // Enable implicit TLS encryption
+    $mail->Port = $config['smtp_port'];    
 
     //Recipients
-    $mail->setFrom('noreply@parokya-ni-san-gregorio-magno.com', 'San Gregorio Magno');
+$mail->setFrom('noreply@parokya-ni-san-gregorio-magno.com', 'San Gregorio Magno');
     $mail->addAddress($email);            //Add a recipient
     $mail->addReplyTo('sangregoriomagnochurch@gmail.com');
 

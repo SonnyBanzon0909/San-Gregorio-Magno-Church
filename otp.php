@@ -70,20 +70,21 @@ if (!$conn) {
 
 mysqli_close($conn);
 
-
+$config = parse_ini_file('config.ini');
 
 
 try {
 
-    //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'mail.parokya-ni-san-gregorio-magno.com';                       //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'noreply@parokya-ni-san-gregorio-magno.com';      //SMTP username
-    $mail->Password   = 'yir7h@^A5+#)';//'l)UKks28.Jp67H';                      //SMTP password
-    $mail->SMTPSecure =  PHPMailer::ENCRYPTION_SMTPS;          //Enable implicit TLS encryption
-    $mail->Port       = 465;//465;     
+    // Create PHPMailer object
+    $mail = new PHPMailer(true);
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;  // Enable verbose debug output
+    $mail->isSMTP();  // Send using SMTP
+    $mail->Host = $config['smtp_server'];  // Set the SMTP server to send through
+    $mail->SMTPAuth = true;  // Enable SMTP authentication
+    $mail->Username = $config['smtp_username'];  // SMTP username
+    $mail->Password = $config['smtp_password'];  // SMTP password
+    $mail->SMTPSecure = $config['smtp_encryption'];  // Enable implicit TLS encryption
+    $mail->Port = $config['smtp_port'];       
 // 
     // $mail->Host       = 'smtp.gmail.com';                       //Set the SMTP server to send through
     // $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
