@@ -29,7 +29,8 @@ if (isset($_SESSION['user_email'])) {
 
 ?>
 
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+ 
+<script src="https://www.google.com/recaptcha/api.js?render=explicit"></script>
 
 
 <div class="section footer-section wf-section">
