@@ -29,8 +29,6 @@ if (isset($_SESSION['user_email'])) {
 
 ?>
 
- 
-
 
 <div class="section footer-section wf-section">
   <div class="container">
@@ -103,9 +101,6 @@ if (isset($_SESSION['user_email'])) {
   </div>
 </div>
 
-
-
-
 <div class="section login-section create-section wf-section">
   <div class="login-wrapper">
     <a data-w-id="b6a4babc-5026-d4af-ff01-fe6645157765" href="#" class="close-login w-inline-block create-btn-close"><img src="images/close-icon-2.svg" loading="lazy" alt="" class="close-icon"></a>
@@ -133,11 +128,6 @@ if (isset($_SESSION['user_email'])) {
 
 
         <div class="input-con"><input required type="password" class="input-field w-input create-field" maxlength="256" name="c-password" data-name="Create Password 3" placeholder="Create password" id="c-password"></div>
-
-        <div class="g-recaptcha" data-sitekey="6Leix8olAAAAAHVp3iS0W0WAbiuE1-Pq1ZmgNhmV"></div>
-
-
-
         <div id="w-node-b6a4babc-5026-d4af-ff01-fe664515777d-45157763" class="already-text">Already have an account?  <a href="#" data-w-id="b6a4babc-5026-d4af-ff01-fe664515777f" class="login-link-span">Log in</a>
         </div>
 
@@ -412,7 +402,6 @@ if (isset($_SESSION['user_email'])) {
 
 
 
-<script src="https://www.google.com/recaptcha/api.js?render=explicit"></script>
 
 <script type="text/javascript">
   function resetInput()
@@ -722,10 +711,16 @@ if (isset($_SESSION['user_email'])) {
     });    
   }
 
-function create() {
-  // Get the reCAPTCHA response token
-  grecaptcha.execute('6Leix8olAAAAAHVp3iS0W0WAbiuE1-Pq1ZmgNhmV', {action: 'submit'}).then(function(token) {
-    // Add the token to your Ajax request data
+
+  function create(){
+
+    $(".create-section").css("display","none");
+    $(".create-section").css("opacity","0");
+
+    $(".verify-section").css("display","flex");
+    $(".verify-section").css("opacity","1");
+
+
     const name = document.querySelector('#c-fullname').value;
     const birthday = document.querySelector('#c-birthday').value;
     const contact = document.querySelector('#c-contact').value;
@@ -733,26 +728,22 @@ function create() {
     const barangay = document.querySelector('#c-barangay').value;
     const email = document.querySelector('#c-email').value;
     const password = document.querySelector('#c-password').value;
-    const data = 'name=' + encodeURIComponent(name) + '&birthday=' + encodeURIComponent(birthday) + '&contact=' + encodeURIComponent(contact) + '&address=' + encodeURIComponent(address) + '&barangay=' + encodeURIComponent(barangay) + '&email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password) + '&token=' + encodeURIComponent(token);
 
-    // Make your Ajax request with the data
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'otp.php');
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onload = () => {
       if (xhr.status === 200) {
-        // Handle success response
-        // For example, display a success message to the user
+        //const output = document.querySelector('#output');
+        //output.innerHTML = xhr.responseText;
+        //alert(xhr.statusText+" : success");
       } else {
-        // Handle error response
-        // For example, display an error message to the user
         console.error('Error:', xhr.statusText);
       }
     };
-    xhr.send(data);
-  });
-}
+    xhr.send('name=' + encodeURIComponent(name) + '&birthday=' + encodeURIComponent(birthday) + '&contact=' + encodeURIComponent(contact) + '&address=' + encodeURIComponent(address) + '&barangay=' + encodeURIComponent(barangay) + '&email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password));
 
+  }
 
   function login() {
   // Retrieve the email and password from the form
