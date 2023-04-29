@@ -1,7 +1,7 @@
 <?php
 
 $config = parse_ini_file('config.ini');
-echo $config['smtp_server'];
+//echo $config['smtp_server'];
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -61,7 +61,7 @@ $mail = new PHPMailer(true);
 $sql = "INSERT INTO temp_account (email, otp, date_time, verified) VALUES ('$email', '$otp', '$date_time', 'false')";
 if(mysqli_query($conn, $sql))
 {
-    echo "Record added successfully!";
+    echo "success";
 } 
 else
 {
