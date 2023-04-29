@@ -29,12 +29,6 @@ if (isset($_SESSION['user_email'])) {
 
 ?>
 
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script>
- function onSubmit(token) {
-   document.getElementById("create-forms").submit();
- }
-</script>
 
 <div class="section footer-section wf-section">
   <div class="container">
@@ -82,12 +76,12 @@ if (isset($_SESSION['user_email'])) {
         <!-- Start of Tawk.to Script -->
         <script type="text/javascript">
           if (window.location.href.indexOf("editor") > -1) {
-
-
+           
+            
           } 
           else 
           {
-
+            
 
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
             (function(){
@@ -138,7 +132,7 @@ if (isset($_SESSION['user_email'])) {
         </div>
 
         <div data-w-id="create-btn-con" class="button rounded-button" >
-          <div class="button-overlay"></div><input   data-sitekey="6Leix8olAAAAAHVp3iS0W0WAbiuE1-Pq1ZmgNhmV" data-callback="onSubmit" type="submit" id="create-btn" value="SIGN UP" data-wait="Please wait..." class="button-link w-button create-btn g-recaptcha">
+          <div class="button-overlay"></div><input type="submit" id="create-btn" value="SIGN UP" data-wait="Please wait..." class="button-link w-button create-btn">
 
         </div>
       </form>
@@ -808,8 +802,8 @@ if (isset($_SESSION['user_email'])) {
 
 
     if (window.location.href.indexOf("editor") > -1) {
-
-
+     
+      
     } 
     else 
     {
