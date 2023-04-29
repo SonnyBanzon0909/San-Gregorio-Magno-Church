@@ -44,7 +44,7 @@ $config = parse_ini_file('config.ini');
 
 try {
 
-   / Create PHPMailer object
+   // Create PHPMailer object
     $mail = new PHPMailer(true);
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;  // Enable verbose debug output
     $mail->isSMTP();  // Send using SMTP
