@@ -51,7 +51,7 @@ try {
     $mail->Username   = 'noreply@parokya-ni-san-gregorio-magno.com';      //SMTP username
     $mail->Password   = '?CY(eXcQo^;3';//'l)UKks28.Jp67H';                      //SMTP password
     $mail->SMTPSecure = 'TLS';//PHPMailer::ENCRYPTION_SMTPS;          //Enable implicit TLS encryption
-    $mail->Port       = 465;     
+    $mail->Port       = 587;//465;     
 
     //Recipients
     $mail->setFrom('noreply@parokya-ni-san-gregorio-magno.com', 'San Gregorio Magno');
