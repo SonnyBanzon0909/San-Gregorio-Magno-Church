@@ -29,6 +29,7 @@ if (isset($_SESSION['user_email'])) {
 
 ?>
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <div class="section footer-section wf-section">
   <div class="container">
@@ -128,6 +129,11 @@ if (isset($_SESSION['user_email'])) {
 
 
         <div class="input-con"><input required type="password" class="input-field w-input create-field" maxlength="256" name="c-password" data-name="Create Password 3" placeholder="Create password" id="c-password"></div>
+
+        <div class="g-recaptcha" data-sitekey="6Leix8olAAAAAHVp3iS0W0WAbiuE1-Pq1ZmgNhmV"></div>
+
+
+
         <div id="w-node-b6a4babc-5026-d4af-ff01-fe664515777d-45157763" class="already-text">Already have an account?  <a href="#" data-w-id="b6a4babc-5026-d4af-ff01-fe664515777f" class="login-link-span">Log in</a>
         </div>
 
