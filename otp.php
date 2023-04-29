@@ -1,4 +1,8 @@
 <?php
+
+$config = parse_ini_file('config.ini');
+echo $config['smtp_server'];
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
