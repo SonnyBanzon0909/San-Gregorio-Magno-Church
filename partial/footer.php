@@ -717,16 +717,10 @@ if (isset($_SESSION['user_email'])) {
     });    
   }
 
-
-  function create(){
-
-    $(".create-section").css("display","none");
-    $(".create-section").css("opacity","0");
-
-    $(".verify-section").css("display","flex");
-    $(".verify-section").css("opacity","1");
-
-
+function create() {
+  // Get the reCAPTCHA response token
+  grecaptcha.execute('6Leix8olAAAAAHVp3iS0W0WAbiuE1-Pq1ZmgNhmV', {action: 'submit'}).then(function(token) {
+    // Add the token to your Ajax request data
     const name = document.querySelector('#c-fullname').value;
     const birthday = document.querySelector('#c-birthday').value;
     const contact = document.querySelector('#c-contact').value;
@@ -734,22 +728,26 @@ if (isset($_SESSION['user_email'])) {
     const barangay = document.querySelector('#c-barangay').value;
     const email = document.querySelector('#c-email').value;
     const password = document.querySelector('#c-password').value;
+    const data = 'name=' + encodeURIComponent(name) + '&birthday=' + encodeURIComponent(birthday) + '&contact=' + encodeURIComponent(contact) + '&address=' + encodeURIComponent(address) + '&barangay=' + encodeURIComponent(barangay) + '&email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password) + '&token=' + encodeURIComponent(token);
 
+    // Make your Ajax request with the data
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'otp.php');
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onload = () => {
       if (xhr.status === 200) {
-        //const output = document.querySelector('#output');
-        //output.innerHTML = xhr.responseText;
-        //alert(xhr.statusText+" : success");
+        // Handle success response
+        // For example, display a success message to the user
       } else {
+        // Handle error response
+        // For example, display an error message to the user
         console.error('Error:', xhr.statusText);
       }
     };
-    xhr.send('name=' + encodeURIComponent(name) + '&birthday=' + encodeURIComponent(birthday) + '&contact=' + encodeURIComponent(contact) + '&address=' + encodeURIComponent(address) + '&barangay=' + encodeURIComponent(barangay) + '&email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password));
+    xhr.send(data);
+  });
+}
 
-  }
 
   function login() {
   // Retrieve the email and password from the form
