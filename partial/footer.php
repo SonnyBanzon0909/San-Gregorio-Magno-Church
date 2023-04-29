@@ -138,7 +138,7 @@ if (isset($_SESSION['user_email'])) {
         </div>
 
         <div data-w-id="create-btn-con" class="button rounded-button" >
-          <div class="button-overlay"></div><input class="g-recaptcha" data-sitekey="6Leix8olAAAAAHVp3iS0W0WAbiuE1-Pq1ZmgNhmV" data-callback="onSubmit" type="submit" id="create-btn" value="SIGN UP" data-wait="Please wait..." class="button-link w-button create-btn">
+          <div class="button-overlay"></div><input   data-sitekey="6Leix8olAAAAAHVp3iS0W0WAbiuE1-Pq1ZmgNhmV" data-callback="onSubmit" type="submit" id="create-btn" value="SIGN UP" data-wait="Please wait..." class="button-link w-button create-btn g-recaptcha">
 
         </div>
       </form>
