@@ -623,7 +623,7 @@ function print() {
       link.dispatchEvent(new MouseEvent('contextmenu', {bubbles: true, cancelable: true, view: window}));
 
       // Remove the download link from the DOM
-      document.body.removeChild(link);
+      //document.body.removeChild(link);
     },
     error: function(xhr, textStatus, errorThrown) {
       // Handle any errors that occur during the AJAX request
