@@ -612,10 +612,10 @@ function print() {
 
     success: function(response) {
       // Create a download link with the file URL
-      alert(response);
+      console.log(response);
       var link = document.createElement('a');
       link.setAttribute('href', response);
-      link.setAttribute('download', 'baptism-certificates-list.xlsx');
+      link.setAttribute('download', '');
       link.style.display = 'none';
       document.body.appendChild(link);
 
@@ -623,13 +623,15 @@ function print() {
       link.click();
 
       // Remove the download link from the DOM
-      //document.body.removeChild(link);
+      document.body.removeChild(link);
     },
     error: function(xhr, textStatus, errorThrown) {
       // Handle any errors that occur during the AJAX request
       console.log("Error: " + errorThrown);
     }
   });
+}
+);
 }
 
 
