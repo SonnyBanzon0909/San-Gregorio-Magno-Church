@@ -624,11 +624,7 @@ function print() {
       // document.body.removeChild(link);
       // Consume the function as follows:
       //const file = createBlob("Services Report");
-        // Create a blob from the response content
-      const blob = new Blob([response]);
-
-  // Save the blob as a file with the given filename
-      saveAs(blob, 'filename.xlsx');
+      saveAs(response, "Services Report.xlsx");
 
 
     },
@@ -640,25 +636,18 @@ function print() {
   });
 }
 
-function saveAs(content, fileName) {
-  const a = document.createElement("a");
-  const isBlob = content.toString().indexOf("Blob") > -1;
-  let url = content;
-  if (isBlob) {
-    if (window.navigator && window.navigator.msSaveBlob) { // for Edge
-      window.navigator.msSaveBlob(content, fileName);
-      return;
-    }
-    url = window.webkitURL.createObjectURL(content); // for Chrome
-  }
-  a.href = url;
-  a.download = fileName;
-  a.click();
-  if (isBlob) {
-    window.webkitURL.revokeObjectURL(url); // for Chrome
-  }
+function saveAs(url, fileName) {
+  fetch(url)
+    .then(response => response.blob())
+    .then(blob => {
+      const a = document.createElement("a");
+      const blobUrl = window.URL.createObjectURL(blob);
+      a.href = blobUrl;
+      a.download = fileName;
+      a.click();
+      window.URL.revokeObjectURL(blobUrl);
+    });
 }
-
 
 
 
