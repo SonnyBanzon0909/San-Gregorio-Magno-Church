@@ -740,39 +740,43 @@
 
 
   function printDiv() {
-  if (confirm("Are you sure you want to update the status and print file?")) {
-    $(".text-cert").css("opacity", "1");
-    $.ajax({
-      type: "POST",
-      url: "update_status.php",
-      data: { id: id },
-      success: function(response) {},
-      error: function(response) {}
-    });
+    if (confirm("Are you sure you want to update the status and print file?")) {
+      $(".text-cert").css("opacity", "1");
+      $.ajax({
+        type: "POST",
+        url: "update_status.php",
+        data: { id: id },
+        success: function(response) {},
+        error: function(response) {}
+      });
 
-    var printContents = document.getElementById(cert_type).innerHTML;
-    var originalContents = document.body.innerHTML;
+      var printContents = document.getElementById(cert_type).innerHTML;
+      var originalContents = document.body.innerHTML;
 
-    var printWindow = window.open("", "", "height=768,width=1366");
-    printWindow.document.write("<html><head><title>" + document.title + "</title>");
-    printWindow.document.write(
-      '<link href="../css/normalize.css" rel="stylesheet" type="text/css">'
-    );
-    printWindow.document.write(
-      '<link href="../css/parokya.css" rel="stylesheet" type="text/css">'
-    );
-    printWindow.document.write(
-      '<link href="../css/san-gregorio-magno.parokya.css" rel="stylesheet" type="text/css">'
-    );
-    printWindow.document.write("<style>.text-cert{opacity:1 !important;}</style></head>");
-    printWindow.document.write("<body>");
-    printWindow.document.write(printContents);
-    printWindow.document.write("</body></html>");
+      var printWindow = window.open("", "", "height=768,width=1366");
+      printWindow.document.write("<html><head><title>" + document.title + "</title>");
+      printWindow.document.write(
+        '<link href="../css/normalize.css" rel="stylesheet" type="text/css">'
+        );
+      printWindow.document.write(
+        '<link href="../css/parokya.css" rel="stylesheet" type="text/css">'
+        );
+      printWindow.document.write(
+        '<link href="../css/san-gregorio-magno.parokya.css" rel="stylesheet" type="text/css">'
+        );
+      printWindow.document.write("<style>.text-cert{opacity:1 !important;}</style></head>");
+      printWindow.document.write("<body>");
+      printWindow.document.write(printContents);
+      printWindow.document.write("</body></html>");
 
-    printWindow.document.close(); // necessary for IE >= 10
-    printWindow.focus(); // necessary for IE >= 10*/
-
-    printWindow.print();
+    
+// Wait for the window to finish loading
+    printWindow.onload = function() {
+      setTimeout(function() {
+        printWindow.print();
+        printWindow.close();
+  }, 1000); // Wait 1 second before printing
+    };
 
     setTimeout(function() {
       location.reload();
