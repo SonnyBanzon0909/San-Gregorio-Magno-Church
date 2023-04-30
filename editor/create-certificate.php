@@ -60,7 +60,7 @@
       <div class="header-wrapper">
         <div class="header-content-con">
           <h1 data-w-id="97ee2e95-bedc-8996-6f58-28ca048dc297" style="opacity:0" class="header-title header-title-text">Certificate</h1>
-          <div data-w-id="97ee2e95-bedc-8996-6f58-28ca048dc299" style="opacity:0" class="body-text-medium header-excerpt">lorem ipsum</div>
+          <div data-w-id="97ee2e95-bedc-8996-6f58-28ca048dc299" style="opacity:0" class="body-text-medium header-excerpt"></div>
         </div>
       </div>
     </div>
