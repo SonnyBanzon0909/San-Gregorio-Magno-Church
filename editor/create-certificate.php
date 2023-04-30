@@ -610,7 +610,7 @@
           $(this).addClass("active-input");
 
         });
-        $(".text-cert").css("opacity",'0');
+        //$(".text-cert").css("opacity",'0');
 
       });
     });
