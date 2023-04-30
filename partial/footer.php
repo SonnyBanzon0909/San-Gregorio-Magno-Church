@@ -76,12 +76,12 @@ if (isset($_SESSION['user_email'])) {
         <!-- Start of Tawk.to Script -->
         <script type="text/javascript">
           if (window.location.href.indexOf("editor") > -1) {
-           
-            
+
+
           } 
           else 
           {
-            
+
 
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
             (function(){
@@ -178,14 +178,18 @@ if (isset($_SESSION['user_email'])) {
 
       <form id="change-form" name="wf-form-login" data-name="login" method="get" class="login-form" action="">
 
-        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="change-name" data-name="change-name" placeholder="Current password" id="change-name"></div>
+        <div class="input-con relative"><input type="text" class="input-field w-input" maxlength="256" name="change-name" data-name="change-name" placeholder="Current password" id="change-name">
+          <img class="eye" src="images/open_eye.svg">
+        </div>
 
 
         <div class="input-con relative"><input type="text" class="input-field w-input" maxlength="256" name="change-address" data-name="change-address" placeholder="New password" id="change-address">
           <img class="eye" src="images/open_eye.svg">
         </div>
 
-        <div class="input-con relative"><input type="text" class="input-field w-input" maxlength="256" name="change-password" data-name="change-password" placeholder="Confirm password" id="change-password"></div>
+        <div class="input-con relative"><input type="text" class="input-field w-input" maxlength="256" name="change-password" data-name="change-password" placeholder="Confirm password" id="change-password">
+          <img class="eye" src="images/open_eye.svg">
+        </div>
 
         <div id="w-node-e836a998-e239-21e2-f726-d8e7131034ad-131034a1" class="save-grid-wrapper">
           <div id="w-node-e836a998-e239-21e2-f726-d8e7131034ae-131034a1" class="save-grid">
@@ -407,6 +411,24 @@ if (isset($_SESSION['user_email'])) {
 
 
 <script type="text/javascript">
+
+  $(document).ready(function() {
+  // Toggle password visibility on click of eye icon
+    $(".input-con .eye").click(function() {
+      var $input = $(this).prev("input");
+      if ($input.attr("type") === "password") {
+        $input.attr("type", "text");
+        $(this).attr("src", "images/close_eye.svg");
+      } else {
+        $input.attr("type", "password");
+        $(this).attr("src", "images/open_eye.svg");
+      }
+    });
+  });
+
+
+
+
   function resetInput()
   {
     $("#l-email").val("");
@@ -805,8 +827,8 @@ if (isset($_SESSION['user_email'])) {
 
 
     if (window.location.href.indexOf("editor") > -1) {
-     
-      
+
+
     } 
     else 
     {
