@@ -140,7 +140,7 @@
             <div id="w-node-b4028a5b-c8ef-df80-9a35-75789bf105b1-6fbcb9d9" class="search-wrapper">
 
               <div id="w-node-b6ec6774-df05-e803-8d15-82867510d761-6fbcb9d9" class="print-wrapper">
-                <a href="#" download="Services Report.xlxs" id="report" class="print-con dl-con" onclick="print()"><img src="../images/Mask-group.svg" loading="lazy" alt="" class="print-icon"></a>
+                <div id="w-node-_797a341e-e77b-3edb-abfc-8ecd7d3a3407-6fbcb9d9" class="print-con dl-con" onclick="print()"><img src="../images/Mask-group.svg" loading="lazy" alt="" class="print-icon"></div>
 
                 <div id="download-pdf" class="print-con printer-con" onclick="loadPrint()"><img src="../images/Mask-group-1.svg" loading="lazy" alt="" class="print-icon"></div>
               </div>
@@ -613,19 +613,22 @@ function print() {
     },
 
     success: function(response) {
+      // // Create a download link with the file URL
+      // var link = document.createElement('a');
+      // link.setAttribute('href', response);
+      // link.setAttribute('download', 'filename.xlsx'); // Replace with your desired filename and extension
+      // link.style.display = 'none';
+      // document.body.appendChild(link);
 
-      $("#report").attr("href",response);
-      // saveAs(response, "Services Report.xlsx");
+      // // Trigger a click event on the download link to open the save as dialog box
+      // link.click();
 
-// // Fetch the xlsx file from a URL
-//       fetch(response)
-//       .then(response => response.blob())
-//       .then(blob => {
-//       // Save the blob as a file using FileSaver.js
-//         const fileName = 'filename.xlsx';
-//         saveAs(blob, fileName);
-//       })
-//       .catch(error => console.error(error));
+      // // Remove the download link from the document
+      // document.body.removeChild(link);
+      // Consume the function as follows:
+      //const file = createBlob("Services Report");
+      saveAs(response, "Services Report.xlsx");
+
 
     },
 
@@ -636,18 +639,18 @@ function print() {
   });
 }
 
-// function saveAs(url, fileName) {
-//   fetch(url)
-//     .then(response => response.blob())
-//     .then(blob => {
-//       const a = document.createElement("a");
-//       const blobUrl = window.URL.createObjectURL(blob);
-//       a.href = blobUrl;
-//       a.download = fileName;
-//       a.click();
-//       window.URL.revokeObjectURL(blobUrl);
-//     });
-// }
+function saveAs(url, fileName) {
+  fetch(url)
+    .then(response => response.blob())
+    .then(blob => {
+      const a = document.createElement("a");
+      const blobUrl = window.URL.createObjectURL(blob);
+      a.href = blobUrl;
+      a.download = fileName;
+      a.click();
+      window.URL.revokeObjectURL(blobUrl);
+    });
+}
 
 
 
