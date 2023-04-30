@@ -611,17 +611,18 @@ function print() {
     },
 
     success: function(response) {
-      // Handle the response from the PHP script
-      // For example, you could update the contents of a <div> element with the response data
-      //alert(response);
-
-      // Show a file save dialog box
-      var blob = new Blob([response]);
+      // Create a download link with the file URL
       var link = document.createElement('a');
-      link.href = window.URL.createObjectURL(blob);
-      link.download = "baptism-certificates-list_" + Date.now() + ".xlsx";
+      link.setAttribute('href', response);
+      link.setAttribute('download', 'baptism-certificates-list.xlsx');
+      link.style.display = 'none';
+      document.body.appendChild(link);
+
+      // Trigger a click event on the download link to open the save dialog box
       link.click();
 
+      // Remove the download link from the DOM
+      document.body.removeChild(link);
     },
     error: function(xhr, textStatus, errorThrown) {
       // Handle any errors that occur during the AJAX request
@@ -629,6 +630,7 @@ function print() {
     }
   });
 }
+
 
 
 

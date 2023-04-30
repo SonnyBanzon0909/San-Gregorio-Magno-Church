@@ -99,19 +99,16 @@ if ($result->num_rows > 0) {
 // $writer->save($filename);
 // echo $filename;
 
+// Save spreadsheet to file
+$writer = new Xlsx($spreadsheet);
 // Save spreadsheet to file with current date and time in filename
 $date = date('Y-m-d H-i-s');
 $filename = "baptism-certificates-list_$date.xlsx";
 $writer = new Xlsx($spreadsheet);
 $writer->save($filename);
-
-// Set the Content-Disposition header to set the filename of the downloaded file
-header("Content-Disposition: attachment; filename=\"$filename\"");
-header("Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-readfile($filename);
-
-// Delete the file after it has been downloaded
-unlink($filename);
+$file_url = 'http://' . $_SERVER['HTTP_HOST'] . '/' . $filename;
+echo $file_url;
+ 
 
 
 // Close database connection
