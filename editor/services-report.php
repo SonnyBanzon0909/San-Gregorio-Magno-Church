@@ -585,10 +585,6 @@ function setActivePage(pageBtn) {
   pageBtn.classList.add("active-page");
 }
 
-
-$(document).ready(function() {
-  $('a[target="_blank"]').attr('rel', 'noopener noreferrer');
-});
 function print() {
   // Get the current values of all four select boxes and the search input
   var gender = $("#gender").val();
@@ -598,20 +594,39 @@ function print() {
   var name = $("#search").val();
   var purpose = $("#purpose").val();
 
-  // Create a form element and append hidden input fields for the form data
-  var form = $('<form>').attr('id', 'print-form').attr('method', 'POST').attr('action', 'print_services.php');
-  form.append($('<input>').attr('type', 'hidden').attr('name', 'gender').val(gender));
-  form.append($('<input>').attr('type', 'hidden').attr('name', 'year').val(year));
-  form.append($('<input>').attr('type', 'hidden').attr('name', 'barangay').val(barangay));
-  form.append($('<input>').attr('type', 'hidden').attr('name', 'month').val(month));
-  form.append($('<input>').attr('type', 'hidden').attr('name', 'name').val(name));
-  form.append($('<input>').attr('type', 'hidden').attr('name', 'purpose').val(purpose));
+  // Send an AJAX request to the server-side PHP script
+  $.ajax({
+    url: "print_services.php", // Replace with the URL of your PHP script
+    method: "POST",
+    data: {
+      gender: gender,
+      year: year,
+      barangay: barangay,
+      month: month,
+      name: name,
+      purpose: purpose
+    },
 
-  // Submit the form
-  form.appendTo('body').submit();
+    success: function(response) {
+      console.log(response); // Log the response from the server
+      // Create a download link with the file URL
+      var link = document.createElement('a');
+      link.setAttribute('href', response);
+      link.setAttribute('download', 'baptism-certificates-list.xlsx');
+      link.style.display = 'none';
+      document.body.appendChild(link);
 
-  // Remove the form from the DOM
-  form.remove();
+      // Trigger a click event on the download link to open the save dialog box
+      link.click();
+
+      // Remove the download link from the DOM
+      document.body.removeChild(link);
+    },
+    error: function(xhr, textStatus, errorThrown) {
+      // Handle any errors that occur during the AJAX request
+      console.log("Error: " + errorThrown);
+    }
+  });
 }
 
 
