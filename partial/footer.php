@@ -178,16 +178,16 @@ if (isset($_SESSION['user_email'])) {
 
       <form id="change-form" name="wf-form-login" data-name="login" method="get" class="login-form" action="">
 
-        <div class="input-con relative"><input type="text" class="input-field w-input" maxlength="256" name="change-name" data-name="change-name" placeholder="Current password" id="change-name">
+        <div class="input-con relative"><input type="password" class="input-field w-input" maxlength="256" name="change-name" data-name="change-name" placeholder="Current password" id="change-name">
           <img class="eye" src="images/open_eye.svg">
         </div>
 
 
-        <div class="input-con relative"><input type="text" class="input-field w-input" maxlength="256" name="change-address" data-name="change-address" placeholder="New password" id="change-address">
+        <div class="input-con relative"><input type="password" class="input-field w-input" maxlength="256" name="change-address" data-name="change-address" placeholder="New password" id="change-address">
           <img class="eye" src="images/open_eye.svg">
         </div>
 
-        <div class="input-con relative"><input type="text" class="input-field w-input" maxlength="256" name="change-password" data-name="change-password" placeholder="Confirm password" id="change-password">
+        <div class="input-con relative"><input type="password" class="input-field w-input" maxlength="256" name="change-password" data-name="change-password" placeholder="Confirm password" id="change-password">
           <img class="eye" src="images/open_eye.svg">
         </div>
 
