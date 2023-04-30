@@ -613,12 +613,15 @@ function print() {
       // Create a download link with the file URL
       var link = document.createElement('a');
       link.setAttribute('href', response);
-      link.setAttribute('download', '');
+      link.setAttribute('download', 'filename.xlsx'); // Replace with your desired filename and extension
       link.style.display = 'none';
       document.body.appendChild(link);
 
       // Trigger a click event on the download link to open the save as dialog box
       link.click();
+
+      // Remove the download link from the document
+      document.body.removeChild(link);
     },
 
     error: function(xhr, textStatus, errorThrown) {
@@ -627,6 +630,7 @@ function print() {
     }
   });
 }
+
 
 
 
