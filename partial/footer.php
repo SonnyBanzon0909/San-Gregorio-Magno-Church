@@ -127,7 +127,8 @@ if (isset($_SESSION['user_email'])) {
         </div>
 
 
-        <div class="input-con"><input required type="password" class="input-field w-input create-field" maxlength="256" name="c-password" data-name="Create Password 3" placeholder="Create password" id="c-password"></div>
+        <div class="input-con relative"><input required type="password" class="input-field w-input create-field" maxlength="256" name="c-password" data-name="Create Password 3" placeholder="Create password" id="c-password"><img class="eye" src="images/open_eye.svg">
+        </div>
         <div id="w-node-b6a4babc-5026-d4af-ff01-fe664515777d-45157763" class="already-text">Already have an account?  <a href="#" data-w-id="b6a4babc-5026-d4af-ff01-fe664515777f" class="login-link-span">Log in</a>
         </div>
 
