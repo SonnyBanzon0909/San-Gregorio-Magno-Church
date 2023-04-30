@@ -612,7 +612,7 @@ function print() {
 
     success: function(response) {
       // Create a download link with the file URL
-      //alert(response);
+      alert(response);
       var link = document.createElement('a');
       link.setAttribute('href', response);
       link.setAttribute('target', '_blank');
