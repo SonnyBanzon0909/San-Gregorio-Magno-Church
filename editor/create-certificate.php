@@ -39,24 +39,7 @@
         touch-action: none;
         -ms-touch-action: none;
       }
-      @font-face {
-        font-family: 'Rasa';
-        src: url('fonts/Rasa-Regular.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-      }
-      @font-face {
-        font-family: 'Rasa';
-        src: url('fonts/Rasa-Medium.ttf') format('truetype');
-        font-weight: 500;
-        font-style: normal;
-      }
-      .text-cert
-      {
-        font-family: 'Rasa', sans-serif;
-        font-weight: 400;
-        font-size: 19px;
-      }
+      
     </style>
     <!--  Google tag (gtag.js)  -->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XREV9R6ECX"></script>
