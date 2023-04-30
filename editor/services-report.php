@@ -589,39 +589,52 @@ function setActivePage(pageBtn) {
 
 
 
-$.ajax({
-  url: "print_services.php",
-  method: "POST",
-  data: {
-    gender: gender,
-    year: year,
-    barangay: barangay,
-    month: month,
-    name: name,
-    purpose: purpose
-  },
-  success: function(response) {
+
+function print() {
+  // Get the current values of all four select boxes and the search input
+  var gender = $("#gender").val();
+  var year = $("#year").val();
+  var barangay = $("#barangay").val();
+  var month = $("#month").val();
+  var name = $("#search").val();
+  var purpose = $("#purpose").val();
+
+  // Send an AJAX request to the server-side PHP script
+  $.ajax({
+    url: "print_services.php",
+    method: "POST",
+    data: {
+      gender: gender,
+      year: year,
+      barangay: barangay,
+      month: month,
+      name: name,
+      purpose: purpose
+    },
+    success: function(response) {
     // Create a blob object from the response
-    var blob = new Blob([response], { type: "application/vnd.ms-excel" });
-    
+      var blob = new Blob([response], { type: "application/vnd.ms-excel" });
+      
     // Check if the browser is Microsoft Edge
-    if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+      if (window.navigator && window.navigator.msSaveOrOpenBlob) {
       // Use the msSaveOrOpenBlob method to prompt the user to save the file
-      window.navigator.msSaveOrOpenBlob(blob, "baptism-certificates-list.xlsx");
-    } else {
+        window.navigator.msSaveOrOpenBlob(blob, "baptism-certificates-list.xlsx");
+      } else {
       // For other browsers, create a download link and trigger a click event
-      var link = document.createElement("a");
-      link.href = window.URL.createObjectURL(blob);
-      link.download = "baptism-certificates-list.xlsx";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+        var link = document.createElement("a");
+        link.href = window.URL.createObjectURL(blob);
+        link.download = "baptism-certificates-list.xlsx";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    },
+    error: function(xhr, textStatus, errorThrown) {
+      console.log("Error: " + errorThrown);
     }
-  },
-  error: function(xhr, textStatus, errorThrown) {
-    console.log("Error: " + errorThrown);
-  }
-});
+  });
+
+}
 
 
 
