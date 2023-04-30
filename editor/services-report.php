@@ -68,7 +68,7 @@
         <div class="header-wrapper">
           <div class="header-content-con">
             <h1 data-w-id="57a8dbd8-0d2d-09f9-75c6-5edafa8b68e2" style="opacity:0" class="header-title header-title-text">Services Reports </h1>
-            <div data-w-id="57a8dbd8-0d2d-09f9-75c6-5edafa8b68e4" style="opacity:0" class="body-text-medium header-excerpt">lorem ipsum</div>
+            <div data-w-id="57a8dbd8-0d2d-09f9-75c6-5edafa8b68e4" style="opacity:0" class="body-text-medium header-excerpt"></div>
           </div>
         </div>
       </div>
