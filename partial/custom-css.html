@@ -1,5 +1,13 @@
   <div class="custom-css w-embed">
     <style>
+      input[type="password"]::-webkit-credentials-auto-fill-button,
+      input[type="password"]::-webkit-credentials-auto-fill-button:focus,
+      input[type="password"]::-webkit-credentials-auto-fill-button:hover {
+        display: none !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+      }
+      
       .relative{
         position: relative !important;
       }
