@@ -587,7 +587,6 @@ function setActivePage(pageBtn) {
 
 
 
-
 function print() {
   // Get the current values of all four select boxes and the search input
   var gender = $("#gender").val();
@@ -611,20 +610,14 @@ function print() {
     },
 
     success: function(response) {
-  // Create a download link with the file URL
+      // Create a download link with the file URL
       var link = document.createElement('a');
       link.setAttribute('href', response);
-      link.setAttribute('target', '_blank');
+      link.setAttribute('download', '');
       link.style.display = 'none';
       document.body.appendChild(link);
 
-  // Add event listener to the download link
-      link.addEventListener('click', function(event) {
-        event.preventDefault();
-        window.open(response, '_blank');
-      });
-
-  // Trigger a click event on the download link to open the save as dialog box
+      // Trigger a click event on the download link to open the save as dialog box
       link.click();
     },
 
@@ -634,6 +627,7 @@ function print() {
     }
   });
 }
+
 
 
 
