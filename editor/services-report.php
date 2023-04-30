@@ -622,7 +622,7 @@ function print() {
       link.click();
 
       // Remove the download link from the DOM
-      document.body.removeChild(link);
+      //document.body.removeChild(link);
     },
     error: function(xhr, textStatus, errorThrown) {
       // Handle any errors that occur during the AJAX request
