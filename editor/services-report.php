@@ -588,8 +588,6 @@ function setActivePage(pageBtn) {
 
 
 
-
-
 function print() {
   // Get the current values of all four select boxes and the search input
   var gender = $("#gender").val();
@@ -601,7 +599,7 @@ function print() {
 
   // Send an AJAX request to the server-side PHP script
   $.ajax({
-    url: "print_services.php",
+    url: "print_services.php", // Replace with the URL of your PHP script
     method: "POST",
     data: {
       gender: gender,
@@ -611,31 +609,31 @@ function print() {
       name: name,
       purpose: purpose
     },
+
     success: function(response) {
-    // Create a blob object from the response
-      var blob = new Blob([response], { type: "application/vnd.ms-excel" });
-      
-    // Check if the browser is Microsoft Edge
-      if (window.navigator && window.navigator.msSaveOrOpenBlob) {
-      // Use the msSaveOrOpenBlob method to prompt the user to save the file
-        window.navigator.msSaveOrOpenBlob(blob, "baptism-certificates-list.xlsx");
-      } else {
-      // For other browsers, create a download link and trigger a click event
-        var link = document.createElement("a");
-        link.href = window.URL.createObjectURL(blob);
-        link.download = "baptism-certificates-list.xlsx";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      }
+  // Create a download link with the file URL
+      var link = document.createElement('a');
+      link.setAttribute('href', response);
+      link.setAttribute('target', '_blank');
+      link.style.display = 'none';
+      document.body.appendChild(link);
+
+  // Add event listener to the download link
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.open(response, '_blank');
+      });
+
+  // Trigger a click event on the download link to open the save as dialog box
+      link.click();
     },
+
     error: function(xhr, textStatus, errorThrown) {
+      // Handle any errors that occur during the AJAX request
       console.log("Error: " + errorThrown);
     }
   });
-
 }
-
 
 
 
