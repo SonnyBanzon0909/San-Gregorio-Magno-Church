@@ -106,11 +106,12 @@
       </div>
       <div class="cert-cont-wrapper">
         <div class="cert-wrapper">
+
           <div id="Baptismal" class="cert-preview baptismal-cert">
 
            <?php include '../partial/custom-css.html';  
 
-           
+
            echo '<link href="../css/normalize.css" rel="stylesheet" type="text/css">
            <link href="../css/parokya.css" rel="stylesheet" type="text/css">
            <link href="../css/san-gregorio-magno.parokya.css" rel="stylesheet" type="text/css">';
@@ -289,7 +290,17 @@
             </div>
           </div>
         </div>
+
         <div id="Confirmation" class="cert-preview confirmation-cert"><img src="../images/Group-154.png" loading="lazy" alt="" class="bg-img-copy">
+
+          <?php include '../partial/custom-css.html';  
+
+
+          echo '<link href="../css/normalize.css" rel="stylesheet" type="text/css">
+          <link href="../css/parokya.css" rel="stylesheet" type="text/css">
+          <link href="../css/san-gregorio-magno.parokya.css" rel="stylesheet" type="text/css">';
+          ?>
+
           <div class="cert-border">
             <div class="cert-inner-border">
               <div class="logo-grid">
@@ -425,7 +436,17 @@
             </div>
           </div>
         </div>
+
         <div id="Communion" class="cert-preview communion-cert">
+
+          <?php include '../partial/custom-css.html';  
+
+          
+          echo '<link href="../css/normalize.css" rel="stylesheet" type="text/css">
+          <link href="../css/parokya.css" rel="stylesheet" type="text/css">
+          <link href="../css/san-gregorio-magno.parokya.css" rel="stylesheet" type="text/css">';
+          ?>
+          
           <div class="com-content-wrapper">
             <div class="border-top-left"></div>
             <div class="border-bot-right"></div>
