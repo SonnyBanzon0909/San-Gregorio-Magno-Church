@@ -616,8 +616,11 @@ function print() {
       link.setAttribute('download', '');
       link.style.display = 'none';
       document.body.appendChild(link);
+// Trigger a click event on the download link to open the save dialog box
       link.click();
-      document.body.removeChild(link);
+
+// Reload the page after the download link is clicked
+      location.reload();
 
     },
 
