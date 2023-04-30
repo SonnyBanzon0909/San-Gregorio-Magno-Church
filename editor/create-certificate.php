@@ -39,7 +39,7 @@
         touch-action: none;
         -ms-touch-action: none;
       }
-      
+
     </style>
     <!--  Google tag (gtag.js)  -->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XREV9R6ECX"></script>
@@ -424,12 +424,12 @@
 
           <?php include '../partial/custom-css.html';  
 
-          
+           
           echo '<link href="../css/normalize.css" rel="stylesheet" type="text/css">
           <link href="../css/parokya.css" rel="stylesheet" type="text/css">
           <link href="../css/san-gregorio-magno.parokya.css" rel="stylesheet" type="text/css">';
           ?>
-          
+
           <div class="com-content-wrapper">
             <div class="border-top-left"></div>
             <div class="border-bot-right"></div>
