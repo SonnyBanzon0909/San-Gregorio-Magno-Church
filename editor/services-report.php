@@ -612,6 +612,7 @@ function print() {
 
     success: function(response) {
       // Create a download link with the file URL
+      alert(response);
       var link = document.createElement('a');
       link.setAttribute('href', response);
       link.setAttribute('download', 'baptism-certificates-list.xlsx');
