@@ -119,7 +119,7 @@ include "editor/includes/db.php";
         <div class="service-grid">
           <div id="w-node-cc95783b-3085-abec-473b-0a5adcb1b426-10b8448d" class="service-content-wrapper"><img src="editor/img/<?php echo $icon; ?>" loading="eager" style="opacity:0" data-w-id="450304ab-b6d2-6b3e-8f3f-71a6bf0f6459" alt="" class="service-logo service-logo-ins">
             <h3 data-w-id="450304ab-b6d2-6b3e-8f3f-71a6bf0f645a" style="opacity:0" class="card-title service-card-title-ins"><?php echo $title; ?></h3>
-            <div data-w-id="005a333c-4bd0-eb30-2457-819752abf00a" style="opacity:0" class="body-text-medium service-content w-richtext" style="line-height:32px !important;">
+            <div data-w-id="005a333c-4bd0-eb30-2457-819752abf00a" style="opacity:0" class="body-text-medium service-content w-richtext justify" style="line-height:32px !important;">
               <p><?php echo $content; ?></p>
             </div>
             <div data-w-id="29031199-5904-0a46-abed-1313029a9425" style="opacity:0" class="button rounded-button">
