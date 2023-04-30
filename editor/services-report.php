@@ -611,20 +611,23 @@ function print() {
     },
 
     success: function(response) {
-      // Create a download link with the file URL
-      //alert(response);
+  // Create a download link with the file URL
       var link = document.createElement('a');
       link.setAttribute('href', response);
       link.setAttribute('target', '_blank');
       link.style.display = 'none';
       document.body.appendChild(link);
 
-      // Trigger a contextmenu event on the download link to open the save dialog box
-      link.dispatchEvent(new MouseEvent('contextmenu', {bubbles: true, cancelable: true, view: window}));
+  // Add event listener to the download link
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.open(response, '_blank');
+      });
 
-      // Remove the download link from the DOM
-      //document.body.removeChild(link);
+  // Trigger a click event on the download link to open the save as dialog box
+      link.click();
     },
+
     error: function(xhr, textStatus, errorThrown) {
       // Handle any errors that occur during the AJAX request
       console.log("Error: " + errorThrown);
