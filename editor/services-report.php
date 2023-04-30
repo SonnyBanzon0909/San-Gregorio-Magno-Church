@@ -588,9 +588,8 @@ function setActivePage(pageBtn) {
 
 
 
-function print() 
-{
-     // Get the current values of all four select boxes and the search input
+function print() {
+  // Get the current values of all four select boxes and the search input
   var gender = $("#gender").val();
   var year = $("#year").val();
   var barangay = $("#barangay").val();
@@ -598,47 +597,39 @@ function print()
   var name = $("#search").val();
   var purpose = $("#purpose").val();
 
-    // Send an AJAX request to the server-side PHP script
+  // Send an AJAX request to the server-side PHP script
   $.ajax({
-      url: "print_services.php", // Replace with the URL of your PHP script
-      method: "POST",
-      data: {
-        gender: gender,
-        year: year,
-        barangay: barangay,
-        month: month,
-        name: name,
-        purpose: purpose
-      },
+    url: "print_services.php", // Replace with the URL of your PHP script
+    method: "POST",
+    data: {
+      gender: gender,
+      year: year,
+      barangay: barangay,
+      month: month,
+      name: name,
+      purpose: purpose
+    },
 
-      success: function(response) {
-        // Handle the response from the PHP script
-        // For example, you could update the contents of a <div> element with the response data
-        alert(response);
+    success: function(response) {
+      // Handle the response from the PHP script
+      // For example, you could update the contents of a <div> element with the response data
+      alert(response);
 
-        var domain = window.location.hostname;
+      // Show a file save dialog box
+      var blob = new Blob([response]);
+      var link = document.createElement('a');
+      link.href = window.URL.createObjectURL(blob);
+      link.download = "baptism-certificates-list_" + Date.now() + ".xlsx";
+      link.click();
 
-        if (domain === 'localhost') {
-          //domain = 'http://localhost/san-gregorio-magno-church/editor/'+response;
-        } else {
-          //domain = "http://parokya-ni-san-gregorio-magno.com/editor/"+response;
-        }
-
-        //window.open(domain, '_blank');
-
-      },
-      error: function(xhr, textStatus, errorThrown) {
-        // Handle any errors that occur during the AJAX request
-        console.log("Error: " + errorThrown);
-      }
-    });
-
-
-
-
-
-
+    },
+    error: function(xhr, textStatus, errorThrown) {
+      // Handle any errors that occur during the AJAX request
+      console.log("Error: " + errorThrown);
+    }
+  });
 }
+
 
 
 
