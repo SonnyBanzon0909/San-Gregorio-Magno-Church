@@ -614,7 +614,7 @@ function print()
       success: function(response) {
         // Handle the response from the PHP script
         // For example, you could update the contents of a <div> element with the response data
-        //alert(response);
+        alert(response);
 
         var domain = window.location.hostname;
 

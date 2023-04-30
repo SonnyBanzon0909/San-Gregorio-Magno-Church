@@ -103,13 +103,15 @@ if ($result->num_rows > 0) {
 $date = date('Y-m-d H-i-s');
 $filename = "baptism-certificates-list_$date.xlsx";
 $writer = new Xlsx($spreadsheet);
+$writer->save($filename);
 
-// Prompt user to download the file
-header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-header('Content-Disposition: attachment;filename="' . $filename . '"');
-header('Cache-Control: max-age=0');
+// Set the Content-Disposition header to set the filename of the downloaded file
+header("Content-Disposition: attachment; filename=\"$filename\"");
+header("Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+readfile($filename);
 
-$writer->save('php://output');
+// Delete the file after it has been downloaded
+unlink($filename);
 
 
 // Close database connection
