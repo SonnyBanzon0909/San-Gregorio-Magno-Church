@@ -104,7 +104,7 @@ $writer = new Xlsx($spreadsheet);
 
 // Save spreadsheet to file with current date and time in filename
 $date = date('Y-m-d H-i-s');
-$filename = "docs/baptism-certificates-list_$date.xlsx";
+$filename = "docs/services_reports_$date.xlsx";
 
 // Save the file
 $writer = new Xlsx($spreadsheet);
