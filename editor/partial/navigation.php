@@ -24,7 +24,7 @@ while($row = mysqli_fetch_array($user_query)){
 <div class="section navigation wf-section">
   <div class="container">
     <div class="navigation-link-wrapper">
-      <a href="index.php?filter=today" aria-current="page" class="brand w-inline-block w--current"><img src="images/Parokya-logo.png" loading="eager" alt="" class="brand-logo"></a>
+      <a href="index.php?filter=today" aria-current="page" class="brand w-inline-block w--current"><img src="images/parokya.png" loading="eager" alt="" class="brand-logo"></a>
       <div class="nav-links-grid desktop-nav-link-grid">
         <a href="home.php?source=update_homepage" id="w-node-_14e56277-239e-cc10-6aba-00a1806977c3-806977bd" aria-current="page" class="nav-link w--current">Home</a>
         <a href="about-us.php" id="w-node-_14e56277-239e-cc10-6aba-00a1806977c5-806977bd" class="nav-link">About</a>
