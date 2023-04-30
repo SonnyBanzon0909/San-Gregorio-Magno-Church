@@ -84,7 +84,7 @@
             <div id="w-node-_80536e23-6151-9975-adb2-35980bf7c7b0-6fbcb9d9" class="select-filter-wrapper">
 
               <div class="select-wrapper"><select id="gender" name="Gender" data-name="Gender" class="select filter-select w-select">
-                <option value="">Select sex</option>
+                <option value="">Select gender</option>
                 <option value="male">Male</option>
                 <option value="Female">Female</option>
               </select><img src="../images/down-chevron-1.svg" loading="lazy" alt="" class="select-icon"></div>
