@@ -610,18 +610,23 @@ function print() {
     },
 
     success: function(response) {
-      // Create a download link with the file URL
-      var link = document.createElement('a');
-      link.setAttribute('href', response);
-      link.setAttribute('download', 'filename.xlsx'); // Replace with your desired filename and extension
-      link.style.display = 'none';
-      document.body.appendChild(link);
+      // // Create a download link with the file URL
+      // var link = document.createElement('a');
+      // link.setAttribute('href', response);
+      // link.setAttribute('download', 'filename.xlsx'); // Replace with your desired filename and extension
+      // link.style.display = 'none';
+      // document.body.appendChild(link);
 
-      // Trigger a click event on the download link to open the save as dialog box
-      link.click();
+      // // Trigger a click event on the download link to open the save as dialog box
+      // link.click();
 
-      // Remove the download link from the document
-      document.body.removeChild(link);
+      // // Remove the download link from the document
+      // document.body.removeChild(link);
+      // Consume the function as follows:
+      //const file = createBlob("Services Report");
+      saveAs(response, "Services Report.xlsx");
+
+
     },
 
     error: function(xhr, textStatus, errorThrown) {
@@ -631,6 +636,20 @@ function print() {
   });
 }
 
+function saveAs(content, fileName) {
+  const a = document.createElement("a");
+  const isBlob = content.toString().indexOf("Blob") > -1;
+  let url = content;
+  if (isBlob) {
+    url = window.URL.createObjectURL(content);
+  }
+  a.href = url;
+  a.download = fileName;
+  a.click();
+  if (isBlob) {
+    window.URL.revokeObjectURL(url);
+  }
+}
 
 
 
