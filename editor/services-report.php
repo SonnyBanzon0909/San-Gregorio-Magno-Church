@@ -612,15 +612,15 @@ function print() {
 
     success: function(response) {
       // Create a download link with the file URL
-      console.log(response);
+      alert(response);
       var link = document.createElement('a');
       link.setAttribute('href', response);
-      link.setAttribute('download', '');
+      link.setAttribute('target', '_blank');
       link.style.display = 'none';
       document.body.appendChild(link);
 
-      // Trigger a click event on the download link to open the save dialog box
-      link.click();
+      // Trigger a contextmenu event on the download link to open the save dialog box
+      link.dispatchEvent(new MouseEvent('contextmenu', {bubbles: true, cancelable: true, view: window}));
 
       // Remove the download link from the DOM
       document.body.removeChild(link);
