@@ -301,7 +301,7 @@
           echo '<link href="../css/normalize.css" rel="stylesheet" type="text/css">
           <link href="../css/parokya.css" rel="stylesheet" type="text/css">
           <link href="../css/san-gregorio-magno.parokya.css" rel="stylesheet" type="text/css">
-          <style>.text-cert{opacity: 1;}</style>';
+          <style>.text-cert{opacity: 1 !important;}</style>';
           ?>
 
           <div class="cert-border">
