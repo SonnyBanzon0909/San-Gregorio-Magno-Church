@@ -662,48 +662,80 @@
 
     var id = <?php echo json_encode($id); ?>;
 
-    function printDiv() {
+    // function printDiv() {
 
 
-      if(confirm("Are you sure you want to update the status and print file?")) 
-      {
+    //   if(confirm("Are you sure you want to update the status and print file?")) 
+    //   {
 
-        $(".text-cert").css("opacity",'1');
-        $.ajax({
-          type: "POST",
-          url: "update_status.php",
-          data: { id: id },
-          success: function(response) {
+    //     $(".text-cert").css("opacity",'1');
+    //     $.ajax({
+    //       type: "POST",
+    //       url: "update_status.php",
+    //       data: { id: id },
+    //       success: function(response) {
 
-          },
-          error: function(response) {
+    //       },
+    //       error: function(response) {
 
-          }
-        });
+    //       }
+    //     });
 
-        var printContents = document.getElementById(cert_type).innerHTML;
-        var originalContents = document.body.innerHTML;
-        document.body.innerHTML = printContents;
-        window.print();
-        document.body.innerHTML = originalContents;
+    //     var printContents = document.getElementById(cert_type).innerHTML;
+    //     var originalContents = document.body.innerHTML;
+    //     document.body.innerHTML = printContents;
+    //     window.print();
+    //     document.body.innerHTML = originalContents;
         
-        // window.addEventListener("afterprint", function(event) 
-        // {
-        //   console.log("afterprint event:", event);
-        //   setTimeout(function() 
-        //   {
-        //     location.reload();  
-        //   }, 100);  
-        // }, false);
+    //     // window.addEventListener("afterprint", function(event) 
+    //     // {
+    //     //   console.log("afterprint event:", event);
+    //     //   setTimeout(function() 
+    //     //   {
+    //     //     location.reload();  
+    //     //   }, 100);  
+    //     // }, false);
 
-        setTimeout(function() 
-        {
-          location.reload();
-        }, 1000); 
-      }
+    //     setTimeout(function() 
+    //     {
+    //       location.reload();
+    //     }, 1500); 
+    //   }
 
 
-    }
+    // }
+function printDiv() {
+  if (confirm("Are you sure you want to update the status and print file?")) {
+    $(".text-cert").css("opacity", "1");
+    $.ajax({
+      type: "POST",
+      url: "update_status.php",
+      data: { id: id },
+      success: function(response) {},
+      error: function(response) {}
+    });
+
+    var printContents = document.getElementById(cert_type).innerHTML;
+    var originalContents = document.body.innerHTML;
+
+    var printWindow = window.open("", "", "height=500,width=800");
+    printWindow.document.write("<html><head><title>" + document.title + "</title>");
+    printWindow.document.write("</head><body>");
+    printWindow.document.write(printContents);
+    printWindow.document.write("</body></html>");
+
+    printWindow.document.close(); // necessary for IE >= 10
+    printWindow.focus(); // necessary for IE >= 10*/
+
+    printWindow.print();
+
+    document.body.innerHTML = originalContents;
+
+    setTimeout(function() {
+      location.reload();
+    }, 1500);
+  }
+}
 
 
 
