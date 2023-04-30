@@ -104,15 +104,18 @@ $writer = new Xlsx($spreadsheet);
 
 // Save spreadsheet to file with current date and time in filename
 $date = date('Y-m-d H-i-s');
-$filename = "docs/baptism-certificates-list_$date.xlsx";
+$filename = "baptism-certificates-list_$date.xlsx";
 
 // Save the file
 $writer = new Xlsx($spreadsheet);
 $writer->save($filename);
 
-// Generate the file URL and return it to the client
-$file_url = 'http://' . $_SERVER['HTTP_HOST'] . '/editor/' . $filename;
-echo $file_url;
+// Set the Content-Disposition header to force the browser to prompt the user to save the file
+header('Content-Disposition: attachment; filename="' . $filename . '"');
+
+// Output the file contents
+readfile($filename);
+
 
 
 
