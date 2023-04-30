@@ -766,7 +766,7 @@
 
     setTimeout(function() {
       location.reload();
-    }, 1500);
+    }, 100);
   }
 }
 
