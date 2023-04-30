@@ -760,19 +760,19 @@
       printWindow.document.write(printContents);
       printWindow.document.write("</body></html>");
 
-      
-// Wait for the window to finish loading
-      printWindow.onload = function() {
-        setTimeout(function() {
+
+      // Wait for the window to finish loading
+      //printWindow.onload = function() {
+      setTimeout(function() {
         printWindow.document.close(); // necessary for IE >= 10
-    printWindow.focus(); // necessary for IE >= 10*/
+        printWindow.focus(); // necessary for IE >= 10*/
 
         printWindow.print();
         document.body.innerHTML = originalContents;
-  }, 1000); // Wait 1 second before printing
-      };
+        }, 1000); // Wait 1 second before printing
+      //};
 
-      
+
 
       // setTimeout(function() {
       //   location.reload();
