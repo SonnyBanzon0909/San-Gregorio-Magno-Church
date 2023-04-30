@@ -614,16 +614,16 @@ function print() {
     success: function(response) {
     // Create a blob object from the response
       var blob = new Blob([response], { type: "application/vnd.ms-excel" });
-
+      
     // Check if the browser is Microsoft Edge
       if (window.navigator && window.navigator.msSaveOrOpenBlob) {
       // Use the msSaveOrOpenBlob method to prompt the user to save the file
-        window.navigator.msSaveOrOpenBlob(blob, response);
+        window.navigator.msSaveOrOpenBlob(blob, "baptism-certificates-list.xlsx");
       } else {
       // For other browsers, create a download link and trigger a click event
         var link = document.createElement("a");
         link.href = window.URL.createObjectURL(blob);
-        link.download = response;
+        link.download = "baptism-certificates-list.xlsx";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
