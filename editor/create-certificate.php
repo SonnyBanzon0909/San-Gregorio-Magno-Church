@@ -753,7 +753,7 @@
 
       var printWindow = window.open("", "", "height=768,width=1366");
       printWindow.document.write("<html><head><title>" + document.title + "</title>");
-      printWindow.document.write("</head><body>");
+      printWindow.document.write("</head><style>.text-cert{opacity:1 !important;}</style><body>");
       printWindow.document.write(printContents);
       printWindow.document.write("</body></html>");
 
