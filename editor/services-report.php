@@ -624,7 +624,7 @@ function print()
           //domain = "http://parokya-ni-san-gregorio-magno.com/editor/"+response;
         }
 
-        window.open(domain, '_blank');
+        //window.open(domain, '_blank');
 
       },
       error: function(xhr, textStatus, errorThrown) {
