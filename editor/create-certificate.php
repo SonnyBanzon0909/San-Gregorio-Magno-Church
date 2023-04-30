@@ -53,9 +53,9 @@
       }
       .text-cert
       {
-        font-family: 'Rasa', sans-serif;
-        font-weight: 400;
-        font-size: 19px;
+        font-family: 'Rasa', sans-serif !important;
+        font-weight: 400 !important;
+        font-size: 19px !important;
       } 
     </style>
     <!--  Google tag (gtag.js)  -->
