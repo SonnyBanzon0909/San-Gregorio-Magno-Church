@@ -180,9 +180,12 @@ if (isset($_SESSION['user_email'])) {
 
         <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="change-name" data-name="change-name" placeholder="Current password" id="change-name"></div>
 
-        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="change-address" data-name="change-address" placeholder="New password" id="change-address"></div>
 
-        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="change-password" data-name="change-password" placeholder="Confirm password" id="change-password"></div>
+        <div class="input-con relative"><input type="text" class="input-field w-input" maxlength="256" name="change-address" data-name="change-address" placeholder="New password" id="change-address">
+          <img class="eye" src="images/open_eye.svg">
+        </div>
+
+        <div class="input-con relative"><input type="text" class="input-field w-input" maxlength="256" name="change-password" data-name="change-password" placeholder="Confirm password" id="change-password"></div>
 
         <div id="w-node-e836a998-e239-21e2-f726-d8e7131034ad-131034a1" class="save-grid-wrapper">
           <div id="w-node-e836a998-e239-21e2-f726-d8e7131034ae-131034a1" class="save-grid">
