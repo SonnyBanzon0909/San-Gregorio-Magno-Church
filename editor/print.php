@@ -84,14 +84,29 @@ if ($result->num_rows > 0) {
     }
 }
 
+// // Save spreadsheet to file
+// $writer = new Xlsx($spreadsheet);
+// // Save spreadsheet to file with current date and time in filename
+// $date = date('Y-m-d H-i-s');
+// $filename = "Request_Certificate_$date.xlsx";
+// $writer = new Xlsx($spreadsheet);
+// $writer->save($filename);
+// echo $filename;
+
 // Save spreadsheet to file
 $writer = new Xlsx($spreadsheet);
+
 // Save spreadsheet to file with current date and time in filename
 $date = date('Y-m-d H-i-s');
-$filename = "Request_Certificate_$date.xlsx";
+$filename = "docs/request_certificate_$date.xlsx";
+
+// Save the file
 $writer = new Xlsx($spreadsheet);
 $writer->save($filename);
-echo $filename;
+
+// Generate the file URL and return it to the client
+$file_url = 'http://' . $_SERVER['HTTP_HOST'] . '/editor/' . $filename;
+echo $file_url;
 
 
 // Close database connection
