@@ -90,14 +90,26 @@ if ($result->num_rows > 0) {
     }
 }
 
-// Save spreadsheet to file
-$writer = new Xlsx($spreadsheet);
+// // Save spreadsheet to file
+// $writer = new Xlsx($spreadsheet);
+// // Save spreadsheet to file with current date and time in filename
+// $date = date('Y-m-d H-i-s');
+// $filename = "baptism-certificates-list_$date.xlsx";
+// $writer = new Xlsx($spreadsheet);
+// $writer->save($filename);
+// echo $filename;
+
 // Save spreadsheet to file with current date and time in filename
 $date = date('Y-m-d H-i-s');
 $filename = "baptism-certificates-list_$date.xlsx";
 $writer = new Xlsx($spreadsheet);
-$writer->save($filename);
-echo $filename;
+
+// Prompt user to download the file
+header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+header('Content-Disposition: attachment;filename="' . $filename . '"');
+header('Cache-Control: max-age=0');
+
+$writer->save('php://output');
 
 
 // Close database connection

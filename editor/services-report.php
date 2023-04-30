@@ -619,9 +619,9 @@ function print()
         var domain = window.location.hostname;
 
         if (domain === 'localhost') {
-          domain = 'http://localhost/san-gregorio-magno-church/editor/'+response;
+          //domain = 'http://localhost/san-gregorio-magno-church/editor/'+response;
         } else {
-          domain = "http://parokya-ni-san-gregorio-magno.com/editor/"+response;
+          //domain = "http://parokya-ni-san-gregorio-magno.com/editor/"+response;
         }
 
         window.open(domain, '_blank');
