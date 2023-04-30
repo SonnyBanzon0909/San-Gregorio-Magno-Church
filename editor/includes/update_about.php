@@ -45,7 +45,7 @@ include "db.php";
     //echo '<script>alert("Record Successfully Updated")</script>';
 
     $confirm_message = "Record Successfully Updated.";
-    $loc = "../about.php";
+    $loc = "../about-us.php";
     echo "<script type='text/javascript'>alert('$confirm_message'); location.href='$loc'; </script>";
     // $loc = "staff.php?source=update_staff&staff_id={$staff_id}";
     // echo "<script type='text/javascript'>alert('$confirm_message'); location.href='$loc'; </script>";
