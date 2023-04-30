@@ -769,37 +769,39 @@
       printWindow.document.write(printContents);
       printWindow.document.write("</body></html>");
 
-    
+      
 // Wait for the window to finish loading
-    printWindow.onload = function() {
-      setTimeout(function() {
+      printWindow.onload = function() {
+        setTimeout(function() {
+        printWindow.document.close(); // necessary for IE >= 10
+    printWindow.focus(); // necessary for IE >= 10*/
+
         printWindow.print();
-        printWindow.close();
   }, 1000); // Wait 1 second before printing
-    };
+      };
 
-    setTimeout(function() {
-      location.reload();
-    }, 100);
+      setTimeout(function() {
+        location.reload();
+      }, 100);
+    }
   }
-}
 
 
 
 
-const jsPDF = window.jspdf.jsPDF;
+  const jsPDF = window.jspdf.jsPDF;
 
-const downloadButton = document.querySelector('#download-pdf');
-var name = <?php echo json_encode($name); ?>;
+  const downloadButton = document.querySelector('#download-pdf');
+  var name = <?php echo json_encode($name); ?>;
 
-downloadButton.addEventListener('click', () => {
+  downloadButton.addEventListener('click', () => {
 
-  $(".cert-field").each(function()
-  {
-    $(this).removeClass("active-input");
+    $(".cert-field").each(function()
+    {
+      $(this).removeClass("active-input");
 
-  });
-  $(".text-cert").css("opacity",'1');
+    });
+    $(".text-cert").css("opacity",'1');
 
       // var id = <?php echo json_encode($id); ?>;
 
@@ -866,14 +868,14 @@ downloadButton.addEventListener('click', () => {
 
 
 
-});
+  });
 
 
-function certUpdate()
-{
+  function certUpdate()
+  {
 
 
-}
+  }
 </script>
 
 
