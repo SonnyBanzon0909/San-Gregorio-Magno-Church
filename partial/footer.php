@@ -306,7 +306,7 @@ if (isset($_SESSION['user_email'])) {
         <div id="w-node-_55624acf-f15f-fc5e-8f62-de9f34de7e8b-34de7e81" class="not-save-wrapper" style="display: none;">
         <div class="input-con"><input required type="email" class="input-field w-input" maxlength="256" name="l-email" data-name="Login Email 3" placeholder="Email" id="l-email" value="'.$cookie_email.'"></div>
 
-        <div class="input-con" style="align-items: flex-start !important;flex-direction: column !important;"><input required type="password" class="input-field w-input" maxlength="256" name="l-password" data-name="Login Password 3" placeholder="Password" id="l-password" value="'.$cookie_password.'">
+        <div class="input-con relative" style="align-items: flex-start !important;flex-direction: column !important;"><input required type="password" class="input-field w-input" maxlength="256" name="l-password" data-name="Login Password 3" placeholder="Password" id="l-password" value="'.$cookie_password.'"><img class="eye" src="images/open_eye.svg">
         <p id="error-message" class="requirement-text" style="margin-top: 5px; display: none;"></p>
         </div>
         </div>
