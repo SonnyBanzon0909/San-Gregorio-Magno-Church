@@ -168,6 +168,21 @@ if(isset($_POST['login'])){
   <script src="js/parokya.js" type="text/javascript"></script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
     <script>
+
+      $(document).ready(function() {
+  // Toggle password visibility on click of eye icon
+        $(".input-con .eye").click(function() {
+          var $input = $(this).prev("input");
+          if ($input.attr("type") === "password") {
+            $input.attr("type", "text");
+            $(this).attr("src", "images/close_eye.svg");
+          } else {
+            $input.attr("type", "password");
+            $(this).attr("src", "images/open_eye.svg");
+          }
+        });
+      });
+      
       function togglefunction()
       {  
        if ($(window).width() > 1023) 
