@@ -279,7 +279,7 @@
                       </div>
                       <div class="text-field-wrapper priest-sign">
                         <div class="cert-input-wrapper min-210">
-                          <div class="cert-text text-cert"></div><input type="email" class="cert-field priest-sign w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="">
+                          <div class="cert-text text-cert name"></div><input type="email" class="cert-field priest-sign w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="">
                         </div>
                         <div class="cert-text mag-top">Parish Priest</div>
                       </div>
@@ -427,64 +427,12 @@
                           </div>
                         </div>
                       </div>
-                      <div class="text-field-wrapper priest-sign"><input type="email" class="cert-field priest-sign w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="">
-                        <div class="cert-text mag-top">Parish Priest</div>
+                      <div class="text-field-wrapper priest-sign">
+                        <div class="cert-text text-cert"></div>
                       </div>
+                      <input type="email" class="cert-field priest-sign w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="">
+                      <div class="cert-text mag-top">Parish Priest</div>
                     </div>
-                  </form>
-                  <div class="w-form-done">
-                    <div>Thank you! Your submission has been received!</div>
-                  </div>
-                  <div class="w-form-fail">
-                    <div>Oops! Something went wrong while submitting the form.</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="Communion" class="cert-preview communion-cert">
-
-          <?php include '../partial/custom-css.html';  
-
-
-          echo '<link href="../css/normalize.css" rel="stylesheet" type="text/css">
-          <link href="../css/parokya.css" rel="stylesheet" type="text/css">
-          <link href="../css/san-gregorio-magno.parokya.css" rel="stylesheet" type="text/css"><style>.text-cert{opacity: 1 !important;}</style>';
-          ?>
-
-          <div class="com-content-wrapper">
-            <div class="border-top-left"></div>
-            <div class="border-bot-right"></div>
-            <div class="logo-grid">
-              <div id="w-node-_6b65a5d3-79cb-b4e9-e9b8-0965bb33b797-9d53b872" class="cert-logo-con"><img src="../images/parokya-ni-San-Gregorio-Magno.png" loading="lazy" alt="" class="cert-logo"></div>
-              <div id="w-node-_6b65a5d3-79cb-b4e9-e9b8-0965bb33b799-9d53b872" class="cert-church-title">
-                <div class="diocese">Diocese of Imus</div>
-                <div class="parokya">PAROKYA NI SAN GREGORIO MAGNO</div>
-                <div class="address">Brgy. Inocencio, Trece Martires City, Cavite 4109 Philippines</div>
-              </div>
-              <div id="w-node-_6b65a5d3-79cb-b4e9-e9b8-0965bb33b7a0-9d53b872" class="cert-logo-con"><img src="../images/Diyosesis-ng-Imus.png" loading="lazy" alt="" class="cert-logo"></div>
-            </div>
-            <div class="com-title"><strong>Remembrance of First Holy Communion</strong></div>
-            <div class="com-field-wrapper">
-              <div class="w-form">
-                <form id="email-form-3" name="email-form-3" data-name="Email Form 3" method="get" class="form-2">
-                  <div class="com-input-title"><strong>Received by</strong></div>
-                  <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="receive-by" required="">
-                    <div class="cert-text text-cert name"><?php echo $name; ?></div>
-                  </div>
-                  <div class="com-input-title marg-top-32"><strong>In the church of</strong></div>
-                  <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="church-of" required="">
-                    <div class="cert-text text-cert">---</div>
-                  </div>
-                  <div class="com-input-title marg-top-32"><strong>On the date of</strong></div>
-                  <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="date-of" required="">
-                    <div class="cert-text text-cert">---</div>
-                  </div>
-                  <div id="com-the-rev" class="com-input-title marg-top-32"><strong>By the rev</strong></div>
-                  <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="receive-by" required="">
-                    <div class="cert-text text-cert">---</div>
                   </div>
                 </form>
                 <div class="w-form-done">
@@ -495,39 +443,95 @@
                 </div>
               </div>
             </div>
-            <div class="sign-wrapper">
-              <div class="com-img-wrapper"><img src="../images/image-94.png" loading="lazy" alt="" class="con-img"></div>
-              <div class="sign-con">
-                <div class="sign-overline"><strong>“I am the living bread that came down from heaven; whoever eats this head will live forever.” (John 6:51)</strong></div>
-                <div class="text-field-wrapper priest-sign">
-                  <div class="cert-input-wrapper min-210">
-                    <div class="cert-text text-cert"></div>
-                  </div>
-                  <div class="cert-text mag-top">Parish Priest</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="Communion" class="cert-preview communion-cert">
+
+        <?php include '../partial/custom-css.html';  
+
+
+        echo '<link href="../css/normalize.css" rel="stylesheet" type="text/css">
+        <link href="../css/parokya.css" rel="stylesheet" type="text/css">
+        <link href="../css/san-gregorio-magno.parokya.css" rel="stylesheet" type="text/css"><style>.text-cert{opacity: 1 !important;}</style>';
+        ?>
+
+        <div class="com-content-wrapper">
+          <div class="border-top-left"></div>
+          <div class="border-bot-right"></div>
+          <div class="logo-grid">
+            <div id="w-node-_6b65a5d3-79cb-b4e9-e9b8-0965bb33b797-9d53b872" class="cert-logo-con"><img src="../images/parokya-ni-San-Gregorio-Magno.png" loading="lazy" alt="" class="cert-logo"></div>
+            <div id="w-node-_6b65a5d3-79cb-b4e9-e9b8-0965bb33b799-9d53b872" class="cert-church-title">
+              <div class="diocese">Diocese of Imus</div>
+              <div class="parokya">PAROKYA NI SAN GREGORIO MAGNO</div>
+              <div class="address">Brgy. Inocencio, Trece Martires City, Cavite 4109 Philippines</div>
+            </div>
+            <div id="w-node-_6b65a5d3-79cb-b4e9-e9b8-0965bb33b7a0-9d53b872" class="cert-logo-con"><img src="../images/Diyosesis-ng-Imus.png" loading="lazy" alt="" class="cert-logo"></div>
+          </div>
+          <div class="com-title"><strong>Remembrance of First Holy Communion</strong></div>
+          <div class="com-field-wrapper">
+            <div class="w-form">
+              <form id="email-form-3" name="email-form-3" data-name="Email Form 3" method="get" class="form-2">
+                <div class="com-input-title"><strong>Received by</strong></div>
+                <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="receive-by" required="">
+                  <div class="cert-text text-cert name"><?php echo $name; ?></div>
                 </div>
+                <div class="com-input-title marg-top-32"><strong>In the church of</strong></div>
+                <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="church-of" required="">
+                  <div class="cert-text text-cert">---</div>
+                </div>
+                <div class="com-input-title marg-top-32"><strong>On the date of</strong></div>
+                <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="date-of" required="">
+                  <div class="cert-text text-cert">---</div>
+                </div>
+                <div id="com-the-rev" class="com-input-title marg-top-32"><strong>By the rev</strong></div>
+                <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="receive-by" required="">
+                  <div class="cert-text text-cert">---</div>
+                </div>
+              </form>
+              <div class="w-form-done">
+                <div>Thank you! Your submission has been received!</div>
+              </div>
+              <div class="w-form-fail">
+                <div>Oops! Something went wrong while submitting the form.</div>
+              </div>
+            </div>
+          </div>
+          <div class="sign-wrapper">
+            <div class="com-img-wrapper"><img src="../images/image-94.png" loading="lazy" alt="" class="con-img"></div>
+            <div class="sign-con">
+              <div class="sign-overline"><strong>“I am the living bread that came down from heaven; whoever eats this head will live forever.” (John 6:51)</strong></div>
+              <div class="text-field-wrapper priest-sign">
+                <div class="cert-input-wrapper min-210">
+                  <div class="cert-text text-cert"></div>
+                </div>
+                <input type="email" class="cert-field priest-sign w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="child-of" required="">
+                <div class="cert-text mag-top">Parish Priest</div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="print-btn-wrapper">
-        <div data-w-id="264267ad-4410-94ee-9c94-b4619ad31d51" class="button rounded-button print-btn">
-          <div style="opacity:0" class="button-overlay"></div>
-          <a aria-label="" href="#" class="button-link" id="edit-cert">EDIT</a>
-        </div>
-        <div data-w-id="1bfae472-55c7-8dea-b277-bbaeff02cf6d" class="button rounded-button print-btn">
-          <div style="opacity:0" class="button-overlay"></div>
-          <a aria-label="" href="#" class="button-link" id="download-pdf">SAVE</a>
-        </div>
+    </div>
+    <div class="print-btn-wrapper">
+      <div data-w-id="264267ad-4410-94ee-9c94-b4619ad31d51" class="button rounded-button print-btn">
+        <div style="opacity:0" class="button-overlay"></div>
+        <a aria-label="" href="#" class="button-link" id="edit-cert">EDIT</a>
       </div>
-      <div class="print-btn-con">
-        <div id="print-btn" data-w-id="29354402-af0b-b46a-b719-c3772c7b4b6e" class="button rounded-button print-btn">
-          <div style="opacity:0" class="button-overlay"></div>
-          <a aria-label="" href="#" class="button-link">PRINT</a>
-        </div>
+      <div data-w-id="1bfae472-55c7-8dea-b277-bbaeff02cf6d" class="button rounded-button print-btn">
+        <div style="opacity:0" class="button-overlay"></div>
+        <a aria-label="" href="#" class="button-link" id="download-pdf">SAVE</a>
+      </div>
+    </div>
+    <div class="print-btn-con">
+      <div id="print-btn" data-w-id="29354402-af0b-b46a-b719-c3772c7b4b6e" class="button rounded-button print-btn">
+        <div style="opacity:0" class="button-overlay"></div>
+        <a aria-label="" href="#" class="button-link">PRINT</a>
       </div>
     </div>
   </div>
+</div>
 </div>
 <div class="section footer-section wf-section">
   <div class="container">
