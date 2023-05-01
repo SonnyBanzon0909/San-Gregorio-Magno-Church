@@ -10,7 +10,7 @@ if (isset($_GET['filter'])) {
   } else if ($filter == 'this_week') {
     $date_filter = "YEARWEEK(date_time) = YEARWEEK(NOW())";
   } else if ($filter == 'this_month') {
-    $date_filter = "date_time >= DATE_SUB(NOW(), INTERVAL 30 DAY)"; //"MONTH(date_time) = MONTH(NOW())";
+    $date_filter =  "MONTH(date_time) = MONTH(NOW())";//"date_time >= DATE_SUB(NOW(), INTERVAL 30 DAY)";
   } else {
     $date_filter = "";
   }
