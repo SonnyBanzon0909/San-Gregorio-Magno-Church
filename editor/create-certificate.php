@@ -51,12 +51,16 @@
         font-weight: 500;
         font-style: normal;
       }
-      .text-cert
+      .text-cert.name
       {
         font-family: 'Rasa', sans-serif !important;
         font-weight: 400 !important;
         font-size: 19px !important;
       } 
+      .cert-field.day-of
+      {
+        max-width: 150px !important;
+      }
     </style>
     <!--  Google tag (gtag.js)  -->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XREV9R6ECX"></script>
