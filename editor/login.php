@@ -175,14 +175,14 @@ if(isset($_POST['login'])){
           var $input = $(this).prev("input");
           if ($input.attr("type") === "password") {
             $input.attr("type", "text");
-            $(this).attr("src", "images/close_eye.svg");
+            $(this).attr("src", "../images/close_eye.svg");
           } else {
             $input.attr("type", "password");
-            $(this).attr("src", "images/open_eye.svg");
+            $(this).attr("src", "../images/open_eye.svg");
           }
         });
       });
-      
+
       function togglefunction()
       {  
        if ($(window).width() > 1023) 
