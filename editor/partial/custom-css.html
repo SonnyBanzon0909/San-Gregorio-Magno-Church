@@ -1,6 +1,27 @@
   <div class="custom-css w-embed">
     <style>
       /*CUSTOM CSS*/
+      input[type="password"]::-webkit-credentials-auto-fill-button,
+      input[type="password"]::-webkit-credentials-auto-fill-button:focus,
+      input[type="password"]::-webkit-credentials-auto-fill-button:hover {
+        display: none !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+      }
+      
+      .relative{
+        position: relative !important;
+      }
+      .eye
+      {
+        position: absolute;
+        top: auto;
+        left: auto;
+        right: 16px;
+        bottom: auto;
+        cursor: pointer;
+      }
+      
       h1,h2,h3,h4,h5,h6
       {
        padding: 0;
