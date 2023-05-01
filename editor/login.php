@@ -133,7 +133,7 @@ if(isset($_POST['login'])){
                       <label>Username</label>
                       <input type="text" class="input-field w-input"  name="username" id="username">
                     </div>
-                    <div class="field-wrapper relative">
+                    <div class="field-wrapper relative" style="align-items: flex-start !important;flex-direction: column !important;">
                       <label>Password</label>
                       <input type="password" class="input-field w-input"  name="password" id="username">
                       <img class="eye" src="../images/open_eye.svg">
