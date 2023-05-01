@@ -136,7 +136,7 @@ if(isset($_POST['login'])){
                     <div class="field-wrapper relative">
                       <label>Password</label>
                       <input type="password" class="input-field w-input"  name="password" id="username">
-                      <img class="eye" src="../mages/open_eye.svg">
+                      <img class="eye" src="../images/open_eye.svg">
                     </div>
                   </div>
 
