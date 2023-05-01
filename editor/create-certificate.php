@@ -502,6 +502,7 @@
                 <div class="text-field-wrapper priest-sign">
                   <div class="cert-input-wrapper min-210">
                     <div class="cert-text text-cert"></div>
+                    <input type="email" class="cert-field priest-sign w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="chil" required="">
                   </div>
                   <div class="cert-text mag-top">Parish Priest</div>
                 </div>
