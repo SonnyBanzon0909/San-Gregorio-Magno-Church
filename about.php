@@ -125,7 +125,10 @@ else
         <div data-w-id="a1767852-ec39-07a3-96c2-a3e77e30d7b8" style="opacity:0" class="body-text-medium vision-excerpt max-135 justify"><?php echo $mission_content; ?></div>
         <div class="priest-wrapper">
           <div data-w-id="33758c25-3aeb-f311-0903-90ed3b8106ec" style="opacity:0" class="vision-title"><?php echo $priests_title; ?></div>
-          <div data-w-id="6db1914b-68a4-7ee6-4375-7230eba020b4" style="opacity:0" class="body-text-medium vision-excerpt max-135 justify"><?php echo $priests_subtext; ?></div>
+          <div data-w-id="6db1914b-68a4-7ee6-4375-7230eba020b4" style="opacity:0" class="body-text-medium vision-excerpt max-135 justify">
+            
+            <pre style="white-space: pre-wrap;"><?php echo $priests_subtext; ?></pre>
+          </div>
         </div>
         <div class="priest-list-wrapper">
           <div class="priest-list owl-carousel owl-theme">
