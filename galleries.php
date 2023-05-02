@@ -115,7 +115,10 @@ include "editor/includes/db.php";
           <h2 data-w-id="97af9b72-b3a9-c363-2587-8ec441b953a7" style="opacity:0" class="block-title gallery-block-title"><?php echo $title; ?></h2>
 
           <div data-w-id="b32c8281-cce3-60c9-6f76-debf1e4b9e78" style="opacity:0" class="date-text marg-bot-29"><?php echo $gallery_date; ?></div>
-          <div data-w-id="3e3da1fe-ab13-9350-3b23-4991f7922bb7" style="opacity:0" class="body-text-medium gallery-excerpt"><?php echo $details; ?></div>
+          <div data-w-id="3e3da1fe-ab13-9350-3b23-4991f7922bb7" style="opacity:0" class="body-text-medium gallery-excerpt justify">
+            
+             <pre style="white-space: pre-wrap;"><?php echo $details; ?></pre>
+          </div>
         </div>
         <div data-w-id="ad2701cb-d5b2-2689-c4e9-c13075c7f954" style="opacity:0" class="moment-list-wrapper">
           <div class="moment-list owl-carousel owl-theme">
