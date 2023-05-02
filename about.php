@@ -122,18 +122,18 @@ else
         <div data-w-id="c22253c3-c2ee-a42e-ae65-c6dc461329f0" style="opacity:0" class="vision-title"><?php echo $vision_title; ?></div>
         <div data-w-id="7041dab3-be42-2241-181e-19a005849583" style="opacity:0" class="body-text-medium vision-excerpt max-135 justify"> 
           
-          <pre style="white-space: pre-wrap;"><?php echo $vision_content; ?></pre>
+          <pre ><?php echo $vision_content; ?></pre>
         </div>
         <div data-w-id="692d5a83-7c6b-6e72-a442-f9f1f090fdce" style="opacity:0" class="vision-title marg-top60"><?php echo $mission_title; ?></div>
         <div data-w-id="a1767852-ec39-07a3-96c2-a3e77e30d7b8" style="opacity:0" class="body-text-medium vision-excerpt max-135 justify"> 
           
-          <pre style="white-space: pre-wrap;"><?php echo $mission_content; ?></pre>
+          <pre ><?php echo $mission_content; ?></pre>
         </div>
         <div class="priest-wrapper">
           <div data-w-id="33758c25-3aeb-f311-0903-90ed3b8106ec" style="opacity:0" class="vision-title"><?php echo $priests_title; ?></div>
           <div data-w-id="6db1914b-68a4-7ee6-4375-7230eba020b4" style="opacity:0" class="body-text-medium vision-excerpt max-135 justify">
             
-            <pre style="white-space: pre-wrap;"><?php echo $priests_subtext; ?></pre>
+            <pre ><?php echo $priests_subtext; ?></pre>
           </div>
         </div>
         <div class="priest-list-wrapper">
