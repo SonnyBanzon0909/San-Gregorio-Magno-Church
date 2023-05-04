@@ -111,7 +111,7 @@ $writer = new Xlsx($spreadsheet);
 $writer->save($filename);
 
 // Generate the file URL and return it to the client
-$file_url = 'http://' . $_SERVER['HTTP_HOST'] . '/editor/' . $filename;
+$file_url = 'https://' . $_SERVER['HTTP_HOST'] . '/editor/' . $filename;
 echo $file_url;
 
 
