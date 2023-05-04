@@ -104,7 +104,7 @@
                 <option value="December">December</option>
               </select><img src="../images/down-chevron-1.svg" loading="lazy" alt="" class="select-icon"></div>
 
-              <input type="text" class="select filter-select w-node-bf108295-d0aa-8c11-e91e-2270fbecb533-6fbcb9d9 w-input" maxlength="256" name="Year" data-name="Year" placeholder="Select year" id="year">
+              <input type="text" class="select filter-select w-node-bf108295-d0aa-8c11-e91e-2270fbecb533-6fbcb9d9 w-input" maxlength="256" name="Year" data-name="Year" placeholder="Year" id="year">
 
               <div class="select-wrapper"><select id="barangay" name="Barangay" data-name="Barangay" class="select filter-select w-select">
                 <option value="">Barangay</option>
