@@ -416,7 +416,7 @@ if (isset($_SESSION['user_email'])) {
   var currentPasswordField = document.getElementById("change-name");
   var newPasswordField = document.getElementById("change-address");
   var confirmPasswordField = document.getElementById("change-password");
-    var createPasswordField = document.getElementById("c-password");
+  var createPasswordField = document.getElementById("c-password");
 
   createPasswordField.addEventListener("input", function() {
     if (currentPasswordField.validity.patternMismatch) {
