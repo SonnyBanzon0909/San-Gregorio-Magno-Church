@@ -114,7 +114,8 @@ if (isset($_SESSION['user_email'])) {
 
         <div class="input-con"><input required type="date" class="input-field w-input create-field" maxlength="256" name="c-birthday" data-name="Birthday 2" placeholder="Birthday" id="c-birthday"><img src="images/calendar-2.svg" loading="lazy" alt="" class="calendar"></div>
 
-        <div class="input-con"><input required type="text" class="input-field w-input create-field" maxlength="256" name="c-contact" data-name="Contact Number 2" placeholder="Contact number" id="c-contact"></div>
+        <div class="input-con"><input required type="text" class="input-field w-input create-field" maxlength="256" name="c-contact" data-name="Contact Number 2" placeholder="Contact number" id="c-contact" pattern=".{11,}"></div>
+
         <div class="input-con"><input required type="text" class="input-field w-input create-field" maxlength="256" name="c-address" data-name="Address 3" placeholder="Address" id="c-address"></div>
         <div class="select-wrapper"><select required id="c-barangay" name="c-barangay" data-name="Barangay 2" class="select login-select w-select create-field">
           <option value="">Choose your barangay</option>
@@ -248,7 +249,7 @@ if (isset($_SESSION['user_email'])) {
         <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Full-Name-3" data-name="Full Name 3" placeholder="Full Name" id="edit-name" value="<?php echo $name; ?>"></div>
 
         <div class="input-con"><input required type="date" class="input-field w-input" maxlength="256" name="Birthday-2" data-name="Birthday 2" placeholder="Birthday" id="edit-birthday" value="<?php echo $birthday; ?>"><img src="images/calendar-2.svg" loading="lazy" alt="" class="calendar"></div>
-        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Contact-number-2" data-name="Contact Number 2" placeholder="Contact number" id="edit-phone" value="<?php echo $contact; ?>"></div>
+        <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Contact-number-2" data-name="Contact Number 2" placeholder="Contact number" id="edit-phone" pattern=".{11,}" value="<?php echo $contact; ?>"></div>
         <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Address-3" data-name="Address 3" placeholder="Address" id="edit-address" value="<?php echo $address; ?>"></div>
         <div class="select-wrapper"><select id="edit-barangay" name="Barangay" data-name="Barangay" class="select login-select w-select">
           <option value="<?php echo $barangay; ?>"><?php echo $barangay; ?></option>
@@ -412,11 +413,31 @@ if (isset($_SESSION['user_email'])) {
 
 
 <script type="text/javascript">
-
+ 
   var currentPasswordField = document.getElementById("change-name");
   var newPasswordField = document.getElementById("change-address");
   var confirmPasswordField = document.getElementById("change-password");
   var createPasswordField = document.getElementById("c-password");
+
+var createPhone = document.getElementById("c-contact");
+var editPhone = document.getElementById("edit-phone");
+
+
+createPhone.addEventListener("input", function() {
+    if (createPhone.validity.patternMismatch) {
+      createPhone.setCustomValidity("Number must be 11 numbers long.");
+    } else {
+      createPhone.setCustomValidity("");
+    }
+  });
+editPhone.addEventListener("input", function() {
+    if (editPhone.validity.patternMismatch) {
+      editPhone.setCustomValidity("Number must be 11 numbers long.");
+    } else {
+      editPhone.setCustomValidity("");
+    }
+  });
+
 
   createPasswordField.addEventListener("input", function() {
     if (createPasswordField.validity.patternMismatch) {
@@ -425,7 +446,7 @@ if (isset($_SESSION['user_email'])) {
       createPasswordField.setCustomValidity("");
     }
   });
-  
+
   currentPasswordField.addEventListener("input", function() {
     if (currentPasswordField.validity.patternMismatch) {
       currentPasswordField.setCustomValidity("Password must be at least 8 characters long.");
