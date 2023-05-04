@@ -413,6 +413,35 @@ if (isset($_SESSION['user_email'])) {
 
 <script type="text/javascript">
 
+  var currentPasswordField = document.getElementById("change-name");
+  var newPasswordField = document.getElementById("change-address");
+  var confirmPasswordField = document.getElementById("change-password");
+
+  currentPasswordField.addEventListener("input", function() {
+    if (currentPasswordField.validity.patternMismatch) {
+      currentPasswordField.setCustomValidity("Password must be at least 8 characters long.");
+    } else {
+      currentPasswordField.setCustomValidity("");
+    }
+  });
+
+  newPasswordField.addEventListener("input", function() {
+    if (newPasswordField.validity.patternMismatch) {
+      newPasswordField.setCustomValidity("Password must be at least 8 characters long.");
+    } else {
+      newPasswordField.setCustomValidity("");
+    }
+  });
+
+  confirmPasswordField.addEventListener("input", function() {
+    if (confirmPasswordField.validity.patternMismatch) {
+      confirmPasswordField.setCustomValidity("Password must be at least 8 characters long.");
+    } else {
+      confirmPasswordField.setCustomValidity("");
+    }
+  });
+
+
   $(document).ready(function() {
   // Toggle password visibility on click of eye icon
     $(".input-con .eye").click(function() {
