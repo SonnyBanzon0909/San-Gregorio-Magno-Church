@@ -183,14 +183,14 @@ if (isset($_SESSION['user_email'])) {
           <img class="eye" src="images/open_eye.svg">
         </div>
 
-
-        <div class="input-con relative"><input type="password" class="input-field w-input" maxlength="256" name="change-address" data-name="change-address" placeholder="New password" id="change-address">
+        <div class="input-con relative"><input type="password" class="input-field w-input" maxlength="256" name="change-address" data-name="change-address" placeholder="New password" id="change-address" pattern=".{8,}">
           <img class="eye" src="images/open_eye.svg">
         </div>
 
-        <div class="input-con relative"><input type="password" class="input-field w-input" maxlength="256" name="change-password" data-name="change-password" placeholder="Confirm password" id="change-password">
+        <div class="input-con relative"><input type="password" class="input-field w-input" maxlength="256" name="change-password" data-name="change-password" placeholder="Confirm password" id="change-password" pattern=".{8,}">
           <img class="eye" src="images/open_eye.svg">
         </div>
+
 
         <div id="w-node-e836a998-e239-21e2-f726-d8e7131034ad-131034a1" class="save-grid-wrapper">
           <div id="w-node-e836a998-e239-21e2-f726-d8e7131034ae-131034a1" class="save-grid">
