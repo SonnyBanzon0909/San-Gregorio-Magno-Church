@@ -419,10 +419,10 @@ if (isset($_SESSION['user_email'])) {
   var createPasswordField = document.getElementById("c-password");
 
   createPasswordField.addEventListener("input", function() {
-    if (currentPasswordField.validity.patternMismatch) {
-      currentPasswordField.setCustomValidity("Password must be at least 8 characters long.");
+    if (createPasswordField.validity.patternMismatch) {
+      createPasswordField.setCustomValidity("Password must be at least 8 characters long.");
     } else {
-      currentPasswordField.setCustomValidity("");
+      createPasswordField.setCustomValidity("");
     }
   });
   
