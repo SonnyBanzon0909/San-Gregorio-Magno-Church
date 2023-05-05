@@ -114,7 +114,7 @@ if (isset($_SESSION['user_email'])) {
 
         <div class="input-con"><input required type="date" class="input-field w-input create-field" maxlength="256" name="c-birthday" data-name="Birthday 2" placeholder="Birthday" id="c-birthday"><img src="images/calendar-2.svg" loading="lazy" alt="" class="calendar"></div>
 
-        <div class="input-con"><input required type="text" class="input-field w-input create-field" maxlength="256" name="c-contact" data-name="Contact Number 2" placeholder="Contact number" id="c-contact" pattern=".{11,}"></div>
+        <div class="input-con"><input required type="text" class="input-field w-input create-field" maxlength="11" name="c-contact" data-name="Contact Number 2" placeholder="Contact number" id="c-contact" pattern=".{11,}"></div>
 
         <div class="input-con"><input required type="text" class="input-field w-input create-field" maxlength="256" name="c-address" data-name="Address 3" placeholder="Address" id="c-address"></div>
         <div class="select-wrapper"><select required id="c-barangay" name="c-barangay" data-name="Barangay 2" class="select login-select w-select create-field">
