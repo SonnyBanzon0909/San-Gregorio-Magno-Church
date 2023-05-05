@@ -255,6 +255,7 @@ if (isset($_SESSION['user_email'])) {
         </div>
 
 
+
         <div class="input-con"><input type="text" class="input-field w-input" maxlength="256" name="Address-3" data-name="Address 3" placeholder="Address" id="edit-address" value="<?php echo $address; ?>"></div>
         <div class="select-wrapper"><select id="edit-barangay" name="Barangay" data-name="Barangay" class="select login-select w-select">
           <option value="<?php echo $barangay; ?>"><?php echo $barangay; ?></option>
