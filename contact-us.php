@@ -153,7 +153,7 @@ while($row = mysqli_fetch_array($view_query)){
 
                   <input type="text" class="input-field w-input" maxlength="256" name="Address" data-name="Address" placeholder="Address" id="address" required="">
 
-                  <input type="tel" class="input-field w-input" maxlength="256" name="Phone" data-name="Phone" placeholder="Phone" id="phone" required="">
+                  <input type="tel" class="input-field w-input" maxlength="256" name="Phone" data-name="Phone" placeholder="Phone" id="phone" maxlength="11" required="">
 
                   <div class="select-wrapper"><select id="gender" name="Gender" data-name="Gender" class="select w-select" required="">
                     <option value="">Choose your gender</option>
