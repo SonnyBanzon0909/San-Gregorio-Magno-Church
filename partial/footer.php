@@ -427,9 +427,10 @@ if (isset($_SESSION['user_email'])) {
 
   $("#c-birthday").click(function() {
     $(this).attr("type", "date");
-    var today = new Date().toISOString().slice(0, 10);
+    var today = new Date().toISOString().split('T')[0];
     $(this).attr("min", today);
   });
+
 
 
 
