@@ -427,8 +427,9 @@ if (isset($_SESSION['user_email'])) {
 
 
   $('.code').on('input', function() {
-    if ($(this).val().length === $(this).attr('maxlength')) {
+    if ($(this).val().length === 1 ) {
       $(this).next('.code').focus();
+      console.log($(this).val());
     }
   });
 
