@@ -434,6 +434,7 @@ if (isset($_SESSION['user_email'])) {
 
 
 
+
   $("#c-birthday").click(function() {
     $(this).attr("type", "date");
     var today = new Date().toISOString().split('T')[0];
