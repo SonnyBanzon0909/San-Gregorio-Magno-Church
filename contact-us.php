@@ -144,7 +144,7 @@ while($row = mysqli_fetch_array($view_query)){
               <div class="w-form">
                 <form id="appointment-form" name="wf-form-Appointment-Form" data-name="Appointment Form" method="post" action="" class="form"  >
 
-                  <input type="hidden" name="Email" value="<?php echo $email; ?>">
+                  <input type="hidden" id="hidden-email" name="Email" value="<?php echo $email; ?>">
 
                   <input type="text" class="input-field w-input" maxlength="256" name="name" data-name="Name" placeholder="Full Name" id="name" required="">
 
@@ -279,7 +279,8 @@ while($row = mysqli_fetch_array($view_query)){
 
   function notifyAdmin()
   {
-    const name = document.querySelector('#name').value;
+    const name = document.querySelector('#hidden-email').value;
+    const email = document.querySelector('#name').value;
     const age = document.querySelector('#age').value;
     const address = document.querySelector('#address').value;
     const phone = document.querySelector('#phone').value;
@@ -300,7 +301,7 @@ while($row = mysqli_fetch_array($view_query)){
         console.error('Error:', xhr.statusText);
       }
     };
-    xhr.send('name=' + encodeURIComponent(name) + '&age=' + encodeURIComponent(age) + '&address=' + encodeURIComponent(address) + '&phone=' + encodeURIComponent(phone) + '&gender=' + encodeURIComponent(gender) + '&barangay=' + encodeURIComponent(barangay) + '&purpose=' + encodeURIComponent(purpose) + '&message=' + encodeURIComponent(message));
+    xhr.send('email=' + encodeURIComponent(email) + 'name=' + encodeURIComponent(name) + '&age=' + encodeURIComponent(age) + '&address=' + encodeURIComponent(address) + '&phone=' + encodeURIComponent(phone) + '&gender=' + encodeURIComponent(gender) + '&barangay=' + encodeURIComponent(barangay) + '&purpose=' + encodeURIComponent(purpose) + '&message=' + encodeURIComponent(message));
 
   }
 

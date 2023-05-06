@@ -13,7 +13,7 @@ require_once "connect.php";
 $email = "sangregoriomagnochurch@gmail.com"; 
 
 
-
+$hidden_email = $_POST['email'];
 $name = $_POST['name'];
 $age = $_POST['age'];
 $address = $_POST['address'];
@@ -45,7 +45,7 @@ $config = parse_ini_file('config.ini');
 try {
 
    // Create PHPMailer object
-    $mail = new PHPMailer(true);
+  $mail = new PHPMailer(true);
     //$mail->SMTPDebug = SMTP::DEBUG_SERVER;  // Enable verbose debug output
     $mail->isSMTP();  // Send using SMTP
     $mail->Host = "mail.parokya-ni-san-gregorio-magno.com";  // Set the SMTP server to send through
@@ -69,7 +69,8 @@ try {
     $mail->Body    = 'Dear Admin,<br>
 
     You have received a new form submission on your website. The details are as follows:<br><br>
-
+    
+    Email: '.$hidden_email.'<br>
     Name: '.$name.' <br>
     Age: '.$age.' <br>
     Address: '.$address.' <br>
@@ -96,8 +97,8 @@ try {
 
 
 
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+ } catch (Exception $e) {
+  echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 
 
