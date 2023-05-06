@@ -301,7 +301,7 @@ while($row = mysqli_fetch_array($view_query)){
         console.error('Error:', xhr.statusText);
       }
     };
-    xhr.send('email=' + encodeURIComponent(email) + 'name=' + encodeURIComponent(name) + '&age=' + encodeURIComponent(age) + '&address=' + encodeURIComponent(address) + '&phone=' + encodeURIComponent(phone) + '&gender=' + encodeURIComponent(gender) + '&barangay=' + encodeURIComponent(barangay) + '&purpose=' + encodeURIComponent(purpose) + '&message=' + encodeURIComponent(message));
+    xhr.send('email=' + encodeURIComponent(email) + '&name=' + encodeURIComponent(name) + '&age=' + encodeURIComponent(age) + '&address=' + encodeURIComponent(address) + '&phone=' + encodeURIComponent(phone) + '&gender=' + encodeURIComponent(gender) + '&barangay=' + encodeURIComponent(barangay) + '&purpose=' + encodeURIComponent(purpose) + '&message=' + encodeURIComponent(message));
 
   }
 
