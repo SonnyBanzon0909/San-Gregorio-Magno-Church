@@ -144,6 +144,8 @@ while($row = mysqli_fetch_array($view_query)){
               <div class="w-form">
                 <form id="appointment-form" name="wf-form-Appointment-Form" data-name="Appointment Form" method="post" action="" class="form"  >
 
+                  <input type="hidden" name="Email" value="<?php echo $email; ?>">
+
                   <input type="text" class="input-field w-input" maxlength="256" name="name" data-name="Name" placeholder="Full Name" id="name" required="">
 
                   <input type="hidden" class="input-field w-input" maxlength="256" name="email" data-name="email" placeholder="Email" id="email" value="<?php echo $email; ?>">
