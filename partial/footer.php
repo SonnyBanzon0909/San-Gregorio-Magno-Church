@@ -425,6 +425,15 @@ if (isset($_SESSION['user_email'])) {
 
 <script type="text/javascript">
 
+
+  $('.code').on('input', function() {
+    if ($(this).val().length === $(this).attr('maxlength')) {
+      $(this).next('.code').focus();
+    }
+  });
+
+
+
   $("#c-birthday").click(function() {
     $(this).attr("type", "date");
     var today = new Date().toISOString().split('T')[0];
