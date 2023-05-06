@@ -113,7 +113,7 @@ if (isset($_SESSION['user_email'])) {
         <div class="input-con"><input required type="text" class="input-field w-input create-field" maxlength="256" name="c-fullname" data-name="Full Name 3" placeholder="Full Name" id="c-fullname"></div>
 
         <div class="input-con">
-          <input required type="text" class="input-field w-input create-field" maxlength="256" name="c-birthday" data-name="Birthday 2" placeholder="Birthday" id="c-birthday" min="<?php echo date('Y-m-d'); ?>" pattern="\d{2}/\d{2}/\d{2}">
+          <input required type="text" class="input-field w-input create-field" maxlength="256" name="c-birthday" data-name="Birthday 2" placeholder="Birthday" id="c-birthday"  >
           <img src="images/calendar-2.svg" style="pointer-events: none;" loading="lazy" alt="" class="calendar">
         </div>
 
