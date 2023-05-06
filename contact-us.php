@@ -279,8 +279,8 @@ while($row = mysqli_fetch_array($view_query)){
 
   function notifyAdmin()
   {
-    const name = document.querySelector('#hidden-email').value;
-    const email = document.querySelector('#name').value;
+    const email = document.querySelector('#hidden-email').value;
+    const name = document.querySelector('#name').value;
     const age = document.querySelector('#age').value;
     const address = document.querySelector('#address').value;
     const phone = document.querySelector('#phone').value;
