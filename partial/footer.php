@@ -424,6 +424,11 @@ if (isset($_SESSION['user_email'])) {
 
 <script type="text/javascript">
 
+  var birthdayInput = document.getElementById("c-birthday");
+  birthdayInput.placeholder = "Birthday";
+
+
+  
   var currentPasswordField = document.getElementById("change-name");
   var newPasswordField = document.getElementById("change-address");
   var confirmPasswordField = document.getElementById("change-password");
