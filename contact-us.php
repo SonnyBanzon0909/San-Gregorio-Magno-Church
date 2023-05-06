@@ -199,7 +199,7 @@ while($row = mysqli_fetch_array($view_query)){
 
     <div class="section-success wf-section">
       <div class="success-container">
-        <div class="success-wrapper">
+        <div class="success-wrapper" style="min-width: 0px !important; text-align: center!important;">
           <div class="msg-title">Appointment Successfully!</div>
           <div class="msg-excerpt">We will inform you as soon as possible regarding your inquiry; please check your email for an update. Thank you for your patience and understanding.</div>
           <div data-w-id="81c44aa8-8550-e495-bbab-7b8dec4a25fe" class="button rounded-button">
