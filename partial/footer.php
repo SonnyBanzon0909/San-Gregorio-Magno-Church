@@ -425,10 +425,12 @@ if (isset($_SESSION['user_email'])) {
 
 <script type="text/javascript">
 
-  $("#c-birthday").click(function(){
-
-    $(this).attr("type","date");
+  $("#c-birthday").click(function() {
+    $(this).attr("type", "date");
+    var today = new Date().toISOString().slice(0, 10);
+    $(this).attr("min", today);
   });
+
 
 
 
