@@ -113,7 +113,7 @@ if (isset($_SESSION['user_email'])) {
         <div class="input-con"><input required type="text" class="input-field w-input create-field" maxlength="256" name="c-fullname" data-name="Full Name 3" placeholder="Full Name" id="c-fullname"></div>
 
         <div class="input-con">
-          <input required type="date" class="input-field w-input create-field" maxlength="256" name="c-birthday" data-name="Birthday 2" placeholder="Birthday" id="c-birthday">
+          <input required type="text" class="input-field w-input create-field" maxlength="256" name="c-birthday" data-name="Birthday 2" placeholder="Birthday" id="c-birthday">
           <img src="images/calendar-2.svg" loading="lazy" alt="" class="calendar">
         </div>
 
@@ -424,11 +424,13 @@ if (isset($_SESSION['user_email'])) {
 
 <script type="text/javascript">
 
-  var birthdayInput = document.getElementById("c-birthday");
-  birthdayInput.placeholder = "Birthday";
+  $("#c-birthday").click(function(){
+
+    $(this).attr("type","date");
+  });
 
 
-  
+
   var currentPasswordField = document.getElementById("change-name");
   var newPasswordField = document.getElementById("change-address");
   var confirmPasswordField = document.getElementById("change-password");
