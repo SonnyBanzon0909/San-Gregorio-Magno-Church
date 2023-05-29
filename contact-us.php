@@ -124,7 +124,7 @@ while($row = mysqli_fetch_array($view_query)){
                   <a href="https://www.google.com/maps/place/San+Gregorio+Magno+Parish/@14.2493418,120.876876,17z/data=!3m1!4b1!4m6!3m5!1s0x33bd81744b783deb:0x59051579abb634d9!8m2!3d14.2493366!4d120.8790647!16s%2Fg%2F11f62sthsb" target="_blank" class="social-text"><?php echo $contact_address; ?></a>
                 </div>
                 <div class="social-con"><img src="images/phone.svg" loading="lazy" alt="" class="social-icon">
-                  <a href="tel:<?php echo $contact_number; ?>" class="social-text"><?php echo $contact_number; ?></a>
+                  <a href="tel:<?php echo $contact_number;?>" class="social-text"><?php echo $contact_number; ?></a>
                 </div>
                 <div class="social-con"><img src="images/email.svg" loading="lazy" alt="" class="social-icon">
                   <a href="mailto:sample000@gmail.com" class="social-text"><?php echo $contact_email; ?></a>
