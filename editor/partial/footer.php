@@ -21,8 +21,8 @@
       <div class="footer-brand-wrapper">
         <div data-w-id="0070e048-3023-2eb5-4e69-91f82fdae24b" class="footer-brand-con">
           <div class="footer-brand-grid">
-            <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae24d-2fdae237" href="#" class="footer-brand-link w-inline-block"><img src="images/Diyosesis-ng-Imus.png" loading="eager" alt="" class="footer-brand"></a>
-            <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae24f-2fdae237" href="#" class="footer-brand-link w-inline-block"><img src="images/parokya-ni-San-Gregorio-Magno.png" loading="eager" alt="" class="footer-brand"></a>
+            <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae24d-2fdae237" href="index.php?filter=today" class="footer-brand-link w-inline-block"><img src="images/Diyosesis-ng-Imus.png" loading="eager" alt="" class="footer-brand"></a>
+            <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae24f-2fdae237" href="index.php?filter=today" class="footer-brand-link w-inline-block"><img src="images/parokya-ni-San-Gregorio-Magno.png" loading="eager" alt="" class="footer-brand"></a>
           </div>
           <div class="footer-title">Parokya ni San Gregorio Magno</div>
           <div class="footer-excerpt">Brgy. Inocencio, Trece Martires City, Cavite</div>

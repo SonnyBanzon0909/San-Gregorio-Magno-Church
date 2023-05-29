@@ -51,8 +51,8 @@ if (isset($_SESSION['user_email'])) {
     <div class="footer-brand-wrapper">
       <div data-w-id="0070e048-3023-2eb5-4e69-91f82fdae24b" class="footer-brand-con">
         <div class="footer-brand-grid">
-          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae24d-2fdae237" href="index.php" class="footer-brand-link w-inline-block"><img src="images/Diyosesis-ng-Imus.png" loading="eager" alt="" class="footer-brand"></a>
-          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae24f-2fdae237" href="index.php" class="footer-brand-link w-inline-block"><img src="images/parokya-ni-San-Gregorio-Magno.png" loading="eager" alt="" class="footer-brand"></a>
+          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae24d-2fdae237" href="index.php?filter=today" class="footer-brand-link w-inline-block"><img src="images/Diyosesis-ng-Imus.png" loading="eager" alt="" class="footer-brand"></a>
+          <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae24f-2fdae237" href="index.php?filter=today" class="footer-brand-link w-inline-block"><img src="images/parokya-ni-San-Gregorio-Magno.png" loading="eager" alt="" class="footer-brand"></a>
         </div>
         <div class="footer-title">Parokya ni San Gregorio Magno</div>
         <div class="footer-excerpt">Brgy. Inocencio, Trece Martires City, Cavite</div>
@@ -60,7 +60,7 @@ if (isset($_SESSION['user_email'])) {
     </div>
     <div class="footer-link-wrapper">
       <div data-w-id="0070e048-3023-2eb5-4e69-91f82fdae256" class="footer-link-grid">
-        <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae257-2fdae237" href="index.php" aria-current="page" class="nav-link footer-link w--current">Home</a>
+        <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae257-2fdae237" href="index.php?filter=today" aria-current="page" class="nav-link footer-link w--current">Home</a>
         <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae259-2fdae237" href="about.php" class="nav-link footer-link">About</a>
         <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae25b-2fdae237" href="services.php?id=1" class="nav-link footer-link">Services</a>
         <a id="w-node-_0070e048-3023-2eb5-4e69-91f82fdae25d-2fdae237" href="galleries.php?id=1" class="nav-link footer-link">Galleries</a>
