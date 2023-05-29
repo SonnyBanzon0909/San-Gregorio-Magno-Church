@@ -28,7 +28,7 @@ while($row = mysqli_fetch_array($view_query)){
       <a href="index.php" aria-current="page" class="brand w-inline-block w--current"><img src="images/parokya.svg" loading="eager" alt="" class="brand-logo"></a>
       <div class="nav-links-grid desktop-nav-link-grid">
         <a href="index.php" id="w-node-_14e56277-239e-cc10-6aba-00a1806977c3-806977bd" aria-current="page" class="nav-link w--current">Home</a>
-        <a href="about.php" id="w-node-_14e56277-239e-cc10-6aba-00a1806977c5-806977bd" class="nav-link">About</a>
+        <a href="about-us.php" id="w-node-_14e56277-239e-cc10-6aba-00a1806977c5-806977bd" class="nav-link">About</a>
         <div data-hover="false" data-delay="500" data-w-id="14e56277-239e-cc10-6aba-00a1806977c7" class="nav-dropdown w-dropdown">
           <div class="nav-dropdown-toggle w-dropdown-toggle">
             <div class="nav-link">Services</div><img src="images/down-icon.svg" loading="lazy" alt="" class="dropdown-icon">
