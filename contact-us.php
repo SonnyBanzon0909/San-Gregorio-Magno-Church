@@ -386,7 +386,7 @@ while($row = mysqli_fetch_array($view_query)){
   {
     req_text = faith_req;
   }
-  else if(val == "Mass Wedding")
+  else if(val == "Wedding")
   {
     req_text = mass_req;
   }
