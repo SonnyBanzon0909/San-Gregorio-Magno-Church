@@ -151,7 +151,7 @@ while($row = mysqli_fetch_array($view_query)){
   <div class="container">
     <div class="nav-links-grid mobile-nav-link-grid">
       <a href="index.php" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4710-440d470d" class="nav-link">Home</a>
-      <a href="about.php" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4712-440d470d" class="nav-link">About</a>
+      <a href="about-us.php" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4712-440d470d" class="nav-link">About</a>
       <div data-hover="false" data-delay="500" id="w-node-cc8842c1-27e0-b9b5-b91f-d8b4440d4714-440d470d" data-w-id="cc8842c1-27e0-b9b5-b91f-d8b4440d4714" class="nav-dropdown w-dropdown">
         <div class="nav-dropdown-toggle w-dropdown-toggle">
           <div class="nav-link">Services</div><img src="images/down-icon.svg" loading="lazy" alt="" class="dropdown-icon">
