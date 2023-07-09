@@ -230,7 +230,7 @@
                         </div>
                       </div>
                       <div class="text-field-wrapper">
-                        <div class="cert-text">by the rev</div>
+                        <div class="cert-text">by the Rev</div>
                         <div class="cert-input-wrapper">
                           <div class="cert-text text-cert">---</div><input type="email" class="cert-field by-the w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="by-the" required="">
                         </div>
@@ -380,7 +380,7 @@
                         </div>
                       </div>
                       <div class="text-field-wrapper">
-                        <div class="cert-text">by the rev</div>
+                        <div class="cert-text">by the Rev</div>
                         <div class="cert-input-wrapper"><input type="email" class="cert-field by-the w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" id="by-the" required="">
                           <div class="cert-text text-cert">---</div>
                         </div>
@@ -487,7 +487,7 @@
                   <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="date-of" required="">
                     <div class="cert-text text-cert">---</div>
                   </div>
-                  <div id="com-the-rev" class="com-input-title marg-top-32"><strong>By the rev</strong></div>
+                  <div id="com-the-rev" class="com-input-title marg-top-32"><strong>By the Rev</strong></div>
                   <div class="cert-input-wrapper marg-bot-12"><input type="email" class="cert-field name-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="receive-by" required="">
                     <div class="cert-text text-cert">---</div>
                   </div>
