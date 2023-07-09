@@ -256,7 +256,7 @@ if (isset($_SESSION['user_email'])) {
         <div class="input-con"><input required type="date" class="input-field w-input" maxlength="256" name="Birthday-2" data-name="Birthday 2" placeholder="Birthday" id="edit-birthday" value="<?php echo $birthday; ?>"><img src="images/calendar-2.svg" loading="lazy" alt="" class="calendar"></div>
 
         <div class="input-con">
-          <input type="text" class="input-field w-input" name="Contact-number-2" data-name="Contact Number 2" placeholder="Contact number" maxlength="11" id="edit-phone" pattern=".{11,}" value="<?php echo $contact; ?>">
+          <input type="number" class="input-field w-input" name="Contact-number-2" data-name="Contact Number 2" placeholder="Contact number" maxlength="11" id="edit-phone" pattern=".{11,}" value="<?php echo $contact; ?>">
         </div>
 
 

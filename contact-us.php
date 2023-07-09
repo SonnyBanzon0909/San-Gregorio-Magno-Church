@@ -150,7 +150,7 @@ while($row = mysqli_fetch_array($view_query)){
 
                   <input type="hidden" class="input-field w-input" maxlength="256" name="email" data-name="email" placeholder="Email" id="email" value="<?php echo $email; ?>">
 
-                  <input type="text" class="input-field w-input" maxlength="256" name="Age" data-name="Age" placeholder="Age" id="age" required="">
+                  <input type="number" class="input-field w-input" maxlength="256" name="Age" data-name="Age" placeholder="Age" id="age" required="">
 
 
                   <input type="text" class="input-field w-input" maxlength="256" name="Address" data-name="Address" placeholder="Address" id="address" required="">
